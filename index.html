@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LangCode 2027 — The First Language and Code Workshop</title>
+  <meta name="description" content="LangCode 2027, the First Language and Code Workshop: towards secure, trustworthy, robust, and multilingual code generation. Proposed for the ACL 2027 joint workshop cycle.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌐</text></svg>">
+</head>
+<body>
+
+<nav class="top">
+  <div class="wrap">
+    <span class="brand">LangCode<span class="y">'27</span></span>
+    <span class="spacer"></span>
+    <a class="link" href="#about">About</a>
+    <a class="link" href="#topics">Topics</a>
+    <a class="link" href="#tasks">Shared Tasks</a>
+    <a class="link" href="#dates">Dates</a>
+    <a class="link" href="#organizers">Organizers</a>
+    <a class="link" href="#pc">Committee</a>
+    <a class="link" href="#contact">Contact</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="kicker">// the first language and code workshop</p>
+    <h1 class="title">LangCode 2027</h1>
+    <p class="tagline">Towards <b>secure</b>, <b>trustworthy</b>, <b>robust</b>, and
+      <b>multilingual</b> code generation.</p>
+    <span class="status">proposal under review &middot; notification: October 2, 2026</span>
+    <div class="hero-actions">
+      <a class="btn primary" href="#tasks">Shared Tasks</a>
+      <a class="btn" href="#topics">Call for Papers</a>
+      <a class="btn" href="#dates">Important Dates</a>
+    </div>
+    <p class="polyglot">
+      <span class="c">#</span> code for every language &nbsp;&middot;&nbsp;
+      প্রতিটি ভাষার জন্য কোড &nbsp;&middot;&nbsp;
+      código para cada idioma &nbsp;&middot;&nbsp;
+      为每种语言生成代码 &nbsp;&middot;&nbsp;
+      हर भाषा के लिए कोड &nbsp;&middot;&nbsp;
+      شيفرة لكل لغة &nbsp;&middot;&nbsp;
+      msimbo kwa kila lugha &nbsp;&middot;&nbsp;
+      κώδικας για κάθε γλώσσα &nbsp;&middot;&nbsp;
+      すべての言語のためのコード
+    </p>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section id="about">
+    <h2><span class="hash">##</span>About the Workshop</h2>
+    <p>
+      Research at the intersection of language and code has become one of the most active
+      areas in NLP, yet the benefits of code language models remain concentrated in a
+      narrow slice of the world's languages: models are prompted overwhelmingly in English,
+      evaluated almost exclusively on a handful of high-resource programming languages, and
+      equipped with safety mechanisms that are rarely tested beyond English inputs.
+    </p>
+    <p>
+      <strong>LangCode 2027</strong> is a forum for research that makes code generation work
+      for everyone &mdash; speakers of all natural languages, users of all programming
+      languages, and deployments that must remain safe under adversarial pressure, offer
+      explainability and interpretability, and align with human values and practices. We
+      treat linguistic variation and safety as inseparable: guardrails calibrated on English
+      degrade sharply on other languages, so a code model cannot be safe for all users
+      unless it is robust for all languages.
+    </p>
+    <p class="muted small">
+      LangCode 2027 has been proposed to the joint EACL/COLING/NAACL/ACL/EMNLP 2027 workshop
+      call, with NAACL 2027 (San Francisco) as the preferred venue. This page will be updated
+      when the outcome is announced on October&nbsp;2,&nbsp;2026.
+    </p>
+  </section>
+
+  <section id="topics">
+    <h2><span class="hash">##</span>Topics of Interest</h2>
+    <p>Mirroring the pillars in the workshop title, plus a fifth area for applications,
+       we invite submissions including but not limited to:</p>
+    <div class="pillars">
+      <div class="pillar">
+        <h3><span class="idx">01</span>Security</h3>
+        <ul>
+          <li>Secure code generation, including vulnerability-aware training and decoding</li>
+          <li>Guardrails for code models: input filtering, output auditing, policy enforcement</li>
+          <li>Adversarial attacks on CodeLLMs: jailbreaks, prompt injection, obfuscation</li>
+          <li>Detection and repair of vulnerable or malicious generated code</li>
+          <li>Safety of agentic coding systems</li>
+        </ul>
+      </div>
+      <div class="pillar">
+        <h3><span class="idx">02</span>Trustworthiness</h3>
+        <ul>
+          <li>Explainability and interpretability of code models and their failure modes</li>
+          <li>Alignment of code models and agents with human intents and practices</li>
+          <li>Calibration, uncertainty, and hallucination in code generation</li>
+          <li>Contamination-aware benchmarks and evaluation</li>
+        </ul>
+      </div>
+      <div class="pillar">
+        <h3><span class="idx">03</span>Robustness</h3>
+        <ul>
+          <li>Robustness to paraphrasing, dialectal variation, and code-mixed prompts</li>
+          <li>Support for low-resource, emerging, legacy, and domain-specific programming languages</li>
+          <li>Adaptation to new programming languages and distribution shift</li>
+        </ul>
+      </div>
+      <div class="pillar">
+        <h3><span class="idx">04</span>Multilinguality</h3>
+        <ul>
+          <li>Code generation, explanation, and documentation from non-English prompts</li>
+          <li>Cross-lingual transfer and adaptation to new natural languages</li>
+          <li>Data curation and synthetic data for underrepresented languages</li>
+        </ul>
+      </div>
+      <div class="pillar">
+        <h3><span class="idx">05</span>Applications</h3>
+        <ul>
+          <li>CodeLLMs in computing education, including feedback for non-English-speaking learners</li>
+          <li>Efficient code models for low-compute settings and equitable access</li>
+          <li>Case studies on deploying code models across languages and communities</li>
+        </ul>
+      </div>
+    </div>
+    <p class="muted small" style="margin-top:1rem;">
+      Reviewing will run on OpenReview, with an option to commit pre-reviewed ARR papers.
+      The full call for papers, including formatting and archival options, will be published
+      with the first CFP.
+    </p>
+  </section>
+
+  <section id="tasks">
+    <h2><span class="hash">##</span>Shared Tasks</h2>
+    <p>
+      LangCode 2027 will feature two shared tasks, hosted on CodaBench with sandboxed
+      evaluation harnesses, public baselines, and starter kits. Participation is free,
+      and constrained tracks keep low-compute teams competitive.
+    </p>
+
+    <div class="task">
+      <h3><span class="tid">Task 1&nbsp;/</span> Multilingual Code Generation</h3>
+      <p class="meta">100+ natural languages &middot; execution-based Pass@1 &middot; tier-macro-averaged</p>
+      <p>
+        Participants receive programming problems with prompts in over 100 natural languages
+        spanning high-, mid-, and low-resource tiers, and must generate correct Python
+        solutions. The task builds on the mHumanEval methodology, refreshed with newly
+        authored held-out problems to prevent contamination. Systems are ranked by
+        execution-based Pass@1 on hidden unit tests, macro-averaged across language tiers so
+        that high-resource performance alone cannot win; per-language scores and the
+        high&ndash;low-resource gap are also reported.
+      </p>
+      <span class="chip">CodaBench page: coming soon</span>
+    </div>
+
+    <div class="task">
+      <h3><span class="tid">Task 2&nbsp;/</span> Adversarial Prompt Detection for Code Models</h3>
+      <p class="meta">18 languages &middot; macro-F1 &middot; surprise-language leaderboard</p>
+      <p>
+        Systems classify prompts directed at a CodeLLM as benign or adversarial (eliciting
+        malicious code, jailbreaks, prompt injection, or obfuscated harmful requests); a
+        second subtrack classifies the attack technique. The data derive from the organizers'
+        MALICE benchmark (Findings of EMNLP 2026): adversarial prompts across 18 natural
+        languages built from nine malicious-code benchmarks via code-mixing and
+        transliteration, rebalanced with fresh benign prompts. Evaluation uses macro-F1, with
+        a cross-lingual leaderboard on surprise languages unseen in training.
+      </p>
+      <span class="chip">CodaBench page: coming soon</span>
+    </div>
+  </section>
+
+  <section id="dates">
+    <h2><span class="hash">##</span>Important Dates</h2>
+    <p class="muted small">All dates tentative until the workshop is accepted;
+       shared task timelines will be announced upon acceptance. Deadlines are 11:59&nbsp;PM UTC-12.</p>
+    <table class="dates">
+      <tr>
+        <td class="when">Sep 2026</td>
+        <td>Workshop proposal submitted to the 2027 joint workshop call</td>
+      </tr>
+      <tr>
+        <td class="when">Oct 2, 2026</td>
+        <td>Workshop acceptance notification</td>
+      </tr>
+      <tr>
+        <td class="when">Oct 26, 2026</td>
+        <td>First call for papers; shared task training data released</td>
+      </tr>
+      <tr>
+        <td class="when">Feb 5, 2027</td>
+        <td>Paper submission deadline; shared task evaluation window</td>
+      </tr>
+      <tr>
+        <td class="when">Mar 26, 2027</td>
+        <td>Notification of acceptance</td>
+      </tr>
+      <tr>
+        <td class="when">Jun 2027</td>
+        <td>Workshop at NAACL 2027, San Francisco (preferred venue, hybrid)</td>
+      </tr>
+    </table>
+  </section>
+
+  <section id="speakers">
+    <h2><span class="hash">##</span>Invited Speakers</h2>
+    <p class="muted">Keynotes spanning multilingual and low-resource code generation, the
+       security of code models, and human&ndash;AI collaboration in coding will be announced
+       after the workshop is accepted.</p>
+  </section>
+
+  <section id="organizers">
+    <h2><span class="hash">##</span>Organizers</h2>
+    <div class="people">
+      <div class="person">
+        <span class="name"><a href="https://mraihan-gmu.github.io" target="_blank" rel="noopener">Nishat Raihan</a></span><span class="role">lead</span>
+        <div class="affil">University of Notre Dame, USA</div>
+      </div>
+      <div class="person">
+        <span class="name">Joanna C. S. Santos</span>
+        <div class="affil">University of Notre Dame, USA</div>
+      </div>
+      <div class="person">
+        <span class="name"><a href="https://mzampieri.com" target="_blank" rel="noopener">Marcos Zampieri</a></span>
+        <div class="affil">George Mason University, USA</div>
+      </div>
+      <div class="person">
+        <span class="name"><a href="https://ziyuyao.org" target="_blank" rel="noopener">Ziyu Yao</a></span>
+        <div class="affil">George Mason University, USA</div>
+      </div>
+      <div class="person">
+        <span class="name"><a href="https://www.kpmoran.com" target="_blank" rel="noopener">Kevin Moran</a></span>
+        <div class="affil">University of Central Florida, USA</div>
+      </div>
+      <div class="person">
+        <span class="name"><a href="https://academicweb.nd.edu/~dchiang/" target="_blank" rel="noopener">David Chiang</a></span>
+        <div class="affil">University of Notre Dame, USA</div>
+      </div>
+      <div class="person">
+        <span class="name">Beatrice Casey</span>
+        <div class="affil">University of Notre Dame, USA</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pc">
+    <h2><span class="hash">##</span>Program Committee</h2>
+    <ul class="pc">
+      <li>Antonios Anastasopoulos <span class="affil">&middot; George Mason University</span></li>
+      <li>Md Arid Hasan <span class="affil">&middot; University of Toronto</span></li>
+      <li>Md Mezbaur Rahman <span class="affil">&middot; University of Illinois at Chicago</span></li>
+      <li>Mohammad Anas Jawad <span class="affil">&middot; University of Illinois at Chicago</span></li>
+      <li>Saroj Kumar Basnet <span class="affil">&middot; George Mason University</span></li>
+      <li>Dipak Meher <span class="affil">&middot; George Mason University</span></li>
+      <li>Xinye Zhao <span class="affil">&middot; University of Notre Dame</span></li>
+      <li>Vinicius Lopes <span class="affil">&middot; University of Notre Dame</span></li>
+      <li>Md Mohsinul Kabir <span class="affil">&middot; University of Manchester</span></li>
+      <li>Aashish Yadavalley <span class="affil">&middot; University of Central Florida</span></li>
+      <li>Antonio Mastropaolo <span class="affil">&middot; William &amp; Mary</span></li>
+      <li>Michele Tufano <span class="affil">&middot; Google</span></li>
+      <li>Arun Krishna Vajjala <span class="affil">&middot; Apple</span></li>
+      <li>Azmain Yakin <span class="affil">&middot; Hokkaido University</span></li>
+      <li>Tasnim Ahmed <span class="affil">&middot; Queen's University</span></li>
+    </ul>
+    <p class="muted small">The committee is being expanded ahead of the first call for papers.</p>
+  </section>
+
+  <section id="contact">
+    <h2><span class="hash">##</span>Contact</h2>
+    <p>Questions about the workshop or the shared tasks are welcome:
+       write to the lead organizer at
+       <span style="font-family: var(--mono);">mraihan&nbsp;[at]&nbsp;nd&nbsp;[dot]&nbsp;edu</span>,
+       or open an issue in the
+       <a href="https://github.com/langcode2027/langcode2027.github.io" target="_blank" rel="noopener">website repository</a>.</p>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>LangCode 2027 &middot; The First Language and Code Workshop</div>
+    <div class="sig"><span class="c">$</span> generate --secure --trustworthy --robust --multilingual</div>
+  </div>
+</footer>
+
+</body>
+</html>
