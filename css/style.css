@@ -501,14 +501,6 @@ ul.pc li .affil { color: var(--ink-soft); font-size: .86rem; }
 .fact dd { margin: 0; font-size: .93rem; color: var(--ink-soft); }
 .fact dd b { color: var(--ink); font-weight: 600; }
 
-.venue-order { list-style: none; display: flex; flex-wrap: wrap; gap: .4rem; padding: 0; margin: .4rem 0 0; }
-.venue-order li {
-  font-family: var(--mono); font-size: .78rem; color: var(--ink-soft);
-  border: 1px solid var(--line); border-radius: .3rem; padding: .1rem .45rem;
-  background: var(--bg-sink);
-}
-.venue-order li:first-child { color: var(--accent); border-color: var(--accent); background: var(--accent-soft); font-weight: 600; }
-
 /* ---------------------------------------------------------------- footer */
 
 footer {
