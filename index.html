@@ -4,169 +4,333 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>LangCode 2027 — The First Language and Code Workshop</title>
-  <meta name="description" content="LangCode 2027, the First Language and Code Workshop: towards secure, trustworthy, robust, and multilingual code generation. Proposed for the ACL 2027 joint workshop cycle.">
-  <link rel="stylesheet" href="css/style.css">
+  <meta name="description" content="LangCode 2027, the First Language and Code Workshop: towards secure, trustworthy, robust, and multilingual code generation. Two shared tasks, proposed for the 2027 ACL-community joint workshop cycle.">
+  <meta name="theme-color" content="#0e7c66">
+  <link rel="canonical" href="https://langcode2027.github.io/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://langcode2027.github.io/">
+  <meta property="og:title" content="LangCode 2027 — The First Language and Code Workshop">
+  <meta property="og:description" content="Towards secure, trustworthy, robust, and multilingual code generation. Two shared tasks: multilingual code generation and adversarial prompt detection for code models.">
+  <meta name="twitter:card" content="summary">
+
+  <link rel="stylesheet" href="css/style.css?v=2">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌐</text></svg>">
+  <script src="js/main.js?v=2"></script>
 </head>
 <body>
 
+<a class="skip-link" href="#about">Skip to content</a>
+<div id="progress" aria-hidden="true"></div>
+
 <nav class="top">
   <div class="wrap">
-    <span class="brand">LangCode<span class="y">'27</span></span>
-    <span class="spacer"></span>
-    <a class="link" href="#about">About</a>
-    <a class="link" href="#topics">Topics</a>
-    <a class="link" href="#tasks">Shared Tasks</a>
-    <a class="link" href="#dates">Dates</a>
-    <a class="link" href="#organizers">Organizers</a>
-    <a class="link" href="#pc">Committee</a>
-    <a class="link" href="#contact">Contact</a>
+    <a class="brand" href="#top">LangCode<span class="y">'27</span></a>
+    <div class="navlinks">
+      <a href="#about">About</a>
+      <a href="#why">Why</a>
+      <a href="#topics">Topics</a>
+      <a href="#tasks">Shared Tasks</a>
+      <a href="#dates">Dates</a>
+      <a href="#speakers">Speakers</a>
+      <a href="#organizers">Organizers</a>
+      <a href="#pc">Committee</a>
+      <a href="#format">Format</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <button class="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
+      <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11Z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.4"/><path d="M12 2.5v2.4M12 19.1v2.4M2.5 12h2.4M19.1 12h2.4M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M19.1 4.9l-1.7 1.7M6.6 17.4l-1.7 1.7"/></svg>
+    </button>
   </div>
 </nav>
 
-<header class="hero">
+<header class="hero" id="top">
   <div class="wrap">
-    <p class="kicker">// the first language and code workshop</p>
-    <h1 class="title">LangCode 2027</h1>
-    <p class="tagline">Towards <b>secure</b>, <b>trustworthy</b>, <b>robust</b>, and
+    <p class="kicker" data-reveal>// the first language and code workshop</p>
+    <h1 class="title" data-reveal style="--d:60ms">LangCode 2027</h1>
+    <p class="tagline" data-reveal style="--d:120ms">Towards <b>secure</b>, <b>trustworthy</b>, <b>robust</b>, and
       <b>multilingual</b> code generation.</p>
-    <span class="status">proposal under review &middot; notification: October 2, 2026</span>
-    <div class="hero-actions">
+    <div data-reveal style="--d:180ms">
+      <span class="status"><span class="dot" aria-hidden="true"></span>Proposal submitted &middot; notification October&nbsp;2,&nbsp;2026</span>
+    </div>
+    <div class="hero-actions" data-reveal style="--d:240ms">
       <a class="btn primary" href="#tasks">Shared Tasks</a>
       <a class="btn" href="#topics">Call for Papers</a>
       <a class="btn" href="#dates">Important Dates</a>
+      <a class="btn" href="#organizers">Organizers</a>
     </div>
-    <p class="polyglot">
-      <span class="c">#</span> code for every language &nbsp;&middot;&nbsp;
-      প্রতিটি ভাষার জন্য কোড &nbsp;&middot;&nbsp;
-      código para cada idioma &nbsp;&middot;&nbsp;
-      为每种语言生成代码 &nbsp;&middot;&nbsp;
-      हर भाषा के लिए कोड &nbsp;&middot;&nbsp;
-      شيفرة لكل لغة &nbsp;&middot;&nbsp;
-      msimbo kwa kila lugha &nbsp;&middot;&nbsp;
-      κώδικας για κάθε γλώσσα &nbsp;&middot;&nbsp;
-      すべての言語のためのコード
+    <p class="termline" data-reveal style="--d:300ms">
+      <span class="sr-only">Code for every language — the workshop motto, shown in rotation across many languages.</span>
+      <span aria-hidden="true"><span class="c">$</span> langcode --generate</span>
+      <span aria-hidden="true">"<bdi class="tw"><span class="typed"></span><span class="caret"></span></bdi>"</span>
+      <span class="lang" aria-hidden="true"></span>
     </p>
   </div>
 </header>
 
+<div class="ribbon" aria-hidden="true">
+  <div class="ribbon-track">
+    <span class="item"><span dir="auto">code for every language</span><span class="tag">English</span></span>
+    <span class="item"><span dir="auto">প্রতিটি ভাষার জন্য কোড</span><span class="tag">বাংলা</span></span>
+    <span class="item"><span dir="auto">código para cada idioma</span><span class="tag">Español</span></span>
+    <span class="item"><span dir="auto">为每种语言生成代码</span><span class="tag">中文</span></span>
+    <span class="item"><span dir="auto">हर भाषा के लिए कोड</span><span class="tag">हिन्दी</span></span>
+    <span class="item"><span dir="auto">شيفرة لكل لغة</span><span class="tag">العربية</span></span>
+    <span class="item"><span dir="auto">msimbo kwa kila lugha</span><span class="tag">Kiswahili</span></span>
+    <span class="item"><span dir="auto">すべての言語のためのコード</span><span class="tag">日本語</span></span>
+    <span class="item"><span dir="auto">κώδικας για κάθε γλώσσα</span><span class="tag">Ελληνικά</span></span>
+    <span class="item"><span dir="auto">모든 언어를 위한 코드</span><span class="tag">한국어</span></span>
+    <span class="item"><span dir="auto">код для каждого языка</span><span class="tag">Русский</span></span>
+    <span class="item"><span dir="auto">du code pour chaque langue</span><span class="tag">Français</span></span>
+    <span class="item"><span dir="auto">Code für jede Sprache</span><span class="tag">Deutsch</span></span>
+    <span class="item"><span dir="auto">código para todos os idiomas</span><span class="tag">Português</span></span>
+    <span class="item"><span dir="auto">codice per ogni lingua</span><span class="tag">Italiano</span></span>
+    <span class="item"><span dir="auto">her dil için kod</span><span class="tag">Türkçe</span></span>
+    <span class="item"><span dir="auto">mã cho mọi ngôn ngữ</span><span class="tag">Tiếng Việt</span></span>
+    <span class="item"><span dir="auto">kode untuk setiap bahasa</span><span class="tag">Indonesia</span></span>
+    <span class="item"><span dir="auto">ہر زبان کے لیے کوڈ</span><span class="tag">اردو</span></span>
+    <span class="item"><span dir="auto">کد برای هر زبان</span><span class="tag">فارسی</span></span>
+    <span class="item"><span dir="auto">קוד לכל שפה</span><span class="tag">עברית</span></span>
+    <span class="item"><span dir="auto">код для кожної мови</span><span class="tag">Українська</span></span>
+    <span class="item"><span dir="auto">โค้ดสำหรับทุกภาษา</span><span class="tag">ไทย</span></span>
+    <span class="item"><span dir="auto">kod dla każdego języka</span><span class="tag">Polski</span></span>
+    <span class="item"><span dir="auto">code voor elke taal</span><span class="tag">Nederlands</span></span>
+    <span class="item"><span dir="auto">kodigo para sa bawat wika</span><span class="tag">Filipino</span></span>
+    <span class="item"><span dir="auto">हरेक भाषाका लागि कोड</span><span class="tag">नेपाली</span></span>
+    <span class="item"><span dir="auto">koodu fún gbogbo èdè</span><span class="tag">Yorùbá</span></span>
+  </div>
+</div>
+
 <main class="wrap">
+
+  <section class="glance" aria-label="The workshop at a glance">
+    <div class="stats" data-stagger>
+      <div class="stat" data-reveal>
+        <span class="n" data-count="2">2</span>
+        <span class="l">shared tasks on CodaBench</span>
+      </div>
+      <div class="stat" data-reveal>
+        <span class="n" data-count="100" data-post="+">100+</span>
+        <span class="l">natural languages in Task&nbsp;1</span>
+      </div>
+      <div class="stat" data-reveal>
+        <span class="n" data-count="250" data-pre="~" data-post="K">~250K</span>
+        <span class="l">adversarial prompts in Task&nbsp;2</span>
+      </div>
+      <div class="stat" data-reveal>
+        <span class="n" data-count="25">25</span>
+        <span class="l">committee members, all confirmed</span>
+      </div>
+      <div class="stat" data-reveal>
+        <span class="n">60&ndash;80</span>
+        <span class="l">expected attendees, one&nbsp;day</span>
+      </div>
+    </div>
+  </section>
 
   <section id="about">
     <h2><span class="hash">##</span>About the Workshop</h2>
-    <p>
-      Research at the intersection of language and code has become one of the most active
-      areas in NLP, yet the benefits of code language models remain concentrated in a
-      narrow slice of the world's languages: models are prompted overwhelmingly in English,
-      evaluated almost exclusively on a handful of high-resource programming languages, and
-      equipped with safety mechanisms that are rarely tested beyond English inputs.
+    <hr class="rule">
+    <p class="lede">
+      Research at the intersection of natural language and code is among the most active areas
+      in NLP, yet the ACL community has no dedicated workshop on the topic.
     </p>
     <p>
-      <strong>LangCode 2027</strong> is a forum for research that makes code generation work
-      for everyone &mdash; speakers of all natural languages, users of all programming
-      languages, and deployments that must remain safe under adversarial pressure, offer
-      explainability and interpretability, and align with human values and practices. We
-      treat linguistic variation and safety as inseparable: guardrails calibrated on English
-      degrade sharply on other languages, so a code model cannot be safe for all users
-      unless it is robust for all languages.
+      Code models, exemplified by CodeLLMs, are now a standing track at ACL conferences, but the
+      benefits remain concentrated in a very narrow slice of the world's languages: models are
+      prompted overwhelmingly in English, evaluated almost exclusively on Python and a handful of
+      high-resource programming languages, and equipped with safety mechanisms that are rarely
+      tested beyond English inputs.
     </p>
+    <p>
+      <strong>LangCode 2027</strong> is a forum for research that makes code generation work for
+      everyone &mdash; speakers of all natural languages, users of all programming languages, and
+      deployments that must remain safe under adversarial pressure, offer desired explainability
+      and interpretability, and align with human values and practices. We treat linguistic
+      variation and safety as intertwined: guardrails calibrated on English degrade sharply on
+      other languages, so a code model cannot be safe for all users unless it is robust for all
+      languages.
+    </p>
+
+    <h3 class="sr-only">The three axes of robustness</h3>
+    <div class="axes" data-stagger>
+      <div class="axis" data-reveal>
+        <span class="rn">AXIS I</span>
+        <h3>Across natural languages</h3>
+        <p>Code generation, explanation, and documentation from prompts written in any language,
+           not only English.</p>
+      </div>
+      <div class="axis" data-reveal>
+        <span class="rn">AXIS II</span>
+        <h3>Across programming languages</h3>
+        <p>Low-resource, emerging, legacy, and domain-specific programming languages that current
+           models handle poorly.</p>
+      </div>
+      <div class="axis" data-reveal>
+        <span class="rn">AXIS III</span>
+        <h3>Against adversaries</h3>
+        <p>Secure generation, guardrails, and defenses against jailbreaks and prompt injection
+           &mdash; in every language.</p>
+      </div>
+    </div>
     <p class="muted small">
-      LangCode 2027 has been proposed to the joint EACL/COLING/NAACL/ACL/EMNLP 2027 workshop
-      call, with NAACL 2027 (San Francisco) as the preferred venue. This page will be updated
-      when the outcome is announced on October&nbsp;2,&nbsp;2026.
+      Alongside these three axes, the workshop welcomes submissions on the explainability and
+      interpretability of CodeLLMs and on human&ndash;CodeLLM (and CodeLLM agent) alignment.
+    </p>
+  </section>
+
+  <section id="why">
+    <h2><span class="hash">##</span>Why LangCode?</h2>
+    <hr class="rule">
+    <p class="lede">
+      The closest existing venues sit outside the ACL community, and the one that sat inside it
+      was discontinued. None centers linguistic diversity or safety, and none runs shared tasks.
+    </p>
+    <div class="table-scroll" data-reveal>
+      <table class="compare">
+        <thead>
+          <tr>
+            <th scope="col">Workshop</th>
+            <th scope="col">Hosted at</th>
+            <th scope="col">Centers linguistic diversity</th>
+            <th scope="col">Centers safety &amp; guardrails</th>
+            <th scope="col">Runs shared tasks</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="venue"><a href="https://llm4code.github.io" target="_blank" rel="noopener">LLM4Code</a></td>
+            <td class="host">ICSE &middot; software engineering</td>
+            <td><span class="no">&mdash;</span></td>
+            <td><span class="no">&mdash;</span></td>
+            <td><span class="no">&mdash;</span></td>
+          </tr>
+          <tr>
+            <td class="venue"><a href="https://dl4c.github.io" target="_blank" rel="noopener">DL4C</a></td>
+            <td class="host">ICLR, NeurIPS, ICML &middot; machine learning</td>
+            <td><span class="no">&mdash;</span></td>
+            <td><span class="no">&mdash;</span></td>
+            <td><span class="no">&mdash;</span></td>
+          </tr>
+          <tr>
+            <td class="venue"><a href="https://nlp4prog.github.io/2021/" target="_blank" rel="noopener">NLP4Prog</a></td>
+            <td class="host">ACL 2021 &middot; discontinued</td>
+            <td><span class="no">&mdash;</span></td>
+            <td><span class="no">&mdash;</span></td>
+            <td><span class="no">&mdash;</span></td>
+          </tr>
+          <tr class="us">
+            <td class="venue">LangCode 2027</td>
+            <td class="host">ACL community &middot; NLP &amp; software engineering</td>
+            <td><span class="yes">&#10003;</span></td>
+            <td><span class="yes">&#10003;</span></td>
+            <td><span class="yes">&#10003;</span> two</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="muted small">
+      Assessment based on the published scope and calls for papers of these venues as of
+      September&nbsp;2026.
     </p>
   </section>
 
   <section id="topics">
     <h2><span class="hash">##</span>Topics of Interest</h2>
-    <p>Mirroring the pillars in the workshop title, plus a fifth area for applications,
-       we invite submissions including but not limited to:</p>
-    <div class="pillars">
-      <div class="pillar">
-        <h3><span class="idx">01</span>Security</h3>
+    <hr class="rule">
+    <p class="lede">Mirroring the pillars in the workshop title, plus a fifth area for
+       applications, we invite submissions including but not limited to:</p>
+    <div class="pillars" data-stagger>
+      <div class="pillar" data-reveal>
+        <h3><span class="idx">01</span>Secure Code Generation</h3>
         <ul>
           <li>Secure code generation, including vulnerability-aware training and decoding</li>
-          <li>Guardrails for code models: input filtering, output auditing, policy enforcement</li>
-          <li>Adversarial attacks on CodeLLMs: jailbreaks, prompt injection, obfuscation</li>
-          <li>Detection and repair of vulnerable or malicious generated code</li>
+          <li>Guardrails for code models: input filtering, output auditing, and policy enforcement</li>
+          <li>Adversarial attacks on CodeLLMs: jailbreaks, prompt injection, and obfuscation</li>
           <li>Safety of agentic coding systems</li>
         </ul>
       </div>
-      <div class="pillar">
-        <h3><span class="idx">02</span>Trustworthiness</h3>
+      <div class="pillar" data-reveal>
+        <h3><span class="idx">02</span>Trustworthiness in Code LLMs</h3>
         <ul>
           <li>Explainability and interpretability of code models and their failure modes</li>
-          <li>Alignment of code models and agents with human intents and practices</li>
           <li>Calibration, uncertainty, and hallucination in code generation</li>
           <li>Contamination-aware benchmarks and evaluation</li>
+          <li>Alignment of code models and agents with human intents and practices</li>
         </ul>
       </div>
-      <div class="pillar">
-        <h3><span class="idx">03</span>Robustness</h3>
+      <div class="pillar" data-reveal>
+        <h3><span class="idx">03</span>Robustness in Code Models</h3>
         <ul>
           <li>Robustness to paraphrasing, dialectal variation, and code-mixed prompts</li>
           <li>Support for low-resource, emerging, legacy, and domain-specific programming languages</li>
           <li>Adaptation to new programming languages and distribution shift</li>
         </ul>
       </div>
-      <div class="pillar">
-        <h3><span class="idx">04</span>Multilinguality</h3>
+      <div class="pillar" data-reveal>
+        <h3><span class="idx">04</span>Multilingual Code Generation</h3>
         <ul>
           <li>Code generation, explanation, and documentation from non-English prompts</li>
           <li>Cross-lingual transfer and adaptation to new natural languages</li>
           <li>Data curation and synthetic data for underrepresented languages</li>
         </ul>
       </div>
-      <div class="pillar">
-        <h3><span class="idx">05</span>Applications</h3>
+      <div class="pillar" data-reveal>
+        <h3><span class="idx">05</span>Code LLM Applications</h3>
         <ul>
-          <li>CodeLLMs in computing education, including feedback for non-English-speaking learners</li>
           <li>Efficient code models for low-compute settings and equitable access</li>
           <li>Case studies on deploying code models across languages and communities</li>
+          <li>CodeLLMs in computing education, including feedback for non-English-speaking learners</li>
         </ul>
       </div>
     </div>
-    <p class="muted small" style="margin-top:1rem;">
-      Reviewing will run on OpenReview, with an option to commit pre-reviewed ARR papers.
-      The full call for papers, including formatting and archival options, will be published
-      with the first CFP.
-    </p>
   </section>
 
   <section id="tasks">
     <h2><span class="hash">##</span>Shared Tasks</h2>
-    <p>
-      LangCode 2027 will feature two shared tasks, hosted on CodaBench with sandboxed
-      evaluation harnesses, public baselines, and starter kits. Participation is free,
-      and constrained tracks keep low-compute teams competitive.
+    <hr class="rule">
+    <p class="lede">
+      LangCode 2027 will host two shared tasks on CodaBench, with sandboxed evaluation harnesses,
+      public baselines, and starter kits. Participation is free, and constrained tracks keep
+      low-compute teams competitive.
     </p>
 
-    <div class="task">
+    <div class="task" data-reveal>
       <h3><span class="tid">Task 1&nbsp;/</span> Multilingual Code Generation</h3>
-      <p class="meta">100+ natural languages &middot; execution-based Pass@1 &middot; tier-macro-averaged</p>
+      <div class="meta">
+        <span>100+ natural languages</span>
+        <span>execution-based Pass@1</span>
+        <span>macro-averaged across tiers</span>
+        <span>held-out problems</span>
+      </div>
       <p>
-        Participants receive programming problems with prompts in over 100 natural languages
-        spanning high-, mid-, and low-resource tiers, and must generate correct Python
-        solutions. The task builds on the mHumanEval methodology, refreshed with newly
-        authored held-out problems to prevent contamination. Systems are ranked by
-        execution-based Pass@1 on hidden unit tests, macro-averaged across language tiers so
-        that high-resource performance alone cannot win; per-language scores and the
+        Participants generate Python solutions to programming problems presented in more than 100
+        natural languages spanning high-, mid-, and low-resource tiers. Building on
+        <a href="https://aclanthology.org/2025.naacl-long.570/" target="_blank" rel="noopener">mHumanEval</a>,
+        the task uses newly authored held-out problems to limit contamination. Systems are ranked
+        by execution-based Pass@1 on hidden tests, macro-averaged across language tiers so that
+        high-resource performance alone cannot win; per-language performance and the
         high&ndash;low-resource gap are also reported.
       </p>
       <span class="chip">CodaBench page: coming soon</span>
     </div>
 
-    <div class="task">
+    <div class="task" data-reveal style="--d:80ms">
       <h3><span class="tid">Task 2&nbsp;/</span> Adversarial Prompt Detection for Code Models</h3>
-      <p class="meta">18 languages &middot; macro-F1 &middot; surprise-language leaderboard</p>
+      <div class="meta">
+        <span>18 languages</span>
+        <span>~250K prompts</span>
+        <span>macro-F1</span>
+        <span>surprise-language leaderboard</span>
+      </div>
       <p>
-        Systems classify prompts directed at a CodeLLM as benign or adversarial (eliciting
-        malicious code, jailbreaks, prompt injection, or obfuscated harmful requests); a
-        second subtrack classifies the attack technique. The data derive from the organizers'
-        MALICE benchmark (Findings of EMNLP 2026): adversarial prompts across 18 natural
-        languages built from nine malicious-code benchmarks via code-mixing and
-        transliteration, rebalanced with fresh benign prompts. Evaluation uses macro-F1, with
-        a cross-lingual leaderboard on surprise languages unseen in training.
+        Systems classify CodeLLM prompts as benign or adversarial, with a subtrack for attack-type
+        classification. The task builds on MALICE (Findings of EMNLP 2026), a roughly 250K-prompt
+        benchmark spanning 18 languages together with code-mixed and transliterated adversarial
+        variants. Since MALICE reveals substantial cross-lingual degradation in existing
+        guardrails, the task targets a documented security gap. Evaluation uses macro-F1,
+        including a cross-lingual leaderboard on surprise languages.
       </p>
       <span class="chip">CodaBench page: coming soon</span>
     </div>
@@ -174,86 +338,139 @@
 
   <section id="dates">
     <h2><span class="hash">##</span>Important Dates</h2>
-    <p class="muted small">All dates tentative until the workshop is accepted;
-       shared task timelines will be announced upon acceptance. Deadlines are 11:59&nbsp;PM UTC-12.</p>
-    <table class="dates">
-      <tr>
-        <td class="when">Sep 2026</td>
-        <td>Workshop proposal submitted to the 2027 joint workshop call</td>
-      </tr>
-      <tr>
-        <td class="when">Oct 2, 2026</td>
-        <td>Workshop acceptance notification</td>
-      </tr>
-      <tr>
-        <td class="when">Oct 26, 2026</td>
-        <td>First call for papers; shared task training data released</td>
-      </tr>
-      <tr>
-        <td class="when">Feb 5, 2027</td>
-        <td>Paper submission deadline; shared task evaluation window</td>
-      </tr>
-      <tr>
-        <td class="when">Mar 26, 2027</td>
-        <td>Notification of acceptance</td>
-      </tr>
-      <tr>
-        <td class="when">Jun 2027</td>
-        <td>Workshop at NAACL 2027, San Francisco (preferred venue, hybrid)</td>
-      </tr>
-    </table>
+    <hr class="rule">
+    <p class="lede">All dates after the acceptance notification are tentative; shared task
+       timelines will be announced upon acceptance. Deadlines are 11:59&nbsp;PM UTC-12.</p>
+    <ol class="timeline">
+      <li class="done">
+        <span class="when">September 2026</span>
+        <span class="what">Workshop proposal submitted to the 2027 joint workshop call</span>
+      </li>
+      <li>
+        <span class="when">October 2, 2026</span>
+        <span class="what">Workshop acceptance notification<span class="flag">next</span></span>
+      </li>
+      <li>
+        <span class="when">October 26, 2026</span>
+        <span class="what">First call for papers; shared task training data released</span>
+      </li>
+      <li>
+        <span class="when">February 5, 2027</span>
+        <span class="what">Paper submission deadline; shared task evaluation window</span>
+      </li>
+      <li>
+        <span class="when">March 26, 2027</span>
+        <span class="what">Notification of acceptance</span>
+      </li>
+      <li>
+        <span class="when">June 2027</span>
+        <span class="what">Workshop at NAACL 2027 (preferred venue) &mdash; one day, hybrid</span>
+      </li>
+    </ol>
   </section>
 
   <section id="speakers">
     <h2><span class="hash">##</span>Invited Speakers</h2>
-    <p>Keynotes will span multilingual and low-resource code generation, the security of
-       code models, and human&ndash;AI collaboration in coding.</p>
-    <div class="people">
-      <div class="person">
-        <span class="name"><a href="https://valeriechen.github.io" target="_blank" rel="noopener">Valerie Chen</a></span><span class="role">confirmed</span>
-        <div class="affil">Stanford University, USA</div>
+    <hr class="rule">
+    <p class="lede">Keynotes will span multilingual and low-resource code generation, the security
+       of code models, and human&ndash;AI collaboration in coding.</p>
+    <div class="people wide">
+      <div class="person speaker" data-reveal>
+        <span class="kbadge" aria-hidden="true">VC</span>
+        <div>
+          <span class="name"><a href="https://valeriechen.github.io" target="_blank" rel="noopener">Valerie Chen</a></span><span class="role">confirmed</span>
+          <div class="affil">Stanford University, USA</div>
+          <p class="bio">Human&ndash;AI collaboration in programming, and how developers actually
+             work with code assistants.</p>
+        </div>
       </div>
     </div>
-    <p class="muted small" style="margin-top:1rem;">Further keynotes will be announced once
-       the workshop is accepted.</p>
+    <p class="muted small" style="margin-top:1rem;">Additional keynotes will be announced once the
+       workshop is accepted. ACL provides one free registration for an invited speaker; the
+       organizers will cover the remaining costs independently.</p>
   </section>
 
   <section id="organizers">
     <h2><span class="hash">##</span>Organizers</h2>
-    <div class="people">
-      <div class="person">
-        <span class="name"><a href="https://mraihan-gmu.github.io" target="_blank" rel="noopener">Nishat Raihan</a></span><span class="role">lead</span>
+    <hr class="rule">
+    <p class="lede">Seven organizers across three universities, spanning NLP, software
+       engineering, and security, with extensive shared task and workshop experience.</p>
+    <div class="people" data-stagger>
+      <div class="person" data-reveal>
+        <span class="name"><a href="https://md-nishat.com" target="_blank" rel="noopener">Nishat Raihan</a></span><span class="role">lead</span>
         <div class="affil">University of Notre Dame, USA</div>
+        <p class="bio">Provost's Postdoctoral Fellow in Computer Science and Engineering; PhD from
+          George Mason University, 2026. Works on multilingual and low-resource code generation,
+          safety guardrails for code models, and LLMs in computing education. Created mHumanEval,
+          TigerLLM, TigerCoder, MojoBench, and CodeGuard. Led the BLP-2025 shared task on Bangla
+          code generation and co-organizes the creole MT shared task at WMT 2026.</p>
       </div>
-      <div class="person">
-        <span class="name">Joanna C. S. Santos</span>
+      <div class="person" data-reveal>
+        <span class="name"><a href="https://s2elab.org/members/" target="_blank" rel="noopener">Beatrice Casey</a></span>
         <div class="affil">University of Notre Dame, USA</div>
+        <p class="bio">PhD candidate in Computer Science and Engineering, advised by Joanna C. S.
+          Santos in the S2E lab. Works on machine learning for software security, including the
+          security of code language models and AI coding agents. Lead author of an ACM Computing
+          Surveys article on source code representations for ML-based cybersecurity tasks.</p>
       </div>
-      <div class="person">
-        <span class="name"><a href="https://mzampieri.com" target="_blank" rel="noopener">Marcos Zampieri</a></span>
-        <div class="affil">George Mason University, USA</div>
-      </div>
-      <div class="person">
-        <span class="name"><a href="https://ziyuyao.org" target="_blank" rel="noopener">Ziyu Yao</a></span>
-        <div class="affil">George Mason University, USA</div>
-      </div>
-      <div class="person">
-        <span class="name"><a href="https://www.kpmoran.com" target="_blank" rel="noopener">Kevin Moran</a></span>
-        <div class="affil">University of Central Florida, USA</div>
-      </div>
-      <div class="person">
+      <div class="person" data-reveal>
         <span class="name"><a href="https://academicweb.nd.edu/~dchiang/" target="_blank" rel="noopener">David Chiang</a></span>
         <div class="affil">University of Notre Dame, USA</div>
+        <p class="bio">Associate Professor of Computer Science and Engineering, leading the Notre
+          Dame NLP group; PhD from the University of Pennsylvania. Studies the abilities and
+          limitations of language models through formal language theory, and develops models for
+          all kinds of human languages and language varieties. His work on hierarchical
+          phrase-based machine translation received the ACL 2005 Best Paper Award.</p>
       </div>
-      <div class="person">
-        <span class="name">Beatrice Casey</span>
+      <div class="person" data-reveal>
+        <span class="name"><a href="https://www.kpmoran.com" target="_blank" rel="noopener">Kevin Moran</a></span>
+        <div class="affil">University of Central Florida, USA</div>
+        <p class="bio">Assistant Professor of Computer Science, directing the SAGE research lab;
+          previously Assistant Professor at George Mason University (2020&ndash;2023); PhD from
+          William &amp; Mary, 2018. Applies machine learning to data mined from software
+          repositories to build practical developer tools. Recipient of the NSF CAREER Award, the
+          ACM SIGSOFT Early Career Researcher Award, and multiple Distinguished Paper Awards.</p>
+      </div>
+      <div class="person" data-reveal>
+        <span class="name"><a href="https://s2elab.org" target="_blank" rel="noopener">Joanna C. S. Santos</a></span>
         <div class="affil">University of Notre Dame, USA</div>
+        <p class="bio">Assistant Professor of Computer Science and Engineering, leading the
+          Security and Software Engineering (S2E) lab; PhD from the Rochester Institute of
+          Technology. Research spans secure code generation, software security, and program
+          analysis; her group created SecurityEval, one of the first benchmarks for the security
+          of LLM-generated code. ICSA 2017 Best Paper Award and ESEC/FSE 2023 Distinguished
+          Reviewer Award.</p>
+      </div>
+      <div class="person" data-reveal>
+        <span class="name"><a href="https://ziyuyao.org" target="_blank" rel="noopener">Ziyu Yao</a></span>
+        <div class="affil">George Mason University, USA</div>
+        <p class="bio">Assistant Professor of Computer Science, co-leading the George Mason NLP
+          group; PhD from The Ohio State University, 2021. Research spans LLMs for code generation
+          and reasoning, mechanistic interpretability, human&ndash;LLM interaction, and AI for
+          education. Recipient of an NSF CAREER Award (2026) for research on the interpretability
+          of LLMs, and selected for Rising Stars in EECS (2020).</p>
+      </div>
+      <div class="person" data-reveal>
+        <span class="name"><a href="https://mzampieri.com" target="_blank" rel="noopener">Marcos Zampieri</a></span>
+        <div class="affil">George Mason University, USA</div>
+        <p class="bio">Assistant Professor at George Mason University and Visiting Assistant
+          Professor at Duke University. Publishes on language and dialect identification, machine
+          translation, and multilingual code generation (e.g., mHumanEval). Co-organizer of the
+          VarDial workshop since 2014, SemEval chair (2025&ndash;2026), and co-organizer of
+          multiple shared tasks at BEA, SemEval, and WMT.</p>
       </div>
     </div>
   </section>
 
   <section id="pc">
     <h2><span class="hash">##</span>Program Committee</h2>
+    <hr class="rule">
+    <div class="callout" data-reveal>
+      We reached out personally to every program committee member, and
+      <strong>list only those who have agreed to serve</strong>. The committee spans academia
+      (professors, postdocs, and PhD students) and industry (research scientists and research
+      engineers).
+    </div>
     <ul class="pc">
       <li>Antonios Anastasopoulos <span class="affil">&middot; George Mason University</span></li>
       <li>Md Arid Hasan <span class="affil">&middot; University of Toronto</span></li>
@@ -264,30 +481,99 @@
       <li>Xinye Zhao <span class="affil">&middot; University of Notre Dame</span></li>
       <li>Vinicius Lopes <span class="affil">&middot; University of Notre Dame</span></li>
       <li>Md Mohsinul Kabir <span class="affil">&middot; University of Manchester</span></li>
-      <li>Aashish Yadavalley <span class="affil">&middot; University of Central Florida</span></li>
+      <li>Aashish Yadavally <span class="affil">&middot; University of Central Florida</span></li>
       <li>Antonio Mastropaolo <span class="affil">&middot; William &amp; Mary</span></li>
       <li>Michele Tufano <span class="affil">&middot; Google</span></li>
       <li>Arun Krishna Vajjala <span class="affil">&middot; Apple</span></li>
       <li>Azmain Yakin <span class="affil">&middot; Hokkaido University</span></li>
       <li>Tasnim Ahmed <span class="affil">&middot; Queen's University</span></li>
+      <li>Mohammed Latif Siddiq <span class="affil">&middot; Meta</span></li>
+      <li>Maliha Jahan <span class="affil">&middot; Amazon</span></li>
+      <li>Amimul Ehsan Zoha <span class="affil">&middot; George Mason University</span></li>
+      <li>Sudipta Kar <span class="affil">&middot; Oracle</span></li>
+      <li>Firoj Alam <span class="affil">&middot; Qatar Computing Research Institute, HBKU</span></li>
+      <li>Shammur Absar Chowdhury <span class="affil">&middot; Qatar Computing Research Institute, HBKU</span></li>
+      <li>Alphaeus Dmonte <span class="affil">&middot; George Mason University</span></li>
+      <li>Mohamed Aghzal <span class="affil">&middot; George Mason University</span></li>
+      <li>Hao Yan <span class="affil">&middot; George Mason University</span></li>
+      <li>Mohammad Rashidujjaman Rifat <span class="affil">&middot; University of Notre Dame</span></li>
     </ul>
-    <p class="muted small">The committee is being expanded ahead of the first call for papers.</p>
+  </section>
+
+  <section id="format">
+    <h2><span class="hash">##</span>Format &amp; Participation</h2>
+    <hr class="rule">
+    <div class="facts" data-stagger>
+      <dl class="fact" data-reveal>
+        <dt>Format</dt>
+        <dd><b>One day, in person, hybrid.</b> Authors who cannot travel can present remotely; if
+            needed, the full program can run virtually.</dd>
+      </dl>
+      <dl class="fact" data-reveal>
+        <dt>Reviewing</dt>
+        <dd><b>OpenReview</b>, with an option to commit pre-reviewed <b>ARR</b> papers.</dd>
+      </dl>
+      <dl class="fact" data-reveal>
+        <dt>Expected scale</dt>
+        <dd><b>50&ndash;60 submissions</b> and <b>60&ndash;80 attendees</b>, based on participation
+            in related code models research and the organizers' shared task record.</dd>
+      </dl>
+      <dl class="fact" data-reveal>
+        <dt>Venue preference</dt>
+        <dd>
+          <ol class="venue-order">
+            <li>NAACL</li><li>EACL</li><li>ACL</li><li>EMNLP</li><li>COLING</li>
+          </ol>
+        </dd>
+      </dl>
+    </div>
+
+    <div class="callout" data-reveal>
+      <strong>Track record.</strong> BLP-2025 &mdash; a code generation shared task led by our
+      organizers &mdash; drew <strong>152 participants</strong>, <strong>63 teams</strong>, and
+      <strong>488 submissions</strong>. The organizers have also run successful shared tasks at
+      VarDial and WMT.
+    </div>
+
+    <h3 style="margin:1.8rem 0 .4rem; font-size:1.05rem;">Diversity and Inclusion</h3>
+    <p>
+      LangCode contributes to academic diversity by design. Beyond academic diversity, we seek
+      broad geographic, institutional, demographic, and career-stage representation among invited
+      speakers and the program committee. We disseminate the call for papers through multilingual
+      NLP, low-resource language, software engineering, security, and relevant affinity
+      communities.
+    </p>
   </section>
 
   <section id="contact">
     <h2><span class="hash">##</span>Contact</h2>
-    <p>Questions about the workshop or the shared tasks are welcome:
-       write to the lead organizer at
+    <hr class="rule">
+    <p>Questions about the workshop or the shared tasks are welcome: write to the lead organizer at
        <span style="font-family: var(--mono);">mraihan&nbsp;[at]&nbsp;nd&nbsp;[dot]&nbsp;edu</span>,
        or open an issue in the
        <a href="https://github.com/langcode2027/langcode2027.github.io" target="_blank" rel="noopener">website repository</a>.</p>
+    <p class="muted small">
+      LangCode 2027 has been proposed to the joint EACL/COLING/NAACL/ACL/EMNLP 2027 workshop call.
+      This page will be updated when the outcome is announced on October&nbsp;2,&nbsp;2026.
+    </p>
   </section>
 
 </main>
 
 <footer>
   <div class="wrap">
-    <div>LangCode 2027 &middot; The First Language and Code Workshop</div>
+    <div class="frow">
+      <div>
+        <div><strong>LangCode 2027</strong> &middot; The First Language and Code Workshop</div>
+        <div class="muted">Towards secure, trustworthy, robust, and multilingual code generation.</div>
+      </div>
+      <div>
+        <a href="#tasks">Shared Tasks</a> &middot;
+        <a href="#dates">Dates</a> &middot;
+        <a href="#organizers">Organizers</a> &middot;
+        <a href="https://github.com/langcode2027/langcode2027.github.io" target="_blank" rel="noopener">Repository</a>
+      </div>
+    </div>
     <div class="sig"><span class="c">$</span> generate --secure --trustworthy --robust --multilingual</div>
   </div>
 </footer>
