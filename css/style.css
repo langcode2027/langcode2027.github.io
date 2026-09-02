@@ -343,25 +343,6 @@ section p { max-width: 46rem; }
 .axis h3 { margin: 0 0 .3rem; font-size: 1rem; }
 .axis p { margin: 0; font-size: .9rem; color: var(--ink-soft); }
 
-/* --------------------------------------------------------- comparison table */
-
-.table-scroll { overflow-x: auto; margin: 1.2rem 0 .6rem; border-radius: var(--r); border: 1px solid var(--line); }
-table.compare { border-collapse: collapse; width: 100%; min-width: 34rem; background: var(--bg-raise); font-size: .9rem; }
-table.compare th, table.compare td { padding: .6rem .85rem; text-align: left; border-bottom: 1px solid var(--line-soft); }
-table.compare thead th {
-  font-family: var(--mono); font-size: .74rem; font-weight: 600;
-  letter-spacing: .03em; color: var(--ink-soft); text-transform: uppercase;
-  background: var(--bg-sink); border-bottom: 1px solid var(--line); vertical-align: bottom;
-}
-table.compare tbody tr:last-child td { border-bottom: 0; }
-table.compare td.venue { font-weight: 600; }
-table.compare td.host { color: var(--ink-soft); font-size: .86rem; }
-table.compare tr.us { background: var(--accent-soft); }
-table.compare tr.us td { color: var(--ink); }
-table.compare tr.us td.venue { color: var(--accent); }
-.yes { color: var(--accent); font-weight: 700; }
-.no { color: var(--ink-faint); }
-
 /* ------------------------------------------------------------ pillar cards */
 
 .pillars {
@@ -441,43 +422,57 @@ ol.timeline .flag {
   padding: 0 .3rem; margin-left: .4rem; vertical-align: 1px;
 }
 
-/* ----------------------------------------------------------------- people */
+/* ------------------------------------------------- people (photo cards) --- */
 
-.people {
+.orgs {
   display: grid; gap: .8rem;
-  grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
   margin-top: 1.1rem;
 }
-.person {
+.org {
+  position: relative;
   background: var(--bg-raise); border: 1px solid var(--line);
-  border-radius: var(--r); padding: .85rem 1rem;
+  border-radius: var(--r); padding: 1.1rem .9rem 1rem;
+  text-align: center;
   transition: transform .22s var(--ease), border-color .22s var(--ease), box-shadow .22s var(--ease);
 }
-.person:hover { transform: translateY(-3px); border-color: var(--accent); box-shadow: var(--shadow-m); }
-.person .name { font-weight: 650; color: var(--blue); }
-.person .name a { color: var(--blue); }
-.person .role {
-  font-family: var(--mono); font-size: .68rem; color: var(--accent);
-  border: 1px solid var(--accent); border-radius: .3rem;
-  padding: 0 .32rem; margin-left: .35rem; vertical-align: 2px;
-  text-transform: uppercase; letter-spacing: .04em;
-}
-.person .affil { font-size: .86rem; color: var(--ink-soft); }
-.person .bio { font-size: .86rem; color: var(--ink-soft); margin: .45rem 0 0; line-height: 1.55; }
+.org:hover { transform: translateY(-3px); border-color: var(--accent); box-shadow: var(--shadow-m); }
 
-.people.wide { grid-template-columns: repeat(auto-fill, minmax(21rem, 1fr)); }
-.speaker { display: flex; gap: 1rem; align-items: flex-start; }
-.speaker .kbadge {
-  flex: none; width: 2.6rem; height: 2.6rem; border-radius: 50%;
-  display: grid; place-items: center;
-  background: var(--accent-soft); color: var(--accent);
-  font-family: var(--mono); font-weight: 700; font-size: .95rem;
-  border: 1px solid color-mix(in srgb, var(--accent) 40%, transparent);
+.avatar {
+  position: relative; display: block;
+  width: 5.5rem; height: 5.5rem; margin: 0 auto .7rem;
+  border-radius: 50%; overflow: hidden;
+  background: var(--accent-soft);
+  border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
 }
+.avatar .ph {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  transition: transform .35s var(--ease);
+}
+.org:hover .avatar .ph { transform: scale(1.05); }
+.avatar .init {
+  position: absolute; inset: 0; display: none;
+  place-items: center; font-family: var(--mono); font-weight: 700;
+  font-size: 1.35rem; letter-spacing: .02em; color: var(--accent);
+}
+.avatar.no-photo .ph { display: none; }
+.avatar.no-photo .init { display: grid; }
+
+.org .nm { display: block; font-weight: 650; font-size: .96rem; color: var(--blue); }
+.org .nm a { color: var(--blue); }
+.org .role {
+  position: absolute; top: .5rem; right: .5rem;
+  font-family: var(--mono); font-size: .64rem; color: var(--accent);
+  background: var(--accent-soft);
+  border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent);
+  border-radius: .3rem; padding: 0 .32rem;
+  text-transform: uppercase; letter-spacing: .05em;
+}
+.org .af { display: block; font-size: .83rem; color: var(--ink-soft); margin-top: .2rem; }
 
 ul.pc {
   columns: 2; column-gap: 2.2rem; padding-left: 1.15rem;
-  margin-top: .9rem; max-width: 48rem;
+  margin-top: .9rem; max-width: 50rem;
 }
 ul.pc li { margin: .3rem 0; font-size: .93rem; break-inside: avoid; }
 ul.pc li .affil { color: var(--ink-soft); font-size: .86rem; }
@@ -525,6 +520,7 @@ footer .frow { display: flex; flex-wrap: wrap; gap: .8rem 1.6rem; align-items: b
 footer a { color: var(--ink-soft); }
 footer a:hover { color: var(--accent); }
 footer .sig { font-family: var(--mono); font-size: .78rem; margin-top: .9rem; color: var(--ink-faint); }
+footer { scroll-margin-top: 4.5rem; }
 footer .sig .c { color: var(--accent); }
 
 /* ------------------------------------------------------- reveal animation */
@@ -565,5 +561,5 @@ footer .sig .c { color: var(--accent); }
   body { background: #fff; color: #000; font-size: 10.5pt; }
   [data-reveal] { opacity: 1 !important; transform: none !important; }
   section { padding: 1rem 0; break-inside: avoid; }
-  .pillar, .task, .person, .stat, .fact { break-inside: avoid; box-shadow: none; }
+  .pillar, .task, .org, .stat, .fact { break-inside: avoid; box-shadow: none; }
 }

@@ -183,6 +183,16 @@
       }
     }
 
+    /* --------------------------- fall back to initials if a photo is missing --- */
+    Array.prototype.forEach.call(document.querySelectorAll(".avatar .ph"), function (img) {
+      var fail = function () {
+        var av = img.parentNode;
+        if (av) av.classList.add("no-photo");
+      };
+      img.addEventListener("error", fail);
+      if (img.complete && img.naturalWidth === 0) fail();
+    });
+
     /* ------------------------------------------- duplicate ribbon for loop --- */
     var track = document.querySelector(".ribbon-track");
     if (track && !reduce) {
