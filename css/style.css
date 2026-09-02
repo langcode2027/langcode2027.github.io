@@ -468,7 +468,8 @@ ol.timeline .flag {
   border-radius: .3rem; padding: 0 .32rem;
   text-transform: uppercase; letter-spacing: .05em;
 }
-.org .af { display: block; font-size: .83rem; color: var(--ink-soft); margin-top: .2rem; }
+.org .ti { display: block; font-size: .82rem; color: var(--ink-soft); margin-top: .22rem; }
+.org .af { display: block; font-size: .79rem; color: var(--ink-faint); margin-top: .1rem; }
 
 ul.pc {
   columns: 2; column-gap: 2.2rem; padding-left: 1.15rem;
