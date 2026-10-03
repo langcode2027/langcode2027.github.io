@@ -198,5 +198,127 @@
     if (track && !reduce) {
       track.innerHTML += track.innerHTML;   /* second copy makes -50% seamless */
     }
+
+    /* ------------------------------- Task 1: one problem, many languages --- */
+    var demo = document.getElementById("t1demo");
+    if (demo) {
+      var docEl = demo.querySelector(".doc bdi");
+      var tagEl = document.querySelector("#t1run .lng");
+      var picks = Array.prototype.slice.call(document.querySelectorAll(".lang-picks button"));
+      var docs = picks.map(function (b) {
+        return { text: b.getAttribute("data-doc"), dir: b.getAttribute("data-dir") || "ltr", name: b.textContent };
+      });
+      var di = 0, timer = null, auto = !reduce;
+
+      var mark = function (i) {
+        picks.forEach(function (b, j) { b.setAttribute("aria-pressed", j === i ? "true" : "false"); });
+        docEl.setAttribute("dir", docs[i].dir);
+        if (tagEl) tagEl.textContent = docs[i].name;
+      };
+      var showFull = function (i) {
+        window.clearTimeout(timer);
+        di = i; mark(i);
+        docEl.textContent = docs[i].text;
+        demo.classList.add("solved");
+      };
+      var typeOut = function (i) {
+        di = i; mark(i);
+        demo.classList.remove("solved");
+        var chars = Array.from(docs[i].text), k = 0;
+        docEl.textContent = "";
+        var step = function () {
+          if (!auto) return;
+          k++;
+          docEl.textContent = chars.slice(0, k).join("");
+          if (k < chars.length) { timer = window.setTimeout(step, 38); return; }
+          timer = window.setTimeout(function () {
+            demo.classList.add("solved");
+            timer = window.setTimeout(function () { typeOut((di + 1) % docs.length); }, 2600);
+          }, 380);
+        };
+        timer = window.setTimeout(step, 250);
+      };
+
+      picks.forEach(function (b, i) {
+        b.addEventListener("click", function () { auto = false; showFull(i); });
+      });
+      if (auto) typeOut(0); else showFull(0);
+    }
+
+    /* ---------------------------------- Task 2: guardrail console stream --- */
+    var guard = document.getElementById("guard");
+    if (guard) {
+      var feed = [
+        ["Swahili · Yoruba", "code-mixed", "subprocess", 1],
+        ["Hindi", "transliterated", "pandas", 0],
+        ["Tagalog · Hausa", "code-mixed", "socket", 1],
+        ["Russian", "transliterated", "os.remove", 1],
+        ["Somali · Igbo", "code-mixed", "matplotlib", 0],
+        ["Bengali", "transliterated", "requests.post", 1],
+        ["Cebuano · Javanese", "code-mixed", "sorted", 0],
+        ["Arabic", "transliterated", "ctypes", 1],
+        ["Malagasy · Sundanese", "code-mixed", "keyboard", 1],
+        ["Korean", "transliterated", "json.loads", 0]
+      ];
+      var fi = 0, MAX = 5;
+      var redact = function () {
+        var s = document.createElement("span");
+        s.className = "r";
+        s.style.width = (1.4 + Math.random() * 3.6).toFixed(2) + "rem";
+        return s;
+      };
+      var makeRow = function (f, resolved) {
+        var row = document.createElement("div");
+        row.className = "gr";
+        var lg = document.createElement("span");
+        lg.className = "lg";
+        lg.textContent = f[0];
+        var sm = document.createElement("small");
+        sm.textContent = f[1];
+        lg.appendChild(sm);
+        var txt = document.createElement("span");
+        txt.className = "txt";
+        var n = 3 + Math.floor(Math.random() * 3), at = 1 + Math.floor(Math.random() * (n - 1));
+        for (var i = 0; i < n; i++) {
+          if (i === at) { var c = document.createElement("code"); c.textContent = f[2]; txt.appendChild(c); }
+          txt.appendChild(redact());
+        }
+        var vd = document.createElement("span");
+        var settle = function () {
+          vd.className = "vd " + (f[3] ? "adv" : "ben");
+          vd.textContent = f[3] ? "ADVERSARIAL" : "BENIGN";
+        };
+        if (resolved) settle();
+        else { vd.className = "vd scan"; vd.textContent = "SCANNING"; window.setTimeout(settle, 1000); }
+        row.appendChild(lg); row.appendChild(txt); row.appendChild(vd);
+        return row;
+      };
+      if (reduce) {
+        for (var g = 0; g < MAX; g++) guard.appendChild(makeRow(feed[g], true));
+      } else {
+        for (var h = MAX - 1; h >= 1; h--) guard.appendChild(makeRow(feed[h], true));
+        fi = MAX;
+        var push = function () {
+          guard.insertBefore(makeRow(feed[fi % feed.length], false), guard.firstChild);
+          fi++;
+          while (guard.children.length > MAX) guard.removeChild(guard.lastChild);
+        };
+        push();
+        window.setInterval(function () { if (!document.hidden) push(); }, 2300);
+      }
+    }
+
+    /* ------------------------------------------------------ copy BibTeX ---- */
+    Array.prototype.forEach.call(document.querySelectorAll(".copy-btn"), function (btn) {
+      btn.addEventListener("click", function () {
+        var pre = btn.parentNode.querySelector("pre");
+        if (!pre || !navigator.clipboard) return;
+        navigator.clipboard.writeText(pre.textContent.trim()).then(function () {
+          btn.textContent = "copied";
+          btn.classList.add("done");
+          window.setTimeout(function () { btn.textContent = "copy"; btn.classList.remove("done"); }, 1600);
+        });
+      });
+    });
   });
 })();

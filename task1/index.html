@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Task 1: Multilingual Code Generation — LangCode 2027</title>
+  <meta name="description" content="LangCode 2027 Shared Task 1: generate Python solutions to programming problems posed in 100+ natural languages. Execution-based Pass@1, macro-averaged across resource tiers. Co-located with NAACL 2027.">
+  <meta name="theme-color" content="#0e7c66">
+  <link rel="canonical" href="https://langcode2027.github.io/task1/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://langcode2027.github.io/task1/">
+  <meta property="og:title" content="LangCode 2027 · Task 1: Multilingual Code Generation">
+  <meta property="og:description" content="Generate Python from problems posed in 100+ natural languages. Execution-based Pass@1, macro-averaged across resource tiers.">
+  <meta name="twitter:card" content="summary">
+
+  <link rel="stylesheet" href="../css/style.css?v=8">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌐</text></svg>">
+  <script src="../js/main.js?v=8"></script>
+</head>
+<body class="t1">
+
+<a class="skip-link" href="#overview">Skip to content</a>
+<div id="progress" aria-hidden="true"></div>
+
+<nav class="top">
+  <div class="wrap">
+    <a class="brand" href="../">LangCode<span class="y">'27</span></a>
+    <div class="navlinks">
+      <a href="#overview">Task</a>
+      <a href="#evaluation">Evaluation</a>
+      <a href="#tracks">Tracks</a>
+      <a href="#data">Data</a>
+      <a href="#dates">Dates</a>
+      <a href="#participate">Participate</a>
+      <span class="sep" aria-hidden="true"></span>
+      <a class="sib" href="../task2/">Task 2 &rarr;</a>
+    </div>
+    <button class="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
+      <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11Z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.4"/><path d="M12 2.5v2.4M12 19.1v2.4M2.5 12h2.4M19.1 12h2.4M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M19.1 4.9l-1.7 1.7M6.6 17.4l-1.7 1.7"/></svg>
+    </button>
+  </div>
+</nav>
+
+<header class="hero thero" id="top">
+  <div class="wrap thero-grid">
+    <div>
+      <p class="crumbs" data-reveal><a href="../">LangCode 2027</a> / <a href="../#tasks">Shared Tasks</a> / Task 1</p>
+      <h1 class="title" data-reveal style="--d:60ms"><span class="tno">shared_task[1]</span>Multilingual Code Generation</h1>
+      <p class="tagline" data-reveal style="--d:120ms">One problem, <b>100+ natural languages</b>, one correct
+        program. Can your model write the same code no matter which language the problem is posed in?</p>
+      <div class="meta-row" data-reveal style="--d:180ms">
+        <span>100+ natural languages</span>
+        <span>Python</span>
+        <span>execution-based Pass@1</span>
+        <span>macro-avg across tiers</span>
+      </div>
+      <div class="hero-actions" data-reveal style="--d:240ms">
+        <span class="btn ghost" title="The CodaBench competition opens with the training data release">CodaBench &middot; coming soon</span>
+        <a class="btn primary" href="#evaluation">How it is scored</a>
+        <a class="btn" href="#dates">Dates</a>
+      </div>
+    </div>
+
+    <div data-reveal style="--d:200ms">
+      <div class="window">
+        <div class="bar"><i></i><i></i><i></i><span class="fn">sum_even.py</span><span class="live">live</span></div>
+        <pre class="code" id="t1demo" aria-label="Example: a short Python problem whose docstring is shown in many natural languages, followed by a solution"><span class="ln"><span class="kw">def</span> <span class="fnn">sum_even</span>(nums: <span class="ty">list</span>[<span class="ty">int</span>]) -&gt; <span class="ty">int</span>:</span><span class="ln"><span class="str">    """</span></span><span class="ln doc str">    <bdi dir="ltr"></bdi></span><span class="ln str">    &gt;&gt;&gt; sum_even([1, 2, 3, 4])</span><span class="ln str">    6</span><span class="ln"><span class="str">    """</span></span><span class="ln solve">    <span class="kw">return</span> <span class="fnn">sum</span>(n <span class="kw">for</span> n <span class="kw">in</span> nums <span class="kw">if</span> n % <span class="num">2</span> == <span class="num">0</span>)</span></pre>
+        <div class="runline" id="t1run">
+          <span><span class="c">$</span> run hidden_tests</span>
+          <span class="lang lng" style="font-size:.72rem;border:1px solid var(--line);border-radius:.3rem;padding:0 .35rem;color:var(--ink-faint);">English</span>
+          <span class="res">&#10003; pass</span>
+        </div>
+      </div>
+      <div class="lang-picks" role="group" aria-label="Show the problem in another language">
+        <button type="button" aria-pressed="true" data-doc="Return the sum of all even numbers in the list.">English</button>
+        <button type="button" aria-pressed="false" data-doc="তালিকার সব জোড় সংখ্যার যোগফল ফেরত দাও।">বাংলা</button>
+        <button type="button" aria-pressed="false" data-doc="Devuelve la suma de todos los números pares de la lista.">Español</button>
+        <button type="button" aria-pressed="false" data-doc="返回列表中所有偶数的和。">中文</button>
+        <button type="button" aria-pressed="false" data-doc="सूची की सभी सम संख्याओं का योग लौटाएँ।">हिन्दी</button>
+        <button type="button" aria-pressed="false" data-doc="أعد مجموع جميع الأعداد الزوجية في القائمة." data-dir="rtl">العربية</button>
+        <button type="button" aria-pressed="false" data-doc="Rudisha jumla ya namba zote shufwa katika orodha.">Kiswahili</button>
+        <button type="button" aria-pressed="false" data-doc="リスト内のすべての偶数の合計を返す。">日本語</button>
+        <button type="button" aria-pressed="false" data-doc="Верни сумму всех чётных чисел в списке.">Русский</button>
+        <button type="button" aria-pressed="false" data-doc="Renvoie la somme de tous les nombres pairs de la liste.">Français</button>
+        <button type="button" aria-pressed="false" data-doc="Listedeki tüm çift sayıların toplamını döndür.">Türkçe</button>
+      </div>
+      <p class="demo-note">Illustrative problem, not drawn from the test set. Click a language to pin it.</p>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section id="overview">
+    <h2><span class="hash">##</span>The Task</h2>
+    <hr class="rule">
+    <p class="lede">Code models are prompted mostly in English and benchmarked mostly on English.
+      Task 1 asks how well they hold up when the same programming problem arrives in a different
+      natural language.</p>
+    <div class="flow arrows" data-stagger>
+      <div class="step" data-reveal>
+        <span class="sn">01</span>
+        <h3>Read</h3>
+        <p>A function signature and a problem description written in one of more than 100 natural
+          languages, spanning high- to low-resource tiers.</p>
+      </div>
+      <div class="step" data-reveal>
+        <span class="sn">02</span>
+        <h3>Generate</h3>
+        <p>Your system writes a Python solution. One attempt per problem.</p>
+      </div>
+      <div class="step" data-reveal>
+        <span class="sn">03</span>
+        <h3>Execute</h3>
+        <p>The solution runs against hidden unit tests. It passes only if every test passes.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="evaluation">
+    <h2><span class="hash">##</span>Evaluation</h2>
+    <hr class="rule">
+    <p class="lede">Systems are ranked by execution-based Pass@1 on hidden tests, macro-averaged
+      across language resource tiers.</p>
+
+    <div class="formula" data-reveal role="img" aria-label="Score equals one over the number of tiers, times the sum over tiers t of Pass at 1 for tier t">
+      <span class="v">Score</span>
+      <span class="op">=</span>
+      <span class="frac"><span>1</span><span>|<span class="v">T</span>|</span></span>
+      <span class="sum"><span class="big">&Sigma;</span><span class="sub"><span class="v">t</span>&thinsp;&isin;&thinsp;<span class="v">T</span></span></span>
+      <span class="hl">Pass@1</span><span>(<span class="v">t</span>)</span>
+    </div>
+
+    <div class="facts" data-stagger>
+      <dl class="fact" data-reveal>
+        <dt>Pass@1</dt>
+        <dd>The share of problems whose <b>single</b> generated solution passes all hidden tests.</dd>
+      </dl>
+      <dl class="fact" data-reveal>
+        <dt>Macro-average</dt>
+        <dd>Every resource tier counts equally, so <b>high-resource performance alone cannot win</b>.</dd>
+      </dl>
+      <dl class="fact" data-reveal>
+        <dt>Hidden tests</dt>
+        <dd>Test cases are never released, which keeps the leaderboard <b>honest</b>.</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section id="tracks">
+    <h2><span class="hash">##</span>Tracks</h2>
+    <hr class="rule">
+    <p class="lede">Participation is free. A constrained track keeps low-compute teams
+      competitive.</p>
+    <div class="duo" data-stagger>
+      <div class="card" data-reveal>
+        <span class="tag">Constrained</span>
+        <h3>Small models, big ideas</h3>
+        <p>Limits on model size and compute, so the winning idea does not have to be the biggest
+          GPU budget. Exact limits are announced with the training data.</p>
+        <span class="glyph" aria-hidden="true">&lt;/&gt;</span>
+      </div>
+      <div class="card" data-reveal>
+        <span class="tag">Open</span>
+        <h3>Anything goes</h3>
+        <p>No limits on model size or compute. Show how far today&rsquo;s strongest systems reach
+          across languages.</p>
+        <span class="glyph" aria-hidden="true">&infin;</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="data">
+    <h2><span class="hash">##</span>Data</h2>
+    <hr class="rule">
+    <p>
+      The task builds on
+      <a href="https://aclanthology.org/2025.naacl-long.570/" target="_blank" rel="noopener">mHumanEval</a>
+      (NAACL 2025), a multilingual extension of HumanEval. The test set uses <b>newly authored,
+      held-out problems</b> to limit contamination from pretraining data, so systems are scored on
+      problems they cannot have memorized.
+    </p>
+    <div class="duo" data-stagger>
+      <div class="card" data-reveal>
+        <span class="tag">Released</span>
+        <h3>Training and development data</h3>
+        <p>Problems with prompts across resource tiers, plus public baselines and a starter kit on
+          CodaBench.</p>
+      </div>
+      <div class="card" data-reveal>
+        <span class="tag">Held out</span>
+        <h3>Test problems</h3>
+        <p>New problems with hidden unit tests, released only during the evaluation window.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="dates">
+    <h2><span class="hash">##</span>Dates</h2>
+    <hr class="rule">
+    <p class="lede">All dates are tentative. Deadlines are 11:59&nbsp;PM UTC-12 (Anywhere on Earth).</p>
+    <ol class="timeline">
+      <li>
+        <span class="when">October 26, 2026</span>
+        <span class="what">Training data released<span class="flag">next</span></span>
+      </li>
+      <li>
+        <span class="when">February 5, 2027</span>
+        <span class="what">Evaluation window; paper submission deadline</span>
+      </li>
+      <li>
+        <span class="when">March 26, 2027</span>
+        <span class="what">Notification of acceptance</span>
+      </li>
+      <li>
+        <span class="when">2027</span>
+        <span class="what">LangCode at <b>NAACL 2027</b> &mdash; exact date TBD</span>
+      </li>
+    </ol>
+  </section>
+
+  <section id="participate">
+    <h2><span class="hash">##</span>Participate</h2>
+    <hr class="rule">
+    <ol class="steps">
+      <li>Join the CodaBench competition. <span class="muted">The link goes live here with the training data.</span></li>
+      <li>Download the training data and starter kit, and build your system.</li>
+      <li>Submit predictions during the evaluation window and watch the leaderboard.</li>
+    </ol>
+    <p class="muted small">Questions? Email the organizers at
+      <span style="font-family: var(--mono);">mraihan&nbsp;[at]&nbsp;nd&nbsp;[dot]&nbsp;edu</span>.</p>
+
+    <h3 style="margin:2rem 0 0;font-size:1rem;">Cite the source benchmark</h3>
+    <div class="bib">
+      <button class="copy-btn" type="button">copy</button>
+<pre>@inproceedings{raihan2025mhumaneval,
+  title     = {m{H}uman{E}val - A Multilingual Benchmark to Evaluate Large Language Models for Code Generation},
+  author    = {Raihan, Nishat and Anastasopoulos, Antonios and Zampieri, Marcos},
+  booktitle = {Proceedings of NAACL 2025},
+  year      = {2025},
+  url       = {https://aclanthology.org/2025.naacl-long.570/}
+}</pre>
+    </div>
+
+    <a class="sibling to2" href="../task2/" data-reveal>
+      <span>
+        <span class="k">shared_task[2] &rarr;</span>
+        <span class="t">Adversarial Prompt Detection</span>
+        <span class="d">Can a guardrail spot a malicious coding prompt when it is code-mixed or transliterated?</span>
+      </span>
+      <span class="go" aria-hidden="true">&rarr;</span>
+    </a>
+  </section>
+
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="frow">
+      <div>
+        <div><strong>LangCode 2027</strong> &middot; The First Language and Code Workshop &middot; NAACL 2027</div>
+        <div class="muted">Contact the lead organizer at
+          <span style="font-family: var(--mono);">mraihan&nbsp;[at]&nbsp;nd&nbsp;[dot]&nbsp;edu</span></div>
+      </div>
+      <div>
+        <a href="../">Workshop</a> &middot;
+        <a href="../task2/">Task 2</a> &middot;
+        <a href="https://github.com/langcode2027/langcode2027.github.io" target="_blank" rel="noopener">Repository</a>
+      </div>
+    </div>
+    <div class="sig"><span class="c">$</span> generate --lang=any --target=python</div>
+  </div>
+</footer>
+
+</body>
+</html>

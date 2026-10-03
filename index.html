@@ -4,19 +4,19 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>LangCode 2027 — The First Language and Code Workshop</title>
-  <meta name="description" content="LangCode 2027, the First Language and Code Workshop: towards secure, trustworthy, robust, and multilingual code generation. Two shared tasks, proposed for the 2027 ACL-community joint workshop cycle.">
+  <meta name="description" content="LangCode 2027, the First Language and Code Workshop: towards secure, trustworthy, robust, and multilingual code generation. Two shared tasks. Co-located with NAACL 2027.">
   <meta name="theme-color" content="#0e7c66">
   <link rel="canonical" href="https://langcode2027.github.io/">
 
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://langcode2027.github.io/">
   <meta property="og:title" content="LangCode 2027 — The First Language and Code Workshop">
-  <meta property="og:description" content="Towards secure, trustworthy, robust, and multilingual code generation. Two shared tasks: multilingual code generation and adversarial prompt detection for code models.">
+  <meta property="og:description" content="Co-located with NAACL 2027. Towards secure, trustworthy, robust, and multilingual code generation. Two shared tasks: multilingual code generation and adversarial prompt detection for code models.">
   <meta name="twitter:card" content="summary">
 
-  <link rel="stylesheet" href="css/style.css?v=6">
+  <link rel="stylesheet" href="css/style.css?v=8">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌐</text></svg>">
-  <script src="js/main.js?v=6"></script>
+  <script src="js/main.js?v=8"></script>
 </head>
 <body>
 
@@ -43,12 +43,12 @@
 
 <header class="hero" id="top">
   <div class="wrap">
-    <p class="kicker" data-reveal>// the first language and code workshop</p>
+    <p class="kicker" data-reveal>// the first language and code workshop &middot; naacl 2027</p>
     <h1 class="title" data-reveal style="--d:60ms">LangCode 2027</h1>
     <p class="tagline" data-reveal style="--d:120ms">Towards <b>secure</b>, <b>trustworthy</b>, <b>robust</b>, and
       <b>multilingual</b> code generation.</p>
     <div data-reveal style="--d:180ms">
-      <span class="status"><span class="dot" aria-hidden="true"></span>Proposal submitted &middot; notification October&nbsp;2,&nbsp;2026</span>
+      <span class="status ok"><svg class="tick" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.4l3 3 6-6.6"/></svg>Accepted &middot; co-located with <b>NAACL&nbsp;2027</b></span>
     </div>
     <div class="hero-actions" data-reveal style="--d:240ms">
       <a class="btn primary" href="#tasks">Shared Tasks</a>
@@ -219,7 +219,7 @@
       </dl>
       <dl class="fact" data-reveal>
         <dt>Venue</dt>
-        <dd><b>TBD.</b> Announced with the acceptance notification.</dd>
+        <dd><b>NAACL 2027.</b> Exact date and location to follow from the NAACL workshop chairs.</dd>
       </dl>
     </div>
   </section>
@@ -231,7 +231,7 @@
        is free, and constrained tracks keep low-compute teams competitive.</p>
 
     <div class="task" data-reveal>
-      <h3><span class="tid">Task 1&nbsp;/</span> Multilingual Code Generation</h3>
+      <h3><a class="task-link" href="task1/"><span class="tid">Task 1&nbsp;/</span> Multilingual Code Generation</a></h3>
       <div class="meta">
         <span>100+ natural languages</span>
         <span>execution-based Pass@1</span>
@@ -245,11 +245,14 @@
         by Pass@1 on hidden tests, macro-averaged across tiers so that high-resource performance
         alone cannot win.
       </p>
-      <span class="chip">CodaBench page: coming soon</span>
+      <div class="task-foot">
+        <a class="btn primary sm" href="task1/">Task 1 details <span aria-hidden="true">&rarr;</span></a>
+        <span class="chip">CodaBench page: coming soon</span>
+      </div>
     </div>
 
-    <div class="task" data-reveal style="--d:80ms">
-      <h3><span class="tid">Task 2&nbsp;/</span> Adversarial Prompt Detection</h3>
+    <div class="task t2" data-reveal style="--d:80ms">
+      <h3><a class="task-link" href="task2/"><span class="tid">Task 2&nbsp;/</span> Adversarial Prompt Detection</a></h3>
       <div class="meta">
         <span>18 languages</span>
         <span>~250K prompts</span>
@@ -262,27 +265,22 @@
         languages with code-mixed and transliterated variants. Ranked by macro-F1, with a
         cross-lingual leaderboard on surprise languages.
       </p>
-      <span class="chip">CodaBench page: coming soon</span>
+      <div class="task-foot">
+        <a class="btn primary sm" href="task2/">Task 2 details <span aria-hidden="true">&rarr;</span></a>
+        <span class="chip">CodaBench page: coming soon</span>
+      </div>
     </div>
   </section>
 
   <section id="dates">
     <h2><span class="hash">##</span>Important Dates</h2>
     <hr class="rule">
-    <p class="lede">Dates after the acceptance notification are tentative. Deadlines are
-       11:59&nbsp;PM UTC-12.</p>
+    <p class="lede">All dates are tentative. Deadlines are 11:59&nbsp;PM UTC-12
+       (Anywhere on Earth).</p>
     <ol class="timeline">
-      <li class="done">
-        <span class="when">September 2026</span>
-        <span class="what">Proposal submitted to the 2027 joint workshop call</span>
-      </li>
-      <li>
-        <span class="when">October 2, 2026</span>
-        <span class="what">Workshop acceptance notification<span class="flag">next</span></span>
-      </li>
       <li>
         <span class="when">October 26, 2026</span>
-        <span class="what">First call for papers; shared task training data released</span>
+        <span class="what">First call for papers; shared task training data released<span class="flag">next</span></span>
       </li>
       <li>
         <span class="when">February 5, 2027</span>
@@ -294,7 +292,7 @@
       </li>
       <li>
         <span class="when">2027</span>
-        <span class="what">Workshop &mdash; date and venue TBD</span>
+        <span class="what">Workshop at <b>NAACL 2027</b> &mdash; exact date TBD</span>
       </li>
     </ol>
   </section>
@@ -311,7 +309,7 @@
         <span class="af">Stanford University, USA</span>
       </div>
     </div>
-    <p class="muted small">Additional keynotes will be announced once the workshop is accepted.</p>
+    <p class="muted small">Additional keynotes will be announced soon.</p>
   </section>
 
   <section id="organizers">
@@ -410,7 +408,8 @@
       </div>
       <div>
         <a href="#cfp">Call for Papers</a> &middot;
-        <a href="#tasks">Shared Tasks</a> &middot;
+        <a href="task1/">Task 1</a> &middot;
+        <a href="task2/">Task 2</a> &middot;
         <a href="#dates">Dates</a> &middot;
         <a href="https://github.com/langcode2027/langcode2027.github.io" target="_blank" rel="noopener">Repository</a>
       </div>

@@ -2,14 +2,17 @@
 
 Website for **LangCode 2027 — The First Language and Code Workshop**
 (*Towards Secure, Trustworthy, Robust, and Multilingual Code Generation*),
-proposed for the joint EACL/COLING/NAACL/ACL/EMNLP 2027 workshop cycle.
+accepted as a one-day workshop co-located with NAACL 2027.
 
 Live at: <https://langcode2027.github.io>
 
 ## Structure
 
-- `index.html` — single-page site (At a glance, About, Call for Papers,
+- `index.html` — main page (At a glance, About, Call for Papers,
   Shared Tasks, Dates, Speakers, Organizers, Program Committee)
+- `task1/index.html`, `task2/index.html` — one page per shared task
+  (Multilingual Code Generation; Adversarial Prompt Detection). Task 2 uses a
+  rose accent via `body.t2`. Each hero has a live demo driven by `js/main.js`.
 - `css/style.css` — styles; light/dark follows the visitor's system theme and can
   be overridden with the nav toggle (persisted in `localStorage` under `theme`)
 - `js/main.js` — theme toggle, reading-progress bar, scroll reveals, stat
@@ -28,9 +31,9 @@ descriptions, organizer and program committee rosters, and expected attendance.
 
 ## Editing
 
-Edit `index.html` and push to `main`; Pages redeploys automatically.
+Edit the HTML pages and push to `main`; Pages redeploys automatically.
 Preview locally by opening `index.html` in a browser — no tooling required.
-Bump the `?v=` query on the `css/style.css` and `js/main.js` links when changing
+Bump the `?v=` query on the `css/style.css` and `js/main.js` links (in all three pages) when changing
 those files, so returning visitors do not get a stale cached copy.
 
 Maintained by the LangCode 2027 organizers.
