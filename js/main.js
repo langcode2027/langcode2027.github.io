@@ -51,6 +51,11 @@
       paint();
     }
 
+    /* --- section rules and timelines animate on reveal too (CSS decides how) --- */
+    Array.prototype.forEach.call(document.querySelectorAll(".rule, ol.timeline"), function (el) {
+      el.setAttribute("data-reveal", "");
+    });
+
     /* ------------------------------------------------- reveal on scroll ---- */
     var revealables = Array.prototype.slice.call(document.querySelectorAll("[data-reveal]"));
     if (!("IntersectionObserver" in window) || reduce) {
@@ -289,8 +294,25 @@
         var days = Math.ceil((aoe(next.getAttribute("data-date")) - now) / 86400000);
         cd.textContent = "";
         var b = document.createElement("b");
-        b.textContent = days + (days === 1 ? " day" : " days");
+        var unit = days === 1 ? " day" : " days";
+        b.textContent = days + unit;
         cd.appendChild(b);
+        if (!reduce && "IntersectionObserver" in window) {
+          b.textContent = "0" + unit;
+          var cdo = new IntersectionObserver(function (en) {
+            if (!en[0].isIntersecting) return;
+            cdo.disconnect();
+            var t0 = null;
+            var tick = function (ts) {
+              if (t0 === null) t0 = ts;
+              var q = Math.min(1, (ts - t0) / 1100);
+              b.textContent = Math.round(days * (1 - Math.pow(1 - q, 3))) + unit;
+              if (q < 1) window.requestAnimationFrame(tick);
+            };
+            window.requestAnimationFrame(tick);
+          }, { threshold: 0.6 });
+          cdo.observe(cd);
+        }
         cd.appendChild(document.createTextNode(" until " + next.getAttribute("data-label")));
       }
     });
