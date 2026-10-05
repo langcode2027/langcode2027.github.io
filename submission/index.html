@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Paper Submission — LangCode 2027</title>
+  <meta name="description" content="Paper submission guidelines for LangCode 2027, the First Language and Code Workshop at NAACL 2027: paper types and page limits, ACL formatting, anonymity, ARR commitment, policies, and dates.">
+  <meta name="theme-color" content="#0e7c66">
+  <link rel="canonical" href="https://langcode2027.github.io/submission/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://langcode2027.github.io/submission/">
+  <meta property="og:title" content="LangCode 2027 · Paper Submission">
+  <meta property="og:description" content="How to submit to LangCode 2027 at NAACL 2027: long and short papers, shared task system papers, ACL format, double-blind review on OpenReview.">
+  <meta name="twitter:card" content="summary">
+  <link rel="stylesheet" href="../css/style.css?v=10">
+  <link rel="icon" type="image/svg+xml" href="../media/logo.svg">
+  <script src="../js/main.js?v=10"></script>
+</head>
+<body class="sub">
+
+<a class="skip-link" href="#types">Skip to content</a>
+<div id="progress" aria-hidden="true"></div>
+
+<nav class="top">
+  <div class="wrap">
+    <a class="brand" href="../"><svg class="logo" viewBox="0 0 64 64" aria-hidden="true"><rect class="lg-tile" x="2" y="2" width="60" height="60" rx="14"/><path class="lg-glyph" d="M14 17h6v24M14 41h12"/><path class="lg-glyph" d="M40.5 29.2a7.6 7.6 0 1 0 0 11.6"/><rect class="lg-caret" x="45" y="21" width="7.5" height="21" rx="1.2"/></svg><span>LangCode<span class="y">'27</span></span></a>
+    <div class="navlinks">
+      <a href="../#dates">Dates</a>
+      <a href="../#about">About</a>
+      <a href="../#cfp">Call for Papers</a>
+      <a class="here" href="./" aria-current="page">Paper Submission</a>
+      <button class="dd-btn" type="button" aria-expanded="false" aria-controls="tasks-menu">Shared Tasks<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5"/></svg></button>
+      <a href="../#speakers">Speakers</a>
+      <a href="../#organizers">Organizers</a>
+    </div>
+    <div class="dd-menu" id="tasks-menu" hidden>
+      <a href="../task1/"><span class="k">Task 1</span>Multilingual Code Generation</a>
+      <a href="../task2/" class="r"><span class="k">Task 2</span>Adversarial Prompt Detection</a>
+    </div>
+    <button class="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
+      <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11Z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.4"/><path d="M12 2.5v2.4M12 19.1v2.4M2.5 12h2.4M19.1 12h2.4M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M19.1 4.9l-1.7 1.7M6.6 17.4l-1.7 1.7"/></svg>
+    </button>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div class="hero-main">
+      <p class="crumbs" data-reveal><a href="../">LangCode 2027</a> / Paper Submission</p>
+      <h1 class="title" data-reveal style="--d:60ms">Paper Submission</h1>
+      <p class="tagline" data-reveal style="--d:120ms">Formal guidelines for <b>long papers</b>, <b>short papers</b>,
+        and <b>shared task system papers</b>. Double-blind review on OpenReview, in the standard ACL format.</p>
+      <div class="venue" data-reveal style="--d:180ms">
+        <span class="status ok"><span class="dot" aria-hidden="true"></span>Co-located with <b>NAACL&nbsp;2027</b></span>
+        <span class="vmeta"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/></svg>June 1&ndash;5, 2027</span>
+        <span class="vmeta"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-6.2-6.5-11a6.5 6.5 0 0 1 13 0c0 4.8-6.5 11-6.5 11Z"/><circle cx="12" cy="10" r="2.3"/></svg>San Francisco, California, USA</span>
+      </div>
+      <div class="hero-actions" data-reveal style="--d:240ms">
+        <span class="btn ghost" title="The OpenReview portal opens with the first call for papers">OpenReview &middot; opens Oct 26</span>
+        <a class="btn primary" href="https://github.com/acl-org/acl-style-files" target="_blank" rel="noopener">ACL templates</a>
+        <a class="btn" href="#checklist">Pre-submission checklist</a>
+      </div>
+      <nav class="toc" aria-label="On this page" data-reveal style="--d:300ms">
+        <a href="#types">Paper types</a><a href="#format">Format</a><a href="#review">Anonymity &amp; review</a><a href="#arr">ARR commitment</a><a href="#policies">Policies</a><a href="#presentation">Presentation</a><a href="#checklist">Checklist</a>
+      </nav>
+    </div>
+
+    <aside class="dates-card" id="dates" aria-labelledby="dates-h" data-reveal style="--d:200ms">
+      <div class="dc-head">
+        <h2 id="dates-h">Important Dates</h2>
+        <span class="aoe" title="Deadlines are 11:59 PM UTC-12 (Anywhere on Earth)">AoE</span>
+      </div>
+      <ol class="timeline compact">
+        <li data-date="2026-10-26" data-label="Training data release">
+          <span class="when">Oct 26, 2026</span>
+          <span class="what">First call for papers; shared task training data<span class="flag">next</span></span>
+        </li>
+        <li data-date="2027-02-15" data-label="Paper submission deadline">
+          <span class="when">Feb 15, 2027</span>
+          <span class="what">Paper submission deadline</span>
+        </li>
+        <li data-date="2027-03-26" data-label="Notification of acceptance">
+          <span class="when">Mar 26, 2027</span>
+          <span class="what">Notification of acceptance</span>
+        </li>
+        <li data-date="2027-04-16" data-label="Camera-ready deadline">
+          <span class="when">Apr 16, 2027</span>
+          <span class="what">Camera-ready due</span>
+        </li>
+        <li data-date="2027-06-05" data-label="NAACL 2027">
+          <span class="when">June 2027</span>
+          <span class="what">Workshop at <b>NAACL 2027</b>, San Francisco</span>
+        </li>
+      </ol>
+      <p class="countdown"></p>
+      <p class="fine">Subject to change. Deadlines are 11:59&nbsp;PM UTC-12.</p>
+    </aside>
+  </div>
+</header>
+
+<div class="ticker" role="region" aria-label="Updates and important dates">
+  <div class="wrap ticker-in">
+    <span class="ticker-label"><span class="dot" aria-hidden="true"></span>Updates</span>
+    <div class="ticker-view">
+      <div class="ticker-track">
+        <div class="tk-set">
+          <span class="tk"><b>NAACL 2027</b>LangCode is co-located with NAACL 2027 &middot; June 1&ndash;5, 2027 &middot; San Francisco, California, USA</span>
+          <span class="tk"><b>Oct 26, 2026</b>First call for papers; shared task training data released</span>
+          <span class="tk"><b>Feb 15, 2027</b>Paper submission deadline</span>
+          <span class="tk"><b>Mar 26, 2027</b>Notification of acceptance</span>
+          <span class="tk"><b>Apr 16, 2027</b>Camera-ready due</span>
+          <span class="tk"><b>New</b>Formal <a href="../submission/">paper submission guidelines</a> are up</span>
+          <span class="tk"><b>New</b>Pages for <a href="../task1/">Shared Task 1</a> and <a href="../task2/">Shared Task 2</a> are up</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main class="wrap">
+
+  <section id="types">
+    <h2><span class="hash">##</span>Paper Types</h2>
+    <hr class="rule">
+    <p class="lede">We welcome submissions on any topic in the <a href="../#cfp">call for papers</a>.
+      Page limits count content only; references are unlimited.</p>
+    <div class="ptypes" data-stagger>
+      <div class="ptype" data-reveal>
+        <span class="pg"><b>8</b> pages</span>
+        <h3>Long papers</h3>
+        <p>Substantial, original, completed work: new methods, benchmarks, analyses, or resources.</p>
+        <span class="cam">+1 page in the camera-ready</span>
+      </div>
+      <div class="ptype" data-reveal>
+        <span class="pg"><b>4</b> pages</span>
+        <h3>Short papers</h3>
+        <p>A focused contribution: a small experiment, a negative result, an opinion, or work in progress.</p>
+        <span class="cam">+1 page in the camera-ready</span>
+      </div>
+      <div class="ptype" data-reveal>
+        <span class="pg"><b>4</b> pages</span>
+        <h3>System papers</h3>
+        <p>For participants in <a href="../task1/">Task 1</a> or <a href="../task2/">Task 2</a>: describe
+          your system, results, and what did and did not work.</p>
+        <span class="cam">+1 page in the camera-ready</span>
+      </div>
+    </div>
+    <p class="muted small">Not counted toward the limit: references, the required Limitations section, the
+      optional Ethical Considerations section, and appendices.</p>
+  </section>
+
+  <section id="format">
+    <h2><span class="hash">##</span>Format</h2>
+    <hr class="rule">
+    <ol class="rules" data-stagger>
+      <li data-reveal><b>Use the official ACL style files</b> (LaTeX or Word) from
+        <a href="https://github.com/acl-org/acl-style-files" target="_blank" rel="noopener">acl-org/acl-style-files</a>,
+        unmodified, in review mode (with line numbers).</li>
+      <li data-reveal><b>Submit a single PDF</b> on A4 paper. Papers that change the margins, font size, or
+        spacing, or that exceed the page limit, may be desk-rejected.</li>
+      <li data-reveal><b>Include a section titled &ldquo;Limitations&rdquo;</b> after the conclusion and before
+        the references. It may not contain new experiments, figures, or analysis.</li>
+      <li data-reveal><b>Appendices</b> go after the references. The paper must stand on its own: reviewers
+        are not required to read them.</li>
+      <li data-reveal><b>Code and data</b> may be submitted as supplementary material and must be anonymized.</li>
+    </ol>
+    <p class="muted small">Everything not covered here follows the
+      <a href="https://acl-org.github.io/ACLPUB/formatting.html" target="_blank" rel="noopener">ACL paper formatting guidelines</a>.</p>
+  </section>
+
+  <section id="review">
+    <h2><span class="hash">##</span>Anonymity &amp; Review</h2>
+    <hr class="rule">
+    <div class="duo" data-stagger>
+      <div class="card" data-reveal>
+        <span class="tag">Double-blind</span>
+        <h3>Keep the submission anonymous</h3>
+        <p>No author names, affiliations, or acknowledgments. Refer to your own prior work in the third
+          person, and link code and data through anonymized repositories.</p>
+        <span class="glyph" aria-hidden="true">?:?</span>
+      </div>
+      <div class="card" data-reveal>
+        <span class="tag">OpenReview</span>
+        <h3>Submit and review on OpenReview</h3>
+        <p>Every author needs an OpenReview profile before the deadline. Each paper is reviewed by members
+          of our <a href="../#pc">program committee</a>.</p>
+        <span class="glyph" aria-hidden="true">&#10003;</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="arr">
+    <h2><span class="hash">##</span>ARR Commitment</h2>
+    <hr class="rule">
+    <p>Papers already reviewed through <a href="https://aclrollingreview.org/" target="_blank" rel="noopener">ACL
+      Rolling Review</a> can be <b>committed</b> to LangCode with their existing reviews and meta-review,
+      instead of being submitted for fresh review. Committed papers are not re-reviewed; the organizers decide
+      based on the ARR reviews. The commitment deadline and link are announced with the call for papers.</p>
+  </section>
+
+  <section id="policies">
+    <h2><span class="hash">##</span>Policies</h2>
+    <hr class="rule">
+    <div class="facts" data-stagger>
+      <dl class="fact" data-reveal>
+        <dt>Originality</dt>
+        <dd>Submissions must be <b>original and unpublished</b>. If a paper is under review elsewhere, say so
+          when you submit, and withdraw it from LangCode if it is accepted at another venue.</dd>
+      </dl>
+      <dl class="fact" data-reveal>
+        <dt>Security research</dt>
+        <dd>Papers on attacks, jailbreaks, or malicious code should discuss <b>dual use and responsible
+          disclosure</b> in an Ethical Considerations section, and should not include working exploits.</dd>
+      </dl>
+      <dl class="fact" data-reveal>
+        <dt>ACL policies</dt>
+        <dd>All submissions follow ACL&rsquo;s <b>publication ethics</b> policies, including those on AI writing
+          assistance, and all participants follow the <b>ACL anti-harassment policy</b>.</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section id="presentation">
+    <h2><span class="hash">##</span>Presentation &amp; Proceedings</h2>
+    <hr class="rule">
+    <div class="duo" data-stagger>
+      <div class="card" data-reveal>
+        <span class="tag">Proceedings</span>
+        <h3>Published in the ACL Anthology</h3>
+        <p>Accepted papers appear in the LangCode 2027 workshop proceedings.</p>
+        <span class="glyph" aria-hidden="true">&para;</span>
+      </div>
+      <div class="card" data-reveal>
+        <span class="tag">Hybrid</span>
+        <h3>Present in San Francisco or online</h3>
+        <p>At least one author of each accepted paper registers for the workshop and presents it, in person
+          at NAACL 2027 or remotely.</p>
+        <span class="glyph" aria-hidden="true">&#8644;</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="checklist">
+    <h2><span class="hash">##</span>Pre-Submission Checklist</h2>
+    <hr class="rule">
+    <div class="check" data-reveal>
+      <div class="check-head">
+        <span class="check-count"><b>0</b> of 7 ready</span>
+        <span class="check-bar" aria-hidden="true"><span></span></span>
+      </div>
+      <ul>
+        <li><label><input type="checkbox"> Written with the ACL style files, in review mode</label></li>
+        <li><label><input type="checkbox"> Within the page limit for its paper type</label></li>
+        <li><label><input type="checkbox"> Fully anonymized, including links to code and data</label></li>
+        <li><label><input type="checkbox"> Has a Limitations section after the conclusion</label></li>
+        <li><label><input type="checkbox"> Discusses ethics and dual use, if it touches security</label></li>
+        <li><label><input type="checkbox"> Exported as a single A4 PDF</label></li>
+        <li><label><input type="checkbox"> Every author has an OpenReview profile</label></li>
+      </ul>
+      <p class="check-done">All set. Good luck with your submission!</p>
+    </div>
+    <p class="muted small" style="margin-top:1.4rem">Questions? Email the organizers at
+      <span style="font-family: var(--mono);">mraihan&nbsp;[at]&nbsp;nd&nbsp;[dot]&nbsp;edu</span>.</p>
+  </section>
+
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="frow">
+      <div>
+        <div><strong>LangCode 2027</strong> &middot; The First Language and Code Workshop &middot; NAACL 2027</div>
+        <div class="muted">Contact the lead organizer at
+          <span style="font-family: var(--mono);">mraihan&nbsp;[at]&nbsp;nd&nbsp;[dot]&nbsp;edu</span></div>
+      </div>
+      <div>
+        <a href="../">Workshop</a> &middot;
+        <a href="../task1/">Task 1</a> &middot;
+        <a href="../task2/">Task 2</a> &middot;
+        <a href="https://github.com/langcode2027/langcode2027.github.io" target="_blank" rel="noopener">Repository</a>
+      </div>
+    </div>
+    <div class="sig"><span class="c">$</span> submit --anonymous --format=acl --pages=8</div>
+  </div>
+</footer>
+
+</body>
+</html>

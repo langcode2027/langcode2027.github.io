@@ -199,6 +199,60 @@
       track.innerHTML += track.innerHTML;   /* second copy makes -50% seamless */
     }
 
+    /* --------------------------------------- nav dropdown: shared tasks --- */
+    var ddBtn = document.querySelector(".dd-btn");
+    var ddMenu = document.getElementById("tasks-menu");
+    if (ddBtn && ddMenu) {
+      var wrap = ddMenu.parentNode, hideT = null;
+      var place = function () {
+        var l = ddBtn.getBoundingClientRect().left - wrap.getBoundingClientRect().left;
+        var max = wrap.clientWidth - ddMenu.offsetWidth - 8;
+        ddMenu.style.left = Math.max(8, Math.min(l, max)) + "px";
+      };
+      var open = function () {
+        window.clearTimeout(hideT);
+        ddMenu.hidden = false; ddBtn.setAttribute("aria-expanded", "true"); place();
+      };
+      var close = function () { ddMenu.hidden = true; ddBtn.setAttribute("aria-expanded", "false"); };
+      var viaHover = false;
+      ddBtn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        if (viaHover) { viaHover = false; open(); return; }
+        if (ddMenu.hidden) open(); else close();
+      });
+      if (window.matchMedia && window.matchMedia("(hover: hover)").matches) {
+        [ddBtn, ddMenu].forEach(function (el) {
+          el.addEventListener("mouseenter", function () { if (ddMenu.hidden) viaHover = true; open(); });
+          el.addEventListener("mouseleave", function () { hideT = window.setTimeout(close, 180); });
+        });
+      }
+      document.addEventListener("click", function (e) { if (!ddMenu.contains(e.target)) close(); });
+      document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !ddMenu.hidden) { close(); ddBtn.focus(); } });
+      var nl = document.querySelector(".navlinks");
+      if (nl) nl.addEventListener("scroll", function () { if (!ddMenu.hidden) place(); }, { passive: true });
+      window.addEventListener("resize", function () { if (!ddMenu.hidden) place(); });
+    }
+
+    /* ------------------------------------ pre-submission checklist ------ */
+    var check = document.querySelector(".check");
+    if (check) {
+      var boxes = Array.prototype.slice.call(check.querySelectorAll("input[type=checkbox]"));
+      var KEY = "langcode-checklist";
+      try {
+        var saved = JSON.parse(localStorage.getItem(KEY) || "[]");
+        boxes.forEach(function (b, i) { b.checked = !!saved[i]; });
+      } catch (e) {}
+      var update = function () {
+        var n = boxes.filter(function (b) { return b.checked; }).length;
+        check.querySelector(".check-count b").textContent = n;
+        check.querySelector(".check-bar span").style.width = (100 * n / boxes.length) + "%";
+        check.classList.toggle("all", n === boxes.length);
+        try { localStorage.setItem(KEY, JSON.stringify(boxes.map(function (b) { return b.checked; }))); } catch (e) {}
+      };
+      boxes.forEach(function (b) { b.addEventListener("change", update); });
+      update();
+    }
+
     /* ------------------------------------- rolling updates ticker loop --- */
     var tset = document.querySelector(".ticker .tk-set");
     if (tset && !reduce) {

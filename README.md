@@ -10,6 +10,11 @@ Live at: <https://langcode2027.github.io>
 
 - `index.html` — main page (At a glance, About, Call for Papers,
   Shared Tasks, Dates, Speakers, Organizers, Program Committee)
+- `submission/index.html` — Paper Submission page: formal guidelines (paper types
+  and limits, ACL format, anonymity, ARR commitment, policies, presentation) and a
+  pre-submission checklist.
+- `media/logo.svg` — the logo (terminal "lc" monogram with a cursor); also the
+  favicon. The nav uses an inline copy that follows the light/dark theme.
 - `task1/index.html`, `task2/index.html` — one page per shared task
   (Multilingual Code Generation; Adversarial Prompt Detection). Task 2 uses a
   rose accent via `body.t2`. Each hero has a live demo driven by `js/main.js`.
@@ -33,7 +38,7 @@ descriptions, organizer and program committee rosters, and expected attendance.
 
 Edit the HTML pages and push to `main`; Pages redeploys automatically.
 Preview locally by opening `index.html` in a browser — no tooling required.
-Bump the `?v=` query on the `css/style.css` and `js/main.js` links (in all three pages) when changing
+Bump the `?v=` query on the `css/style.css` and `js/main.js` links (in all four pages) when changing
 those files, so returning visitors do not get a stale cached copy.
 
 Maintained by the LangCode 2027 organizers.
