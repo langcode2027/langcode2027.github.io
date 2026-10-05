@@ -20,7 +20,8 @@ Live at: <https://langcode2027.github.io>
   main.js inlines them so their colors follow the `--sf-*` tokens in style.css
   (light and dark); the files carry light fallbacks. PNG/PDF exports, light and
   dark, sit next to them.
-- `media/announce/` — the social-media announcement (1080x1350 at 2x, PNG + PDF)
+- `media/announce/` — announcements, PNG + PDF: dark portrait (`langcode2027-announcement`),
+  light portrait (`-light`), and light landscape 1920x1080 (`-landscape`), all at 2x,
   with QR codes to the home page and the submission page.
 - `media/logo.svg` — the logo (terminal "lc" monogram with a cursor); also the
   favicon. The nav uses an inline copy that follows the light/dark theme.

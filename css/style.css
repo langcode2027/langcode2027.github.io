@@ -1203,6 +1203,54 @@ html[data-theme="dark"] {
 .hero.mini .hero-art svg { width: auto; height: 100%; min-width: 0; }
 @media (max-width: 60rem) { .hero-art.ready { opacity: .5; } }
 
+
+/* ------------------------------------------- how-to-submit stepper */
+
+ol.stepper { list-style: none; margin: 1.4rem 0 1rem; padding: 0; position: relative; max-width: 46rem; }
+ol.stepper::before {
+  content: ""; position: absolute; left: 1.15rem; top: 1.2rem; bottom: 1.6rem; width: 2px;
+  background: linear-gradient(180deg, var(--accent), color-mix(in srgb, var(--accent) 15%, transparent));
+}
+.step-i { position: relative; display: grid; grid-template-columns: 2.3rem minmax(0, 1fr); gap: 1rem; padding-bottom: 1.1rem; }
+.step-i .sn {
+  position: relative; z-index: 1; width: 2.3rem; height: 2.3rem; border-radius: 50%;
+  display: grid; place-items: center; font-family: var(--mono); font-weight: 700; font-size: .95rem;
+  background: var(--bg); color: var(--accent); border: 2px solid var(--accent);
+  transition: background .25s var(--ease), color .25s var(--ease), transform .25s var(--ease);
+}
+.step-i:hover .sn { background: var(--accent); color: var(--bg); transform: scale(1.08); }
+.step-i .sb {
+  background: var(--bg-raise); border: 1px solid var(--line); border-radius: var(--r);
+  padding: .75rem 1rem .8rem;
+  transition: border-color .22s var(--ease), box-shadow .22s var(--ease), transform .22s var(--ease);
+}
+.step-i:hover .sb { border-color: var(--accent); box-shadow: var(--shadow-m); transform: translateX(3px); }
+.step-i h3 { margin: 0 0 .15rem; font-size: 1.02rem; }
+.step-i p { margin: 0; font-size: .92rem; color: var(--ink-soft); }
+.step-i:last-child .sn { background: var(--accent); color: var(--bg); }
+.sls { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .55rem; }
+.sl {
+  font-family: var(--mono); font-size: .74rem; color: var(--accent);
+  background: var(--accent-soft); border-radius: 999px; padding: .15rem .6rem;
+  transition: background .18s var(--ease), color .18s var(--ease);
+}
+.sl:hover { background: var(--accent); color: var(--bg); text-decoration: none; }
+.shortcut, .after {
+  display: grid; grid-template-columns: auto minmax(0, 1fr); gap: .3rem 1rem; align-items: start;
+  max-width: 46rem; margin: .6rem 0 0; padding: .9rem 1.1rem; border-radius: var(--r);
+  font-size: .93rem; line-height: 1.55;
+}
+.shortcut { background: var(--amber-soft); border: 1px dashed color-mix(in srgb, var(--amber) 45%, transparent); }
+.after { background: var(--ok-soft); border: 1px solid color-mix(in srgb, var(--ok) 30%, transparent); }
+.sc-k {
+  font-family: var(--mono); font-size: .7rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+  padding: .15rem .45rem; border-radius: .3rem; margin-top: .15rem; white-space: nowrap;
+}
+.shortcut .sc-k { color: var(--amber); border: 1px solid color-mix(in srgb, var(--amber) 45%, transparent); }
+.after .sc-k { color: var(--ok); border: 1px solid color-mix(in srgb, var(--ok) 45%, transparent); }
+.shortcut .sl { margin-left: .3rem; }
+@media (max-width: 34rem) { .shortcut, .after { grid-template-columns: minmax(0, 1fr); } }
+
 /* ------------------------------------------------------- reveal animation */
 
 [data-reveal] {
