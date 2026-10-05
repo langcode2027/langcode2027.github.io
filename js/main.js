@@ -199,6 +199,48 @@
       track.innerHTML += track.innerHTML;   /* second copy makes -50% seamless */
     }
 
+    /* ------------------------------------- rolling updates ticker loop --- */
+    var tset = document.querySelector(".ticker .tk-set");
+    if (tset && !reduce) {
+      var copy = tset.cloneNode(true);       /* second copy makes -50% seamless */
+      copy.setAttribute("aria-hidden", "true");
+      Array.prototype.forEach.call(copy.querySelectorAll("a"), function (a) { a.setAttribute("tabindex", "-1"); });
+      tset.parentNode.appendChild(copy);
+    }
+
+    /* ------------- timelines: mark past dates done, flag the next one --- */
+    var now = Date.now();
+    var aoe = function (iso) {                /* end of that day, UTC-12 */
+      var p = iso.split("-");
+      return Date.UTC(+p[0], +p[1] - 1, +p[2], 23, 59) + 12 * 3600 * 1000;
+    };
+    Array.prototype.forEach.call(document.querySelectorAll("ol.timeline"), function (ol) {
+      var items = Array.prototype.slice.call(ol.querySelectorAll("li[data-date]"));
+      if (!items.length) return;
+      Array.prototype.forEach.call(ol.querySelectorAll(".flag"), function (f) { f.parentNode.removeChild(f); });
+      var next = null;
+      items.forEach(function (li) {
+        if (aoe(li.getAttribute("data-date")) < now) li.classList.add("done");
+        else if (!next) next = li;
+      });
+      if (!next) return;
+      next.classList.add("next");
+      var flag = document.createElement("span");
+      flag.className = "flag";
+      flag.textContent = "next";
+      next.querySelector(".what").appendChild(flag);
+
+      var cd = ol.parentNode.querySelector(".countdown");
+      if (cd && next.getAttribute("data-label")) {
+        var days = Math.ceil((aoe(next.getAttribute("data-date")) - now) / 86400000);
+        cd.textContent = "";
+        var b = document.createElement("b");
+        b.textContent = days + (days === 1 ? " day" : " days");
+        cd.appendChild(b);
+        cd.appendChild(document.createTextNode(" until " + next.getAttribute("data-label")));
+      }
+    });
+
     /* ------------------------------- Task 1: one problem, many languages --- */
     var demo = document.getElementById("t1demo");
     if (demo) {

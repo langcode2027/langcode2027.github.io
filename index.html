@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>LangCode 2027 — The First Language and Code Workshop</title>
-  <meta name="description" content="LangCode 2027, the First Language and Code Workshop: towards secure, trustworthy, robust, and multilingual code generation. Two shared tasks. Co-located with NAACL 2027.">
+  <meta name="description" content="LangCode 2027, the First Language and Code Workshop: towards secure, trustworthy, robust, and multilingual code generation. Two shared tasks. Co-located with NAACL 2027, June 1–5, 2027, San Francisco.">
   <meta name="theme-color" content="#0e7c66">
   <link rel="canonical" href="https://langcode2027.github.io/">
 
@@ -14,23 +14,41 @@
   <meta property="og:description" content="Co-located with NAACL 2027. Towards secure, trustworthy, robust, and multilingual code generation. Two shared tasks: multilingual code generation and adversarial prompt detection for code models.">
   <meta name="twitter:card" content="summary">
 
-  <link rel="stylesheet" href="css/style.css?v=8">
+  <link rel="stylesheet" href="css/style.css?v=9">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌐</text></svg>">
-  <script src="js/main.js?v=8"></script>
+  <script src="js/main.js?v=9"></script>
 </head>
 <body>
 
 <a class="skip-link" href="#about">Skip to content</a>
 <div id="progress" aria-hidden="true"></div>
 
+<div class="ticker" role="region" aria-label="Updates and important dates">
+  <div class="wrap ticker-in">
+    <span class="ticker-label"><span class="dot" aria-hidden="true"></span>Updates</span>
+    <div class="ticker-view">
+      <div class="ticker-track">
+        <div class="tk-set">
+          <span class="tk"><b>NAACL 2027</b>LangCode is co-located with NAACL 2027 &middot; June 1&ndash;5, 2027 &middot; San Francisco, California, USA</span>
+          <span class="tk"><b>Oct 26, 2026</b>First call for papers; shared task training data released</span>
+          <span class="tk"><b>Feb 15, 2027</b>Paper submission deadline</span>
+          <span class="tk"><b>Mar 26, 2027</b>Notification of acceptance</span>
+          <span class="tk"><b>Apr 16, 2027</b>Camera-ready due</span>
+          <span class="tk"><b>New</b>Pages for <a href="task1/">Shared Task 1</a> and <a href="task2/">Shared Task 2</a> are up</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <nav class="top">
   <div class="wrap">
     <a class="brand" href="#top">LangCode<span class="y">'27</span></a>
     <div class="navlinks">
+      <a href="#dates">Dates</a>
       <a href="#about">About</a>
       <a href="#cfp">Call for Papers</a>
       <a href="#tasks">Shared Tasks</a>
-      <a href="#dates">Dates</a>
       <a href="#speakers">Speakers</a>
       <a href="#organizers">Organizers</a>
     </div>
@@ -42,25 +60,59 @@
 </nav>
 
 <header class="hero" id="top">
-  <div class="wrap">
-    <p class="kicker" data-reveal>// the first language and code workshop &middot; naacl 2027</p>
-    <h1 class="title" data-reveal style="--d:60ms">LangCode 2027</h1>
-    <p class="tagline" data-reveal style="--d:120ms">Towards <b>secure</b>, <b>trustworthy</b>, <b>robust</b>, and
-      <b>multilingual</b> code generation.</p>
-    <div data-reveal style="--d:180ms">
-      <span class="status ok"><svg class="tick" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.4l3 3 6-6.6"/></svg>Accepted &middot; co-located with <b>NAACL&nbsp;2027</b></span>
+  <div class="wrap hero-grid">
+    <div class="hero-main">
+      <p class="kicker" data-reveal>// the first language and code workshop</p>
+      <h1 class="title" data-reveal style="--d:60ms">LangCode 2027</h1>
+      <p class="tagline" data-reveal style="--d:120ms">Towards <b>secure</b>, <b>trustworthy</b>, <b>robust</b>, and
+        <b>multilingual</b> code generation.</p>
+      <div class="venue" data-reveal style="--d:180ms">
+        <span class="status ok"><span class="dot" aria-hidden="true"></span>Co-located with <b>NAACL&nbsp;2027</b></span>
+        <span class="vmeta"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/></svg>June 1&ndash;5, 2027</span>
+        <span class="vmeta"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-6.2-6.5-11a6.5 6.5 0 0 1 13 0c0 4.8-6.5 11-6.5 11Z"/><circle cx="12" cy="10" r="2.3"/></svg>San Francisco, California, USA</span>
+      </div>
+      <div class="hero-actions" data-reveal style="--d:240ms">
+        <a class="btn primary" href="#tasks">Shared Tasks</a>
+        <a class="btn" href="#cfp">Call for Papers</a>
+      </div>
+      <p class="termline" data-reveal style="--d:300ms">
+        <span class="sr-only">Code for every language — the workshop motto, shown in rotation across many languages.</span>
+        <span aria-hidden="true"><span class="c">$</span> langcode --generate</span>
+        <span aria-hidden="true">"<bdi class="tw"><span class="typed"></span><span class="caret"></span></bdi>"</span>
+        <span class="lang" aria-hidden="true"></span>
+      </p>
     </div>
-    <div class="hero-actions" data-reveal style="--d:240ms">
-      <a class="btn primary" href="#tasks">Shared Tasks</a>
-      <a class="btn" href="#cfp">Call for Papers</a>
-      <a class="btn" href="#dates">Important Dates</a>
-    </div>
-    <p class="termline" data-reveal style="--d:300ms">
-      <span class="sr-only">Code for every language — the workshop motto, shown in rotation across many languages.</span>
-      <span aria-hidden="true"><span class="c">$</span> langcode --generate</span>
-      <span aria-hidden="true">"<bdi class="tw"><span class="typed"></span><span class="caret"></span></bdi>"</span>
-      <span class="lang" aria-hidden="true"></span>
-    </p>
+
+    <aside class="dates-card" id="dates" aria-labelledby="dates-h" data-reveal style="--d:200ms">
+      <div class="dc-head">
+        <h2 id="dates-h">Important Dates</h2>
+        <span class="aoe" title="Deadlines are 11:59 PM UTC-12 (Anywhere on Earth)">AoE</span>
+      </div>
+      <ol class="timeline compact">
+        <li data-date="2026-10-26" data-label="Training data release">
+          <span class="when">Oct 26, 2026</span>
+          <span class="what">First call for papers; shared task training data<span class="flag">next</span></span>
+        </li>
+        <li data-date="2027-02-15" data-label="Paper submission deadline">
+          <span class="when">Feb 15, 2027</span>
+          <span class="what">Paper submission deadline</span>
+        </li>
+        <li data-date="2027-03-26" data-label="Notification of acceptance">
+          <span class="when">Mar 26, 2027</span>
+          <span class="what">Notification of acceptance</span>
+        </li>
+        <li data-date="2027-04-16" data-label="Camera-ready deadline">
+          <span class="when">Apr 16, 2027</span>
+          <span class="what">Camera-ready due</span>
+        </li>
+        <li data-date="2027-06-05" data-label="NAACL 2027">
+          <span class="when">June 2027</span>
+          <span class="what">Workshop at <b>NAACL 2027</b>, San Francisco</span>
+        </li>
+      </ol>
+      <p class="countdown"></p>
+      <p class="fine">Subject to change. Deadlines are 11:59&nbsp;PM UTC-12.</p>
+    </aside>
   </div>
 </header>
 
@@ -219,7 +271,7 @@
       </dl>
       <dl class="fact" data-reveal>
         <dt>Venue</dt>
-        <dd><b>NAACL 2027.</b> Exact date and location to follow from the NAACL workshop chairs.</dd>
+        <dd><b>NAACL 2027</b>, June 1&ndash;5, 2027, in San Francisco, California, USA.</dd>
       </dl>
     </div>
   </section>
@@ -270,31 +322,6 @@
         <span class="chip">CodaBench page: coming soon</span>
       </div>
     </div>
-  </section>
-
-  <section id="dates">
-    <h2><span class="hash">##</span>Important Dates</h2>
-    <hr class="rule">
-    <p class="lede">All dates are tentative. Deadlines are 11:59&nbsp;PM UTC-12
-       (Anywhere on Earth).</p>
-    <ol class="timeline">
-      <li>
-        <span class="when">October 26, 2026</span>
-        <span class="what">First call for papers; shared task training data released<span class="flag">next</span></span>
-      </li>
-      <li>
-        <span class="when">February 5, 2027</span>
-        <span class="what">Paper submission deadline; shared task evaluation window</span>
-      </li>
-      <li>
-        <span class="when">March 26, 2027</span>
-        <span class="what">Notification of acceptance</span>
-      </li>
-      <li>
-        <span class="when">2027</span>
-        <span class="what">Workshop at <b>NAACL 2027</b> &mdash; exact date TBD</span>
-      </li>
-    </ol>
   </section>
 
   <section id="speakers">
