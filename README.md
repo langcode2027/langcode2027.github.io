@@ -13,6 +13,15 @@ Live at: <https://langcode2027.github.io>
 - `submission/index.html` — Paper Submission page: formal guidelines (paper types
   and limits, ACL format, anonymity, ARR commitment, policies, presentation) and a
   pre-submission checklist.
+- `organizers/index.html` — Organizing Committee, then Invited Speakers, then
+  Program Committee (moved off the home page; the nav item is just "Organizers").
+- `media/banner/sf-bridge.svg`, `sf-city.svg` — text-free San Francisco hero
+  backgrounds (Golden Gate on the home page; skyline on Submission and Organizers).
+  main.js inlines them so their colors follow the `--sf-*` tokens in style.css
+  (light and dark); the files carry light fallbacks. PNG/PDF exports, light and
+  dark, sit next to them.
+- `media/announce/` — the social-media announcement (1080x1350 at 2x, PNG + PDF)
+  with QR codes to the home page and the submission page.
 - `media/logo.svg` — the logo (terminal "lc" monogram with a cursor); also the
   favicon. The nav uses an inline copy that follows the light/dark theme.
 - `task1/index.html`, `task2/index.html` — one page per shared task
@@ -38,7 +47,7 @@ descriptions, organizer and program committee rosters, and expected attendance.
 
 Edit the HTML pages and push to `main`; Pages redeploys automatically.
 Preview locally by opening `index.html` in a browser — no tooling required.
-Bump the `?v=` query on the `css/style.css` and `js/main.js` links (in all four pages) when changing
+Bump the `?v=` query on the `css/style.css` and `js/main.js` links (in all five pages) when changing
 those files, so returning visitors do not get a stale cached copy.
 
 Maintained by the LangCode 2027 organizers.

@@ -204,6 +204,16 @@
       track.innerHTML += track.innerHTML;   /* second copy makes -50% seamless */
     }
 
+    /* ------------------------- San Francisco banner behind the hero ---- */
+    var art = document.querySelector(".hero-art[data-src]");
+    if (art && window.fetch) {
+      fetch(art.getAttribute("data-src")).then(function (r) { return r.ok ? r.text() : ""; }).then(function (svg) {
+        if (svg.indexOf("<svg") !== 0) return;
+        art.innerHTML = svg;
+        window.requestAnimationFrame(function () { art.classList.add("ready"); });
+      }).catch(function () {});
+    }
+
     /* --------------------------------------- nav dropdown: shared tasks --- */
     var ddBtn = document.querySelector(".dd-btn");
     var ddMenu = document.getElementById("tasks-menu");

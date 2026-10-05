@@ -14,13 +14,13 @@
   <meta property="og:description" content="Co-located with NAACL 2027. Towards secure, trustworthy, robust, and multilingual code generation. Two shared tasks: multilingual code generation and adversarial prompt detection for code models.">
   <meta name="twitter:card" content="summary">
 
-  <link rel="stylesheet" href="css/style.css?v=11">
+  <link rel="stylesheet" href="css/style.css?v=12">
   <link rel="icon" type="image/svg+xml" href="media/logo.svg">
-  <script src="js/main.js?v=11"></script>
+  <script src="js/main.js?v=12"></script>
 </head>
 <body>
 
-<a class="skip-link" href="#about">Skip to content</a>
+<a class="skip-link" href="#cfp">Skip to content</a>
 <div id="progress" aria-hidden="true"></div>
 
 <div class="ribbon" aria-hidden="true">
@@ -60,13 +60,10 @@
   <div class="wrap">
     <a class="brand" href="#top"><svg class="logo" viewBox="0 0 64 64" aria-hidden="true"><rect class="lg-tile" x="2" y="2" width="60" height="60" rx="14"/><path class="lg-glyph" d="M14 17h6v24M14 41h12"/><path class="lg-glyph" d="M40.5 29.2a7.6 7.6 0 1 0 0 11.6"/><rect class="lg-caret" x="45" y="21" width="7.5" height="21" rx="1.2"/></svg><span>LangCode<span class="y">'27</span></span></a>
     <div class="navlinks">
-      <a href="#dates">Dates</a>
-      <a href="#about">About</a>
       <a href="#cfp">Call for Papers</a>
       <a href="submission/">Paper Submission</a>
       <button class="dd-btn" type="button" aria-expanded="false" aria-controls="tasks-menu">Shared Tasks<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5"/></svg></button>
-      <a href="#speakers">Speakers</a>
-      <a href="#organizers">Organizers</a>
+      <a href="organizers/">Organizers</a>
     </div>
     <div class="dd-menu" id="tasks-menu" hidden>
       <a href="task1/"><span class="k">Task 1</span>Multilingual Code Generation</a>
@@ -80,6 +77,7 @@
 </nav>
 
 <header class="hero" id="top">
+  <div class="hero-art" data-src="media/banner/sf-bridge.svg" aria-hidden="true"></div>
   <div class="wrap hero-grid">
     <div class="hero-main">
       <p class="kicker" data-reveal>// the first language and code workshop</p>
@@ -158,41 +156,6 @@
 
 <main class="wrap">
 
-  <section id="about">
-    <h2><span class="hash">##</span>About</h2>
-    <hr class="rule">
-    <p class="lede">
-      Research at the intersection of natural language and code is among the most active areas in
-      NLP, yet the ACL community has no dedicated workshop on the topic.
-    </p>
-    <p>
-      Code models are prompted overwhelmingly in English, evaluated almost exclusively on Python
-      and a few high-resource programming languages, and guarded by safety mechanisms rarely
-      tested beyond English inputs. LangCode treats linguistic variation and safety as
-      intertwined: guardrails calibrated on English degrade sharply on other languages, so a code
-      model cannot be safe for all users unless it is robust for all languages.
-    </p>
-
-    <h3 class="sr-only">The three axes of robustness</h3>
-    <div class="axes" data-stagger>
-      <div class="axis" data-reveal>
-        <span class="rn">AXIS I</span>
-        <h3>Natural languages</h3>
-        <p>Generation, explanation, and documentation from prompts in any language.</p>
-      </div>
-      <div class="axis" data-reveal>
-        <span class="rn">AXIS II</span>
-        <h3>Programming languages</h3>
-        <p>Low-resource, emerging, legacy, and domain-specific languages.</p>
-      </div>
-      <div class="axis" data-reveal>
-        <span class="rn">AXIS III</span>
-        <h3>Adversaries</h3>
-        <p>Secure generation, guardrails, and jailbreak and prompt-injection defenses.</p>
-      </div>
-    </div>
-  </section>
-
   <section id="cfp">
     <h2><span class="hash">##</span>Call for Papers</h2>
     <hr class="rule">
@@ -259,104 +222,6 @@
     <p><a class="btn primary sm" href="submission/">Submission guidelines <span aria-hidden="true">&rarr;</span></a></p>
   </section>
 
-  <section id="speakers">
-    <h2><span class="hash">##</span>Invited Speakers</h2>
-    <hr class="rule">
-    <div class="orgs" data-stagger>
-      <div class="org" data-reveal>
-        <span class="avatar"><img class="ph" src="media/organizers/chen.jpg" alt="Valerie Chen" loading="lazy" width="88" height="88"><span class="init" aria-hidden="true">VC</span></span>
-        <span class="nm"><a href="https://valeriechen.github.io" target="_blank" rel="noopener">Dr. Valerie Chen</a></span>
-        <span class="role">confirmed</span>
-        <span class="ti">Postdoctoral Researcher</span>
-        <span class="af">Stanford University, USA</span>
-      </div>
-    </div>
-    <p class="muted small">Additional keynotes will be announced soon.</p>
-  </section>
-
-  <section id="organizers">
-    <h2><span class="hash">##</span>Organizers</h2>
-    <hr class="rule">
-    <div class="orgs" data-stagger>
-      <div class="org" data-reveal>
-        <span class="avatar"><img class="ph" src="media/organizers/raihan.jpg" alt="Nishat Raihan" loading="lazy" width="88" height="88"><span class="init" aria-hidden="true">NR</span></span>
-        <span class="nm"><a href="https://md-nishat.com" target="_blank" rel="noopener">Dr. Nishat Raihan</a></span>
-        <span class="role">lead</span>
-        <span class="ti">Provost's Postdoctoral Fellow</span>
-        <span class="af">University of Notre Dame</span>
-      </div>
-      <div class="org" data-reveal>
-        <span class="avatar"><img class="ph" src="media/organizers/casey.jpg" alt="Beatrice Casey" loading="lazy" width="88" height="88"><span class="init" aria-hidden="true">BC</span></span>
-        <span class="nm"><a href="https://s2elab.org/members/" target="_blank" rel="noopener">Beatrice Casey</a></span>
-        <span class="ti">PhD Candidate</span>
-        <span class="af">University of Notre Dame</span>
-      </div>
-      <div class="org" data-reveal>
-        <span class="avatar"><img class="ph" src="media/organizers/chiang.jpg" alt="David Chiang" loading="lazy" width="88" height="88"><span class="init" aria-hidden="true">DC</span></span>
-        <span class="nm"><a href="https://academicweb.nd.edu/~dchiang/" target="_blank" rel="noopener">Dr. David Chiang</a></span>
-        <span class="ti">Associate Professor</span>
-        <span class="af">University of Notre Dame</span>
-      </div>
-      <div class="org" data-reveal>
-        <span class="avatar"><img class="ph" src="media/organizers/moran.jpg" alt="Kevin Moran" loading="lazy" width="88" height="88"><span class="init" aria-hidden="true">KM</span></span>
-        <span class="nm"><a href="https://www.kpmoran.com" target="_blank" rel="noopener">Dr. Kevin Moran</a></span>
-        <span class="ti">Assistant Professor</span>
-        <span class="af">University of Central Florida</span>
-      </div>
-      <div class="org" data-reveal>
-        <span class="avatar"><img class="ph" src="media/organizers/santos.jpg" alt="Joanna C. S. Santos" loading="lazy" width="88" height="88"><span class="init" aria-hidden="true">JS</span></span>
-        <span class="nm"><a href="https://s2elab.org" target="_blank" rel="noopener">Dr. Joanna C. S. Santos</a></span>
-        <span class="ti">Assistant Professor</span>
-        <span class="af">University of Notre Dame</span>
-      </div>
-      <div class="org" data-reveal>
-        <span class="avatar"><img class="ph" src="media/organizers/yao.jpg" alt="Ziyu Yao" loading="lazy" width="88" height="88"><span class="init" aria-hidden="true">ZY</span></span>
-        <span class="nm"><a href="https://ziyuyao.org" target="_blank" rel="noopener">Dr. Ziyu Yao</a></span>
-        <span class="ti">Assistant Professor</span>
-        <span class="af">George Mason University</span>
-      </div>
-      <div class="org" data-reveal>
-        <span class="avatar"><img class="ph" src="media/organizers/zampieri.jpg" alt="Marcos Zampieri" loading="lazy" width="88" height="88"><span class="init" aria-hidden="true">MZ</span></span>
-        <span class="nm"><a href="https://mzampieri.com" target="_blank" rel="noopener">Dr. Marcos Zampieri</a></span>
-        <span class="ti">Assistant Professor</span>
-        <span class="af">George Mason University</span>
-      </div>
-    </div>
-  </section>
-
-  <section id="pc">
-    <h2><span class="hash">##</span>Program Committee</h2>
-    <hr class="rule">
-    <p class="lede">Every member was contacted personally; only those who agreed to serve are
-       listed.</p>
-    <ul class="pc">
-      <li>Antonios Anastasopoulos <span class="affil">&middot; George Mason University</span></li>
-      <li>Md Arid Hasan <span class="affil">&middot; University of Toronto</span></li>
-      <li>Md Mezbaur Rahman <span class="affil">&middot; University of Illinois at Chicago</span></li>
-      <li>Mohammad Anas Jawad <span class="affil">&middot; University of Illinois at Chicago</span></li>
-      <li>Saroj Kumar Basnet <span class="affil">&middot; George Mason University</span></li>
-      <li>Dipak Meher <span class="affil">&middot; George Mason University</span></li>
-      <li>Xinye Zhao <span class="affil">&middot; University of Notre Dame</span></li>
-      <li>Vinicius Lopes <span class="affil">&middot; University of Notre Dame</span></li>
-      <li>Md Mohsinul Kabir <span class="affil">&middot; University of Manchester</span></li>
-      <li>Aashish Yadavally <span class="affil">&middot; University of Central Florida</span></li>
-      <li>Antonio Mastropaolo <span class="affil">&middot; William &amp; Mary</span></li>
-      <li>Michele Tufano <span class="affil">&middot; Google</span></li>
-      <li>Arun Krishna Vajjala <span class="affil">&middot; Apple</span></li>
-      <li>Azmain Yakin <span class="affil">&middot; Hokkaido University</span></li>
-      <li>Tasnim Ahmed <span class="affil">&middot; Queen's University</span></li>
-      <li>Mohammed Latif Siddiq <span class="affil">&middot; Meta</span></li>
-      <li>Maliha Jahan <span class="affil">&middot; Amazon</span></li>
-      <li>Amimul Ehsan Zoha <span class="affil">&middot; George Mason University</span></li>
-      <li>Sudipta Kar <span class="affil">&middot; Oracle</span></li>
-      <li>Firoj Alam <span class="affil">&middot; Qatar Computing Research Institute, HBKU</span></li>
-      <li>Shammur Absar Chowdhury <span class="affil">&middot; Qatar Computing Research Institute, HBKU</span></li>
-      <li>Alphaeus Dmonte <span class="affil">&middot; George Mason University</span></li>
-      <li>Mohamed Aghzal <span class="affil">&middot; George Mason University</span></li>
-      <li>Hao Yan <span class="affil">&middot; George Mason University</span></li>
-      <li>Mohammad Rashidujjaman Rifat <span class="affil">&middot; University of Notre Dame</span></li>
-    </ul>
-  </section>
 
 </main>
 
@@ -373,7 +238,7 @@
         <a href="submission/">Paper Submission</a> &middot;
         <a href="task1/">Task 1</a> &middot;
         <a href="task2/">Task 2</a> &middot;
-        <a href="#dates">Dates</a> &middot;
+        <a href="organizers/">Organizers</a> &middot;
         <a href="https://github.com/langcode2027/langcode2027.github.io" target="_blank" rel="noopener">Repository</a>
       </div>
     </div>
