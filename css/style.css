@@ -1135,50 +1135,46 @@ h1.title[data-reveal] { transform: translateY(14px); filter: blur(4px); transiti
 h1.title[data-reveal].in { filter: none; transform: none; }
 
 
-/* ------------------------------------------- San Francisco hero banners */
-/* SVGs in media/banner/ are inlined by main.js; their colors come from
-   these --sf-* tokens (with light fallbacks baked into the files for export). */
-
-:root {
-  --sf-sky: transparent; --sf-sun: #f7d8c2; --sf-hill-far: #dbe9e3; --sf-hill-near: #c9ddd5;
-  --sf-water: #e6f0ec; --sf-wave: #ffffff; --sf-bridge: #c4482c; --sf-fog: #ffffff; --sf-bird: #6b7886;
-  --sf-bld-far: #d5e5df; --sf-bld: #bcd5cb; --sf-win: #ffffff; --sf-line: #86ad9f;
-  --sf-house1: #ecdbcf; --sf-house2: #dce9e4; --sf-house3: #f1e5cd; --sf-trim: #a3bdb3; --sf-lawn: #d3e6da;
-}
-@media (prefers-color-scheme: dark) {
-  html:not([data-theme="light"]) {
-    --sf-sun: #3a2419; --sf-hill-far: #142529; --sf-hill-near: #18302e; --sf-water: #0f1b1e;
-    --sf-wave: rgba(255,255,255,.1); --sf-bridge: #d9603c; --sf-fog: rgba(255,255,255,.07); --sf-bird: #7d8a97;
-    --sf-bld-far: #142428; --sf-bld: #1b3130; --sf-win: rgba(255,214,150,.55); --sf-line: #3d6a5e;
-    --sf-house1: #3a2b27; --sf-house2: #1d3330; --sf-house3: #383122; --sf-trim: #4d6e64; --sf-lawn: #11231e;
-  }
-}
-html[data-theme="dark"] {
-  --sf-sun: #3a2419; --sf-hill-far: #142529; --sf-hill-near: #18302e; --sf-water: #0f1b1e;
-  --sf-wave: rgba(255,255,255,.1); --sf-bridge: #d9603c; --sf-fog: rgba(255,255,255,.07); --sf-bird: #7d8a97;
-  --sf-bld-far: #142428; --sf-bld: #1b3130; --sf-win: rgba(255,214,150,.55); --sf-line: #3d6a5e;
-  --sf-house1: #3a2b27; --sf-house2: #1d3330; --sf-house3: #383122; --sf-trim: #4d6e64; --sf-lawn: #11231e;
-}
-.hero-art {
-  position: absolute; inset: 0; z-index: 0; pointer-events: none;
-  opacity: 0; transition: opacity 1.2s var(--ease);
-  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 42%), linear-gradient(to right, transparent 4%, #000 46%);
-  -webkit-mask-composite: source-in;
-  mask-image: linear-gradient(to bottom, transparent 0%, #000 42%), linear-gradient(to right, transparent 4%, #000 46%);
-  mask-composite: intersect;
-}
-.hero-art.ready { opacity: 1; }
-.hero-art svg { position: absolute; right: 0; bottom: 0; width: max(100%, 68rem); height: auto; }
-.hero-art .sky { display: none; }
-.hero-art .fog rect { animation: fog 22s ease-in-out infinite alternate; }
-.hero-art .fog rect:nth-child(2n) { animation-duration: 30s; animation-direction: alternate-reverse; }
-@keyframes fog { from { transform: translateX(-40px); } to { transform: translateX(60px); } }
+/* ------------------------------------------- San Francisco hero photos */
 .hero > .wrap { position: relative; z-index: 1; }
+/* real San Francisco photos behind the hero, with a scrim for legibility */
+header.hero.has-photo { background: var(--bg); }
+header.hero.has-photo::before { display: none; }
+.hero-photo {
+  position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  /* photo starts just inside the copy column, so the scrim always sits under the text */
+  left: calc(max(0px, (100% - 62rem) / 2) + var(--copy, 31.25rem));
+  background: var(--photo) var(--photo-pos, center) / cover no-repeat;
+}
+.hero-photo::after {
+  content: ""; position: absolute; inset: 0;
+  background:
+    linear-gradient(0deg, var(--bg) 0, color-mix(in srgb, var(--bg) 0%, transparent) 26%),
+    linear-gradient(90deg,
+      var(--bg) 0,
+      color-mix(in srgb, var(--bg) 90%, transparent) 4.5rem,
+      color-mix(in srgb, var(--bg) 40%, transparent) 15rem,
+      color-mix(in srgb, var(--bg) 6%, transparent) 100%);
+}
+.hero-photo.gg  { --photo: url(../media/photos/sf-golden-gate.jpg); --photo-pos: 55% 30%; }
+.hero-photo.emb { --photo: url(../media/photos/sf-embarcadero.jpg); --photo-pos: 70% 60%; }
+.hero-photo.pl  { --photo: url(../media/photos/sf-painted-ladies.jpg); --photo-pos: 60% 62%; }
+html[data-theme="dark"] .hero-photo { filter: brightness(.78) saturate(.9); }
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .hero-photo { filter: brightness(.78) saturate(.9); }
+}
+@media (max-width: 44rem) {
+  /* copy spans the full width on phones: even scrim, photo as texture */
+  .hero-photo { left: 0; }
+  .hero-photo::after { background: color-mix(in srgb, var(--bg) 84%, transparent); }
+}
+header.hero.mini.has-photo .tagline { max-width: 34rem; }
+footer .credit { font-size: .74rem; color: var(--ink-faint); margin-top: .7rem; }
+footer .credit a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+
 /* home hero: keep the copy left of the bridge tower */
 header.hero.home .hero-main { max-width: 34rem; }
 .hero.mini { padding: 3.2rem 0 2.6rem; }
-.hero.mini .hero-art svg { width: auto; height: 100%; min-width: 0; }
-@media (max-width: 60rem) { .hero-art.ready { opacity: .5; } }
 
 
 /* ------------------------------------------- how-to-submit stepper */
@@ -1250,7 +1246,6 @@ ol.stepper::before {
   .rule[data-reveal], ol.timeline[data-reveal]::before, ol.timeline[data-reveal] li::before { transform: none; }
   h1.title[data-reveal] { filter: none; }
   .ticker-track { animation: none; }
-  .hero-art .fog rect { animation: none; }
   .logo .lg-caret { animation: none; }
   .ticker-view { overflow-x: auto; }
   .termline .caret { animation: none; }

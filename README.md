@@ -15,11 +15,12 @@ Live at: <https://langcode2027.github.io>
   pre-submission checklist.
 - `organizers/index.html` — Organizing Committee, then Invited Speakers, then
   Program Committee (moved off the home page; the nav item is just "Organizers").
-- `media/banner/sf-bridge.svg`, `sf-city.svg` — text-free San Francisco hero
-  backgrounds (Golden Gate on the home page; skyline on Submission and Organizers).
-  main.js inlines them so their colors follow the `--sf-*` tokens in style.css
-  (light and dark); the files carry light fallbacks. PNG/PDF exports, light and
-  dark, sit next to them.
+- `media/photos/` — real San Francisco hero photos from Wikimedia Commons
+  (Golden Gate from Baker Beach on Home, Embarcadero on Submission, Painted Ladies
+  on Organizers), 2400px wide. CC BY / CC BY-SA, credited in each page's footer.
+  A theme-aware scrim in style.css (`.hero-photo`) keeps the hero text readable.
+- `media/banner/` — the earlier drawn SF banners (SVG + PNG/PDF exports, light and
+  dark); no longer used by the site, kept as standalone graphics.
 - `media/announce/` — announcements, PNG + PDF: dark portrait (`langcode2027-announcement`),
   light portrait (`-light`), and light landscape 1920x1080 (`-landscape`), all at 2x,
   with QR codes to the home page and the submission page.
