@@ -198,12 +198,6 @@
       if (img.complete && img.naturalWidth === 0) fail();
     });
 
-    /* ------------------------------------------- duplicate ribbon for loop --- */
-    var track = document.querySelector(".ribbon-track");
-    if (track && !reduce) {
-      track.innerHTML += track.innerHTML;   /* second copy makes -50% seamless */
-    }
-
     /* ------------------------- San Francisco banner behind the hero ---- */
     var art = document.querySelector(".hero-art[data-src]");
     if (art && window.fetch) {

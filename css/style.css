@@ -285,32 +285,6 @@ p.tagline b { color: var(--ink); font-weight: 650; }
   border: 1px solid var(--line); border-radius: .3rem; padding: 0 .35rem;
 }
 
-/* --------------------------------------------------- language ribbon (marquee) */
-
-.ribbon {
-  background: var(--ink); color: var(--bg);
-  overflow: hidden; padding: .6rem 0;
-  mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
-}
-.ribbon-track {
-  display: flex; width: max-content; gap: 0;
-  animation: slide 78s linear infinite;
-}
-.ribbon:hover .ribbon-track { animation-play-state: paused; }
-@keyframes slide { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-.ribbon .item {
-  font-family: var(--mono); font-size: .82rem;
-  color: color-mix(in srgb, currentColor 88%, transparent);
-  padding: 0 1.1rem; white-space: nowrap;
-  border-right: 1px solid color-mix(in srgb, currentColor 16%, transparent);
-}
-.ribbon .item .tag { color: #45c4a0; font-size: .7rem; margin-left: .4rem; }
-html[data-theme="dark"] .ribbon { background: #151b23; color: var(--ink); border-bottom: 1px solid var(--line); }
-@media (prefers-color-scheme: dark) {
-  html:not([data-theme="light"]) .ribbon { background: #151b23; color: var(--ink); border-bottom: 1px solid var(--line); }
-}
-
 /* ---------------------------------------------------------------- sections */
 
 section { padding: 3.2rem 0 .8rem; scroll-margin-top: 4.5rem; }
@@ -922,6 +896,7 @@ html[data-theme="dark"] .sibling .go { color: #0d1117; }
   -webkit-mask-image: linear-gradient(90deg, transparent, #000 3%, #000 94%, transparent);
 }
 .ticker-track { display: flex; width: max-content; animation: slide 60s linear infinite; }
+@keyframes slide { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 .ticker:hover .ticker-track, .ticker:focus-within .ticker-track { animation-play-state: paused; }
 .tk-set { display: flex; }
 .tk { white-space: nowrap; padding: 0 2rem 0 0; }
@@ -1199,6 +1174,8 @@ html[data-theme="dark"] {
 .hero-art .fog rect:nth-child(2n) { animation-duration: 30s; animation-direction: alternate-reverse; }
 @keyframes fog { from { transform: translateX(-40px); } to { transform: translateX(60px); } }
 .hero > .wrap { position: relative; z-index: 1; }
+/* home hero: keep the copy left of the bridge tower */
+header.hero.home .hero-main { max-width: 34rem; }
 .hero.mini { padding: 3.2rem 0 2.6rem; }
 .hero.mini .hero-art svg { width: auto; height: 100%; min-width: 0; }
 @media (max-width: 60rem) { .hero-art.ready { opacity: .5; } }
@@ -1272,7 +1249,6 @@ ol.stepper::before {
   [data-reveal] { opacity: 1; transform: none; }
   .rule[data-reveal], ol.timeline[data-reveal]::before, ol.timeline[data-reveal] li::before { transform: none; }
   h1.title[data-reveal] { filter: none; }
-  .ribbon-track { animation: none; }
   .ticker-track { animation: none; }
   .hero-art .fog rect { animation: none; }
   .logo .lg-caret { animation: none; }
@@ -1291,7 +1267,7 @@ ol.stepper::before {
 /* ----------------------------------------------------------------- print */
 
 @media print {
-  nav.top, #progress, .ribbon, .ticker, .hero-actions, .skip-link, .theme-toggle, .copy-btn, .lang-picks { display: none !important; }
+  nav.top, #progress, .ticker, .hero-actions, .skip-link, .theme-toggle, .copy-btn, .lang-picks { display: none !important; }
   body { background: #fff; color: #000; font-size: 10.5pt; }
   [data-reveal] { opacity: 1 !important; transform: none !important; }
   section { padding: 1rem 0; break-inside: avoid; }
