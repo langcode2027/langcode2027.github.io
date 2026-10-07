@@ -8,11 +8,11 @@ Live at: <https://langcode2027.github.io>
 
 ## Structure
 
-- `index.html` — main page (At a glance, About, Call for Papers,
-  Shared Tasks, Dates, Speakers, Organizers, Program Committee)
-- `submission/index.html` — Paper Submission page: formal guidelines (paper types
-  and limits, ACL format, anonymity, ARR commitment, policies, presentation) and a
-  pre-submission checklist.
+- `index.html` — home page: hero, Updates ticker, and Call for Papers (five topic
+  areas, the two ways to submit — direct OpenReview submission or ARR commitment —
+  and the archival note: every accepted paper is archival, in the ACL Anthology).
+- `submission/index.html` — Paper Submission page: six-step how-to, paper types,
+  and official resources. Its step 6 links back to the ARR option on the home page.
 - `organizers/index.html` — Organizing Committee, then Invited Speakers, then
   Program Committee (moved off the home page; the nav item is just "Organizers").
 - `media/photos/` — real San Francisco hero photos from Wikimedia Commons
