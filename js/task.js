@@ -1,5 +1,5 @@
 // LangCode 2027 shared-task pages: mobile menu, dates card and countdown,
-// updates bar, Task 1 language demo, BibTeX copy button.
+// updates bar, Task 1 language example, BibTeX copy button.
 
 (function () {
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -60,28 +60,43 @@
     }
   }
 
-  // Task 1 data page: one problem, its description in many languages.
-  var doc = document.getElementById("demo-doc");
-  if (doc) {
-    var tabs = Array.prototype.slice.call(document.querySelectorAll(".demo-tabs .tab"));
+  // Task 1 data page: one problem, its description in many natural languages
+  // (top tabs) and its code in several programming languages (bottom tabs).
+  var nlTabs = Array.prototype.slice.call(document.querySelectorAll(".demo-tabs.many .tab"));
+  if (nlTabs.length) {
+    var docs = document.querySelectorAll(".code-demo .doc");
+    var plTabs = Array.prototype.slice.call(document.querySelectorAll(".pl-tabs .tab"));
+    var codes = document.querySelectorAll(".code-demo[data-pl]");
     var current = 0, timer = null;
-    var show = function (i) {
-      current = i;
-      tabs.forEach(function (t, j) {
-        t.classList.toggle("active", j === i);
-        t.setAttribute("aria-selected", j === i ? "true" : "false");
+    var select = function (tabs, active) {
+      tabs.forEach(function (t) {
+        t.classList.toggle("active", t === active);
+        t.setAttribute("aria-selected", t === active ? "true" : "false");
       });
-      doc.classList.add("fade");
+    };
+    var showNl = function (i) {
+      current = i;
+      select(nlTabs, nlTabs[i]);
+      docs.forEach(function (d) { d.classList.add("fade"); });
       setTimeout(function () {
-        doc.textContent = tabs[i].getAttribute("data-doc");
-        doc.dir = tabs[i].getAttribute("data-dir") || "ltr";
-        doc.classList.remove("fade");
+        docs.forEach(function (d) {
+          d.textContent = nlTabs[i].getAttribute("data-doc");
+          d.dir = nlTabs[i].getAttribute("data-dir") || "ltr";
+          d.classList.remove("fade");
+        });
       }, reduceMotion ? 0 : 200);
     };
-    tabs.forEach(function (t, i) {
-      t.addEventListener("click", function () { clearInterval(timer); show(i); });
+    nlTabs.forEach(function (t, i) {
+      t.addEventListener("click", function () { clearInterval(timer); showNl(i); });
     });
-    if (!reduceMotion) timer = setInterval(function () { show((current + 1) % tabs.length); }, 2600);
+    plTabs.forEach(function (t) {
+      t.addEventListener("click", function () {
+        clearInterval(timer);
+        select(plTabs, t);
+        codes.forEach(function (c) { c.hidden = c.getAttribute("data-pl") !== t.getAttribute("data-pl"); });
+      });
+    });
+    if (!reduceMotion) timer = setInterval(function () { showNl((current + 1) % nlTabs.length); }, 2600);
   }
 
   // Copy BibTeX.

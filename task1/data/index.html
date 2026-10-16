@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/task.css?v=7">
+  <link rel="stylesheet" href="/css/task.css?v=8">
 </head>
 <body class="t1 page-data">
 
@@ -69,7 +69,7 @@
 <section class="section">
   <div class="wrap">
     <h2><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="4.5" width="17" height="15" rx="2"/><path d="M3.5 9.5h17M3.5 14.5h17M9.5 9.5v10"/></svg>What you get</h2>
-    <p class="section-lead">Each example is a Python function signature with a problem description in one natural language. Every problem comes with hidden unit tests that decide whether a solution is correct.</p>
+    <p class="section-lead">Each example is a function signature in one programming language (Python, C, C++, Java, and others) with a problem description in one natural language. Every problem comes with hidden unit tests that decide whether a solution is correct.</p>
     <table class="splits">
       <thead><tr><th>Split</th><th>Phase</th><th>Released</th><th>Use it to</th></tr></thead>
       <tbody>
@@ -90,13 +90,14 @@
         <li><strong>High-resource:</strong> languages such as English and Spanish.</li>
         <li><strong>Lower-resource:</strong> languages with far less text, where code models struggle most.</li>
       </ul>
-      <p>The correct program is the same in every language. The test set uses <strong>newly written problems</strong> so systems are scored on problems they cannot have memorized.</p>
+      <p>The problem also comes in several programming languages, and the solution must be written in the one requested. The correct program does not change with the natural language. The test set uses <strong>newly written problems</strong> so systems are scored on problems they cannot have memorized.</p>
     </div>
 
-    <div class="demo" aria-label="Example: one problem described in several languages">
+    <div class="demo" aria-label="Example: one problem in several natural and programming languages">
       <div class="demo-head">
-        <span class="demo-title">One problem, eleven ways to ask for it</span>
-        <div class="demo-tabs many" role="tablist">
+        <span class="demo-title">One problem, many ways to ask for it</span>
+        <span class="demo-label"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.7 5.4 3.7 8.5s-1.2 5.9-3.7 8.5c-2.5-2.6-3.7-5.4-3.7-8.5s1.2-5.9 3.7-8.5z"/></svg>Natural language</span>
+        <div class="demo-tabs many" role="tablist" aria-label="Natural language">
           <button role="tab" class="tab active" aria-selected="true" data-doc="Return the sum of all even numbers in the list.">English</button>
           <button role="tab" class="tab" aria-selected="false" data-doc="তালিকার সব জোড় সংখ্যার যোগফল ফেরত দাও।">বাংলা</button>
           <button role="tab" class="tab" aria-selected="false" data-doc="Devuelve la suma de todos los números pares de la lista.">Español</button>
@@ -109,16 +110,49 @@
           <button role="tab" class="tab" aria-selected="false" data-doc="Renvoie la somme de tous les nombres pairs de la liste.">Français</button>
           <button role="tab" class="tab" aria-selected="false" data-doc="Listedeki tüm çift sayıların toplamını döndür.">Türkçe</button>
         </div>
+        <span class="demo-label"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8.5 7-5 5 5 5M15.5 7l5 5-5 5"/></svg>Programming language</span>
+        <div class="demo-tabs pl-tabs" role="tablist" aria-label="Programming language">
+          <button role="tab" class="tab active" aria-selected="true" data-pl="py">Python</button>
+          <button role="tab" class="tab" aria-selected="false" data-pl="c">C</button>
+          <button role="tab" class="tab" aria-selected="false" data-pl="cpp">C++</button>
+          <button role="tab" class="tab" aria-selected="false" data-pl="java">Java</button>
+        </div>
       </div>
-<pre class="code-demo"><span class="kw">def</span> sum_even(nums: list[int]) -&gt; int:
+<pre class="code-demo" data-pl="py"><span class="kw">def</span> sum_even(nums: list[int]) -&gt; int:
 <span class="str">    """
-    <bdi class="doc" id="demo-doc">Return the sum of all even numbers in the list.</bdi>
+    <bdi class="doc">Return the sum of all even numbers in the list.</bdi>
     &gt;&gt;&gt; sum_even([1, 2, 3, 4])
     6
     """</span>
     <span class="kw">return</span> sum(n <span class="kw">for</span> n <span class="kw">in</span> nums <span class="kw">if</span> n % 2 == 0)</pre>
+<pre class="code-demo" data-pl="c" hidden><span class="str">/* <bdi class="doc">Return the sum of all even numbers in the list.</bdi>
+   sum_even({1, 2, 3, 4}, 4) == 6 */</span>
+<span class="kw">int</span> sum_even(<span class="kw">const int</span> *nums, <span class="kw">int</span> len) {
+    <span class="kw">int</span> s = 0;
+    <span class="kw">for</span> (<span class="kw">int</span> i = 0; i &lt; len; i++)
+        <span class="kw">if</span> (nums[i] % 2 == 0) s += nums[i];
+    <span class="kw">return</span> s;
+}</pre>
+<pre class="code-demo" data-pl="cpp" hidden><span class="str">// <bdi class="doc">Return the sum of all even numbers in the list.</bdi>
+// sum_even({1, 2, 3, 4}) == 6</span>
+<span class="kw">int</span> sum_even(<span class="kw">const</span> std::vector&lt;<span class="kw">int</span>&gt;&amp; nums) {
+    <span class="kw">int</span> s = 0;
+    <span class="kw">for</span> (<span class="kw">int</span> n : nums)
+        <span class="kw">if</span> (n % 2 == 0) s += n;
+    <span class="kw">return</span> s;
+}</pre>
+<pre class="code-demo" data-pl="java" hidden><span class="str">/**
+ * <bdi class="doc">Return the sum of all even numbers in the list.</bdi>
+ * sumEven(new int[]{1, 2, 3, 4}) == 6
+ */</span>
+<span class="kw">static int</span> sumEven(<span class="kw">int</span>[] nums) {
+    <span class="kw">int</span> s = 0;
+    <span class="kw">for</span> (<span class="kw">int</span> n : nums)
+        <span class="kw">if</span> (n % 2 == 0) s += n;
+    <span class="kw">return</span> s;
+}</pre>
       <div class="run"><span>$ run hidden_tests</span><span class="ok">✓ pass</span></div>
-      <p class="demo-foot">Illustrative problem, not from the test set. Click a language to pin it.</p>
+      <p class="demo-foot">Illustrative problem, not from the test set. Click a tab to pin it.</p>
     </div>
   </div>
 </section>
@@ -139,7 +173,7 @@
         <p>Baseline results to compare against, so you know where you stand.</p>
       </div>
       <div class="kit-item">
-        <span class="kit-icon" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="m10 12-2 2 2 2M14 12l2 2-2 2"/></svg>.py</span>
+        <span class="kit-icon" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="m10 12-2 2 2 2M14 12l2 2-2 2"/></svg>FORMAT</span>
         <h3>Submission format</h3>
         <p>How to package your solutions in the file format CodaBench accepts.</p>
       </div>
@@ -179,6 +213,6 @@
   </div>
 </footer>
 
-<script src="/js/task.js?v=2"></script>
+<script src="/js/task.js?v=3"></script>
 </body>
 </html>

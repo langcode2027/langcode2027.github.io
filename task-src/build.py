@@ -314,7 +314,7 @@ def render(key, i):
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/task.css?v=7">
+  <link rel="stylesheet" href="/css/task.css?v=8">
 </head>
 <body class="{t["cls"]} page-{slug}">
 
@@ -328,7 +328,7 @@ def render(key, i):
 
 {footer(t)}
 
-<script src="/js/task.js?v=2"></script>
+<script src="/js/task.js?v=3"></script>
 </body>
 </html>
 """)

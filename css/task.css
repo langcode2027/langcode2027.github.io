@@ -630,3 +630,12 @@ p { margin: 0 0 1rem; }
 .sf-kicker .ico { width: 16px; height: 16px; margin-right: 6px; vertical-align: -2px; }
 .callout > .ico { width: 24px; height: 24px; flex: none; color: var(--primary); }
 .callout-warn > .ico { color: #C27C0E; }
+
+/* Date dots: smaller dots, thinner ring and taller rows, so two filled dots on
+   neighboring rows (two milestones on the same day) never touch. */
+.dc-list li { padding: 3px 0; }
+.dc-list li::before { left: -20px; top: 7px; width: 10px; height: 10px; }
+.dc-list li.is-next::before { box-shadow: 0 0 0 3px var(--primary-soft); }
+.demo-label { display: inline-flex; align-items: center; gap: 6px; font-size: .78rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); margin-bottom: -6px; }
+.demo-label .ico { width: 14px; height: 14px; color: var(--primary); }
+.code-demo[hidden] { display: none; }
