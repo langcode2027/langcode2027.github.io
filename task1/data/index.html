@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Data · Task 1: Multilingual Code Generation · LangCode 2027</title>
+  <meta name="description" content="What you get, how the data is built, and the starter kit.">
+  <meta name="theme-color" content="#0E8A5F">
+  <link rel="canonical" href="https://langcode2027.github.io/task1/data/">
+  <link rel="icon" type="image/svg+xml" href="/media/logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/task.css?v=7">
+</head>
+<body class="t1 page-data">
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="/task1/" aria-label="Shared Task 1 home">
+      <svg class="logo" viewBox="0 0 64 64" aria-hidden="true"><rect class="lg-tile" x="2" y="2" width="60" height="60" rx="14"/><path class="lg-glyph" d="M14 17h6v24M14 41h12"/><path class="lg-glyph" d="M40.5 29.2a7.6 7.6 0 1 0 0 11.6"/><rect class="lg-caret" x="45" y="21" width="7.5" height="21" rx="1.2"/></svg>
+      <span class="brand-text"><span class="brand-name">LangCode<span>'27</span></span><span class="brand-sub">Shared Task 1</span></span>
+    </a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="nav-links" class="nav-links">
+      <a href="/task1/data/" class="active" aria-current="page"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg>Data</a>
+      <a href="/task1/leaderboard/"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 21h8"/><path d="M12 16v5"/><path d="M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M17 5h3v2a3 3 0 0 1-3 3"/><path d="M7 5H4v2a3 3 0 0 0 3 3"/></svg>Leaderboard</a>
+      <a href="/task1/participate/"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21V4"/><path d="M5 4h13l-2.5 4.5L18 13H5"/></svg>Participate</a>
+      <a href="/task1/paper/"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6"/><path d="M9 17h6"/></svg>Paper Submission</a>
+      <a href="/organizers/"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c.6-3.4 3-5.4 6-5.4s5.4 2 6 5.4"/><circle cx="17" cy="9" r="2.4"/><path d="M16.5 14.7c2.4.2 4 1.9 4.5 4.8"/></svg>Organizers</a>
+      <a class="nav-cta" href="/">LangCode 2027</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="page-head" style="--photo: url('/media/photos/sf-embarcadero.jpg')">
+  <div class="wrap">
+    <p class="crumbs"><a href="/">LangCode 2027</a> <span aria-hidden="true">/</span> <a href="/task1/">Task 1</a> <span aria-hidden="true">/</span> Data</p>
+    <h1><svg class="ico ico-h1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg>Data</h1>
+    <p class="page-desc">What you get, how the data is built, and the starter kit.</p>
+  </div>
+</section>
+<div class="ticker" role="region" aria-label="Updates and important dates">
+  <div class="wrap ticker-in">
+    <span class="ticker-label"><span class="dot" aria-hidden="true"></span>Updates</span>
+    <div class="ticker-view">
+      <div class="ticker-track">
+        <div class="tk-set">
+          <span class="tk" data-date="2026-10-20"><b>Oct 20, 2026</b>Training and development data release; CodaBench registration opens</span>
+          <span class="tk" data-date="2027-01-15"><b>Jan 15, 2027</b>Test data release / evaluation begins</span>
+          <span class="tk" data-date="2027-01-24"><b>Jan 24, 2027</b>Registration deadline</span>
+          <span class="tk" data-date="2027-01-31"><b>Jan 31, 2027</b>System submission deadline</span>
+          <span class="tk" data-date="2027-02-03"><b>Feb 3, 2027</b>Official results released</span>
+          <span class="tk" data-date="2027-02-15"><b>Feb 15, 2027</b>Shared-task paper submission deadline</span>
+          <span class="tk" data-date="2027-03-26"><b>Mar 26, 2027</b>Notification of acceptance</span>
+          <span class="tk" data-date="2027-04-16"><b>Apr 16, 2027</b>Camera-ready paper due</span>
+          <span class="tk" data-date="2027-06-01"><b>Jun 1–5, 2027</b>Workshop at NAACL 2027, San Francisco</span>
+          <span class="tk"><b>LangCode 2027</b>Co-located with NAACL 2027 · June 1–5, 2027 · San Francisco, California</span>
+          <span class="tk"><b>Also</b><a href="/task2/">Shared Task 2: Adversarial Prompt Detection</a></span>
+          <span class="tk" data-date="2027-02-05"><b>Feb 5, 2027</b>Regular workshop papers due. See the <a href="/#cfp">Call for Papers</a></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<section class="section">
+  <div class="wrap">
+    <h2><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="4.5" width="17" height="15" rx="2"/><path d="M3.5 9.5h17M3.5 14.5h17M9.5 9.5v10"/></svg>What you get</h2>
+    <p class="section-lead">Each example is a Python function signature with a problem description in one natural language. Every problem comes with hidden unit tests that decide whether a solution is correct.</p>
+    <table class="splits">
+      <thead><tr><th>Split</th><th>Phase</th><th>Released</th><th>Use it to</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Train</strong></td><td>Development</td><td>Oct 20, 2026</td><td>Train your system</td></tr>
+        <tr><td><strong>Dev</strong></td><td>Development</td><td>Oct 20, 2026</td><td>Tune your system and practice submitting on CodaBench</td></tr>
+        <tr><td><strong>Test</strong></td><td>Evaluation</td><td>Jan 15, 2027</td><td>Make your final solutions. New problems, hidden tests.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="section section-tint">
+  <div class="wrap forms-grid">
+    <div>
+      <h2><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.7 5.4 3.7 8.5s-1.2 5.9-3.7 8.5c-2.5-2.6-3.7-5.4-3.7-8.5s1.2-5.9 3.7-8.5z"/></svg>One problem, many languages</h2>
+      <p>The task builds on <a href="https://aclanthology.org/2025.naacl-long.570/" target="_blank" rel="noopener">mHumanEval ↗</a> (NAACL 2025), a multilingual extension of HumanEval. The same problem is described in more than 100 natural languages, grouped into resource tiers by how much text each language has on the web:</p>
+      <ul class="plain">
+        <li><strong>High-resource:</strong> languages such as English and Spanish.</li>
+        <li><strong>Lower-resource:</strong> languages with far less text, where code models struggle most.</li>
+      </ul>
+      <p>The correct program is the same in every language. The test set uses <strong>newly written problems</strong> so systems are scored on problems they cannot have memorized.</p>
+    </div>
+
+    <div class="demo" aria-label="Example: one problem described in several languages">
+      <div class="demo-head">
+        <span class="demo-title">One problem, eleven ways to ask for it</span>
+        <div class="demo-tabs many" role="tablist">
+          <button role="tab" class="tab active" aria-selected="true" data-doc="Return the sum of all even numbers in the list.">English</button>
+          <button role="tab" class="tab" aria-selected="false" data-doc="তালিকার সব জোড় সংখ্যার যোগফল ফেরত দাও।">বাংলা</button>
+          <button role="tab" class="tab" aria-selected="false" data-doc="Devuelve la suma de todos los números pares de la lista.">Español</button>
+          <button role="tab" class="tab" aria-selected="false" data-doc="返回列表中所有偶数的和。">中文</button>
+          <button role="tab" class="tab" aria-selected="false" data-doc="सूची की सभी सम संख्याओं का योग लौटाएँ।">हिन्दी</button>
+          <button role="tab" class="tab" aria-selected="false" data-doc="أعد مجموع جميع الأعداد الزوجية في القائمة." data-dir="rtl">العربية</button>
+          <button role="tab" class="tab" aria-selected="false" data-doc="Rudisha jumla ya namba zote shufwa katika orodha.">Kiswahili</button>
+          <button role="tab" class="tab" aria-selected="false" data-doc="リスト内のすべての偶数の合計を返す。">日本語</button>
+          <button role="tab" class="tab" aria-selected="false" data-doc="Верни сумму всех чётных чисел в списке.">Русский</button>
+          <button role="tab" class="tab" aria-selected="false" data-doc="Renvoie la somme de tous les nombres pairs de la liste.">Français</button>
+          <button role="tab" class="tab" aria-selected="false" data-doc="Listedeki tüm çift sayıların toplamını döndür.">Türkçe</button>
+        </div>
+      </div>
+<pre class="code-demo"><span class="kw">def</span> sum_even(nums: list[int]) -&gt; int:
+<span class="str">    """
+    <bdi class="doc" id="demo-doc">Return the sum of all even numbers in the list.</bdi>
+    &gt;&gt;&gt; sum_even([1, 2, 3, 4])
+    6
+    """</span>
+    <span class="kw">return</span> sum(n <span class="kw">for</span> n <span class="kw">in</span> nums <span class="kw">if</span> n % 2 == 0)</pre>
+      <div class="run"><span>$ run hidden_tests</span><span class="ok">✓ pass</span></div>
+      <p class="demo-foot">Illustrative problem, not from the test set. Click a language to pin it.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9z"/><path d="m4 7.5 8 4.5 8-4.5M12 12v9"/></svg>Starter kit <span class="badge">Released Oct 20, 2026</span></h2>
+    <p class="section-lead">Download it with the data on CodaBench. It gets you from zero to a valid submission.</p>
+    <div class="kit">
+      <div class="kit-item">
+        <span class="kit-icon" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg>DATA</span>
+        <h3>Train and dev problems</h3>
+        <p>Problems with descriptions across resource tiers, for building and tuning your system.</p>
+      </div>
+      <div class="kit-item">
+        <span class="kit-icon" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4v16h16"/><path d="M8 16v-4M12 16V8M16 16v-6"/></svg>BASE</span>
+        <h3>Public baselines</h3>
+        <p>Baseline results to compare against, so you know where you stand.</p>
+      </div>
+      <div class="kit-item">
+        <span class="kit-icon" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="m10 12-2 2 2 2M14 12l2 2-2 2"/></svg>.py</span>
+        <h3>Submission format</h3>
+        <p>How to package your solutions in the file format CodaBench accepts.</p>
+      </div>
+    </div>
+    <p class="note-small">Download links will appear here on October 20, 2026.</p>
+
+    <h2 style="margin-top:44px"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4.5A1.5 1.5 0 0 1 5.5 3H20v15H5.5A1.5 1.5 0 0 0 4 19.5z"/><path d="M4 19.5A1.5 1.5 0 0 0 5.5 21H20v-3"/></svg>Cite the source benchmark</h2>
+    <div class="bib">
+      <button class="copy-btn" type="button">copy</button>
+<pre>@inproceedings{raihan2025mhumaneval,
+  title     = {m{H}uman{E}val - A Multilingual Benchmark to Evaluate Large Language Models for Code Generation},
+  author    = {Raihan, Nishat and Anastasopoulos, Antonios and Zampieri, Marcos},
+  booktitle = {Proceedings of NAACL 2025},
+  year      = {2025},
+  url       = {https://aclanthology.org/2025.naacl-long.570/}
+}</pre>
+    </div>
+  </div>
+</section>
+
+<nav class="pager wrap" aria-label="Page navigation"><span></span><a class="pg-next" href="/task1/leaderboard/"><span>Next</span>Leaderboard</a></nav>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <svg class="logo" viewBox="0 0 64 64" aria-hidden="true"><rect class="lg-tile" x="2" y="2" width="60" height="60" rx="14"/><path class="lg-glyph" d="M14 17h6v24M14 41h12"/><path class="lg-glyph" d="M40.5 29.2a7.6 7.6 0 1 0 0 11.6"/><rect class="lg-caret" x="45" y="21" width="7.5" height="21" rx="1.2"/></svg>
+        <p><strong>Shared Task 1: Multilingual Code Generation</strong> is part of <a href="/">LangCode 2027, the First Language and Code Workshop</a>, co-located with NAACL 2027 in San Francisco. Questions: <a href="mailto:mraihan@nd.edu">mraihan@nd.edu</a></p>
+      </div>
+      <p class="footer-also">Also at LangCode 2027: <a href="/task2/">Task 2: Adversarial Prompt Detection →</a></p>
+    </div>
+    <p class="credits">Photos from Wikimedia Commons:
+      <a href="https://commons.wikimedia.org/wiki/File:GoldenGateBridge_BakerBeach_MC.jpg" target="_blank" rel="noopener">Golden Gate Bridge</a> by Christian Mehlführer (CC BY 3.0);
+      <a href="https://commons.wikimedia.org/wiki/File:Painted_Ladies_San_Francisco_January_2013_panorama_2.jpg" target="_blank" rel="noopener">Painted Ladies</a> by King of Hearts (CC BY-SA 3.0);
+      <a href="https://commons.wikimedia.org/wiki/File:San_Francisco_from_Pier_7_September_2013_panorama_edit.jpg" target="_blank" rel="noopener">San Francisco from Pier 7</a> by King of Hearts (CC BY-SA 3.0). Tinted.</p>
+  </div>
+</footer>
+
+<script src="/js/task.js?v=2"></script>
+</body>
+</html>

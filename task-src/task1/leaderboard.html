@@ -1,0 +1,44 @@
+<section class="section">
+  <div class="wrap narrow">
+    <h2>{{i:gauge}}Metrics</h2>
+    <p>Systems are ranked by execution-based <strong>Pass@1</strong> on hidden tests, macro-averaged across language resource tiers <em>T</em>:</p>
+    <div class="formula" role="img" aria-label="Score equals one over the number of tiers, times the sum over tiers t of Pass at 1 for tier t">
+      <span class="v">Score</span><span>=</span>
+      <span class="frac"><span>1</span><span>|<span class="v">T</span>|</span></span>
+      <span class="sum"><span class="big">Σ</span><span class="sub"><span class="v">t</span> ∈ <span class="v">T</span></span></span>
+      <span class="hl">Pass@1</span><span>(<span class="v">t</span>)</span>
+    </div>
+    <p class="note-small">Pass@1: the share of problems whose single generated solution passes all hidden tests. Each tier counts equally.</p>
+
+    <h2>{{i:layers}}Two tracks</h2>
+    <div class="phases">
+      <article class="phase phase-dev">
+        <p class="phase-tag">Constrained</p>
+        <h3>{{i:cpu}}Small models</h3>
+        <p class="phase-when">Limits on model size and compute</p>
+        <p>So the winning idea does not need the biggest GPU budget. Exact limits are announced with the training data.</p>
+      </article>
+      <article class="phase phase-eval">
+        <p class="phase-tag">Open</p>
+        <h3>{{i:globe}}Anything goes</h3>
+        <p class="phase-when">No limits</p>
+        <p>Show how far today's strongest systems reach across languages.</p>
+      </article>
+    </div>
+
+    <h2>{{i:tool}}Development phase</h2>
+    <div class="placeholder">
+      <p><strong>Oct 20, 2026 – Jan 15, 2027.</strong> Scores on the dev set appear on the CodaBench leaderboard as you submit. They are for practice and do not count toward the final ranking.</p>
+    </div>
+
+    <h2>{{i:trophy}}Evaluation phase: official results</h2>
+    <div class="placeholder">
+      <p>Final submissions on the new test problems are made on CodaBench from Jan 15 to Jan 31, 2027. The official ranking for each track will be published here on <strong>February 3, 2027</strong>.</p>
+    </div>
+    <table class="lb-table" aria-label="Official leaderboard">
+      <thead><tr><th>Rank</th><th>Team</th><th>Track</th><th>Score</th></tr></thead>
+      <tbody><tr><td colspan="4" class="lb-empty">No results yet</td></tr></tbody>
+    </table>
+    <p class="note-small">How to submit: see <a href="/task1/participate/">Participate</a>.</p>
+  </div>
+</section>

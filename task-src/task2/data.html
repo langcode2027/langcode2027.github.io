@@ -1,0 +1,93 @@
+<section class="section">
+  <div class="wrap">
+    <h2>{{i:table}}What you get</h2>
+    <p class="section-lead">Each example is one prompt with a Subtask A label (benign or adversarial) and, for adversarial prompts, a Subtask B attack type. The task builds on <strong>MALICE</strong>, a benchmark of about 250K code-mixed and transliterated adversarial prompts, split evenly between the two attack styles.</p>
+    <table class="splits">
+      <thead><tr><th>Split</th><th>Phase</th><th>Released</th><th>Use it to</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Train</strong></td><td>Development</td><td>Oct 20, 2026</td><td>Train your detector</td></tr>
+        <tr><td><strong>Dev</strong></td><td>Development</td><td>Oct 20, 2026</td><td>Tune your detector and practice submitting on CodaBench</td></tr>
+        <tr><td><strong>Test</strong></td><td>Evaluation</td><td>Jan 15, 2027</td><td>Make your final predictions. New prompts, no labels, plus surprise languages.</td></tr>
+      </tbody>
+    </table>
+    <ul class="stats-row">
+      <li><strong>~250K</strong><span>adversarial prompts in MALICE</span></li>
+      <li><strong>18</strong><span>task languages</span></li>
+      <li><strong>9</strong><span>source security benchmarks</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="section section-tint">
+  <div class="wrap">
+    <h2>{{i:globe}}How the prompts are built</h2>
+    <p class="section-lead">A malicious English coding request from an established security benchmark is translated sentence by sentence into low-resource languages, or transliterated into a non-Latin script. Programming keywords stay as they are.</p>
+    <div class="lang-groups">
+      <div class="kit-item">
+        <span class="kit-icon" aria-hidden="true">{{i:shuffle}}10 languages</span>
+        <h3>Code-mixed</h3>
+        <p>Low-resource, Latin script. Sentences are mixed across languages within one prompt.</p>
+        <div class="pills">
+          <span>Swahili</span><span>Yoruba</span><span>Tagalog</span><span>Somali</span><span>Hausa</span>
+          <span>Igbo</span><span>Cebuano</span><span>Malagasy</span><span>Sundanese</span><span>Javanese</span>
+        </div>
+      </div>
+      <div class="kit-item">
+        <span class="kit-icon" aria-hidden="true">{{i:type}}8 languages</span>
+        <h3>Transliterated</h3>
+        <p>Written in non-Latin scripts (Chinese in Pinyin).</p>
+        <div class="pills">
+          <span>Chinese<span class="sc">Pinyin</span></span><span>Hindi<span class="sc">हिन्दी</span></span>
+          <span>Russian<span class="sc">Русский</span></span><span>Arabic<span class="sc" dir="rtl">العربية</span></span>
+          <span>Japanese<span class="sc">日本語</span></span><span>Korean<span class="sc">한국어</span></span>
+          <span>Greek<span class="sc">Ελληνικά</span></span><span>Bengali<span class="sc">বাংলা</span></span>
+        </div>
+      </div>
+      <div class="kit-item">
+        <span class="kit-icon" aria-hidden="true">{{i:question}}? languages</span>
+        <h3>Surprise</h3>
+        <p>Held back until the evaluation phase, for a cross-lingual leaderboard. Revealed Jan 15, 2027.</p>
+        <div class="pills"><span>???</span><span>???</span><span>???</span></div>
+      </div>
+    </div>
+    <aside class="callout callout-warn" role="note">
+      {{i:lock}}<p><strong>Content warning and responsible use.</strong> The data contains prompts written to elicit malicious code. Like MALICE itself, it is released for defensive safety research only, under restricted-use terms that participants accept when they register.</p>
+    </aside>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2>{{i:package}}Starter kit <span class="badge">Released Oct 20, 2026</span></h2>
+    <p class="section-lead">Download it with the data on CodaBench. It gets you from zero to a valid submission.</p>
+    <div class="kit">
+      <div class="kit-item">
+        <span class="kit-icon" aria-hidden="true">{{i:data}}DATA</span>
+        <h3>Train and dev sets</h3>
+        <p>The labeled prompts for building and tuning your detector, for both subtasks.</p>
+      </div>
+      <div class="kit-item">
+        <span class="kit-icon" aria-hidden="true">{{i:chart}}BASE</span>
+        <h3>Public baselines</h3>
+        <p>Baseline results to compare against, so you know where you stand.</p>
+      </div>
+      <div class="kit-item">
+        <span class="kit-icon" aria-hidden="true">{{i:file-code}}.csv</span>
+        <h3>Submission format</h3>
+        <p>How to package your predictions in the file format CodaBench accepts.</p>
+      </div>
+    </div>
+    <p class="note-small">Download links will appear here on October 20, 2026.</p>
+
+    <h2 style="margin-top:44px">{{i:book}}Cite the source benchmark</h2>
+    <div class="bib">
+      <button class="copy-btn" type="button">copy</button>
+<pre>@inproceedings{raihan2026malice,
+  title     = {On the Robustness of Code {LLM} Guardrails to Code-mixed and Transliterated Inputs},
+  author    = {Raihan, Nishat and Meher, Dipak and Dhingra, Bhuwan and Zampieri, Marcos},
+  booktitle = {Findings of the Association for Computational Linguistics: EMNLP 2026},
+  year      = {2026}
+}</pre>
+    </div>
+  </div>
+</section>

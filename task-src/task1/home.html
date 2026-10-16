@@ -1,0 +1,94 @@
+<section class="hero">
+  <div class="hero-photo" role="img" aria-label="The Golden Gate Bridge in San Francisco"></div>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow"><span class="dot"></span>Shared Task 1 · LangCode Workshop at NAACL 2027</p>
+      <h1><span class="tno">shared_task[1]</span>Multilingual <span>Code Generation</span></h1>
+      <p class="hero-sub">One problem, 100+ natural languages, one correct program</p>
+      <p class="lead">Given a programming problem described in one of more than 100 natural languages, write a <strong>Python</strong> solution that passes hidden unit tests. Your system should solve the problem no matter which language it is posed in.</p>
+      <ul class="facts">
+        <li>{{i:calendar}}June 1–5, 2027</li>
+        <li>{{i:pin}}San Francisco, California</li>
+        <li>{{i:upload}}Submissions on CodaBench</li>
+      </ul>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#task">Read the task <span aria-hidden="true">↓</span></a>
+        <a class="btn btn-ghost" href="/task1/participate/">How to participate</a>
+      </div>
+    </div>
+    {{DATES_CARD}}
+  </div>
+</section>
+
+{{TICKER}}
+
+<section class="section" id="task">
+  <div class="wrap narrow">
+    <p class="kicker">The task</p>
+    <h2>{{i:target}}Write the same program, whatever language the problem is in</h2>
+
+    <div class="io">
+      <div class="io-box"><span class="io-tag">{{i:inbox}}Input</span><p>A Python function signature and a problem description written in one of 100+ natural languages, from high- to low-resource.</p></div>
+      <span class="io-arrow" aria-hidden="true">→</span>
+      <div class="io-box"><span class="io-tag">{{i:tag}}Output</span><p>One Python solution. It counts only if it passes every hidden unit test.</p></div>
+    </div>
+
+    <h3 class="sub-h">{{i:book}}Background</h3>
+    <p>Code models are prompted mostly in English and benchmarked mostly on English. Many programmers describe what they want in another language, and a model that solves a problem in English can fail on the same problem written in a lower-resource language. This task measures that gap and rewards systems that close it.</p>
+  </div>
+</section>
+
+<section class="section section-tint" id="scoring">
+  <div class="wrap">
+    <h2>{{i:gauge}}How systems are scored</h2>
+    <div class="levels levels-3">
+      <article class="level level-main">
+        <span class="level-id wide">Pass@1</span>
+        <h3>{{i:check}}One attempt</h3>
+        <p>The share of problems whose single generated solution passes all hidden tests.</p>
+        <p class="level-cat">Execution-based, no partial credit</p>
+      </article>
+      <article class="level level-alt">
+        <span class="level-id wide">avg</span>
+        <h3>{{i:scale}}Every tier counts</h3>
+        <p>Pass@1 is macro-averaged across language resource tiers, so high-resource languages alone cannot win.</p>
+        <p class="level-cat">Each resource tier carries the same weight</p>
+      </article>
+      <article class="level level-main">
+        <span class="level-id wide">tests</span>
+        <h3>{{i:eye-off}}Hidden tests</h3>
+        <p>Test cases are never released. The test problems are newly written and held out.</p>
+        <p class="level-cat">Limits contamination from pretraining data</p>
+      </article>
+    </div>
+    <p class="note-small">Full metric and the two tracks (constrained and open): see <a href="/task1/leaderboard/">Leaderboard</a>.</p>
+  </div>
+</section>
+
+<section class="section" id="phases">
+  <div class="wrap">
+    <p class="kicker">Two phases, both on CodaBench</p>
+    <h2>{{i:flag}}Development, then evaluation</h2>
+    {{PHASES}}
+  </div>
+</section>
+
+<section class="section section-tint">
+  <div class="wrap">
+    <p class="kicker">Next steps</p>
+    <h2>{{i:route}}How to take part</h2>
+    <div class="steps steps-3">
+      <a class="step step-link" href="/task1/data/"><span class="step-n">1</span><h3>{{i:download}}Get the data</h3><p>Training and dev problems plus a starter kit, released Oct 20, 2026.</p><span class="go">Data →</span></a>
+      <a class="step step-link" href="/task1/participate/"><span class="step-n">2</span><h3>{{i:upload}}Submit on CodaBench</h3><p>Practice on the dev set until Jan 15, then submit test solutions by Jan 31, 2027.</p><span class="go">Participate →</span></a>
+      <a class="step step-link" href="/task1/paper/"><span class="step-n">3</span><h3>{{i:pen}}Write your paper</h3><p>Describe your system in up to 4 pages, due Feb 15, 2027.</p><span class="go">Paper Submission →</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="sf-band" aria-label="The Painted Ladies and downtown San Francisco">
+  <div class="wrap">
+    <p class="sf-kicker">{{i:pin}}LangCode 2027 · NAACL 2027</p>
+    <h2>See you in San Francisco</h2>
+    <p>Teams present their systems at LangCode 2027, the First Language and Code Workshop, co-located with NAACL 2027, June 1–5.</p>
+  </div>
+</section>

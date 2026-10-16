@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Paper Submission · Task 2: Adversarial Prompt Detection · LangCode 2027</title>
+  <meta name="description" content="How to write and submit your system description paper.">
+  <meta name="theme-color" content="#D93A43">
+  <link rel="canonical" href="https://langcode2027.github.io/task2/paper/">
+  <link rel="icon" type="image/svg+xml" href="/media/logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/task.css?v=7">
+</head>
+<body class="t2 page-paper">
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="/task2/" aria-label="Shared Task 2 home">
+      <svg class="logo" viewBox="0 0 64 64" aria-hidden="true"><rect class="lg-tile" x="2" y="2" width="60" height="60" rx="14"/><path class="lg-glyph" d="M14 17h6v24M14 41h12"/><path class="lg-glyph" d="M40.5 29.2a7.6 7.6 0 1 0 0 11.6"/><rect class="lg-caret" x="45" y="21" width="7.5" height="21" rx="1.2"/></svg>
+      <span class="brand-text"><span class="brand-name">LangCode<span>'27</span></span><span class="brand-sub">Shared Task 2</span></span>
+    </a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="nav-links" class="nav-links">
+      <a href="/task2/data/"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg>Data</a>
+      <a href="/task2/leaderboard/"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 21h8"/><path d="M12 16v5"/><path d="M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M17 5h3v2a3 3 0 0 1-3 3"/><path d="M7 5H4v2a3 3 0 0 0 3 3"/></svg>Leaderboard</a>
+      <a href="/task2/participate/"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21V4"/><path d="M5 4h13l-2.5 4.5L18 13H5"/></svg>Participate</a>
+      <a href="/task2/paper/" class="active" aria-current="page"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6"/><path d="M9 17h6"/></svg>Paper Submission</a>
+      <a href="/organizers/"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c.6-3.4 3-5.4 6-5.4s5.4 2 6 5.4"/><circle cx="17" cy="9" r="2.4"/><path d="M16.5 14.7c2.4.2 4 1.9 4.5 4.8"/></svg>Organizers</a>
+      <a class="nav-cta" href="/">LangCode 2027</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="page-head" style="--photo: url('/media/photos/sf-painted-ladies.jpg')">
+  <div class="wrap">
+    <p class="crumbs"><a href="/">LangCode 2027</a> <span aria-hidden="true">/</span> <a href="/task2/">Task 2</a> <span aria-hidden="true">/</span> Paper Submission</p>
+    <h1><svg class="ico ico-h1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6"/><path d="M9 17h6"/></svg>Paper Submission</h1>
+    <p class="page-desc">How to write and submit your system description paper.</p>
+  </div>
+</section>
+<div class="ticker" role="region" aria-label="Updates and important dates">
+  <div class="wrap ticker-in">
+    <span class="ticker-label"><span class="dot" aria-hidden="true"></span>Updates</span>
+    <div class="ticker-view">
+      <div class="ticker-track">
+        <div class="tk-set">
+          <span class="tk" data-date="2026-10-20"><b>Oct 20, 2026</b>Training and development data release; CodaBench registration opens</span>
+          <span class="tk" data-date="2027-01-15"><b>Jan 15, 2027</b>Test data release / evaluation begins; surprise languages revealed</span>
+          <span class="tk" data-date="2027-01-24"><b>Jan 24, 2027</b>Registration deadline</span>
+          <span class="tk" data-date="2027-01-31"><b>Jan 31, 2027</b>System submission deadline</span>
+          <span class="tk" data-date="2027-02-03"><b>Feb 3, 2027</b>Official results released</span>
+          <span class="tk" data-date="2027-02-15"><b>Feb 15, 2027</b>Shared-task paper submission deadline</span>
+          <span class="tk" data-date="2027-03-26"><b>Mar 26, 2027</b>Notification of acceptance</span>
+          <span class="tk" data-date="2027-04-16"><b>Apr 16, 2027</b>Camera-ready paper due</span>
+          <span class="tk" data-date="2027-06-01"><b>Jun 1–5, 2027</b>Workshop at NAACL 2027, San Francisco</span>
+          <span class="tk"><b>LangCode 2027</b>Co-located with NAACL 2027 · June 1–5, 2027 · San Francisco, California</span>
+          <span class="tk"><b>Also</b><a href="/task1/">Shared Task 1: Multilingual Code Generation</a></span>
+          <span class="tk" data-date="2027-02-05"><b>Feb 5, 2027</b>Regular workshop papers due. See the <a href="/#cfp">Call for Papers</a></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<section class="section">
+  <div class="wrap narrow">
+    <p class="big">Every team that submits on CodaBench is encouraged to write a short paper describing its system. Accepted papers appear in the LangCode 2027 proceedings in the ACL Anthology and are presented at the workshop.</p>
+
+    <ol class="howto">
+      <li>
+        <span class="h-n">1</span>
+        <div>
+          <h3><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16z"/><path d="m13.5 6.5 4 4"/></svg>Write</h3>
+          <p>Up to <strong>4 pages</strong> (plus 1 page in the camera-ready), using the official ACL two-column template (<a href="https://www.overleaf.com/latex/templates/association-for-computational-linguistics-acl-conference/jvxskxpnznfj" target="_blank" rel="noopener">Overleaf ↗</a>). Do not change the style files. References, the Limitations section, and appendices do not count toward the limit.</p>
+        </div>
+      </li>
+      <li>
+        <span class="h-n">2</span>
+        <div>
+          <h3><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="m8.5 12.2 2.4 2.4 4.6-4.8"/></svg>Check the format</h3>
+          <p>Run <a href="https://github.com/acl-org/aclpubcheck" target="_blank" rel="noopener">ACL PubCheck ↗</a> on your PDF before submitting.</p>
+        </div>
+      </li>
+      <li>
+        <span class="h-n">3</span>
+        <div>
+          <h3><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15V4"/><path d="M7.5 8.5 12 4l4.5 4.5"/><path d="M4 15v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></svg>Submit on OpenReview</h3>
+          <p>The submission link will be posted here. Follow the full rules, including anonymity, on the LangCode <a href="/submission/">Paper Submission</a> page.</p>
+          <p class="when">Deadline Feb 15, 2027, 11:59 PM AoE</p>
+        </div>
+      </li>
+      <li>
+        <span class="h-n">4</span>
+        <div>
+          <h3><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></svg>Get the decision</h3>
+          <p class="when">Notification Mar 26, 2027</p>
+        </div>
+      </li>
+      <li>
+        <span class="h-n">5</span>
+        <div>
+          <h3><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="m9 14.5 2 2 4-4"/></svg>Send the final version</h3>
+          <p>Fix the points the reviewers raised and upload the camera-ready paper.</p>
+          <p class="when">Camera-ready due Apr 16, 2027</p>
+        </div>
+      </li>
+      <li>
+        <span class="h-n">6</span>
+        <div>
+          <h3><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M12 16v4M8 20h8"/></svg>Present</h3>
+          <p>Present your work at LangCode 2027, co-located with NAACL 2027 in San Francisco.</p>
+          <p class="when">June 1–5, 2027</p>
+        </div>
+      </li>
+    </ol>
+
+    <aside class="callout callout-warn" role="note">
+      <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5 2.5 20h19z"/><path d="M12 10v4.5M12 17.3v.1"/></svg><p><strong>Make your OpenReview account now.</strong> Every author needs one. Accounts made with a non-institutional email (for example Gmail) can take up to two weeks to be approved.</p>
+    </aside>
+  </div>
+</section>
+
+<nav class="pager wrap" aria-label="Page navigation"><a class="pg-prev" href="/task2/participate/"><span>Previous</span>Participate</a><span></span></nav>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <svg class="logo" viewBox="0 0 64 64" aria-hidden="true"><rect class="lg-tile" x="2" y="2" width="60" height="60" rx="14"/><path class="lg-glyph" d="M14 17h6v24M14 41h12"/><path class="lg-glyph" d="M40.5 29.2a7.6 7.6 0 1 0 0 11.6"/><rect class="lg-caret" x="45" y="21" width="7.5" height="21" rx="1.2"/></svg>
+        <p><strong>Shared Task 2: Adversarial Prompt Detection</strong> is part of <a href="/">LangCode 2027, the First Language and Code Workshop</a>, co-located with NAACL 2027 in San Francisco. Questions: <a href="mailto:mraihan@nd.edu">mraihan@nd.edu</a></p>
+      </div>
+      <p class="footer-also">Also at LangCode 2027: <a href="/task1/">Task 1: Multilingual Code Generation →</a></p>
+    </div>
+    <p class="credits">Photos from Wikimedia Commons:
+      <a href="https://commons.wikimedia.org/wiki/File:GoldenGateBridge_BakerBeach_MC.jpg" target="_blank" rel="noopener">Golden Gate Bridge</a> by Christian Mehlführer (CC BY 3.0);
+      <a href="https://commons.wikimedia.org/wiki/File:Painted_Ladies_San_Francisco_January_2013_panorama_2.jpg" target="_blank" rel="noopener">Painted Ladies</a> by King of Hearts (CC BY-SA 3.0);
+      <a href="https://commons.wikimedia.org/wiki/File:San_Francisco_from_Pier_7_September_2013_panorama_edit.jpg" target="_blank" rel="noopener">San Francisco from Pier 7</a> by King of Hearts (CC BY-SA 3.0). Tinted.</p>
+  </div>
+</footer>
+
+<script src="/js/task.js?v=2"></script>
+</body>
+</html>

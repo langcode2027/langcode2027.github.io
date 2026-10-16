@@ -26,9 +26,15 @@ Live at: <https://langcode2027.github.io>
   with QR codes to the home page and the submission page.
 - `media/logo.svg` — the logo (terminal "lc" monogram with a cursor); also the
   favicon. The nav uses an inline copy that follows the light/dark theme.
-- `task1/index.html`, `task2/index.html` — one page per shared task
-  (Multilingual Code Generation; Adversarial Prompt Detection). Task 2 uses a
-  rose accent via `body.t2`. Each hero has a live demo driven by `js/main.js`.
+- `task1/`, `task2/` — one small site per shared task, laid out like
+  <https://banglaknight.github.io/>: a home page (banner with the Important Dates card,
+  updates bar, the task, phases, next steps) plus `data/`, `leaderboard/`,
+  `participate/` and `paper/`. Task 1 is green, Task 2 is red (`body.t1` / `body.t2`
+  tokens in `css/task.css`; behavior in `js/task.js`).
+  **These pages are generated.** Edit the bodies in `task-src/task1/*.html` and
+  `task-src/task2/*.html`, or the shared dates in `DATES` at the top of
+  `task-src/build.py` (the same schedule as BanglaKnight), then run
+  `python3 task-src/build.py`. Hand edits to `task1/` or `task2/` are overwritten.
 - `css/style.css` — styles; light/dark follows the visitor's system theme and can
   be overridden with the nav toggle (persisted in `localStorage` under `theme`)
 - `js/main.js` — theme toggle, reading-progress bar, scroll reveals, stat

@@ -1,0 +1,43 @@
+<section class="section">
+  <div class="wrap narrow">
+    <h2>{{i:gauge}}Metrics</h2>
+    <p>Systems are ranked by <strong>macro-F1</strong> over the classes <em>C</em>, so a detector cannot win by favoring the majority class:</p>
+    <div class="formula" role="img" aria-label="Macro F1 equals one over the number of classes, times the sum over classes c of F1 for class c">
+      <span class="v">Macro-F1</span><span>=</span>
+      <span class="frac"><span>1</span><span>|<span class="v">C</span>|</span></span>
+      <span class="sum"><span class="big">Σ</span><span class="sub"><span class="v">c</span> ∈ <span class="v">C</span></span></span>
+      <span class="hl">F1</span><span>(<span class="v">c</span>)</span>
+    </div>
+
+    <h2>{{i:layers}}Two leaderboards</h2>
+    <div class="phases">
+      <article class="phase phase-eval">
+        <p class="phase-tag">Main</p>
+        <h3>{{i:globe}}Task languages</h3>
+        <p class="phase-when">18 languages</p>
+        <p>Macro-F1 on held-out prompts in the 18 task languages, for Subtask A and Subtask B.</p>
+      </article>
+      <article class="phase phase-dev">
+        <p class="phase-tag">Cross-lingual</p>
+        <h3>{{i:question}}Surprise languages</h3>
+        <p class="phase-when">Never seen in training</p>
+        <p>Macro-F1 on surprise languages revealed on Jan 15. Does your guardrail generalize?</p>
+      </article>
+    </div>
+
+    <h2>{{i:tool}}Development phase</h2>
+    <div class="placeholder">
+      <p><strong>Oct 20, 2026 – Jan 15, 2027.</strong> Scores on the dev set appear on the CodaBench leaderboard as you submit. They are for practice and do not count toward the final ranking.</p>
+    </div>
+
+    <h2>{{i:trophy}}Evaluation phase: official results</h2>
+    <div class="placeholder">
+      <p>Final submissions on the new test set are made on CodaBench from Jan 15 to Jan 31, 2027. The official rankings will be published here on <strong>February 3, 2027</strong>.</p>
+    </div>
+    <table class="lb-table" aria-label="Official leaderboard">
+      <thead><tr><th>Rank</th><th>Team</th><th>Subtask A</th><th>Subtask B</th><th>Surprise</th></tr></thead>
+      <tbody><tr><td colspan="5" class="lb-empty">No results yet</td></tr></tbody>
+    </table>
+    <p class="note-small">How to submit: see <a href="/task2/participate/">Participate</a>.</p>
+  </div>
+</section>

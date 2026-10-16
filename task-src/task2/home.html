@@ -1,0 +1,89 @@
+<section class="hero">
+  <div class="hero-photo" role="img" aria-label="The Golden Gate Bridge in San Francisco"></div>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow"><span class="dot"></span>Shared Task 2 · LangCode Workshop at NAACL 2027</p>
+      <h1><span class="tno">shared_task[2]</span>Adversarial <span>Prompt Detection</span></h1>
+      <p class="hero-sub">Guardrails for code-mixed and transliterated prompts</p>
+      <p class="lead">Given a prompt sent to a code model, decide whether it is <strong>benign</strong> or <strong>adversarial</strong>, and if adversarial, what kind of attack it is. Prompts are <strong>code-mixed</strong> across low-resource languages or <strong>transliterated</strong> into non-Latin scripts, with programming keywords kept as they are.</p>
+      <ul class="facts">
+        <li>{{i:calendar}}June 1–5, 2027</li>
+        <li>{{i:pin}}San Francisco, California</li>
+        <li>{{i:upload}}Submissions on CodaBench</li>
+      </ul>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#task">Read the task <span aria-hidden="true">↓</span></a>
+        <a class="btn btn-ghost" href="/task2/participate/">How to participate</a>
+      </div>
+    </div>
+    {{DATES_CARD}}
+  </div>
+</section>
+
+{{TICKER}}
+
+<section class="section" id="task">
+  <div class="wrap narrow">
+    <p class="kicker">The task</p>
+    <h2>{{i:target}}Catch a malicious coding prompt in any language or script</h2>
+
+    <div class="io">
+      <div class="io-box"><span class="io-tag">{{i:inbox}}Input</span><p>One prompt to a code model, code-mixed across low-resource languages or transliterated into a non-Latin script.</p></div>
+      <span class="io-arrow" aria-hidden="true">→</span>
+      <div class="io-box"><span class="io-tag">{{i:tag}}Output</span><p>Benign or adversarial (Subtask A), and the attack type for adversarial prompts (Subtask B).</p></div>
+    </div>
+
+    <h3 class="sub-h">{{i:book}}Background</h3>
+    <p>Code-model safety filters are calibrated almost entirely on English. Rewrite a malicious request in a low-resource language, or spell it out in another script, keep the code keywords intact, and many filters stop working. In MALICE, the best classifier's accuracy fell from <strong>0.93</strong> on English to <strong>0.21</strong> on code-mixed malicious prompts, and even the most safety-aligned model tested produced about <strong>3×</strong> more malicious code.</p>
+    <p class="note-small">Findings from MALICE (Raihan, Meher, Dhingra, Zampieri; Findings of EMNLP 2026).</p>
+  </div>
+</section>
+
+<section class="section section-tint" id="subtasks">
+  <div class="wrap">
+    <h2>{{i:layers}}Two subtasks</h2>
+    <div class="levels levels-2">
+      <article class="level level-main">
+        <span class="level-id wide">A</span>
+        <h3>{{i:shield}}Benign or adversarial?</h3>
+        <p>Binary classification of each prompt sent to a code model. This is the main leaderboard.</p>
+        <p class="level-cat">Label: 0 benign, 1 adversarial</p>
+      </article>
+      <article class="level level-alt">
+        <span class="level-id wide">B</span>
+        <h3>{{i:alert}}Which attack?</h3>
+        <p>For adversarial prompts, identify the attack type. Finer-grained, and closer to what a real guardrail needs to log.</p>
+        <p class="level-cat">Attack categories are listed with the training data</p>
+      </article>
+    </div>
+    <p class="note-small">Every prompt is either code-mixed or transliterated. See <a href="/task2/data/">Data</a> for the 18 languages.</p>
+  </div>
+</section>
+
+<section class="section" id="phases">
+  <div class="wrap">
+    <p class="kicker">Two phases, both on CodaBench</p>
+    <h2>{{i:flag}}Development, then evaluation</h2>
+    {{PHASES}}
+  </div>
+</section>
+
+<section class="section section-tint">
+  <div class="wrap">
+    <p class="kicker">Next steps</p>
+    <h2>{{i:route}}How to take part</h2>
+    <div class="steps steps-3">
+      <a class="step step-link" href="/task2/data/"><span class="step-n">1</span><h3>{{i:download}}Get the data</h3><p>Training and dev sets plus a starter kit, released Oct 20, 2026.</p><span class="go">Data →</span></a>
+      <a class="step step-link" href="/task2/participate/"><span class="step-n">2</span><h3>{{i:upload}}Submit on CodaBench</h3><p>Practice on the dev set until Jan 15, then submit test predictions by Jan 31, 2027.</p><span class="go">Participate →</span></a>
+      <a class="step step-link" href="/task2/paper/"><span class="step-n">3</span><h3>{{i:pen}}Write your paper</h3><p>Describe your system in up to 4 pages, due Feb 15, 2027.</p><span class="go">Paper Submission →</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="sf-band" aria-label="The Painted Ladies and downtown San Francisco">
+  <div class="wrap">
+    <p class="sf-kicker">{{i:pin}}LangCode 2027 · NAACL 2027</p>
+    <h2>See you in San Francisco</h2>
+    <p>Teams present their systems at LangCode 2027, the First Language and Code Workshop, co-located with NAACL 2027, June 1–5.</p>
+  </div>
+</section>

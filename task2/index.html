@@ -1,78 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Task 2: Adversarial Prompt Detection — LangCode 2027</title>
-  <meta name="description" content="LangCode 2027 Shared Task 2: classify code-model prompts as benign or adversarial across 18 languages, with code-mixed and transliterated attacks. Built on MALICE (~250K prompts). Macro-F1 and a surprise-language leaderboard. Co-located with NAACL 2027.">
-  <meta name="theme-color" content="#b4234a">
+  <title>Shared Task 2: Adversarial Prompt Detection · LangCode 2027</title>
+  <meta name="description" content="LangCode 2027 Shared Task 2: Guardrails for code-mixed and transliterated prompts. Co-located with NAACL 2027.">
+  <meta name="theme-color" content="#D93A43">
   <link rel="canonical" href="https://langcode2027.github.io/task2/">
-
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://langcode2027.github.io/task2/">
-  <meta property="og:title" content="LangCode 2027 · Task 2: Adversarial Prompt Detection">
-  <meta property="og:description" content="Can a guardrail spot a malicious coding prompt when it is code-mixed or transliterated? 18 languages, ~250K prompts, macro-F1, surprise languages.">
-  <meta name="twitter:card" content="summary">
-
-  <link rel="stylesheet" href="../css/style.css?v=17">
-  <link rel="icon" type="image/svg+xml" href="../media/logo.svg">
-  <script src="../js/main.js?v=15"></script>
+  <link rel="icon" type="image/svg+xml" href="/media/logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/task.css?v=7">
 </head>
-<body class="t2">
+<body class="t2 page-home">
 
-<a class="skip-link" href="#overview">Skip to content</a>
-<div id="progress" aria-hidden="true"></div>
-
-<nav class="top">
-  <div class="wrap">
-    <a class="brand" href="../"><svg class="logo" viewBox="0 0 64 64" aria-hidden="true"><rect class="lg-tile" x="2" y="2" width="60" height="60" rx="14"/><path class="lg-glyph" d="M14 17h6v24M14 41h12"/><path class="lg-glyph" d="M40.5 29.2a7.6 7.6 0 1 0 0 11.6"/><rect class="lg-caret" x="45" y="21" width="7.5" height="21" rx="1.2"/></svg><span>LangCode<span class="y">'27</span></span></a>
-    <div class="navlinks">
-      <a href="#overview">Task</a>
-      <a href="#subtasks">Subtasks</a>
-      <a href="#data">Data</a>
-      <a href="#evaluation">Evaluation</a>
-      <a href="#participate">Participate</a>
-      <span class="sep" aria-hidden="true"></span>
-      <a class="sib" href="../task1/">&larr; Task 1</a>
-    </div>
-    <button class="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
-      <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11Z"/></svg>
-      <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.4"/><path d="M12 2.5v2.4M12 19.1v2.4M2.5 12h2.4M19.1 12h2.4M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M19.1 4.9l-1.7 1.7M6.6 17.4l-1.7 1.7"/></svg>
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="/task2/" aria-label="Shared Task 2 home">
+      <svg class="logo" viewBox="0 0 64 64" aria-hidden="true"><rect class="lg-tile" x="2" y="2" width="60" height="60" rx="14"/><path class="lg-glyph" d="M14 17h6v24M14 41h12"/><path class="lg-glyph" d="M40.5 29.2a7.6 7.6 0 1 0 0 11.6"/><rect class="lg-caret" x="45" y="21" width="7.5" height="21" rx="1.2"/></svg>
+      <span class="brand-text"><span class="brand-name">LangCode<span>'27</span></span><span class="brand-sub">Shared Task 2</span></span>
+    </a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+      <span></span><span></span><span></span>
     </button>
-  </div>
-</nav>
-
-<header class="hero thero" id="top">
-  <div class="wrap thero-grid">
-    <div>
-      <p class="crumbs" data-reveal><a href="../">LangCode 2027</a> / <a href="../#tasks">Shared Tasks</a> / Task 2</p>
-      <h1 class="title" data-reveal style="--d:60ms"><span class="tno">shared_task[2]</span>Adversarial Prompt Detection</h1>
-      <p class="tagline" data-reveal style="--d:120ms">Guardrails trained on English break on other
-        languages. Build one that catches a <b>malicious coding prompt</b> even when it is
-        <b>code-mixed</b> or <b>transliterated</b>.</p>
-      <div class="meta-row" data-reveal style="--d:180ms">
-        <span>18 languages</span>
-        <span>~250K prompts</span>
-        <span>macro-F1</span>
-        <span>surprise languages</span>
-      </div>
-      <div class="hero-actions" data-reveal style="--d:240ms">
-        <span class="btn ghost" title="The CodaBench competition opens with the training data release">CodaBench &middot; coming soon</span>
-        <a class="btn primary" href="#subtasks">See the subtasks</a>
-        <a class="btn" href="#dates">Dates</a>
-      </div>
-    </div>
-
-    <div data-reveal style="--d:200ms">
-      <div class="window">
-        <div class="bar"><i></i><i></i><i></i><span class="fn">guardrail.log</span><span class="live">live</span></div>
-        <div class="guard" id="guard" aria-hidden="true"></div>
-      </div>
-      <p class="demo-note">Illustrative. Prompt text is redacted; only the programming keywords,
-        which MALICE keeps verbatim, are shown.</p>
-    </div>
+    <nav id="nav-links" class="nav-links">
+      <a href="/task2/data/"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg>Data</a>
+      <a href="/task2/leaderboard/"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 21h8"/><path d="M12 16v5"/><path d="M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M17 5h3v2a3 3 0 0 1-3 3"/><path d="M7 5H4v2a3 3 0 0 0 3 3"/></svg>Leaderboard</a>
+      <a href="/task2/participate/"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21V4"/><path d="M5 4h13l-2.5 4.5L18 13H5"/></svg>Participate</a>
+      <a href="/task2/paper/"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6"/><path d="M9 17h6"/></svg>Paper Submission</a>
+      <a href="/organizers/"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c.6-3.4 3-5.4 6-5.4s5.4 2 6 5.4"/><circle cx="17" cy="9" r="2.4"/><path d="M16.5 14.7c2.4.2 4 1.9 4.5 4.8"/></svg>Organizers</a>
+      <a class="nav-cta" href="/">LangCode 2027</a>
+    </nav>
   </div>
 </header>
+
+<main>
+
+<section class="hero">
+  <div class="hero-photo" role="img" aria-label="The Golden Gate Bridge in San Francisco"></div>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow"><span class="dot"></span>Shared Task 2 · LangCode Workshop at NAACL 2027</p>
+      <h1><span class="tno">shared_task[2]</span>Adversarial <span>Prompt Detection</span></h1>
+      <p class="hero-sub">Guardrails for code-mixed and transliterated prompts</p>
+      <p class="lead">Given a prompt sent to a code model, decide whether it is <strong>benign</strong> or <strong>adversarial</strong>, and if adversarial, what kind of attack it is. Prompts are <strong>code-mixed</strong> across low-resource languages or <strong>transliterated</strong> into non-Latin scripts, with programming keywords kept as they are.</p>
+      <ul class="facts">
+        <li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4.5" width="18" height="16" rx="2"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4"/></svg>June 1–5, 2027</li>
+        <li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4"/></svg>San Francisco, California</li>
+        <li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15V4"/><path d="M7.5 8.5 12 4l4.5 4.5"/><path d="M4 15v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></svg>Submissions on CodaBench</li>
+      </ul>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#task">Read the task <span aria-hidden="true">↓</span></a>
+        <a class="btn btn-ghost" href="/task2/participate/">How to participate</a>
+      </div>
+    </div>
+    <aside class="dates-card" aria-label="Important dates">
+  <div class="dc-head"><h2><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4.5" width="18" height="16" rx="2"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4"/></svg>Important Dates</h2><span class="dc-tag">AoE</span></div>
+    <section class="dc-group dc-group-dev">
+      <h3 class="dc-phase-head"><span class="dc-pill">Development phase</span><span class="dc-span">Oct 20 – Jan 15</span></h3>
+      <ol class="dc-list">
+        <li data-date="2026-10-20"><span class="dc-date">Oct 20, 2026</span><span class="dc-title">Training and development data release</span></li>
+        <li data-date="2026-10-20"><span class="dc-date">Oct 20, 2026</span><span class="dc-title">CodaBench registration opens</span></li>
+      </ol>
+    </section>
+    <section class="dc-group dc-group-eval">
+      <h3 class="dc-phase-head"><span class="dc-pill">Evaluation phase</span><span class="dc-span">Jan 15 – Jan 31</span></h3>
+      <ol class="dc-list">
+        <li data-date="2027-01-15"><span class="dc-date">Jan 15, 2027</span><span class="dc-title">Test data release / evaluation begins; surprise languages revealed</span></li>
+        <li data-date="2027-01-24"><span class="dc-date">Jan 24, 2027</span><span class="dc-title">Registration deadline</span></li>
+        <li data-date="2027-01-31"><span class="dc-date">Jan 31, 2027</span><span class="dc-title">System submission deadline</span></li>
+      </ol>
+    </section>
+    <section class="dc-group dc-group-after">
+      <h3 class="dc-phase-head"><span class="dc-pill">Results and papers</span></h3>
+      <ol class="dc-list">
+        <li data-date="2027-02-03"><span class="dc-date">Feb 3, 2027</span><span class="dc-title">Official results released</span></li>
+        <li data-date="2027-02-15"><span class="dc-date">Feb 15, 2027</span><span class="dc-title">Shared-task paper submission deadline</span></li>
+        <li data-date="2027-03-26"><span class="dc-date">Mar 26, 2027</span><span class="dc-title">Notification of acceptance</span></li>
+        <li data-date="2027-04-16"><span class="dc-date">Apr 16, 2027</span><span class="dc-title">Camera-ready paper due</span></li>
+        <li data-date="2027-06-01"><span class="dc-date">Jun 1–5, 2027</span><span class="dc-title">Workshop at NAACL 2027, San Francisco</span></li>
+      </ol>
+    </section>
+  <p class="dc-countdown" hidden></p>
+  <p class="dc-note">Dates may change. Deadlines are 11:59 PM AoE.</p>
+</aside>
+  </div>
+</section>
 
 <div class="ticker" role="region" aria-label="Updates and important dates">
   <div class="wrap ticker-in">
@@ -80,266 +94,130 @@
     <div class="ticker-view">
       <div class="ticker-track">
         <div class="tk-set">
-          <span class="tk"><b>NAACL 2027</b>LangCode is co-located with NAACL 2027 &middot; June 1&ndash;5, 2027 &middot; San Francisco, California, USA</span>
-          <span class="tk"><b>Oct 26, 2026</b>First call for papers; shared task training data released</span>
-          <span class="tk"><b>Feb 5, 2027</b>Paper submission deadline</span>
-          <span class="tk"><b>Mar 12, 2027</b>Commitment deadline for ARR-reviewed papers</span>
-          <span class="tk"><b>Mar 26, 2027</b>Notification of acceptance</span>
-          <span class="tk"><b>Apr 16, 2027</b>Camera-ready due</span>
-          <span class="tk"><b>New</b>Formal <a href="../submission/">paper submission guidelines</a> are up</span>
-          <span class="tk"><b>New</b>Pages for <a href="../task1/">Shared Task 1</a> and <a href="../task2/">Shared Task 2</a> are up</span>
+          <span class="tk" data-date="2026-10-20"><b>Oct 20, 2026</b>Training and development data release; CodaBench registration opens</span>
+          <span class="tk" data-date="2027-01-15"><b>Jan 15, 2027</b>Test data release / evaluation begins; surprise languages revealed</span>
+          <span class="tk" data-date="2027-01-24"><b>Jan 24, 2027</b>Registration deadline</span>
+          <span class="tk" data-date="2027-01-31"><b>Jan 31, 2027</b>System submission deadline</span>
+          <span class="tk" data-date="2027-02-03"><b>Feb 3, 2027</b>Official results released</span>
+          <span class="tk" data-date="2027-02-15"><b>Feb 15, 2027</b>Shared-task paper submission deadline</span>
+          <span class="tk" data-date="2027-03-26"><b>Mar 26, 2027</b>Notification of acceptance</span>
+          <span class="tk" data-date="2027-04-16"><b>Apr 16, 2027</b>Camera-ready paper due</span>
+          <span class="tk" data-date="2027-06-01"><b>Jun 1–5, 2027</b>Workshop at NAACL 2027, San Francisco</span>
+          <span class="tk"><b>LangCode 2027</b>Co-located with NAACL 2027 · June 1–5, 2027 · San Francisco, California</span>
+          <span class="tk"><b>Also</b><a href="/task1/">Shared Task 1: Multilingual Code Generation</a></span>
+          <span class="tk" data-date="2027-02-05"><b>Feb 5, 2027</b>Regular workshop papers due. See the <a href="/#cfp">Call for Papers</a></span>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<main class="wrap">
+<section class="section" id="task">
+  <div class="wrap narrow">
+    <p class="kicker">The task</p>
+    <h2><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1"/></svg>Catch a malicious coding prompt in any language or script</h2>
 
-  <section id="overview">
-    <h2><span class="hash">##</span>The Task</h2>
-    <hr class="rule">
-    <p class="lede">Code-model safety filters are calibrated almost entirely on English. Rewrite a
-      malicious request in a low-resource language, or spell it out in another script, keep the
-      code keywords intact, and many of them stop working.</p>
-
-    <div class="big-stats" data-stagger>
-      <div class="bs" data-reveal>
-        <span class="n">0.93<span class="arr">&rarr;</span>0.21</span>
-        <span class="l">best classifier&rsquo;s accuracy, English vs. code-mixed malicious prompts</span>
-      </div>
-      <div class="bs" data-reveal>
-        <span class="n">~3&times;</span>
-        <span class="l">more malicious code generated by even the most safety-aligned model tested</span>
-      </div>
-      <div class="bs" data-reveal>
-        <span class="n">2 styles</span>
-        <span class="l">transliteration into native scripts is nearly as damaging as code-mixing</span>
-      </div>
-    </div>
-    <p class="muted small">Findings from MALICE (Raihan, Meher, Dhingra, Zampieri; Findings of EMNLP 2026).</p>
-
-    <div class="flow arrows" data-stagger style="margin-top:1.6rem">
-      <div class="step" data-reveal>
-        <span class="sn">01</span>
-        <h3>Seed</h3>
-        <p>A malicious English coding request from an established security benchmark.</p>
-      </div>
-      <div class="step" data-reveal>
-        <span class="sn">02</span>
-        <h3>Disguise</h3>
-        <p>Translated sentence by sentence into low-resource languages, or transliterated into a
-          non-Latin script, with programming keywords kept verbatim.</p>
-      </div>
-      <div class="step" data-reveal>
-        <span class="sn">03</span>
-        <h3>Detect</h3>
-        <p>Your system decides: benign or adversarial? And if adversarial, what kind of attack?</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="subtasks">
-    <h2><span class="hash">##</span>Subtasks</h2>
-    <hr class="rule">
-    <div class="duo" data-stagger>
-      <div class="card" data-reveal>
-        <span class="tag">Subtask A</span>
-        <h3>Benign or adversarial?</h3>
-        <p>Binary classification of each prompt sent to a code model. This is the main
-          leaderboard.</p>
-        <span class="glyph" aria-hidden="true">0|1</span>
-      </div>
-      <div class="card" data-reveal>
-        <span class="tag">Subtask B</span>
-        <h3>Which attack?</h3>
-        <p>For adversarial prompts, identify the attack type. Finer-grained, and closer to what a
-          real guardrail needs to log.</p>
-        <span class="glyph" aria-hidden="true">#?</span>
-      </div>
-    </div>
-    <p class="muted small" style="margin-top:.9rem">Participation is free, and a constrained track
-      keeps low-compute teams competitive.</p>
-  </section>
-
-  <section id="data">
-    <h2><span class="hash">##</span>Data</h2>
-    <hr class="rule">
-    <p class="lede">The task builds on <b>MALICE</b>, a ~250K-prompt benchmark of code-mixed and
-      transliterated adversarial prompts, split evenly between the two attack styles.</p>
-
-    <div class="stats" data-stagger>
-      <div class="stat" data-reveal>
-        <span class="n" data-count="250" data-pre="~" data-post="K">~250K</span>
-        <span class="l">adversarial prompts</span>
-      </div>
-      <div class="stat" data-reveal>
-        <span class="n" data-count="18">18</span>
-        <span class="l">languages</span>
-      </div>
-      <div class="stat" data-reveal>
-        <span class="n" data-count="9">9</span>
-        <span class="l">source security benchmarks</span>
-      </div>
+    <div class="io">
+      <div class="io-box"><span class="io-tag"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 13h5l1.5 2.5h5L16 13h5"/><path d="M5.5 5h13L21 13v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5z"/></svg>Input</span><p>One prompt to a code model, code-mixed across low-resource languages or transliterated into a non-Latin script.</p></div>
+      <span class="io-arrow" aria-hidden="true">→</span>
+      <div class="io-box"><span class="io-tag"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12V4h8l9.5 9.5-8 8z"/><circle cx="7.5" cy="8.5" r="1.4"/></svg>Output</span><p>Benign or adversarial (Subtask A), and the attack type for adversarial prompts (Subtask B).</p></div>
     </div>
 
-    <div class="langs" data-stagger>
-      <div class="grp" data-reveal>
-        <h3>Code-mixed <span class="ct">10 languages</span></h3>
-        <p>Low-resource, Latin script. Sentences are mixed across languages within one prompt.</p>
-        <div class="pills">
-          <span>Swahili</span><span>Yoruba</span><span>Tagalog</span><span>Somali</span>
-          <span>Hausa</span><span>Igbo</span><span>Cebuano</span><span>Malagasy</span>
-          <span>Sundanese</span><span>Javanese</span>
-        </div>
-      </div>
-      <div class="grp" data-reveal>
-        <h3>Transliterated <span class="ct">8 languages</span></h3>
-        <p>Written in non-Latin scripts (Chinese in Pinyin).</p>
-        <div class="pills">
-          <span>Chinese<span class="sc">Pinyin</span></span>
-          <span>Hindi<span class="sc">हिन्दी</span></span>
-          <span>Russian<span class="sc">Русский</span></span>
-          <span>Arabic<span class="sc" dir="rtl">العربية</span></span>
-          <span>Japanese<span class="sc">日本語</span></span>
-          <span>Korean<span class="sc">한국어</span></span>
-          <span>Greek<span class="sc">Ελληνικά</span></span>
-          <span>Bengali<span class="sc">বাংলা</span></span>
-        </div>
-      </div>
-      <div class="grp" data-reveal>
-        <h3>Surprise <span class="ct">? languages</span></h3>
-        <p>Held back until the evaluation window, for a cross-lingual leaderboard.</p>
-        <div class="pills">
-          <span class="q">???</span><span class="q">???</span><span class="q">???</span>
-        </div>
-      </div>
+    <h3 class="sub-h"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4.5A1.5 1.5 0 0 1 5.5 3H20v15H5.5A1.5 1.5 0 0 0 4 19.5z"/><path d="M4 19.5A1.5 1.5 0 0 0 5.5 21H20v-3"/></svg>Background</h3>
+    <p>Code-model safety filters are calibrated almost entirely on English. Rewrite a malicious request in a low-resource language, or spell it out in another script, keep the code keywords intact, and many filters stop working. In MALICE, the best classifier's accuracy fell from <strong>0.93</strong> on English to <strong>0.21</strong> on code-mixed malicious prompts, and even the most safety-aligned model tested produced about <strong>3×</strong> more malicious code.</p>
+    <p class="note-small">Findings from MALICE (Raihan, Meher, Dhingra, Zampieri; Findings of EMNLP 2026).</p>
+  </div>
+</section>
+
+<section class="section section-tint" id="subtasks">
+  <div class="wrap">
+    <h2><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 9 5-9 5-9-5z"/><path d="m3 13 9 5 9-5"/></svg>Two subtasks</h2>
+    <div class="levels levels-2">
+      <article class="level level-main">
+        <span class="level-id wide">A</span>
+        <h3><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4.5 6v5.5c0 4.6 3.2 8.2 7.5 9.5 4.3-1.3 7.5-4.9 7.5-9.5V6z"/></svg>Benign or adversarial?</h3>
+        <p>Binary classification of each prompt sent to a code model. This is the main leaderboard.</p>
+        <p class="level-cat">Label: 0 benign, 1 adversarial</p>
+      </article>
+      <article class="level level-alt">
+        <span class="level-id wide">B</span>
+        <h3><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5 2.5 20h19z"/><path d="M12 10v4.5M12 17.3v.1"/></svg>Which attack?</h3>
+        <p>For adversarial prompts, identify the attack type. Finer-grained, and closer to what a real guardrail needs to log.</p>
+        <p class="level-cat">Attack categories are listed with the training data</p>
+      </article>
     </div>
+    <p class="note-small">Every prompt is either code-mixed or transliterated. See <a href="/task2/data/">Data</a> for the 18 languages.</p>
+  </div>
+</section>
 
-    <div class="warn">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5 2.5 20h19L12 3.5Z"/><path d="M12 10v4.5M12 17.2v.1"/></svg>
-      <div><strong>Content warning and responsible use.</strong> The data contains prompts
-        written to elicit malicious code. Like MALICE itself, it is released for defensive safety
-        research only, under restricted-use terms that participants accept on registration.</div>
+<section class="section" id="phases">
+  <div class="wrap">
+    <p class="kicker">Two phases, both on CodaBench</p>
+    <h2><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21V4"/><path d="M5 4h13l-2.5 4.5L18 13H5"/></svg>Development, then evaluation</h2>
+    <div class="phases">
+  <article class="phase phase-dev">
+    <p class="phase-tag">Phase 1</p>
+    <h3><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 4a5 5 0 0 0-4.8 6.4L4 16.6V20h3.4l6.2-6.2A5 5 0 0 0 20 9l-3 1-2-2 1-3z"/></svg>Development phase</h3>
+    <p class="phase-when">Oct 20, 2026 – Jan 15, 2027</p>
+    <dl>
+      <dt><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg>Data</dt><dd>Training and dev sets, plus the starter kit</dd>
+      <dt><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="3.8"/><path d="M4.5 20.5c.8-4 3.8-6.2 7.5-6.2s6.7 2.2 7.5 6.2"/></svg>You</dt><dd>Build and tune your system</dd>
+      <dt><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15V4"/><path d="M7.5 8.5 12 4l4.5 4.5"/><path d="M4 15v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></svg>CodaBench</dt><dd>Submit predictions on the dev set to see your macro-F1 and check your file format. Practice only: it does not count toward the final ranking.</dd>
+    </dl>
+  </article>
+  <article class="phase phase-eval">
+    <p class="phase-tag">Phase 2 · Final</p>
+    <h3><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1"/></svg>Evaluation phase</h3>
+    <p class="phase-when">Jan 15 – Jan 31, 2027</p>
+    <dl>
+      <dt><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg>Data</dt><dd>A new test set, released Jan 15, without labels, including surprise languages</dd>
+      <dt><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="3.8"/><path d="M4.5 20.5c.8-4 3.8-6.2 7.5-6.2s6.7 2.2 7.5 6.2"/></svg>You</dt><dd>Run your final system on it</dd>
+      <dt><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15V4"/><path d="M7.5 8.5 12 4l4.5 4.5"/><path d="M4 15v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></svg>CodaBench</dt><dd>Submit your test predictions by Jan 31. These decide the official ranking, published Feb 3.</dd>
+    </dl>
+  </article>
+</div>
+  </div>
+</section>
+
+<section class="section section-tint">
+  <div class="wrap">
+    <p class="kicker">Next steps</p>
+    <h2><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="19" r="2.2"/><circle cx="18" cy="5" r="2.2"/><path d="M8.2 19H16a3.5 3.5 0 0 0 0-7H8a3.5 3.5 0 0 1 0-7h7.8"/></svg>How to take part</h2>
+    <div class="steps steps-3">
+      <a class="step step-link" href="/task2/data/"><span class="step-n">1</span><h3><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="M7.5 10.5 12 15l4.5-4.5"/><path d="M4 15v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></svg>Get the data</h3><p>Training and dev sets plus a starter kit, released Oct 20, 2026.</p><span class="go">Data →</span></a>
+      <a class="step step-link" href="/task2/participate/"><span class="step-n">2</span><h3><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15V4"/><path d="M7.5 8.5 12 4l4.5 4.5"/><path d="M4 15v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></svg>Submit on CodaBench</h3><p>Practice on the dev set until Jan 15, then submit test predictions by Jan 31, 2027.</p><span class="go">Participate →</span></a>
+      <a class="step step-link" href="/task2/paper/"><span class="step-n">3</span><h3><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16z"/><path d="m13.5 6.5 4 4"/></svg>Write your paper</h3><p>Describe your system in up to 4 pages, due Feb 15, 2027.</p><span class="go">Paper Submission →</span></a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="evaluation">
-    <h2><span class="hash">##</span>Evaluation</h2>
-    <hr class="rule">
-    <p class="lede">Systems are ranked by macro-F1, so a classifier cannot win by favoring the
-      majority class.</p>
+<section class="sf-band" aria-label="The Painted Ladies and downtown San Francisco">
+  <div class="wrap">
+    <p class="sf-kicker"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4"/></svg>LangCode 2027 · NAACL 2027</p>
+    <h2>See you in San Francisco</h2>
+    <p>Teams present their systems at LangCode 2027, the First Language and Code Workshop, co-located with NAACL 2027, June 1–5.</p>
+  </div>
+</section>
 
-    <div class="formula" data-reveal role="img" aria-label="Macro F1 equals one over the number of classes, times the sum over classes c of F1 for class c">
-      <span class="v">Macro-F1</span>
-      <span class="op">=</span>
-      <span class="frac"><span>1</span><span>|<span class="v">C</span>|</span></span>
-      <span class="sum"><span class="big">&Sigma;</span><span class="sub"><span class="v">c</span>&thinsp;&isin;&thinsp;<span class="v">C</span></span></span>
-      <span class="hl">F1</span><span>(<span class="v">c</span>)</span>
-    </div>
-
-    <div class="facts" data-stagger>
-      <dl class="fact" data-reveal>
-        <dt>Main leaderboard</dt>
-        <dd>Macro-F1 on held-out prompts in the <b>18 task languages</b>.</dd>
-      </dl>
-      <dl class="fact" data-reveal>
-        <dt>Cross-lingual leaderboard</dt>
-        <dd>Macro-F1 on <b>surprise languages</b> never seen in training. Does your guardrail
-          generalize?</dd>
-      </dl>
-    </div>
-  </section>
-
-  <section id="dates">
-    <h2><span class="hash">##</span>Dates</h2>
-    <hr class="rule">
-    <p class="lede">All dates are tentative. Deadlines are 11:59&nbsp;PM UTC-12 (Anywhere on Earth).</p>
-    <ol class="timeline">
-      <li data-date="2026-10-26">
-        <span class="when">October 26, 2026</span>
-        <span class="what">Training data released<span class="flag">next</span></span>
-      </li>
-      <li>
-        <span class="when">TBA</span>
-        <span class="what">Evaluation window; surprise languages revealed; dates announced with the training data</span>
-      </li>
-      <li data-date="2027-02-05">
-        <span class="when">February 5, 2027</span>
-        <span class="what">Paper submission deadline</span>
-      </li>
-      <li data-date="2027-03-12">
-        <span class="when">March 12, 2027</span>
-        <span class="what">Commitment deadline for ARR-reviewed papers</span>
-      </li>
-      <li data-date="2027-03-26">
-        <span class="when">March 26, 2027</span>
-        <span class="what">Notification of acceptance</span>
-      </li>
-      <li data-date="2027-04-16">
-        <span class="when">April 16, 2027</span>
-        <span class="what">Camera-ready due</span>
-      </li>
-      <li data-date="2027-06-05">
-        <span class="when">June 2027</span>
-        <span class="what">LangCode at <b>NAACL 2027</b> (June 1&ndash;5), San Francisco, California, USA</span>
-      </li>
-    </ol>
-  </section>
-
-  <section id="participate">
-    <h2><span class="hash">##</span>Participate</h2>
-    <hr class="rule">
-    <ol class="steps">
-      <li>Join the CodaBench competition and accept the research-use terms. <span class="muted">The link goes live here with the training data.</span></li>
-      <li>Download the training data and starter kit, and build your detector.</li>
-      <li>Submit predictions during the evaluation window, including on the surprise languages.</li>
-    </ol>
-    <p class="muted small">Questions? Email the organizers at
-      <span style="font-family: var(--mono);">mraihan&nbsp;[at]&nbsp;nd&nbsp;[dot]&nbsp;edu</span>.</p>
-
-    <h3 style="margin:2rem 0 0;font-size:1rem;">Cite the source benchmark</h3>
-    <div class="bib">
-      <button class="copy-btn" type="button">copy</button>
-<pre>@inproceedings{raihan2026malice,
-  title     = {On the Robustness of Code {LLM} Guardrails to Code-mixed and Transliterated Inputs},
-  author    = {Raihan, Nishat and Meher, Dipak and Dhingra, Bhuwan and Zampieri, Marcos},
-  booktitle = {Findings of the Association for Computational Linguistics: EMNLP 2026},
-  year      = {2026}
-}</pre>
-    </div>
-
-    <a class="sibling to1" href="../task1/" data-reveal>
-      <span>
-        <span class="k">&larr; shared_task[1]</span>
-        <span class="t">Multilingual Code Generation</span>
-        <span class="d">One problem, 100+ natural languages, one correct program.</span>
-      </span>
-      <span class="go" aria-hidden="true">&rarr;</span>
-    </a>
-  </section>
 
 </main>
 
-<footer id="contact">
+<footer class="footer">
   <div class="wrap">
-    <div class="frow">
-      <div>
-        <div><strong>LangCode 2027</strong> &middot; The First Language and Code Workshop &middot; NAACL 2027</div>
-        <div class="muted">Contact the lead organizer at
-          <span style="font-family: var(--mono);">mraihan&nbsp;[at]&nbsp;nd&nbsp;[dot]&nbsp;edu</span></div>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <svg class="logo" viewBox="0 0 64 64" aria-hidden="true"><rect class="lg-tile" x="2" y="2" width="60" height="60" rx="14"/><path class="lg-glyph" d="M14 17h6v24M14 41h12"/><path class="lg-glyph" d="M40.5 29.2a7.6 7.6 0 1 0 0 11.6"/><rect class="lg-caret" x="45" y="21" width="7.5" height="21" rx="1.2"/></svg>
+        <p><strong>Shared Task 2: Adversarial Prompt Detection</strong> is part of <a href="/">LangCode 2027, the First Language and Code Workshop</a>, co-located with NAACL 2027 in San Francisco. Questions: <a href="mailto:mraihan@nd.edu">mraihan@nd.edu</a></p>
       </div>
-      <div>
-        <a href="../#cfp">Call for Papers</a> &middot;
-        <a href="../submission/">Paper Submission</a> &middot;
-        <a href="../task1/">Task 1</a> &middot;
-        <a href="../task2/">Task 2</a> &middot;
-        <a href="../organizers/">Organizers</a>
-      </div>
+      <p class="footer-also">Also at LangCode 2027: <a href="/task1/">Task 1: Multilingual Code Generation →</a></p>
     </div>
-    <div class="sig"><span class="c">$</span> guard --detect --lang=any --script=any</div>
+    <p class="credits">Photos from Wikimedia Commons:
+      <a href="https://commons.wikimedia.org/wiki/File:GoldenGateBridge_BakerBeach_MC.jpg" target="_blank" rel="noopener">Golden Gate Bridge</a> by Christian Mehlführer (CC BY 3.0);
+      <a href="https://commons.wikimedia.org/wiki/File:Painted_Ladies_San_Francisco_January_2013_panorama_2.jpg" target="_blank" rel="noopener">Painted Ladies</a> by King of Hearts (CC BY-SA 3.0);
+      <a href="https://commons.wikimedia.org/wiki/File:San_Francisco_from_Pier_7_September_2013_panorama_edit.jpg" target="_blank" rel="noopener">San Francisco from Pier 7</a> by King of Hearts (CC BY-SA 3.0). Tinted.</p>
   </div>
 </footer>
 
+<script src="/js/task.js?v=2"></script>
 </body>
 </html>
