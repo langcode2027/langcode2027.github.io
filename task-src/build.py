@@ -18,8 +18,8 @@ ROOT = HERE.parent
 # Shared schedule, the same as BanglaKnight (BLP 2027 Task 1).
 # (ISO date used for the countdown, label shown, milestone, phase)
 DATES = [
-    ("2026-10-20", "Oct 20, 2026", "Training and development data release", "dev"),
-    ("2026-10-20", "Oct 20, 2026", "CodaBench registration opens", "dev"),
+    ("2026-10-30", "Oct 30, 2026", "Training and development data release", "dev"),
+    ("2026-10-30", "Oct 30, 2026", "CodaBench registration opens", "dev"),
     ("2027-01-15", "Jan 15, 2027", "Test data release / evaluation begins", "eval"),
     ("2027-01-24", "Jan 24, 2027", "Registration deadline", "eval"),
     ("2027-01-31", "Jan 31, 2027", "System submission deadline", "eval"),
@@ -31,7 +31,7 @@ DATES = [
 ]
 
 PHASE_NAMES = {
-    "dev": ("Development phase", "Oct 20 – Jan 15"),
+    "dev": ("Development phase", "Oct 30 – Jan 15"),
     "eval": ("Evaluation phase", "Jan 15 – Jan 31"),
     "after": ("Results and papers", ""),
 }
@@ -171,7 +171,7 @@ def phases_block(t):
   <article class="phase phase-dev">
     <p class="phase-tag">Phase 1</p>
     <h3>{icon("tool")}Development phase</h3>
-    <p class="phase-when">Oct 20, 2026 – Jan 15, 2027</p>
+    <p class="phase-when">Oct 30, 2026 – Jan 15, 2027</p>
     <dl>
       <dt>{icon("data")}Data</dt><dd>Training and dev sets, plus the starter kit</dd>
       <dt>{icon("user")}You</dt><dd>Build and tune your system</dd>
