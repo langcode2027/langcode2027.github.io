@@ -23,62 +23,36 @@
       </div>
     </div>
     <p class="note-small">Each example is one prompt with a Subtask A label (benign or adversarial) and, for adversarial prompts, a Subtask B attack type. Train your detector on the train set; tune it and practice submitting on CodaBench with the dev set; make your final predictions on the test set, which adds new prompts and surprise languages. Download links will appear here on October 30, 2026.</p>
-  </div>
-</section>
-
-<section class="section section-tint">
-  <div class="wrap">
-    <h2>{{i:globe}}How the prompts are built</h2>
-    <p class="section-lead">The task builds on <strong>MALICE</strong>, a benchmark of about 250K code-mixed and transliterated adversarial prompts, split evenly between the two attack styles. A malicious English coding request from an established security benchmark is translated sentence by sentence into low-resource languages, or transliterated into a non-Latin script. Programming keywords stay as they are.</p>
-    <ul class="stats-row">
-      <li><strong>~250K</strong><span>adversarial prompts in MALICE</span></li>
-      <li><strong>18</strong><span>task languages</span></li>
-      <li><strong>9</strong><span>source security benchmarks</span></li>
-    </ul>
-    <div class="lang-groups">
-      <div class="kit-item">
-        <span class="kit-icon" aria-hidden="true">{{i:shuffle}}10 languages</span>
-        <h3>Code-mixed</h3>
-        <p>Low-resource, Latin script. Sentences are mixed across languages within one prompt.</p>
-        <div class="pills">
-          <span>Swahili</span><span>Yoruba</span><span>Tagalog</span><span>Somali</span><span>Hausa</span>
-          <span>Igbo</span><span>Cebuano</span><span>Malagasy</span><span>Sundanese</span><span>Javanese</span>
-        </div>
-      </div>
-      <div class="kit-item">
-        <span class="kit-icon" aria-hidden="true">{{i:type}}8 languages</span>
-        <h3>Transliterated</h3>
-        <p>Written in non-Latin scripts (Chinese in Pinyin).</p>
-        <div class="pills">
-          <span>Chinese<span class="sc">Pinyin</span></span><span>Hindi<span class="sc">हिन्दी</span></span>
-          <span>Russian<span class="sc">Русский</span></span><span>Arabic<span class="sc" dir="rtl">العربية</span></span>
-          <span>Japanese<span class="sc">日本語</span></span><span>Korean<span class="sc">한국어</span></span>
-          <span>Greek<span class="sc">Ελληνικά</span></span><span>Bengali<span class="sc">বাংলা</span></span>
-        </div>
-      </div>
-      <div class="kit-item">
-        <span class="kit-icon" aria-hidden="true">{{i:question}}? languages</span>
-        <h3>Surprise</h3>
-        <p>Held back until the evaluation phase, for a cross-lingual leaderboard. Revealed Jan 15, 2027.</p>
-        <div class="pills"><span>???</span><span>???</span><span>???</span></div>
-      </div>
-    </div>
     <aside class="callout callout-warn" role="note">
       {{i:lock}}<p><strong>Content warning and responsible use.</strong> The data contains prompts written to elicit malicious code. Like MALICE itself, it is released for defensive safety research only, under restricted-use terms that participants accept when they register.</p>
     </aside>
   </div>
 </section>
 
-<section class="section">
+<section class="section section-tint">
   <div class="wrap">
     <h2>{{i:book}}Cite the source benchmark</h2>
+    <p class="section-lead">The task builds on <a href="https://aclanthology.org/2026.findings-emnlp.568/" target="_blank" rel="noopener">MALICE ↗</a> (Findings of EMNLP 2026), a benchmark of about 250K code-mixed and transliterated adversarial prompts. If you use the data, please cite:</p>
     <div class="bib">
       <button class="copy-btn" type="button">copy</button>
-<pre>@inproceedings{raihan2026malice,
-  title     = {On the Robustness of Code {LLM} Guardrails to Code-mixed and Transliterated Inputs},
-  author    = {Raihan, Nishat and Meher, Dipak and Dhingra, Bhuwan and Zampieri, Marcos},
-  booktitle = {Findings of the Association for Computational Linguistics: EMNLP 2026},
-  year      = {2026}
+<pre>@inproceedings{raihan-etal-2026-robustness,
+    title = "On the Robustness of Code {LLM} Guardrails to Code-mixed and Transliterated Inputs",
+    author = "Raihan, Nishat  and
+      Meher, Dipak  and
+      Dhingra, Bhuwan  and
+      Zampieri, Marcos",
+    editor = "Lee, Hung-Yi  and
+      Dev, Sunipa  and
+      Li, Jessy  and
+      Elliott, Desmond",
+    booktitle = "Findings of the {A}ssociation for {C}omputational {L}inguistics: {EMNLP} 2026",
+    month = oct,
+    year = "2026",
+    address = "Budapest, Hungary",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2026.findings-emnlp.568/",
+    pages = "11962--11981",
+    ISBN = "979-8-89176-462-0"
 }</pre>
     </div>
   </div>

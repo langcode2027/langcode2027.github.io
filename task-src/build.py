@@ -58,7 +58,7 @@ TASKS = {
         "test_note": "; surprise languages revealed",
         "eval_data": "A new test set, released Jan 15, without labels, including surprise languages",
         "dev_codabench": "Submit predictions on the dev set to see your macro-F1 and check your file format. Practice only: it does not count toward the final ranking.",
-        "data_desc": "The starter kit and how the prompts are built.",
+        "data_desc": "The starter kit and the MALICE citation.",
         "other": "task1",
     },
 }
@@ -235,6 +235,7 @@ def ticker(key, t):
 
 
 def nav(key, t, active):
+    o = TASKS[t["other"]]
     current = ' class="active" aria-current="page"'
     links = "\n".join(
         f'      <a href="{url(key, s)}"{current if s == active else ""}>{icon(ico)}{label}</a>'
@@ -252,6 +253,7 @@ def nav(key, t, active):
     <nav id="nav-links" class="nav-links">
 {links}
       <a href="/organizers/">{icon("people")}Organizers</a>
+      <a class="nav-other" href="{url(t["other"], "home")}" style="--other: {o["theme"]}" title="Shared Task {o["n"]}: {o["name"]}">Task {o["n"]} <span aria-hidden="true">→</span></a>
       <a class="nav-cta" href="/">LangCode 2027</a>
     </nav>
   </div>
@@ -328,7 +330,7 @@ def render(key, i):
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/task.css?v=9">
+  <link rel="stylesheet" href="/css/task.css?v=10">
 </head>
 <body class="{t["cls"]} page-{slug}">
 
