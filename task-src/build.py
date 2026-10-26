@@ -46,6 +46,7 @@ TASKS = {
         "test_note": "",
         "eval_data": "New held-out problems, released Jan 15, with hidden unit tests",
         "dev_codabench": "Submit solutions for the dev problems to see your Pass@1 and check your file format. Practice only: it does not count toward the final ranking.",
+        "data_desc": "The starter kit and one problem in many languages.",
         "other": "task2",
     },
     "task2": {
@@ -57,15 +58,16 @@ TASKS = {
         "test_note": "; surprise languages revealed",
         "eval_data": "A new test set, released Jan 15, without labels, including surprise languages",
         "dev_codabench": "Submit predictions on the dev set to see your macro-F1 and check your file format. Practice only: it does not count toward the final ranking.",
+        "data_desc": "The starter kit and how the prompts are built.",
         "other": "task1",
     },
 }
 
-# slug, menu label, page title, one-line description ({name} is the task name), header photo, icon
+# slug, menu label, page title, one-line description (None: the task's own data_desc), header photo, icon
 PAGES = [
     ("home", "Home", "", "", "sf-golden-gate.jpg", None),
-    ("data", "Data", "Data", "What you get, how the data is built, and the starter kit.", "sf-embarcadero.jpg", "data"),
-    ("leaderboard", "Leaderboard", "Leaderboard", "Metrics, development-phase scores, and official results.", "sf-painted-ladies.jpg", "trophy"),
+    ("data", "Data", "Data", None, "sf-embarcadero.jpg", "data"),
+    ("leaderboard", "Leaderboard", "Leaderboard", "The dev and test leaderboards, and how teams are ranked.", "sf-painted-ladies.jpg", "trophy"),
     ("participate", "Participate", "Participate", "Two phases on CodaBench: practice on the dev set, then submit on the test set.", "sf-golden-gate.jpg", "flag"),
     ("paper", "Paper Submission", "Paper Submission", "How to write and submit your system description paper.", "sf-painted-ladies.jpg", "paper"),
 ]
@@ -119,6 +121,16 @@ ICONS = {
 }
 
 ICON_RE = __import__("re").compile(r"\{\{i:([a-z-]+)\}\}")
+LB_EMPTY_RE = __import__("re").compile(r"\{\{LB_EMPTY:([ts]+)\}\}")
+LEADERBOARD_ROWS = 10   # placeholder rows per board until results come in
+
+
+def lb_empty(spec):
+    """Placeholder rows: the rank, then one dash per column after it (t = text, s = score, right-aligned)."""
+    cells = "".join('<td class="lb-score">&mdash;</td>' if c == "s" else "<td>&mdash;</td>" for c in spec)
+    return "\n          ".join(
+        f'<tr><td class="lb-rank">{k}</td>{cells}</tr>'
+        for k in range(1, LEADERBOARD_ROWS + 1))
 
 
 def icons_in(html):
@@ -294,6 +306,8 @@ def render(key, i):
     body = (body.replace("{{DATES_CARD}}", dates_card(t))
                 .replace("{{PHASES}}", phases_block(t))
                 .replace("{{TICKER}}", ticker(key, t)))
+    body = LB_EMPTY_RE.sub(lambda m: lb_empty(m.group(1)), body)
+    desc = desc or t["data_desc"]
     if slug == "home":
         full_title = f"Shared Task {t['n']}: {t['name']} · LangCode 2027"
         desc = f"LangCode 2027 Shared Task {t['n']}: {t['short']}. Co-located with NAACL 2027."
@@ -314,7 +328,7 @@ def render(key, i):
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/task.css?v=8">
+  <link rel="stylesheet" href="/css/task.css?v=9">
 </head>
 <body class="{t["cls"]} page-{slug}">
 

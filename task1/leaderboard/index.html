@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Leaderboard · Task 1: Multilingual Code Generation · LangCode 2027</title>
-  <meta name="description" content="Metrics, development-phase scores, and official results.">
+  <meta name="description" content="The dev and test leaderboards, and how teams are ranked.">
   <meta name="theme-color" content="#0E8A5F">
   <link rel="canonical" href="https://langcode2027.github.io/task1/leaderboard/">
   <link rel="icon" type="image/svg+xml" href="/media/logo.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/task.css?v=8">
+  <link rel="stylesheet" href="/css/task.css?v=9">
 </head>
 <body class="t1 page-leaderboard">
 
@@ -40,7 +40,7 @@
   <div class="wrap">
     <p class="crumbs"><a href="/">LangCode 2027</a> <span aria-hidden="true">/</span> <a href="/task1/">Task 1</a> <span aria-hidden="true">/</span> Leaderboard</p>
     <h1><svg class="ico ico-h1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 21h8"/><path d="M12 16v5"/><path d="M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M17 5h3v2a3 3 0 0 1-3 3"/><path d="M7 5H4v2a3 3 0 0 0 3 3"/></svg>Leaderboard</h1>
-    <p class="page-desc">Metrics, development-phase scores, and official results.</p>
+    <p class="page-desc">The dev and test leaderboards, and how teams are ranked.</p>
   </div>
 </section>
 <div class="ticker" role="region" aria-label="Updates and important dates">
@@ -67,18 +67,67 @@
   </div>
 </div>
 <section class="section">
-  <div class="wrap narrow">
-    <h2><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 17a8 8 0 1 1 16 0"/><path d="m12 17 4-5"/></svg>Metrics</h2>
-    <p>Systems are ranked by execution-based <strong>Pass@1</strong> on hidden tests, macro-averaged across language resource tiers <em>T</em>:</p>
-    <div class="formula" role="img" aria-label="Score equals one over the number of tiers, times the sum over tiers t of Pass at 1 for tier t">
-      <span class="v">Score</span><span>=</span>
-      <span class="frac"><span>1</span><span>|<span class="v">T</span>|</span></span>
-      <span class="sum"><span class="big">Σ</span><span class="sub"><span class="v">t</span> ∈ <span class="v">T</span></span></span>
-      <span class="hl">Pass@1</span><span>(<span class="v">t</span>)</span>
+  <div class="wrap lb-page">
+    <p class="lb-refresh"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>The boards fill in once CodaBench opens on Oct 30, 2026.</p>
+    <div class="lb-grid">
+      <div class="lb-col">
+        <h2><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 4a5 5 0 0 0-4.8 6.4L4 16.6V20h3.4l6.2-6.2A5 5 0 0 0 20 9l-3 1-2-2 1-3z"/></svg>Dev Leaderboard</h2>
+        <p class="lb-sub">Dev set &middot; Oct 30 &ndash; Jan 15 &middot; for practice, does not count toward the final ranking</p>
+        <table class="lb-table lb-compact" aria-label="Dev leaderboard">
+          <thead><tr><th>#</th><th>Team</th><th>Track</th><th class="lb-score">Score</th></tr></thead>
+          <tbody>
+          <tr><td class="lb-rank">1</td><td>&mdash;</td><td>&mdash;</td><td class="lb-score">&mdash;</td></tr>
+          <tr><td class="lb-rank">2</td><td>&mdash;</td><td>&mdash;</td><td class="lb-score">&mdash;</td></tr>
+          <tr><td class="lb-rank">3</td><td>&mdash;</td><td>&mdash;</td><td class="lb-score">&mdash;</td></tr>
+          <tr><td class="lb-rank">4</td><td>&mdash;</td><td>&mdash;</td><td class="lb-score">&mdash;</td></tr>
+          <tr><td class="lb-rank">5</td><td>&mdash;</td><td>&mdash;</td><td class="lb-score">&mdash;</td></tr>
+          <tr><td class="lb-rank">6</td><td>&mdash;</td><td>&mdash;</td><td class="lb-score">&mdash;</td></tr>
+          <tr><td class="lb-rank">7</td><td>&mdash;</td><td>&mdash;</td><td class="lb-score">&mdash;</td></tr>
+          <tr><td class="lb-rank">8</td><td>&mdash;</td><td>&mdash;</td><td class="lb-score">&mdash;</td></tr>
+          <tr><td class="lb-rank">9</td><td>&mdash;</td><td>&mdash;</td><td class="lb-score">&mdash;</td></tr>
+          <tr><td class="lb-rank">10</td><td>&mdash;</td><td>&mdash;</td><td class="lb-score">&mdash;</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="lb-col">
+        <h2><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 21h8"/><path d="M12 16v5"/><path d="M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M17 5h3v2a3 3 0 0 1-3 3"/><path d="M7 5H4v2a3 3 0 0 0 3 3"/></svg>Test Leaderboard</h2>
+        <p class="lb-sub">New test problems &middot; Jan 15 &ndash; 31 &middot; official ranking for each track Feb 3</p>
+        <table class="lb-table lb-compact" aria-label="Test leaderboard">
+          <thead><tr><th>#</th><th>Team</th><th>Track</th><th class="lb-score">Score</th></tr></thead>
+          <tbody>
+          <tr><td class="lb-rank">1</td><td>&mdash;</td><td>&mdash;</td><td class="lb-score">&mdash;</td></tr>
+          <tr><td class="lb-rank">2</td><td>&mdash;</td><td>&mdash;</td><td class="lb-score">&mdash;</td></tr>
+          <tr><td class="lb-rank">3</td><td>&mdash;</td><td>&mdash;</td><td class="lb-score">&mdash;</td></tr>
+          <tr><td class="lb-rank">4</td><td>&mdash;</td><td>&mdash;</td><td class="lb-score">&mdash;</td></tr>
+          <tr><td class="lb-rank">5</td><td>&mdash;</td><td>&mdash;</td><td class="lb-score">&mdash;</td></tr>
+          <tr><td class="lb-rank">6</td><td>&mdash;</td><td>&mdash;</td><td class="lb-score">&mdash;</td></tr>
+          <tr><td class="lb-rank">7</td><td>&mdash;</td><td>&mdash;</td><td class="lb-score">&mdash;</td></tr>
+          <tr><td class="lb-rank">8</td><td>&mdash;</td><td>&mdash;</td><td class="lb-score">&mdash;</td></tr>
+          <tr><td class="lb-rank">9</td><td>&mdash;</td><td>&mdash;</td><td class="lb-score">&mdash;</td></tr>
+          <tr><td class="lb-rank">10</td><td>&mdash;</td><td>&mdash;</td><td class="lb-score">&mdash;</td></tr>
+          </tbody>
+        </table>
+      </div>
     </div>
-    <p class="note-small">Pass@1: the share of problems whose single generated solution passes all hidden tests. Each tier counts equally.</p>
 
-    <h2><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 9 5-9 5-9-5z"/><path d="m3 13 9 5 9-5"/></svg>Two tracks</h2>
+    <div class="metric-note">
+      <p class="metric-line"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 17a8 8 0 1 1 16 0"/><path d="m12 17 4-5"/></svg><strong>How the score works</strong></p>
+      <math display="block" class="metric-eq" aria-label="Score equals one over the number of tiers, times the sum over tiers t of Pass at 1 for tier t">
+        <mrow><mtext>Score</mtext><mo>=</mo><mfrac><mn>1</mn><mrow><mo stretchy="false">|</mo><mi>T</mi><mo stretchy="false">|</mo></mrow></mfrac><munder><mo>&sum;</mo><mrow><mi>t</mi><mo>&isin;</mo><mi>T</mi></mrow></munder><mtext>Pass@1</mtext><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow>
+      </math>
+      <div class="metric-defs">
+        <div class="metric-def">
+          <p class="metric-line"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="m8.5 12.2 2.4 2.4 4.6-4.8"/></svg><strong>Pass@1(<em>t</em>)</strong></p>
+          <p>The share of problems in tier <em>t</em> whose single generated solution passes all hidden tests. Execution-based, no partial credit.</p>
+        </div>
+        <div class="metric-def">
+          <p class="metric-line"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v16M7 20h10M5 7h14"/><path d="m5 7-2.5 6a2.8 2.8 0 0 0 5 0zM19 7l-2.5 6a2.8 2.8 0 0 0 5 0z"/></svg><strong>Every tier counts</strong></p>
+          <p>Pass@1 is macro-averaged across the language resource tiers <em>T</em>, each with the same weight, so high-resource languages alone cannot win.</p>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="lb-tracks"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 9 5-9 5-9-5z"/><path d="m3 13 9 5 9-5"/></svg>Two tracks</h2>
     <div class="phases">
       <article class="phase phase-dev">
         <p class="phase-tag">Constrained</p>
@@ -93,20 +142,6 @@
         <p>Show how far today's strongest systems reach across languages.</p>
       </article>
     </div>
-
-    <h2><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 4a5 5 0 0 0-4.8 6.4L4 16.6V20h3.4l6.2-6.2A5 5 0 0 0 20 9l-3 1-2-2 1-3z"/></svg>Development phase</h2>
-    <div class="placeholder">
-      <p><strong>Oct 30, 2026 – Jan 15, 2027.</strong> Scores on the dev set appear on the CodaBench leaderboard as you submit. They are for practice and do not count toward the final ranking.</p>
-    </div>
-
-    <h2><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 21h8"/><path d="M12 16v5"/><path d="M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M17 5h3v2a3 3 0 0 1-3 3"/><path d="M7 5H4v2a3 3 0 0 0 3 3"/></svg>Evaluation phase: official results</h2>
-    <div class="placeholder">
-      <p>Final submissions on the new test problems are made on CodaBench from Jan 15 to Jan 31, 2027. The official ranking for each track will be published here on <strong>February 3, 2027</strong>.</p>
-    </div>
-    <table class="lb-table" aria-label="Official leaderboard">
-      <thead><tr><th>Rank</th><th>Team</th><th>Track</th><th>Score</th></tr></thead>
-      <tbody><tr><td colspan="4" class="lb-empty">No results yet</td></tr></tbody>
-    </table>
     <p class="note-small">How to submit: see <a href="/task1/participate/">Participate</a>.</p>
   </div>
 </section>

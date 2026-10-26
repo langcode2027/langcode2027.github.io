@@ -639,3 +639,40 @@ p { margin: 0 0 1rem; }
 .demo-label { display: inline-flex; align-items: center; gap: 6px; font-size: .78rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); margin-bottom: -6px; }
 .demo-label .ico { width: 14px; height: 14px; color: var(--primary); }
 .code-demo[hidden] { display: none; }
+
+/* ---------- Data and Leaderboard pages, as on banglaknight.github.io ---------- */
+/* Starter kit cards: release dates (later, download links) under each card */
+.kit-item .kit-links { margin-top: 12px; color: var(--ink); font-weight: 600; line-height: 1.9; }
+.kit-links .ico { width: 15px; height: 15px; vertical-align: -2px; margin-right: 6px; color: var(--primary); }
+.note-small code { font-family: var(--mono); font-size: .85em; }
+
+/* Leaderboard: dev and test boards side by side, then a compact metric note */
+.lb-page { max-width: 1040px; }
+.lb-refresh { display: flex; align-items: center; gap: 8px; margin: 0 0 18px; color: var(--ink-soft); font-size: .95rem; }
+.lb-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start; }
+.lb-grid h2 { margin: 0; font-size: 1.4rem; }
+.lb-sub { margin: 4px 0 0; min-height: 2.8em; color: var(--muted); font-size: .88rem; }
+.lb-grid .lb-table { margin-top: 12px; }
+.lb-rank { width: 1%; white-space: nowrap; color: var(--muted); }
+.lb-compact { font-size: .88rem; }
+.lb-grid .lb-compact th, .lb-grid .lb-compact td { padding: 5px 10px; line-height: 1.35; color: var(--muted); }
+.lb-compact thead th { font-size: .85rem; white-space: nowrap; color: var(--ink) !important; }
+.lb-table .lb-score { text-align: right; font-family: var(--mono); font-variant-numeric: tabular-nums; }
+.lb-table th.lb-score { font-family: var(--font-head); }
+.metric-note { background: var(--bg-tint); border: 1px solid var(--line); border-radius: 16px; padding: 14px 18px; margin: 36px 0 0; }
+.metric-note p { margin: 0; }
+.metric-line { color: var(--ink); }
+.metric-line .ico { vertical-align: -0.2em; margin-right: 6px; color: var(--primary); }
+.metric-eq { display: block math; margin: 12px auto 10px; font-family: "STIX Two Math", "Cambria Math", "Latin Modern Math", math; font-size: 1.25rem; color: var(--ink); overflow-x: auto; overflow-y: hidden; padding: 2px 0; }
+.metric-defs { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 10px 0 0; }
+.metric-def { min-width: 0; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 10px 14px; }
+.metric-def p { margin: 0; color: var(--ink-soft); font-size: .9rem; }
+.metric-def p.metric-line { color: var(--ink); font-size: .95rem; margin-bottom: 4px; }
+.metric-sub { margin-top: 6px !important; color: var(--ink-soft); font-size: .95rem; }
+.lb-tracks { margin-top: 44px; }
+@media (max-width: 760px) {
+  .lb-grid, .metric-defs { grid-template-columns: 1fr; }
+  .lb-grid { gap: 32px; }
+  .lb-sub { min-height: 0; }
+}
+@media (max-width: 620px) { .metric-eq { font-size: 1rem; } }
