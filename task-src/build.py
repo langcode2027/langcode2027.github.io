@@ -15,14 +15,14 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
 
-# Shared schedule, the same as BanglaKnight (BLP 2027 Task 1).
+# Shared schedule. The test phase matches BanglaKnight (BLP 2027 Task 1).
 # (ISO date used for the countdown, label shown, milestone, phase)
 DATES = [
     ("2026-10-30", "Oct 30, 2026", "Training and development data release", "dev"),
     ("2026-10-30", "Oct 30, 2026", "CodaBench registration opens", "dev"),
-    ("2027-01-15", "Jan 15, 2027", "Test data release / evaluation begins", "eval"),
-    ("2027-01-24", "Jan 24, 2027", "Registration deadline", "eval"),
-    ("2027-01-31", "Jan 31, 2027", "System submission deadline", "eval"),
+    ("2027-01-08", "Jan 8, 2027", "Test data release / test phase begins", "eval"),
+    ("2027-01-17", "Jan 17, 2027", "CodaBench registration deadline", "eval"),
+    ("2027-01-24", "Jan 24, 2027", "System submission deadline", "eval"),
     ("2027-02-03", "Feb 3, 2027", "Official results released", "after"),
     ("2027-02-15", "Feb 15, 2027", "Shared-task paper submission deadline", "after"),
     ("2027-03-26", "Mar 26, 2027", "Notification of acceptance", "after"),
@@ -31,8 +31,8 @@ DATES = [
 ]
 
 PHASE_NAMES = {
-    "dev": ("Development phase", "Oct 30 – Jan 15"),
-    "eval": ("Evaluation phase", "Jan 15 – Jan 31"),
+    "dev": ("Development phase", "Oct 30 – Jan 7"),
+    "eval": ("Test phase", "Jan 8 – Jan 24"),
     "after": ("Results and papers", ""),
 }
 
@@ -41,12 +41,14 @@ TASKS = {
         "n": 1,
         "cls": "t1",
         "name": "Multilingual Code Generation",
-        "short": "Code generation from 100+ natural languages",
+        "short": "Code generation from 50 natural languages",
         "theme": "#0E8A5F",
         "test_note": "",
-        "eval_data": "New held-out problems, released Jan 15, with hidden unit tests",
+        "eval_data": "1,000 test problems, released Jan 8, each with 2 of its 5 test cases shown",
+        "dev_data": "Trial and dev sets, the scorer and the submission format",
+        "eval_submit": "Submit your test solutions by Jan 24. These decide the official ranking, published Feb 3.",
         "dev_codabench": "Submit solutions for the dev problems to see your Pass@1 and check your file format. Practice only: it does not count toward the final ranking.",
-        "data_desc": "The starter kit and one problem in many languages.",
+        "data_desc": "The trial, dev and test sets, the scorer, and one problem in several languages.",
         "other": "task2",
     },
     "task2": {
@@ -56,7 +58,9 @@ TASKS = {
         "short": "Guardrails for code-mixed and transliterated prompts",
         "theme": "#D93A43",
         "test_note": "; surprise languages revealed",
-        "eval_data": "A new test set, released Jan 15, without labels, including surprise languages",
+        "eval_data": "A new test set, released Jan 8, without labels, including surprise languages",
+        "dev_data": "Training and dev sets, plus the starter kit",
+        "eval_submit": "Submit your test predictions by Jan 24. These decide the official ranking, published Feb 3.",
         "dev_codabench": "Submit predictions on the dev set to see your macro-F1 and check your file format. Practice only: it does not count toward the final ranking.",
         "data_desc": "The starter kit and the MALICE citation.",
         "other": "task1",
@@ -159,7 +163,7 @@ def dates_card(t):
         name, span = PHASE_NAMES[phase]
         items = "\n".join(
             f'        <li data-date="{iso}"><span class="dc-date">{label}</span>'
-            f'<span class="dc-title">{escape(title + (t["test_note"] if iso == "2027-01-15" else ""))}</span></li>'
+            f'<span class="dc-title">{escape(title + (t["test_note"] if iso == "2027-01-08" else ""))}</span></li>'
             for iso, label, title, p in DATES if p == phase
         )
         span_html = f'<span class="dc-span">{span}</span>' if span else ""
@@ -183,21 +187,21 @@ def phases_block(t):
   <article class="phase phase-dev">
     <p class="phase-tag">Phase 1</p>
     <h3>{icon("tool")}Development phase</h3>
-    <p class="phase-when">Oct 30, 2026 – Jan 15, 2027</p>
+    <p class="phase-when">Oct 30, 2026 – Jan 7, 2027</p>
     <dl>
-      <dt>{icon("data")}Data</dt><dd>Training and dev sets, plus the starter kit</dd>
+      <dt>{icon("data")}Data</dt><dd>{t["dev_data"]}</dd>
       <dt>{icon("user")}You</dt><dd>Build and tune your system</dd>
       <dt>{icon("upload")}CodaBench</dt><dd>{t["dev_codabench"]}</dd>
     </dl>
   </article>
   <article class="phase phase-eval">
     <p class="phase-tag">Phase 2 · Final</p>
-    <h3>{icon("target")}Evaluation phase</h3>
-    <p class="phase-when">Jan 15 – Jan 31, 2027</p>
+    <h3>{icon("target")}Test phase</h3>
+    <p class="phase-when">Jan 8 – Jan 24, 2027</p>
     <dl>
       <dt>{icon("data")}Data</dt><dd>{t["eval_data"]}</dd>
       <dt>{icon("user")}You</dt><dd>Run your final system on it</dd>
-      <dt>{icon("upload")}CodaBench</dt><dd>Submit your test predictions by Jan 31. These decide the official ranking, published Feb 3.</dd>
+      <dt>{icon("upload")}CodaBench</dt><dd>{t["eval_submit"]}</dd>
     </dl>
   </article>
 </div>"""
@@ -207,7 +211,7 @@ def ticker(key, t):
     """Rolling updates bar: the dates still ahead, then news. task.js loops it."""
     items, last = [], None
     for iso, label, title, _p in DATES:
-        title = title + (t["test_note"] if iso == "2027-01-15" else "")
+        title = title + (t["test_note"] if iso == "2027-01-08" else "")
         if label == last:   # two milestones on one day share one item
             items[-1] = items[-1].replace("</span>", f"; {escape(title)}</span>")
             continue

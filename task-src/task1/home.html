@@ -4,8 +4,8 @@
     <div class="hero-copy">
       <p class="eyebrow"><span class="dot"></span>Shared Task 1 · LangCode Workshop at NAACL 2027</p>
       <h1><span class="tno">shared_task[1]</span>Multilingual <span>Code Generation</span></h1>
-      <p class="hero-sub">One problem, 100+ natural languages, one correct program</p>
-      <p class="lead">Given a programming problem described in one of more than 100 natural languages, write a solution in the requested programming language, such as <strong>Python</strong>, <strong>C</strong>, <strong>C++</strong>, or <strong>Java</strong>, that passes hidden unit tests. Your system should solve the problem no matter which natural language it is posed in.</p>
+      <p class="hero-sub">One problem, 50 natural languages, one correct program</p>
+      <p class="lead">Given a programming problem described in one of 50 natural languages, among them Amharic, Georgian, Hawaiian, Nigerian Pidgin and Telugu, write a solution in the requested programming language, such as <strong>Python</strong>, <strong>C</strong> or <strong>Lua</strong>, that passes the hidden test cases. Your system should solve the problem no matter which natural language it is posed in.</p>
       <ul class="facts">
         <li>{{i:calendar}}June 1–5, 2027</li>
         <li>{{i:pin}}San Francisco, California</li>
@@ -28,9 +28,9 @@
     <h2>{{i:target}}Write the same program, whatever language the problem is in</h2>
 
     <div class="io">
-      <div class="io-box"><span class="io-tag">{{i:inbox}}Input</span><p>A function signature in one programming language (Python, C, C++, Java, and others) and a problem description in one of 100+ natural languages.</p></div>
+      <div class="io-box"><span class="io-tag">{{i:inbox}}Input</span><p>A function signature in one programming language (Python, C, Lua and others) and a problem description in one of 50 natural languages.</p></div>
       <span class="io-arrow" aria-hidden="true">→</span>
-      <div class="io-box"><span class="io-tag">{{i:tag}}Output</span><p>One solution in the same programming language. It counts only if it passes every hidden unit test.</p></div>
+      <div class="io-box"><span class="io-tag">{{i:tag}}Output</span><p>One solution in the same programming language. It counts only if it passes every test case.</p></div>
     </div>
 
     <h3 class="sub-h">{{i:book}}Background</h3>
@@ -45,30 +45,30 @@
       <article class="level level-main">
         <span class="level-id wide">Pass@1</span>
         <h3>{{i:check}}One attempt</h3>
-        <p>The share of problems whose single generated solution passes all hidden tests.</p>
+        <p>The share of problems whose single solution passes all of its test cases.</p>
         <p class="level-cat">Execution-based, no partial credit</p>
       </article>
       <article class="level level-alt">
-        <span class="level-id wide">avg</span>
-        <h3>{{i:scale}}Every tier counts</h3>
-        <p>Pass@1 is macro-averaged across language resource tiers, so high-resource languages alone cannot win.</p>
-        <p class="level-cat">Each resource tier carries the same weight</p>
+        <span class="level-id wide">0&ndash;3</span>
+        <h3>{{i:scale}}Every class shown</h3>
+        <p>The leaderboard also gives Pass@1 for each language class, from class 0 (the least resourced) to class 3, and for each programming language.</p>
+        <p class="level-cat">The ranking uses overall Pass@1</p>
       </article>
       <article class="level level-main">
         <span class="level-id wide">tests</span>
         <h3>{{i:eye-off}}Hidden tests</h3>
-        <p>Test cases are never released. The test problems are newly written and held out.</p>
-        <p class="level-cat">Limits contamination from pretraining data</p>
+        <p>Each problem has 5 test cases. The data shows 2 of them; the other 3 stay hidden, and all 5 are scored.</p>
+        <p class="level-cat">The test problems are held out until Jan 8</p>
       </article>
     </div>
-    <p class="note-small">Full metric and the two tracks (constrained and open): see <a href="/task1/leaderboard/">Leaderboard</a>.</p>
+    <p class="note-small">Full metric and leaderboard columns: see <a href="/task1/leaderboard/">Leaderboard</a>.</p>
   </div>
 </section>
 
 <section class="section" id="phases">
   <div class="wrap">
     <p class="kicker">Two phases, both on CodaBench</p>
-    <h2>{{i:flag}}Development, then evaluation</h2>
+    <h2>{{i:flag}}Development, then test</h2>
     {{PHASES}}
   </div>
 </section>
@@ -78,8 +78,8 @@
     <p class="kicker">Next steps</p>
     <h2>{{i:route}}How to take part</h2>
     <div class="steps steps-3">
-      <a class="step step-link" href="/task1/data/"><span class="step-n">1</span><h3>{{i:download}}Get the data</h3><p>Training and dev problems plus a starter kit, released Oct 30, 2026.</p><span class="go">Data →</span></a>
-      <a class="step step-link" href="/task1/participate/"><span class="step-n">2</span><h3>{{i:upload}}Submit on CodaBench</h3><p>Practice on the dev set until Jan 15, then submit test solutions by Jan 31, 2027.</p><span class="go">Participate →</span></a>
+      <a class="step step-link" href="/task1/data/"><span class="step-n">1</span><h3>{{i:download}}Get the data</h3><p>Trial and dev problems plus the scorer, released Oct 30, 2026.</p><span class="go">Data →</span></a>
+      <a class="step step-link" href="/task1/participate/"><span class="step-n">2</span><h3>{{i:upload}}Submit on CodaBench</h3><p>Practice on the dev set until Jan 7, then submit test solutions by Jan 24, 2027.</p><span class="go">Participate →</span></a>
       <a class="step step-link" href="/task1/paper/"><span class="step-n">3</span><h3>{{i:pen}}Write your paper</h3><p>Describe your system in up to 4 pages, due Feb 15, 2027.</p><span class="go">Paper Submission →</span></a>
     </div>
   </div>

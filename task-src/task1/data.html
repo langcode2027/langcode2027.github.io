@@ -5,9 +5,9 @@
     <div class="kit">
       <div class="kit-item">
         <span class="kit-icon" aria-hidden="true">{{i:data}}DATA</span>
-        <h3>Train and dev problems</h3>
-        <p>Problems with descriptions across resource tiers, for building and tuning your system.</p>
-        <p class="kit-links">{{i:clock}}Train and dev: Oct 30, 2026<br>{{i:clock}}Test: Jan 15, 2027, new problems</p>
+        <h3>Trial, dev and test sets</h3>
+        <p>Trial: 100 problems with all test cases and a reference solution each. Dev: 500 problems; test: 1,000 problems, each showing 2 of its 5 test cases.</p>
+        <p class="kit-links">{{i:clock}}Trial and dev: Oct 30, 2026<br>{{i:clock}}Test: Jan 8, 2027</p>
       </div>
       <div class="kit-item">
         <span class="kit-icon" aria-hidden="true">{{i:chart}}BASE</span>
@@ -16,13 +16,13 @@
         <p class="kit-links">{{i:clock}}With the data, Oct 30, 2026</p>
       </div>
       <div class="kit-item">
-        <span class="kit-icon" aria-hidden="true">{{i:file-code}}FORMAT</span>
-        <h3>Submission format</h3>
-        <p>How to package your solutions in the file format CodaBench accepts.</p>
+        <span class="kit-icon" aria-hidden="true">{{i:file-code}}SCORER</span>
+        <h3>Scorer and submission format</h3>
+        <p>The scoring program that runs on CodaBench, with a format check for your submission file, and how to package your solutions.</p>
         <p class="kit-links">{{i:clock}}With the data, Oct 30, 2026</p>
       </div>
     </div>
-    <p class="note-small">Each example is a function signature in one programming language (Python, C, C++, Java, and others) with a problem description in one natural language. Every problem comes with hidden unit tests that decide whether a solution is correct. Train your system on the train set; tune it and practice submitting on CodaBench with the dev set; make your final solutions on the test set. Download links will appear here on October 30, 2026.</p>
+    <p class="note-small">Each problem is a function signature in one programming language (Python, C, Lua and others) with a problem description in one of 50 natural languages. Every problem has 5 test cases: the trial set shows all of them, the dev and test sets show 2. The natural language of a problem is not given. There is no official training set: you may use any public data, models and tools. Tune your system and practice submitting on CodaBench with the dev set; make your final solutions on the test set. Download links will appear here on October 30, 2026.</p>
   </div>
 </section>
 
@@ -30,12 +30,12 @@
   <div class="wrap forms-grid">
     <div>
       <h2>{{i:globe}}One problem, many languages</h2>
-      <p>The task builds on <a href="https://aclanthology.org/2025.naacl-long.570/" target="_blank" rel="noopener">mHumanEval ↗</a> (NAACL 2025), a multilingual extension of HumanEval. The same problem is described in more than 100 natural languages, grouped into resource tiers by how much text each language has on the web:</p>
+      <p>The task builds on <a href="https://aclanthology.org/2025.naacl-long.570/" target="_blank" rel="noopener">mHumanEval ↗</a> (NAACL 2025), a multilingual extension of HumanEval. Each problem is described in one of 50 natural languages, grouped into the classes of Joshi et al. (2020) by how much text and how many tools each language has:</p>
       <ul class="plain">
-        <li><strong>High-resource:</strong> languages such as English and Spanish.</li>
-        <li><strong>Lower-resource:</strong> languages with far less text, where code models struggle most.</li>
+        <li><strong>Classes 0 and 1:</strong> languages with little text and few tools, such as Nigerian Pidgin, Hawaiian and Telugu, where code models struggle most.</li>
+        <li><strong>Classes 2 and 3:</strong> languages with more resources, such as Amharic and Georgian.</li>
       </ul>
-      <p>The problem also comes in several programming languages, and the solution must be written in the one requested. The correct program does not change with the natural language. The test set uses <strong>newly written problems</strong> so systems are scored on problems they cannot have memorized.</p>
+      <p>The solution must be written in the programming language of the signature. The correct program does not change with the natural language. The test problems are held out until the test phase.</p>
     </div>
 
     <div class="demo" aria-label="Example: one problem in several natural and programming languages">
@@ -44,60 +44,48 @@
         <span class="demo-label">{{i:globe}}Natural language</span>
         <div class="demo-tabs many" role="tablist" aria-label="Natural language">
           <button role="tab" class="tab active" aria-selected="true" data-doc="Return the sum of all even numbers in the list.">English</button>
-          <button role="tab" class="tab" aria-selected="false" data-doc="তালিকার সব জোড় সংখ্যার যোগফল ফেরত দাও।">বাংলা</button>
-          <button role="tab" class="tab" aria-selected="false" data-doc="Devuelve la suma de todos los números pares de la lista.">Español</button>
-          <button role="tab" class="tab" aria-selected="false" data-doc="返回列表中所有偶数的和。">中文</button>
-          <button role="tab" class="tab" aria-selected="false" data-doc="सूची की सभी सम संख्याओं का योग लौटाएँ।">हिन्दी</button>
-          <button role="tab" class="tab" aria-selected="false" data-doc="أعد مجموع جميع الأعداد الزوجية في القائمة." data-dir="rtl">العربية</button>
-          <button role="tab" class="tab" aria-selected="false" data-doc="Rudisha jumla ya namba zote shufwa katika orodha.">Kiswahili</button>
-          <button role="tab" class="tab" aria-selected="false" data-doc="リスト内のすべての偶数の合計を返す。">日本語</button>
-          <button role="tab" class="tab" aria-selected="false" data-doc="Верни сумму всех чётных чисел в списке.">Русский</button>
-          <button role="tab" class="tab" aria-selected="false" data-doc="Renvoie la somme de tous les nombres pairs de la liste.">Français</button>
-          <button role="tab" class="tab" aria-selected="false" data-doc="Listedeki tüm çift sayıların toplamını döndür.">Türkçe</button>
+          <button role="tab" class="tab" aria-selected="false" data-doc="Return di total of all di even numbers wey dey inside di list.">Naijá</button>
+          <button role="tab" class="tab" aria-selected="false" data-doc="జాబితాలోని అన్ని సరి సంఖ్యల మొత్తాన్ని తిరిగి ఇవ్వండి.">తెలుగు</button>
+          <button role="tab" class="tab" aria-selected="false" data-doc="በዝርዝሩ ውስጥ ያሉትን ሁሉንም ጥንድ ቁጥሮች ድምር ይመልሱ።">አማርኛ</button>
+          <button role="tab" class="tab" aria-selected="false" data-doc="დააბრუნე სიაში არსებული ყველა ლუწი რიცხვის ჯამი.">ქართული</button>
         </div>
         <span class="demo-label">{{i:code}}Programming language</span>
         <div class="demo-tabs pl-tabs" role="tablist" aria-label="Programming language">
           <button role="tab" class="tab active" aria-selected="true" data-pl="py">Python</button>
           <button role="tab" class="tab" aria-selected="false" data-pl="c">C</button>
-          <button role="tab" class="tab" aria-selected="false" data-pl="cpp">C++</button>
-          <button role="tab" class="tab" aria-selected="false" data-pl="java">Java</button>
+          <button role="tab" class="tab" aria-selected="false" data-pl="lua">Lua</button>
         </div>
       </div>
 <pre class="code-demo" data-pl="py"><span class="kw">def</span> sum_even(nums: list[int]) -&gt; int:
 <span class="str">    """
     <bdi class="doc">Return the sum of all even numbers in the list.</bdi>
-    &gt;&gt;&gt; sum_even([1, 2, 3, 4])
-    6
+
+    Example: sum_even([1, 2, 3, 4]) == 6
     """</span>
     <span class="kw">return</span> sum(n <span class="kw">for</span> n <span class="kw">in</span> nums <span class="kw">if</span> n % 2 == 0)</pre>
-<pre class="code-demo" data-pl="c" hidden><span class="str">/* <bdi class="doc">Return the sum of all even numbers in the list.</bdi>
-   sum_even({1, 2, 3, 4}, 4) == 6 */</span>
-<span class="kw">int</span> sum_even(<span class="kw">const int</span> *nums, <span class="kw">int</span> len) {
-    <span class="kw">int</span> s = 0;
-    <span class="kw">for</span> (<span class="kw">int</span> i = 0; i &lt; len; i++)
+<pre class="code-demo" data-pl="c" hidden><span class="str">/**
+ * <bdi class="doc">Return the sum of all even numbers in the list.</bdi>
+ *
+ * Example: sum_even([1, 2, 3, 4]) returns 6
+ */</span>
+<span class="kw">long long</span> sum_even(<span class="kw">const long long</span> *nums, <span class="kw">int</span> nums_len) {
+    <span class="kw">long long</span> s = 0;
+    <span class="kw">for</span> (<span class="kw">int</span> i = 0; i &lt; nums_len; i++)
         <span class="kw">if</span> (nums[i] % 2 == 0) s += nums[i];
     <span class="kw">return</span> s;
 }</pre>
-<pre class="code-demo" data-pl="cpp" hidden><span class="str">// <bdi class="doc">Return the sum of all even numbers in the list.</bdi>
-// sum_even({1, 2, 3, 4}) == 6</span>
-<span class="kw">int</span> sum_even(<span class="kw">const</span> std::vector&lt;<span class="kw">int</span>&gt;&amp; nums) {
-    <span class="kw">int</span> s = 0;
-    <span class="kw">for</span> (<span class="kw">int</span> n : nums)
-        <span class="kw">if</span> (n % 2 == 0) s += n;
-    <span class="kw">return</span> s;
-}</pre>
-<pre class="code-demo" data-pl="java" hidden><span class="str">/**
- * <bdi class="doc">Return the sum of all even numbers in the list.</bdi>
- * sumEven(new int[]{1, 2, 3, 4}) == 6
- */</span>
-<span class="kw">static int</span> sumEven(<span class="kw">int</span>[] nums) {
-    <span class="kw">int</span> s = 0;
-    <span class="kw">for</span> (<span class="kw">int</span> n : nums)
-        <span class="kw">if</span> (n % 2 == 0) s += n;
-    <span class="kw">return</span> s;
-}</pre>
+<pre class="code-demo" data-pl="lua" hidden><span class="str">-- <bdi class="doc">Return the sum of all even numbers in the list.</bdi>
+--
+-- Example: sum_even({1, 2, 3, 4}) == 6</span>
+<span class="kw">function</span> sum_even(nums)
+  <span class="kw">local</span> s = 0
+  <span class="kw">for</span> _, n <span class="kw">in</span> ipairs(nums) <span class="kw">do</span>
+    <span class="kw">if</span> n % 2 == 0 <span class="kw">then</span> s = s + n <span class="kw">end</span>
+  <span class="kw">end</span>
+  <span class="kw">return</span> s
+<span class="kw">end</span></pre>
       <div class="run"><span>$ run hidden_tests</span><span class="ok">✓ pass</span></div>
-      <p class="demo-foot">Illustrative problem, not from the test set. Click a tab to pin it.</p>
+      <p class="demo-foot">Illustrative problem, not from the data. In the data, the word "Example" is also translated. Click a tab to pin it.</p>
     </div>
   </div>
 </section>

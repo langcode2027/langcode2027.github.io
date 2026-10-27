@@ -4,21 +4,21 @@
     <div class="lb-grid">
       <div class="lb-col">
         <h2>{{i:tool}}Dev Leaderboard</h2>
-        <p class="lb-sub">Dev set &middot; Oct 30 &ndash; Jan 15 &middot; for practice, does not count toward the final ranking</p>
+        <p class="lb-sub">Dev set &middot; Oct 30 &ndash; Jan 7 &middot; for practice, does not count toward the final ranking</p>
         <table class="lb-table lb-compact" aria-label="Dev leaderboard">
-          <thead><tr><th>#</th><th>Team</th><th>Track</th><th class="lb-score">Score</th></tr></thead>
+          <thead><tr><th>#</th><th>Team</th><th class="lb-score">Pass@1</th></tr></thead>
           <tbody>
-          {{LB_EMPTY:tts}}
+          {{LB_EMPTY:ts}}
           </tbody>
         </table>
       </div>
       <div class="lb-col">
         <h2>{{i:trophy}}Test Leaderboard</h2>
-        <p class="lb-sub">New test problems &middot; Jan 15 &ndash; 31 &middot; official ranking for each track Feb 3</p>
+        <p class="lb-sub">New test problems &middot; Jan 8 &ndash; 24 &middot; official ranking Feb 3</p>
         <table class="lb-table lb-compact" aria-label="Test leaderboard">
-          <thead><tr><th>#</th><th>Team</th><th>Track</th><th class="lb-score">Score</th></tr></thead>
+          <thead><tr><th>#</th><th>Team</th><th class="lb-score">Pass@1</th></tr></thead>
           <tbody>
-          {{LB_EMPTY:tts}}
+          {{LB_EMPTY:ts}}
           </tbody>
         </table>
       </div>
@@ -26,36 +26,23 @@
 
     <div class="metric-note">
       <p class="metric-line">{{i:gauge}}<strong>How the score works</strong></p>
-      <math display="block" class="metric-eq" aria-label="Score equals one over the number of tiers, times the sum over tiers t of Pass at 1 for tier t">
-        <mrow><mtext>Score</mtext><mo>=</mo><mfrac><mn>1</mn><mrow><mo stretchy="false">|</mo><mi>T</mi><mo stretchy="false">|</mo></mrow></mfrac><munder><mo>&sum;</mo><mrow><mi>t</mi><mo>&isin;</mo><mi>T</mi></mrow></munder><mtext>Pass@1</mtext><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow>
+      <math display="block" class="metric-eq" aria-label="Pass at 1 equals the number of problems solved divided by the number of problems">
+        <mrow><mtext>Pass@1</mtext><mo>=</mo><mfrac><mtext>problems whose solution passes all its test cases</mtext><mtext>all problems</mtext></mfrac></mrow>
       </math>
       <div class="metric-defs">
         <div class="metric-def">
-          <p class="metric-line">{{i:check}}<strong>Pass@1(<em>t</em>)</strong></p>
-          <p>The share of problems in tier <em>t</em> whose single generated solution passes all hidden tests. Execution-based, no partial credit.</p>
+          <p class="metric-line">{{i:check}}<strong>All or nothing</strong></p>
+          <p>One solution per problem. Each problem has 5 test cases; if one fails, the problem counts as failed. No partial credit.</p>
         </div>
         <div class="metric-def">
-          <p class="metric-line">{{i:scale}}<strong>Every tier counts</strong></p>
-          <p>Pass@1 is macro-averaged across the language resource tiers <em>T</em>, each with the same weight, so high-resource languages alone cannot win.</p>
+          <p class="metric-line">{{i:scale}}<strong>More columns</strong></p>
+          <p>The CodaBench leaderboard also shows Pass@1 for each language class of Joshi et al. (2020), from class 0 (the least resourced) to class 3, and for each programming language. Teams are ranked by overall Pass@1 only.</p>
         </div>
       </div>
     </div>
 
-    <h2 class="lb-tracks">{{i:layers}}Two tracks</h2>
-    <div class="phases">
-      <article class="phase phase-dev">
-        <p class="phase-tag">Constrained</p>
-        <h3>{{i:cpu}}Small models</h3>
-        <p class="phase-when">Limits on model size and compute</p>
-        <p>So the winning idea does not need the biggest GPU budget. Exact limits are announced with the training data.</p>
-      </article>
-      <article class="phase phase-eval">
-        <p class="phase-tag">Open</p>
-        <h3>{{i:globe}}Anything goes</h3>
-        <p class="phase-when">No limits</p>
-        <p>Show how far today's strongest systems reach across languages.</p>
-      </article>
-    </div>
+    <h2 class="lb-tracks">{{i:layers}}One open track</h2>
+    <p>Any model, data or tool may be used, as long as your system paper describes it. Solutions must come from your system: do not write or fix them by hand.</p>
     <p class="note-small">How to submit: see <a href="/task1/participate/">Participate</a>.</p>
   </div>
 </section>
