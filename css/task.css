@@ -618,6 +618,10 @@ p { margin: 0 0 1rem; }
 .dc-head h2 .ico { width: 18px; height: 18px; color: var(--primary); }
 .facts li { display: inline-flex; align-items: center; gap: 6px; }
 .facts .ico { width: 15px; height: 15px; color: var(--primary); }
+.facts .fact-live { padding: 0; border-color: var(--primary); }
+.facts .fact-live a { display: inline-flex; align-items: center; gap: 6px; padding: 3px 14px; border-radius: 999px; color: var(--primary-deep); text-decoration: none; }
+.facts .fact-live a:hover { background: var(--primary); color: var(--primary-ink); }
+.facts .fact-live a:hover .ico { color: var(--primary-ink); }
 .io-tag, .kit-icon { display: inline-flex; align-items: center; gap: 5px; }
 .io-tag .ico, .kit-icon .ico { width: 14px; height: 14px; }
 .howto h3 { display: flex; align-items: center; gap: 8px; }
