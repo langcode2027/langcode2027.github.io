@@ -46,6 +46,7 @@ TASKS = {
         "test_note": "",
         "eval_data": "1,000 test problems, released Jan 8, each with 2 of its 5 test cases shown",
         "dev_data": "Trial and dev sets, the scorer and the submission format",
+        "questions": 'Questions: ask in the <a href="https://www.codabench.org/competitions/18470/#/forum" target="_blank" rel="noopener">Forum</a> of the CodaBench competition.',
         "eval_submit": "Submit your test solutions by Jan 24. These decide the official ranking, published Feb 3.",
         "dev_codabench": "Submit solutions for the dev problems to see your Pass@1 and check your file format. Practice only: it does not count toward the final ranking.",
         "data_desc": "The trial, dev and test sets, the scorer, and one problem in several languages.",
@@ -60,6 +61,7 @@ TASKS = {
         "test_note": "; surprise languages revealed",
         "eval_data": "A new test set, released Jan 8, without labels, including surprise languages",
         "dev_data": "Training and dev sets, plus the starter kit",
+        "questions": 'Questions: <a href="mailto:mraihan@nd.edu">mraihan@nd.edu</a>',
         "eval_submit": "Submit your test predictions by Jan 24. These decide the official ranking, published Feb 3.",
         "dev_codabench": "Submit predictions on the dev set to see your macro-F1 and check your file format. Practice only: it does not count toward the final ranking.",
         "data_desc": "The starter kit and the MALICE citation.",
@@ -293,7 +295,7 @@ def footer(t):
     <div class="footer-inner">
       <div class="footer-brand">
         {LOGO}
-        <p><strong>Shared Task {t["n"]}: {t["name"]}</strong> is part of <a href="/">LangCode 2027, the First Language and Code Workshop</a>, co-located with NAACL 2027 in San Francisco. Questions: <a href="mailto:mraihan@nd.edu">mraihan@nd.edu</a></p>
+        <p><strong>Shared Task {t["n"]}: {t["name"]}</strong> is part of <a href="/">LangCode 2027, the First Language and Code Workshop</a>, co-located with NAACL 2027 in San Francisco. {t["questions"]}</p>
       </div>
       <p class="footer-also">Also at LangCode 2027: <a href="{url(t["other"], "home")}">Task {o["n"]}: {o["name"]} →</a></p>
     </div>
