@@ -681,3 +681,15 @@ p { margin: 0 0 1rem; }
 .nav-links .nav-other { margin-left: 6px; color: var(--other); box-shadow: inset 0 0 0 1.5px var(--other); font-weight: 600; }
 .nav-links .nav-other:hover { background: var(--other); color: #fff; box-shadow: none; }
 @media (max-width: 1100px) { .nav-links .nav-other { margin: 6px 0 0; justify-content: center; } }
+
+/* Task 1: two starter-kit cards */
+.kit.kit-2 { grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 760px) { .kit.kit-2 { grid-template-columns: 1fr; } }
+
+/* Task 1 leaderboard: team and affiliation columns, team rules box (as on BanglaKnight) */
+.lb-team, .lb-aff { color: var(--muted); }
+.lb-refresh span { display: inline; }
+.team-rules { align-items: flex-start; }
+.team-rules > .ico { margin-top: 2px; }
+.team-rules p + p { margin-top: 8px; }
+.team-warn { color: #C8102E; font-weight: 700; }

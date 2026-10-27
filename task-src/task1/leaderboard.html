@@ -1,14 +1,20 @@
 <section class="section">
   <div class="wrap lb-page">
-    <p class="lb-refresh">{{i:clock}}Live results are on <a href="https://www.codabench.org/competitions/18470/#/results-tab" target="_blank" rel="noopener">CodaBench</a>.</p>
+    <p class="lb-refresh">{{i:clock}}<span>{{LB_UPDATED}} Live results are on <a href="https://www.codabench.org/competitions/18470/#/results-tab" target="_blank" rel="noopener">CodaBench</a>.</span></p>
+    <aside class="callout team-rules" role="note">
+      {{i:people}}<div>
+        <p>Individuals and teams can both take part. A team has at most <strong>5 members</strong>; an individual counts as a team of 1.</p>
+        <p class="team-warn">All submissions for one team must be made through one CodaBench account. Submitting for the same team from more than one account can get the team disqualified.</p>
+      </div>
+    </aside>
     <div class="lb-grid">
       <div class="lb-col">
         <h2>{{i:tool}}Dev Leaderboard</h2>
         <p class="lb-sub">Dev set &middot; Oct 27 &ndash; Jan 7 &middot; for practice, does not count toward the final ranking</p>
         <table class="lb-table lb-compact" aria-label="Dev leaderboard">
-          <thead><tr><th>#</th><th>Team</th><th class="lb-score">Pass@1</th></tr></thead>
+          <thead><tr><th>#</th><th>Team</th><th>Affiliation</th><th class="lb-score">Pass@1</th></tr></thead>
           <tbody>
-          {{LB_EMPTY:ts}}
+          {{LB_DEV_ROWS}}
           </tbody>
         </table>
       </div>
@@ -16,9 +22,9 @@
         <h2>{{i:trophy}}Test Leaderboard</h2>
         <p class="lb-sub">New test problems &middot; Jan 8 &ndash; 24 &middot; official ranking Feb 3</p>
         <table class="lb-table lb-compact" aria-label="Test leaderboard">
-          <thead><tr><th>#</th><th>Team</th><th class="lb-score">Pass@1</th></tr></thead>
+          <thead><tr><th>#</th><th>Team</th><th>Affiliation</th><th class="lb-score">Pass@1</th></tr></thead>
           <tbody>
-          {{LB_EMPTY:ts}}
+          {{LB_TEST_ROWS}}
           </tbody>
         </table>
       </div>
@@ -36,13 +42,11 @@
         </div>
         <div class="metric-def">
           <p class="metric-line">{{i:scale}}<strong>More columns</strong></p>
-          <p>The CodaBench leaderboard also shows Pass@1 for each language class of Joshi et al. (2020), from class 0 (the least resourced) to class 3, and for each programming language. Teams are ranked by overall Pass@1 only.</p>
+          <p>The CodaBench leaderboard also shows Pass@1 for each language class of <a href="https://aclanthology.org/2020.acl-main.560/" target="_blank" rel="noopener">Joshi et al. (2020) ↗</a>, from class 0 (the least resourced) to class 3, and for each programming language. Teams are ranked by overall Pass@1 only.</p>
         </div>
       </div>
     </div>
 
-    <h2 class="lb-tracks">{{i:layers}}One open track</h2>
-    <p>Any model, data or tool may be used, as long as your system paper describes it. Solutions must come from your system: do not write or fix them by hand.</p>
     <p class="note-small">How to submit: see <a href="/task1/participate/">Participate</a>.</p>
   </div>
 </section>

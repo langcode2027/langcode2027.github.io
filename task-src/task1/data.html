@@ -2,18 +2,12 @@
   <div class="wrap">
     <h2>{{i:package}}Starter kit <span class="badge">Released Oct 27, 2026</span></h2>
     <p class="section-lead">Everything is downloaded from this page; nothing comes from CodaBench. It gets you from zero to a valid submission.</p>
-    <div class="kit">
+    <div class="kit kit-2">
       <div class="kit-item">
         <span class="kit-icon" aria-hidden="true">{{i:data}}DATA</span>
         <h3>Trial, dev and test sets</h3>
         <p>Trial: 100 problems with all test cases and a reference solution each. Dev: 500 problems; test: 1,000 problems, each showing 2 of its 5 test cases.</p>
         <p class="kit-links">{{i:download}}Trial: <a href="/task1/data/files/trial.jsonl" download>trial.jsonl</a><br>{{i:download}}Dev: <a href="/task1/data/files/dev.jsonl" download>dev.jsonl</a><br>{{i:clock}}Test: posted here on Jan 8, 2027</p>
-      </div>
-      <div class="kit-item">
-        <span class="kit-icon" aria-hidden="true">{{i:chart}}BASE</span>
-        <h3>Public baselines</h3>
-        <p>Baseline results to compare against, so you know where you stand.</p>
-        <p class="kit-links">{{i:clock}}Coming soon</p>
       </div>
       <div class="kit-item">
         <span class="kit-icon" aria-hidden="true">{{i:file-code}}SCORER</span>
@@ -30,7 +24,7 @@
   <div class="wrap forms-grid">
     <div>
       <h2>{{i:globe}}One problem, many languages</h2>
-      <p>The task builds on <a href="https://aclanthology.org/2025.naacl-long.570/" target="_blank" rel="noopener">mHumanEval ↗</a> (NAACL 2025), a multilingual extension of HumanEval. Each problem is described in one of 50 natural languages, grouped into the classes of Joshi et al. (2020) by how much text and how many tools each language has:</p>
+      <p>The task builds on <a href="https://aclanthology.org/2025.naacl-long.570/" target="_blank" rel="noopener">mHumanEval ↗</a> (NAACL 2025), a multilingual extension of HumanEval. Each problem is described in one of 50 natural languages, grouped into the classes of <a href="https://aclanthology.org/2020.acl-main.560/" target="_blank" rel="noopener">Joshi et al. (2020) ↗</a> by how much text and how many tools each language has:</p>
       <ul class="plain">
         <li><strong>Classes 0 and 1:</strong> languages with little text and few tools, such as Nigerian Pidgin, Hawaiian and Telugu, where code models struggle most.</li>
         <li><strong>Classes 2 and 3:</strong> languages with more resources, such as Amharic and Georgian.</li>
@@ -92,7 +86,8 @@
 
 <section class="section">
   <div class="wrap">
-    <h2>{{i:book}}Cite the source benchmark</h2>
+    <h2>{{i:book}}Citations</h2>
+    <p>The source benchmark:</p>
     <div class="bib">
       <button class="copy-btn" type="button">copy</button>
 <pre>@inproceedings{raihan2025mhumaneval,
@@ -101,6 +96,18 @@
   booktitle = {Proceedings of NAACL 2025},
   year      = {2025},
   url       = {https://aclanthology.org/2025.naacl-long.570/}
+}</pre>
+    </div>
+    <p>The language classes (Class 0 to Class 3):</p>
+    <div class="bib">
+      <button class="copy-btn" type="button">copy</button>
+<pre>@inproceedings{joshi-etal-2020-state,
+  title     = {The State and Fate of Linguistic Diversity and Inclusion in the {NLP} World},
+  author    = {Joshi, Pratik and Santy, Sebastin and Budhiraja, Amar and Bali, Kalika and Choudhury, Monojit},
+  booktitle = {Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics},
+  pages     = {6282--6293},
+  year      = {2020},
+  url       = {https://aclanthology.org/2020.acl-main.560/}
 }</pre>
     </div>
   </div>

@@ -128,7 +128,10 @@ ICONS = {
 
 ICON_RE = __import__("re").compile(r"\{\{i:([a-z-]+)\}\}")
 LB_EMPTY_RE = __import__("re").compile(r"\{\{LB_EMPTY:([ts]+)\}\}")
-LEADERBOARD_ROWS = 10   # placeholder rows per board until results come in
+LEADERBOARD_ROWS = 10   # placeholder rows per board until results come in (Task 2)
+# Task 1 leaderboard data, written once a day by scripts/update_leaderboard.py (GitHub Action)
+LEADERBOARD_JSON = ROOT / "data" / "task1_leaderboard.json"
+TASK1_LB_ROWS = 30
 
 
 def lb_empty(spec):
@@ -137,6 +140,34 @@ def lb_empty(spec):
     return "\n          ".join(
         f'<tr><td class="lb-rank">{k}</td>{cells}</tr>'
         for k in range(1, LEADERBOARD_ROWS + 1))
+
+
+def leaderboard_parts():
+    """Task 1: rows for the dev and test boards and the 'Last updated' line, from data/task1_leaderboard.json."""
+    import json
+    from datetime import datetime, timedelta, timezone
+    data = json.loads(LEADERBOARD_JSON.read_text(encoding="utf-8")) if LEADERBOARD_JSON.exists() else {}
+
+    def rows(entries):
+        out = []
+        for k in range(max(TASK1_LB_ROWS, len(entries))):
+            if k < len(entries):
+                e = entries[k]
+                out.append(f'<tr><td class="lb-rank">{k + 1}</td><td class="lb-team">{escape(e["team"])}</td>'
+                           f'<td class="lb-aff">{escape(e["affiliation"])}</td><td class="lb-score">{e["score"]:.2f}</td></tr>')
+            else:
+                out.append(f'<tr><td class="lb-rank">{k + 1}</td><td class="lb-team">&mdash;</td>'
+                           f'<td class="lb-aff">&mdash;</td><td class="lb-score">&mdash;</td></tr>')
+        return "\n          ".join(out)
+
+    if data.get("updated"):
+        t = datetime.fromisoformat(data["updated"]).astimezone(timezone(timedelta(hours=-5)))
+        stamp = f"{t:%b} {t.day}, {t.year}, {t:%I:%M %p}".replace(" 0", " ")
+        updated = (f"<strong>Last updated: {stamp} EST (UTC&minus;5).</strong> "
+                   "The leaderboards on this page refresh every day at 12:00 AM EST.")
+    else:
+        updated = "The leaderboards on this page refresh every day at 12:00 AM EST (UTC&minus;5)."
+    return rows(data.get("dev", [])), rows(data.get("test", [])), updated
 
 
 def icons_in(html):
@@ -324,6 +355,9 @@ def render(key, i):
                 .replace("{{PHASES}}", phases_block(t))
                 .replace("{{TICKER}}", ticker(key, t)))
     body = LB_EMPTY_RE.sub(lambda m: lb_empty(m.group(1)), body)
+    if "{{LB_DEV_ROWS}}" in body:
+        dev_rows, test_rows, updated = leaderboard_parts()
+        body = body.replace("{{LB_DEV_ROWS}}", dev_rows).replace("{{LB_TEST_ROWS}}", test_rows).replace("{{LB_UPDATED}}", updated)
     desc = desc or t["data_desc"]
     if slug == "home":
         full_title = f"Shared Task {t['n']}: {t['name']} · LangCode 2027"
@@ -345,7 +379,7 @@ def render(key, i):
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/task.css?v=10">
+  <link rel="stylesheet" href="/css/task.css?v=11">
 </head>
 <body class="{t["cls"]} page-{slug}">
 
