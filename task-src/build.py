@@ -5,7 +5,7 @@ This script wraps each one in the shared menu, banner, updates bar and footer, f
 the dates, and writes task1/index.html, task1/data/index.html, and so on (same for task2).
 
 Run after any edit:  python3 task-src/build.py
-Change a date:       edit DATES below (all tasks share one schedule), then run the script.
+Change a date:       edit DATES below (shared) or a task's "open" date, then run the script.
 Don't edit the generated task*/ pages by hand; the next build overwrites them.
 """
 
@@ -18,8 +18,6 @@ ROOT = HERE.parent
 # Shared schedule. The test phase matches BanglaKnight (BLP 2027 Task 1).
 # (ISO date used for the countdown, label shown, milestone, phase)
 DATES = [
-    ("2026-10-30", "Oct 30, 2026", "Training and development data release", "dev"),
-    ("2026-10-30", "Oct 30, 2026", "CodaBench registration opens", "dev"),
     ("2027-01-08", "Jan 8, 2027", "Test data release / test phase begins", "eval"),
     ("2027-01-17", "Jan 17, 2027", "CodaBench registration deadline", "eval"),
     ("2027-01-24", "Jan 24, 2027", "System submission deadline", "eval"),
@@ -31,7 +29,7 @@ DATES = [
 ]
 
 PHASE_NAMES = {
-    "dev": ("Development phase", "Oct 30 – Jan 7"),
+    "dev": ("Development phase", "{open} – Jan 7"),
     "eval": ("Test phase", "Jan 8 – Jan 24"),
     "after": ("Results and papers", ""),
 }
@@ -41,6 +39,7 @@ TASKS = {
         "n": 1,
         "cls": "t1",
         "name": "Multilingual Code Generation",
+        "open": ("2026-10-27", "Oct 27, 2026", "Trial and development data release"),
         "short": "Code generation from 50 natural languages",
         "theme": "#0E8A5F",
         "test_note": "",
@@ -56,6 +55,7 @@ TASKS = {
         "n": 2,
         "cls": "t2",
         "name": "Adversarial Prompt Detection",
+        "open": ("2026-10-30", "Oct 30, 2026", "Training and development data release"),
         "short": "Guardrails for code-mixed and transliterated prompts",
         "theme": "#D93A43",
         "test_note": "; surprise languages revealed",
@@ -159,14 +159,23 @@ def url(task, slug):
     return f"/{task}/" if slug == "home" else f"/{task}/{slug}/"
 
 
+def task_dates(t):
+    """The shared schedule with the task's own opening date for the development phase."""
+    iso, label, release = t["open"]
+    first = [(iso, label, release, "dev"), (iso, label, "CodaBench registration opens", "dev")]
+    return first + [d for d in DATES if d[3] != "dev"]
+
+
 def dates_card(t):
     groups = []
-    for phase in dict.fromkeys(p for *_, p in DATES):
+    dates = task_dates(t)
+    for phase in dict.fromkeys(p for *_, p in dates):
         name, span = PHASE_NAMES[phase]
+        span = span.format(open=t["open"][1].rsplit(",", 1)[0])
         items = "\n".join(
             f'        <li data-date="{iso}"><span class="dc-date">{label}</span>'
             f'<span class="dc-title">{escape(title + (t["test_note"] if iso == "2027-01-08" else ""))}</span></li>'
-            for iso, label, title, p in DATES if p == phase
+            for iso, label, title, p in dates if p == phase
         )
         span_html = f'<span class="dc-span">{span}</span>' if span else ""
         groups.append(f"""    <section class="dc-group dc-group-{phase}">
@@ -189,7 +198,7 @@ def phases_block(t):
   <article class="phase phase-dev">
     <p class="phase-tag">Phase 1</p>
     <h3>{icon("tool")}Development phase</h3>
-    <p class="phase-when">Oct 30, 2026 – Jan 7, 2027</p>
+    <p class="phase-when">{t["open"][1]} – Jan 7, 2027</p>
     <dl>
       <dt>{icon("data")}Data</dt><dd>{t["dev_data"]}</dd>
       <dt>{icon("user")}You</dt><dd>Build and tune your system</dd>
@@ -212,7 +221,7 @@ def phases_block(t):
 def ticker(key, t):
     """Rolling updates bar: the dates still ahead, then news. task.js loops it."""
     items, last = [], None
-    for iso, label, title, _p in DATES:
+    for iso, label, title, _p in task_dates(t):
         title = title + (t["test_note"] if iso == "2027-01-08" else "")
         if label == last:   # two milestones on one day share one item
             items[-1] = items[-1].replace("</span>", f"; {escape(title)}</span>")
