@@ -127,6 +127,9 @@ ICONS = {
 }
 
 ICON_RE = __import__("re").compile(r"\{\{i:([a-z-]+)\}\}")
+# Milestones that open something (a data release, a phase start). The dates card counts down to them
+# from 00:00 UTC, when CodaBench opens the phase; deadlines count to the end of the day AoE.
+OPENING_RE = __import__("re").compile(r"release|opens|begins", __import__("re").I)
 LB_EMPTY_RE = __import__("re").compile(r"\{\{LB_EMPTY:([ts]+)\}\}")
 LEADERBOARD_ROWS = 10   # placeholder rows per board until results come in (Task 2)
 # Task 1 leaderboard data, written once a day by scripts/update_leaderboard.py (GitHub Action)
@@ -236,7 +239,7 @@ def dates_card(t):
         name, span = PHASE_NAMES[phase]
         span = span.format(open=t["open"][1].rsplit(",", 1)[0])
         items = "\n".join(
-            f'        <li data-date="{iso}"><span class="dc-date">{label}</span>'
+            f'        <li data-date="{iso}"{" data-open" if OPENING_RE.search(title) else ""}><span class="dc-date">{label}</span>'
             f'<span class="dc-title">{escape(title + (t["test_note"] if iso == "2027-01-08" else ""))}</span></li>'
             for iso, label, title, p in dates if p == phase
         )
@@ -428,7 +431,7 @@ def render(key, i):
 
 {footer(t)}
 
-<script src="/js/task.js?v=3"></script>
+<script src="/js/task.js?v=4"></script>
 </body>
 </html>
 """)

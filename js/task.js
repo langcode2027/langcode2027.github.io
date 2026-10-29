@@ -19,10 +19,15 @@
     var p = iso.split("-").map(Number);
     return Date.UTC(p[0], p[1] - 1, p[2], 23, 59, 59) + 12 * 3600 * 1000;
   }
+  // Openings (data releases, phase starts; data-open) happen at 00:00 UTC, when CodaBench opens the phase.
+  function startOfDayUTC(iso) {
+    var p = iso.split("-").map(Number);
+    return Date.UTC(p[0], p[1] - 1, p[2]);
+  }
   var now = Date.now();
 
   // Dates card: grey out passed dates, flag the next one, count down to it.
-  var nextIso = null, nextTitles = [];
+  var nextIso = null, nextTitles = [], nextOpen = false;
   document.querySelectorAll(".dates-card li[data-date]").forEach(function (li) {
     var iso = li.getAttribute("data-date");
     if (endOfDayAoE(iso) < now) {
@@ -31,18 +36,20 @@
       nextIso = iso;
       li.classList.add("is-next");
       nextTitles.push(li.querySelector(".dc-title").textContent);
+      nextOpen = nextOpen || li.hasAttribute("data-open");
     }
   });
   var countdown = document.querySelector(".dc-countdown");
   if (countdown && nextIso) {
-    var days = Math.ceil((endOfDayAoE(nextIso) - 86399000 - now) / 86400000);
+    var target = nextOpen ? startOfDayUTC(nextIso) : endOfDayAoE(nextIso) - 86399000;
+    var days = Math.ceil((target - now) / 86400000);
     // Lowercase the first letter but keep names such as CodaBench.
     var what = nextTitles.map(function (t) {
       return /^[A-Z][a-z]+[A-Z]/.test(t) ? t : t.charAt(0).toLowerCase() + t.slice(1);
     }).join(" and ");
     countdown.innerHTML = days <= 0
       ? "<strong>Today</strong> " + what
-      : "<strong>" + days + " days</strong> until " + what;
+      : "<strong>" + days + (days === 1 ? " day" : " days") + "</strong> until " + what;
     countdown.hidden = false;
   }
 
