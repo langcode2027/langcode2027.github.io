@@ -1,5 +1,11 @@
 {
- "updated": "2026-10-28T10:54:41+00:00",
- "dev": [],
+ "updated": "2026-10-29T11:12:24+00:00",
+ "dev": [
+  {
+   "team": "JFO",
+   "affiliation": "University of Asia Pacific",
+   "score": 8.4
+  }
+ ],
  "test": []
 }
