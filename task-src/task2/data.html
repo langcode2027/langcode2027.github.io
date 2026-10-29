@@ -1,38 +1,38 @@
 <section class="section">
   <div class="wrap">
-    <h2>{{i:package}}Starter kit <span class="badge">Released Oct 30, 2026</span></h2>
-    <p class="section-lead">Download it with the data on CodaBench. It gets you from zero to a valid submission.</p>
+    <h2>{{i:package}}Starter kit <span class="badge">Released Oct 29, 2026</span></h2>
+    <p class="section-lead">Everything is downloaded from this page; nothing comes from CodaBench. It gets you from zero to a valid submission.</p>
+    <aside class="callout callout-warn" role="note">
+      {{i:lock}}<p><strong>Content warning and responsible use.</strong> The data contains prompts written to elicit malicious code. By downloading it you agree to use it only for research on detecting and defending against such prompts: do not use it to build or improve attacks, do not run the unsafe prompts against production systems, and do not redistribute it.</p>
+    </aside>
     <div class="kit">
       <div class="kit-item">
         <span class="kit-icon" aria-hidden="true">{{i:data}}DATA</span>
-        <h3>Train and dev sets</h3>
-        <p>The labeled prompts for building and tuning your detector, for both subtasks.</p>
-        <p class="kit-links">{{i:clock}}Train and dev: Oct 30, 2026<br>{{i:clock}}Test: Jan 8, 2027, no labels</p>
+        <h3>Train, dev, dev-test and test sets</h3>
+        <p>Train: 20,000 labeled prompts. Dev: 10,000 labeled prompts. Dev-test: 10,000 prompts without labels, for Development-phase submissions. Test: 30,000 prompts without labels.</p>
+        <p class="kit-links">{{i:download}}Train: <a href="/task2/data/files/train.csv" download>train.csv</a><br>{{i:download}}Dev: <a href="/task2/data/files/dev.csv" download>dev.csv</a><br>{{i:download}}Dev-test: <a href="/task2/data/files/devtest.csv" download>devtest.csv</a><br>{{i:clock}}Test: posted here on Jan 8, 2027</p>
       </div>
       <div class="kit-item">
-        <span class="kit-icon" aria-hidden="true">{{i:chart}}BASE</span>
-        <h3>Public baselines</h3>
-        <p>Baseline results to compare against, so you know where you stand.</p>
-        <p class="kit-links">{{i:clock}}With the data, Oct 30, 2026</p>
+        <span class="kit-icon" aria-hidden="true">{{i:file-code}}SCORER</span>
+        <h3>Scorer and submission format</h3>
+        <p>The scoring program that runs on CodaBench. It scores your labels on train or dev, and checks the format of your submission file before you upload it. The file format is on the CodaBench Submission page.</p>
+        <p class="kit-links">{{i:download}}<a href="/task2/data/files/scorer.zip" download>scorer.zip</a></p>
       </div>
       <div class="kit-item">
-        <span class="kit-icon" aria-hidden="true">{{i:file-code}}.csv</span>
-        <h3>Submission format</h3>
-        <p>How to package your predictions in the file format CodaBench accepts.</p>
-        <p class="kit-links">{{i:clock}}With the data, Oct 30, 2026</p>
+        <span class="kit-icon" aria-hidden="true">{{i:play}}NOTEBOOK</span>
+        <h3>Starter notebook</h3>
+        <p>A Colab notebook that downloads the data and the scorer, explains the Safety Score, trains a small baseline (character n-grams and logistic regression, CPU only), scores it on dev and writes a dev-test <code>submission.zip</code> for CodaBench.</p>
+        <p class="kit-links">{{i:play}}<a href="https://colab.research.google.com/github/langcode2027/langcode2027.github.io/blob/main/task2/data/files/LangCode2027_Task2_starter.ipynb" target="_blank" rel="noopener">Open in Colab ↗</a> · <a href="/task2/data/files/LangCode2027_Task2_starter.ipynb" download>Download</a></p>
       </div>
     </div>
-    <p class="note-small">Each example is one prompt with a Subtask A label (benign or adversarial) and, for adversarial prompts, a Subtask B attack type. Train your detector on the train set; tune it and practice submitting on CodaBench with the dev set; make your final predictions on the test set, which adds new prompts and surprise languages. Download links will appear here on October 30, 2026.</p>
-    <aside class="callout callout-warn" role="note">
-      {{i:lock}}<p><strong>Content warning and responsible use.</strong> The data contains prompts written to elicit malicious code. Like MALICE itself, it is released for defensive safety research only, under restricted-use terms that participants accept when they register.</p>
-    </aside>
+    <p class="note-small">Each file is a UTF-8 CSV with one prompt per row: <code>id</code> (for example <code>T2-483920</code>), <code>prompt</code> and, in train and dev only, <code>label</code>, which is <code>S</code> (safe) or <code>U</code> (unsafe). Train and dev have as many safe as unsafe prompts, and as many code-mixed as transliterated ones. The language and the form of a prompt are not given. Train your detector on the train set, tune it on dev, and practice submitting on CodaBench with the dev-test set; make your final predictions on the test set. You may use any public data, models and tools, but label the dev-test and test prompts with your system, one prompt at a time: do not look them up in other datasets, including the sources MALICE was built from.</p>
   </div>
 </section>
 
 <section class="section section-tint">
   <div class="wrap">
     <h2>{{i:book}}Cite the source benchmark</h2>
-    <p class="section-lead">The task builds on <a href="https://aclanthology.org/2026.findings-emnlp.568/" target="_blank" rel="noopener">MALICE ↗</a> (Findings of EMNLP 2026), a benchmark of about 250K code-mixed and transliterated adversarial prompts. If you use the data, please cite:</p>
+    <p class="section-lead">The prompts are built from the seed prompts of <a href="https://aclanthology.org/2026.findings-emnlp.568/" target="_blank" rel="noopener">MALICE ↗</a> (Findings of EMNLP 2026), a benchmark of code-mixed and transliterated adversarial prompts. If you use the data, please cite:</p>
     <div class="bib">
       <button class="copy-btn" type="button">copy</button>
 <pre>@inproceedings{raihan-etal-2026-robustness,

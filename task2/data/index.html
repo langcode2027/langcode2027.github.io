@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Data · Task 2: Adversarial Prompt Detection · LangCode 2027</title>
-  <meta name="description" content="The starter kit and the MALICE citation.">
+  <meta name="description" content="The train, dev and dev-test sets, the scorer, a starter notebook and the MALICE citation.">
   <meta name="theme-color" content="#D93A43">
   <link rel="canonical" href="https://langcode2027.github.io/task2/data/">
   <link rel="icon" type="image/svg+xml" href="/media/logo.svg">
@@ -41,7 +41,7 @@
   <div class="wrap">
     <p class="crumbs"><a href="/">LangCode 2027</a> <span aria-hidden="true">/</span> <a href="/task2/">Task 2</a> <span aria-hidden="true">/</span> Data</p>
     <h1><svg class="ico ico-h1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg>Data</h1>
-    <p class="page-desc">The starter kit and the MALICE citation.</p>
+    <p class="page-desc">The train, dev and dev-test sets, the scorer, a starter notebook and the MALICE citation.</p>
   </div>
 </section>
 <div class="ticker" role="region" aria-label="Updates and important dates">
@@ -50,8 +50,8 @@
     <div class="ticker-view">
       <div class="ticker-track">
         <div class="tk-set">
-          <span class="tk" data-date="2026-10-30"><b>Oct 30, 2026</b>Training and development data release; CodaBench registration opens</span>
-          <span class="tk" data-date="2027-01-08"><b>Jan 8, 2027</b>Test data release / test phase begins; surprise languages revealed</span>
+          <span class="tk" data-date="2026-10-29"><b>Oct 29, 2026</b>Train, dev and dev-test data release; CodaBench registration opens</span>
+          <span class="tk" data-date="2027-01-08"><b>Jan 8, 2027</b>Test data release / test phase begins</span>
           <span class="tk" data-date="2027-01-17"><b>Jan 17, 2027</b>CodaBench registration deadline</span>
           <span class="tk" data-date="2027-01-24"><b>Jan 24, 2027</b>System submission deadline</span>
           <span class="tk" data-date="2027-02-03"><b>Feb 3, 2027</b>Official results released</span>
@@ -69,39 +69,39 @@
 </div>
 <section class="section">
   <div class="wrap">
-    <h2><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9z"/><path d="m4 7.5 8 4.5 8-4.5M12 12v9"/></svg>Starter kit <span class="badge">Released Oct 30, 2026</span></h2>
-    <p class="section-lead">Download it with the data on CodaBench. It gets you from zero to a valid submission.</p>
+    <h2><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9z"/><path d="m4 7.5 8 4.5 8-4.5M12 12v9"/></svg>Starter kit <span class="badge">Released Oct 29, 2026</span></h2>
+    <p class="section-lead">Everything is downloaded from this page; nothing comes from CodaBench. It gets you from zero to a valid submission.</p>
+    <aside class="callout callout-warn" role="note">
+      <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg><p><strong>Content warning and responsible use.</strong> The data contains prompts written to elicit malicious code. By downloading it you agree to use it only for research on detecting and defending against such prompts: do not use it to build or improve attacks, do not run the unsafe prompts against production systems, and do not redistribute it.</p>
+    </aside>
     <div class="kit">
       <div class="kit-item">
         <span class="kit-icon" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg>DATA</span>
-        <h3>Train and dev sets</h3>
-        <p>The labeled prompts for building and tuning your detector, for both subtasks.</p>
-        <p class="kit-links"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>Train and dev: Oct 30, 2026<br><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>Test: Jan 8, 2027, no labels</p>
+        <h3>Train, dev, dev-test and test sets</h3>
+        <p>Train: 20,000 labeled prompts. Dev: 10,000 labeled prompts. Dev-test: 10,000 prompts without labels, for Development-phase submissions. Test: 30,000 prompts without labels.</p>
+        <p class="kit-links"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="M7.5 10.5 12 15l4.5-4.5"/><path d="M4 15v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></svg>Train: <a href="/task2/data/files/train.csv" download>train.csv</a><br><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="M7.5 10.5 12 15l4.5-4.5"/><path d="M4 15v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></svg>Dev: <a href="/task2/data/files/dev.csv" download>dev.csv</a><br><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="M7.5 10.5 12 15l4.5-4.5"/><path d="M4 15v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></svg>Dev-test: <a href="/task2/data/files/devtest.csv" download>devtest.csv</a><br><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>Test: posted here on Jan 8, 2027</p>
       </div>
       <div class="kit-item">
-        <span class="kit-icon" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4v16h16"/><path d="M8 16v-4M12 16V8M16 16v-6"/></svg>BASE</span>
-        <h3>Public baselines</h3>
-        <p>Baseline results to compare against, so you know where you stand.</p>
-        <p class="kit-links"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>With the data, Oct 30, 2026</p>
+        <span class="kit-icon" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="m10 12-2 2 2 2M14 12l2 2-2 2"/></svg>SCORER</span>
+        <h3>Scorer and submission format</h3>
+        <p>The scoring program that runs on CodaBench. It scores your labels on train or dev, and checks the format of your submission file before you upload it. The file format is on the CodaBench Submission page.</p>
+        <p class="kit-links"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="M7.5 10.5 12 15l4.5-4.5"/><path d="M4 15v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></svg><a href="/task2/data/files/scorer.zip" download>scorer.zip</a></p>
       </div>
       <div class="kit-item">
-        <span class="kit-icon" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="m10 12-2 2 2 2M14 12l2 2-2 2"/></svg>.csv</span>
-        <h3>Submission format</h3>
-        <p>How to package your predictions in the file format CodaBench accepts.</p>
-        <p class="kit-links"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>With the data, Oct 30, 2026</p>
+        <span class="kit-icon" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="m10 8.5 5.5 3.5-5.5 3.5z"/></svg>NOTEBOOK</span>
+        <h3>Starter notebook</h3>
+        <p>A Colab notebook that downloads the data and the scorer, explains the Safety Score, trains a small baseline (character n-grams and logistic regression, CPU only), scores it on dev and writes a dev-test <code>submission.zip</code> for CodaBench.</p>
+        <p class="kit-links"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="m10 8.5 5.5 3.5-5.5 3.5z"/></svg><a href="https://colab.research.google.com/github/langcode2027/langcode2027.github.io/blob/main/task2/data/files/LangCode2027_Task2_starter.ipynb" target="_blank" rel="noopener">Open in Colab ↗</a> · <a href="/task2/data/files/LangCode2027_Task2_starter.ipynb" download>Download</a></p>
       </div>
     </div>
-    <p class="note-small">Each example is one prompt with a Subtask A label (benign or adversarial) and, for adversarial prompts, a Subtask B attack type. Train your detector on the train set; tune it and practice submitting on CodaBench with the dev set; make your final predictions on the test set, which adds new prompts and surprise languages. Download links will appear here on October 30, 2026.</p>
-    <aside class="callout callout-warn" role="note">
-      <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg><p><strong>Content warning and responsible use.</strong> The data contains prompts written to elicit malicious code. Like MALICE itself, it is released for defensive safety research only, under restricted-use terms that participants accept when they register.</p>
-    </aside>
+    <p class="note-small">Each file is a UTF-8 CSV with one prompt per row: <code>id</code> (for example <code>T2-483920</code>), <code>prompt</code> and, in train and dev only, <code>label</code>, which is <code>S</code> (safe) or <code>U</code> (unsafe). Train and dev have as many safe as unsafe prompts, and as many code-mixed as transliterated ones. The language and the form of a prompt are not given. Train your detector on the train set, tune it on dev, and practice submitting on CodaBench with the dev-test set; make your final predictions on the test set. You may use any public data, models and tools, but label the dev-test and test prompts with your system, one prompt at a time: do not look them up in other datasets, including the sources MALICE was built from.</p>
   </div>
 </section>
 
 <section class="section section-tint">
   <div class="wrap">
     <h2><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4.5A1.5 1.5 0 0 1 5.5 3H20v15H5.5A1.5 1.5 0 0 0 4 19.5z"/><path d="M4 19.5A1.5 1.5 0 0 0 5.5 21H20v-3"/></svg>Cite the source benchmark</h2>
-    <p class="section-lead">The task builds on <a href="https://aclanthology.org/2026.findings-emnlp.568/" target="_blank" rel="noopener">MALICE ↗</a> (Findings of EMNLP 2026), a benchmark of about 250K code-mixed and transliterated adversarial prompts. If you use the data, please cite:</p>
+    <p class="section-lead">The prompts are built from the seed prompts of <a href="https://aclanthology.org/2026.findings-emnlp.568/" target="_blank" rel="noopener">MALICE ↗</a> (Findings of EMNLP 2026), a benchmark of code-mixed and transliterated adversarial prompts. If you use the data, please cite:</p>
     <div class="bib">
       <button class="copy-btn" type="button">copy</button>
 <pre>@inproceedings{raihan-etal-2026-robustness,
@@ -135,7 +135,7 @@
     <div class="footer-inner">
       <div class="footer-brand">
         <svg class="logo" viewBox="0 0 64 64" aria-hidden="true"><rect class="lg-tile" x="2" y="2" width="60" height="60" rx="14"/><path class="lg-glyph" d="M14 17h6v24M14 41h12"/><path class="lg-glyph" d="M40.5 29.2a7.6 7.6 0 1 0 0 11.6"/><rect class="lg-caret" x="45" y="21" width="7.5" height="21" rx="1.2"/></svg>
-        <p><strong>Shared Task 2: Adversarial Prompt Detection</strong> is part of <a href="/">LangCode 2027, the First Language and Code Workshop</a>, co-located with NAACL 2027 in San Francisco. Questions: <a href="mailto:mraihan@nd.edu">mraihan@nd.edu</a></p>
+        <p><strong>Shared Task 2: Adversarial Prompt Detection</strong> is part of <a href="/">LangCode 2027, the First Language and Code Workshop</a>, co-located with NAACL 2027 in San Francisco. Questions: ask in the <a href="https://www.codabench.org/competitions/18479/#/forum" target="_blank" rel="noopener">Forum</a> of the CodaBench competition.</p>
       </div>
       <p class="footer-also">Also at LangCode 2027: <a href="/task1/">Task 1: Multilingual Code Generation →</a></p>
     </div>

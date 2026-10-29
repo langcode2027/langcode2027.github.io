@@ -55,16 +55,16 @@ TASKS = {
         "n": 2,
         "cls": "t2",
         "name": "Adversarial Prompt Detection",
-        "open": ("2026-10-30", "Oct 30, 2026", "Training and development data release"),
+        "open": ("2026-10-29", "Oct 29, 2026", "Train, dev and dev-test data release"),
         "short": "Guardrails for code-mixed and transliterated prompts",
         "theme": "#D93A43",
-        "test_note": "; surprise languages revealed",
-        "eval_data": "A new test set, released Jan 8, without labels, including surprise languages",
-        "dev_data": "Training and dev sets, plus the starter kit",
-        "questions": 'Questions: <a href="mailto:mraihan@nd.edu">mraihan@nd.edu</a>',
-        "eval_submit": "Submit your test predictions by Jan 24. These decide the official ranking, published Feb 3.",
-        "dev_codabench": "Submit predictions on the dev set to see your macro-F1 and check your file format. Practice only: it does not count toward the final ranking.",
-        "data_desc": "The starter kit and the MALICE citation.",
+        "test_note": "",
+        "eval_data": "30,000 test prompts, released Jan 8, without labels",
+        "dev_data": "Train, dev and dev-test sets, the scorer and a starter notebook",
+        "questions": 'Questions: ask in the <a href="https://www.codabench.org/competitions/18479/#/forum" target="_blank" rel="noopener">Forum</a> of the CodaBench competition.',
+        "eval_submit": "Submit your test labels by Jan 24. These decide the official ranking, published Feb 3.",
+        "dev_codabench": "Submit labels for the dev-test set to see your Safety Score and check your file format. Practice only: it does not count toward the final ranking.",
+        "data_desc": "The train, dev and dev-test sets, the scorer, a starter notebook and the MALICE citation.",
         "other": "task1",
     },
 }
@@ -132,6 +132,9 @@ LEADERBOARD_ROWS = 10   # placeholder rows per board until results come in (Task
 # Task 1 leaderboard data, written once a day by scripts/update_leaderboard.py (GitHub Action)
 LEADERBOARD_JSON = ROOT / "data" / "task1_leaderboard.json"
 TASK1_LB_ROWS = 30
+# Task 2 leaderboard data, written once a day by scripts/update_task2_leaderboard.py (GitHub Action)
+LEADERBOARD2_JSON = ROOT / "data" / "task2_leaderboard.json"
+TASK2_LB_ROWS = 30
 
 
 def lb_empty(spec):
@@ -158,6 +161,35 @@ def leaderboard_parts():
             else:
                 out.append(f'<tr><td class="lb-rank">{k + 1}</td><td class="lb-team">&mdash;</td>'
                            f'<td class="lb-aff">&mdash;</td><td class="lb-score">&mdash;</td></tr>')
+        return "\n          ".join(out)
+
+    if data.get("updated"):
+        t = datetime.fromisoformat(data["updated"]).astimezone(timezone(timedelta(hours=-5)))
+        stamp = f"{t:%b} {t.day}, {t.year}, {t:%I:%M %p}".replace(" 0", " ")
+        updated = (f"<strong>Last updated: {stamp} EST (UTC&minus;5).</strong> "
+                   "The leaderboards on this page refresh every day at 12:00 AM EST.")
+    else:
+        updated = "The leaderboards on this page refresh every day at 12:00 AM EST (UTC&minus;5)."
+    return rows(data.get("dev", [])), rows(data.get("test", [])), updated
+
+
+def task2_leaderboard_parts():
+    """Task 2: rows (Safety Score, R_U, R_S) for the dev and test boards and the 'Last updated' line."""
+    import json
+    from datetime import datetime, timedelta, timezone
+    data = json.loads(LEADERBOARD2_JSON.read_text(encoding="utf-8")) if LEADERBOARD2_JSON.exists() else {}
+
+    def rows(entries):
+        out = []
+        for k in range(max(TASK2_LB_ROWS, len(entries))):
+            if k < len(entries):
+                e = entries[k]
+                out.append(f'<tr><td class="lb-rank">{k + 1}</td><td class="lb-team">{escape(e["team"])}</td>'
+                           f'<td class="lb-aff">{escape(e["affiliation"])}</td><td class="lb-score">{e["score"]:.2f}</td>'
+                           f'<td class="lb-score">{e["unsafe_recall"]:.2f}</td><td class="lb-score">{e["safe_recall"]:.2f}</td></tr>')
+            else:
+                out.append(f'<tr><td class="lb-rank">{k + 1}</td><td class="lb-team">&mdash;</td><td class="lb-aff">&mdash;</td>'
+                           + '<td class="lb-score">&mdash;</td>' * 3 + '</tr>')
         return "\n          ".join(out)
 
     if data.get("updated"):
@@ -358,6 +390,9 @@ def render(key, i):
     if "{{LB_DEV_ROWS}}" in body:
         dev_rows, test_rows, updated = leaderboard_parts()
         body = body.replace("{{LB_DEV_ROWS}}", dev_rows).replace("{{LB_TEST_ROWS}}", test_rows).replace("{{LB_UPDATED}}", updated)
+    if "{{LB2_DEV_ROWS}}" in body:
+        dev_rows, test_rows, updated = task2_leaderboard_parts()
+        body = body.replace("{{LB2_DEV_ROWS}}", dev_rows).replace("{{LB2_TEST_ROWS}}", test_rows).replace("{{LB2_UPDATED}}", updated)
     desc = desc or t["data_desc"]
     if slug == "home":
         full_title = f"Shared Task {t['n']}: {t['name']} · LangCode 2027"
