@@ -43,7 +43,7 @@ TASKS = {
         "short": "Code generation from 50 natural languages",
         "theme": "#0E8A5F",
         "test_note": "",
-        "eval_data": "1,000 test problems, released Jan 8, each with 2 of its 5 test cases shown",
+        "eval_data": "1,000 test problems, released Jan 8, each with 2 of its test cases shown",
         "dev_data": "Trial and dev sets, the scorer and the submission format",
         "questions": 'Questions: ask in the <a href="https://www.codabench.org/competitions/18470/#/forum" target="_blank" rel="noopener">Forum</a> of the CodaBench competition.',
         "eval_submit": "Submit your test solutions by Jan 24. These decide the official ranking, published Feb 3.",
