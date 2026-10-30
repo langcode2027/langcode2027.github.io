@@ -1,15 +1,15 @@
 {
- "updated": "2026-10-30T11:06:54+00:00",
+ "updated": "2026-10-30T16:02:14+00:00",
  "dev": [
   {
    "team": "X",
    "affiliation": "BUET",
-   "score": 97.0
+   "score": 93.2
   },
   {
    "team": "JFO",
    "affiliation": "University of Asia Pacific",
-   "score": 8.4
+   "score": 7.4
   }
  ],
  "test": []
