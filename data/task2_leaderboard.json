@@ -1,5 +1,27 @@
 {
- "updated": "2026-10-30T11:14:15+00:00",
- "dev": [],
+ "updated": "2026-10-31T10:46:42+00:00",
+ "dev": [
+  {
+   "team": "UIT_Remontada",
+   "affiliation": "University of Information Technology, VNU-HCM",
+   "score": 84.94,
+   "unsafe_recall": 94.84,
+   "safe_recall": 90.1
+  },
+  {
+   "team": "Team Albatross",
+   "affiliation": "IIUC",
+   "score": 80.22,
+   "unsafe_recall": 96.32,
+   "safe_recall": 83.9
+  },
+  {
+   "team": "SAS",
+   "affiliation": "BRAC University (Dhaka)",
+   "score": 71.08,
+   "unsafe_recall": 88.64,
+   "safe_recall": 82.44
+  }
+ ],
  "test": []
 }
