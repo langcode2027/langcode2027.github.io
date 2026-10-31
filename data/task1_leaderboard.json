@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-30T16:02:14+00:00",
+ "updated": "2026-10-31T10:40:25+00:00",
  "dev": [
   {
    "team": "X",
@@ -7,9 +7,19 @@
    "score": 93.2
   },
   {
+   "team": "Team Albatross",
+   "affiliation": "IIUC",
+   "score": 38.6
+  },
+  {
    "team": "JFO",
    "affiliation": "University of Asia Pacific",
    "score": 7.4
+  },
+  {
+   "team": "SAS",
+   "affiliation": "BRAC University (Dhaka)",
+   "score": 3.0
   }
  ],
  "test": []
