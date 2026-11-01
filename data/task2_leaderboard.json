@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-31T10:46:42+00:00",
+ "updated": "2026-11-01T11:44:06+00:00",
  "dev": [
   {
    "team": "UIT_Remontada",
@@ -9,18 +9,25 @@
    "safe_recall": 90.1
   },
   {
+   "team": "HexDefend-AI",
+   "affiliation": "Türkiye",
+   "score": 83.0,
+   "unsafe_recall": 95.7,
+   "safe_recall": 87.3
+  },
+  {
+   "team": "SAS",
+   "affiliation": "BRAC University (Dhaka)",
+   "score": 80.82,
+   "unsafe_recall": 96.38,
+   "safe_recall": 84.44
+  },
+  {
    "team": "Team Albatross",
    "affiliation": "IIUC",
    "score": 80.22,
    "unsafe_recall": 96.32,
    "safe_recall": 83.9
-  },
-  {
-   "team": "SAS",
-   "affiliation": "BRAC University (Dhaka)",
-   "score": 71.08,
-   "unsafe_recall": 88.64,
-   "safe_recall": 82.44
   }
  ],
  "test": []
