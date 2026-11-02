@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-01T11:44:06+00:00",
+ "updated": "2026-11-02T13:14:12+00:00",
  "dev": [
   {
    "team": "UIT_Remontada",
@@ -28,6 +28,20 @@
    "score": 80.22,
    "unsafe_recall": 96.32,
    "safe_recall": 83.9
+  },
+  {
+   "team": "GenreMinds",
+   "affiliation": "independent researcher",
+   "score": 77.22,
+   "unsafe_recall": 90.2,
+   "safe_recall": 87.02
+  },
+  {
+   "team": "Semantix",
+   "affiliation": "University of Asia Pacific",
+   "score": 58.98,
+   "unsafe_recall": 85.24,
+   "safe_recall": 73.74
   }
  ],
  "test": []
