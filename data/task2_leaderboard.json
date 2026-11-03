@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-02T13:14:12+00:00",
+ "updated": "2026-11-03T12:40:15+00:00",
  "dev": [
   {
    "team": "UIT_Remontada",
@@ -7,6 +7,13 @@
    "score": 84.94,
    "unsafe_recall": 94.84,
    "safe_recall": 90.1
+  },
+  {
+   "team": "Semantix",
+   "affiliation": "University of Asia Pacific",
+   "score": 83.52,
+   "unsafe_recall": 93.56,
+   "safe_recall": 89.96
   },
   {
    "team": "HexDefend-AI",
@@ -37,11 +44,18 @@
    "safe_recall": 87.02
   },
   {
-   "team": "Semantix",
-   "affiliation": "University of Asia Pacific",
-   "score": 58.98,
-   "unsafe_recall": 85.24,
-   "safe_recall": 73.74
+   "team": "onlypv",
+   "affiliation": "University of Information Technology, VNU-HCM",
+   "score": 70.1,
+   "unsafe_recall": 88.18,
+   "safe_recall": 81.92
+  },
+  {
+   "team": "ABCD_Team",
+   "affiliation": "University of Information Technology, VNU-HCM",
+   "score": 50.56,
+   "unsafe_recall": 85.1,
+   "safe_recall": 65.46
   }
  ],
  "test": []
