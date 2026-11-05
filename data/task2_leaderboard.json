@@ -1,12 +1,26 @@
 {
- "updated": "2026-11-04T12:50:05+00:00",
+ "updated": "2026-11-05T12:58:31+00:00",
  "dev": [
+  {
+   "team": "ABCD Team",
+   "affiliation": "University of Information Technology, VNU-HCM",
+   "score": 87.82,
+   "unsafe_recall": 97.08,
+   "safe_recall": 90.74
+  },
   {
    "team": "UIT_Remontada",
    "affiliation": "University of Information Technology, VNU-HCM",
-   "score": 85.92,
-   "unsafe_recall": 95.68,
-   "safe_recall": 90.24
+   "score": 86.22,
+   "unsafe_recall": 96.06,
+   "safe_recall": 90.16
+  },
+  {
+   "team": "Guard",
+   "affiliation": "University of Georgia",
+   "score": 85.72,
+   "unsafe_recall": 96.22,
+   "safe_recall": 89.5
   },
   {
    "team": "Semantix",
@@ -21,13 +35,6 @@
    "score": 83.0,
    "unsafe_recall": 95.7,
    "safe_recall": 87.3
-  },
-  {
-   "team": "ABCD Team",
-   "affiliation": "University of Information Technology, VNU-HCM",
-   "score": 82.98,
-   "unsafe_recall": 94.26,
-   "safe_recall": 88.72
   },
   {
    "team": "SAS",
@@ -49,6 +56,13 @@
    "score": 78.34,
    "unsafe_recall": 91.06,
    "safe_recall": 87.28
+  },
+  {
+   "team": "cr7goat",
+   "affiliation": "independent researcher",
+   "score": 78.12,
+   "unsafe_recall": 93.46,
+   "safe_recall": 84.66
   },
   {
    "team": "GenreMinds",
