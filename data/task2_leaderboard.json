@@ -1,6 +1,27 @@
 {
- "updated": "2026-11-05T12:58:31+00:00",
+ "updated": "2026-11-06T12:46:46+00:00",
  "dev": [
+  {
+   "team": "X",
+   "affiliation": "BUET",
+   "score": 96.06,
+   "unsafe_recall": 98.78,
+   "safe_recall": 97.28
+  },
+  {
+   "team": "ScriptSentry",
+   "affiliation": "Independent Researcher",
+   "score": 88.94,
+   "unsafe_recall": 95.8,
+   "safe_recall": 93.14
+  },
+  {
+   "team": "team-halmstad",
+   "affiliation": "Halmstad University",
+   "score": 87.96,
+   "unsafe_recall": 95.68,
+   "safe_recall": 92.28
+  },
   {
    "team": "ABCD Team",
    "affiliation": "University of Information Technology, VNU-HCM",
@@ -9,18 +30,25 @@
    "safe_recall": 90.74
   },
   {
+   "team": "onlypv",
+   "affiliation": "University of Information Technology, VNU-HCM",
+   "score": 87.42,
+   "unsafe_recall": 96.4,
+   "safe_recall": 91.02
+  },
+  {
+   "team": "Guard",
+   "affiliation": "University of Georgia",
+   "score": 87.16,
+   "unsafe_recall": 96.22,
+   "safe_recall": 90.94
+  },
+  {
    "team": "UIT_Remontada",
    "affiliation": "University of Information Technology, VNU-HCM",
    "score": 86.22,
    "unsafe_recall": 96.06,
    "safe_recall": 90.16
-  },
-  {
-   "team": "Guard",
-   "affiliation": "University of Georgia",
-   "score": 85.72,
-   "unsafe_recall": 96.22,
-   "safe_recall": 89.5
   },
   {
    "team": "Semantix",
@@ -37,6 +65,13 @@
    "safe_recall": 87.3
   },
   {
+   "team": "CITD@UIT",
+   "affiliation": "UIT",
+   "score": 82.38,
+   "unsafe_recall": 92.26,
+   "safe_recall": 90.12
+  },
+  {
    "team": "SAS",
    "affiliation": "BRAC University (Dhaka)",
    "score": 80.82,
@@ -49,13 +84,6 @@
    "score": 80.22,
    "unsafe_recall": 96.32,
    "safe_recall": 83.9
-  },
-  {
-   "team": "onlypv",
-   "affiliation": "University of Information Technology, VNU-HCM",
-   "score": 78.34,
-   "unsafe_recall": 91.06,
-   "safe_recall": 87.28
   },
   {
    "team": "cr7goat",
