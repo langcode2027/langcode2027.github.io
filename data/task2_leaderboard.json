@@ -1,12 +1,19 @@
 {
- "updated": "2026-11-06T12:46:46+00:00",
+ "updated": "2026-11-07T11:35:05+00:00",
  "dev": [
   {
    "team": "X",
    "affiliation": "BUET",
-   "score": 96.06,
-   "unsafe_recall": 98.78,
-   "safe_recall": 97.28
+   "score": 96.8,
+   "unsafe_recall": 99.1,
+   "safe_recall": 97.7
+  },
+  {
+   "team": "hh-coder",
+   "affiliation": "Halmstad University",
+   "score": 94.28,
+   "unsafe_recall": 97.72,
+   "safe_recall": 96.56
   },
   {
    "team": "ScriptSentry",
@@ -18,9 +25,9 @@
   {
    "team": "team-halmstad",
    "affiliation": "Halmstad University",
-   "score": 87.96,
-   "unsafe_recall": 95.68,
-   "safe_recall": 92.28
+   "score": 88.36,
+   "unsafe_recall": 96.18,
+   "safe_recall": 92.18
   },
   {
    "team": "ABCD Team",
@@ -58,6 +65,13 @@
    "safe_recall": 90.84
   },
   {
+   "team": "SAS",
+   "affiliation": "BRAC University (Dhaka)",
+   "score": 84.44,
+   "unsafe_recall": 93.78,
+   "safe_recall": 90.66
+  },
+  {
    "team": "HexDefend-AI",
    "affiliation": "Türkiye",
    "score": 83.0,
@@ -66,17 +80,10 @@
   },
   {
    "team": "CITD@UIT",
-   "affiliation": "UIT",
-   "score": 82.38,
-   "unsafe_recall": 92.26,
-   "safe_recall": 90.12
-  },
-  {
-   "team": "SAS",
-   "affiliation": "BRAC University (Dhaka)",
-   "score": 80.82,
-   "unsafe_recall": 96.38,
-   "safe_recall": 84.44
+   "affiliation": "University of Information Technology - VNUHCM",
+   "score": 82.74,
+   "unsafe_recall": 91.42,
+   "safe_recall": 91.32
   },
   {
    "team": "Team Albatross",
