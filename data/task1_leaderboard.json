@@ -1,10 +1,15 @@
 {
- "updated": "2026-11-07T11:25:32+00:00",
+ "updated": "2026-11-08T11:37:14+00:00",
  "dev": [
   {
    "team": "X",
    "affiliation": "BUET",
    "score": 93.2
+  },
+  {
+   "team": "xianyu",
+   "affiliation": "xianyu",
+   "score": 49.6
   },
   {
    "team": "Team Albatross",
