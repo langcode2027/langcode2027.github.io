@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-08T11:47:19+00:00",
+ "updated": "2026-11-09T13:41:13+00:00",
  "dev": [
   {
    "team": "X",
@@ -16,6 +16,13 @@
    "safe_recall": 96.56
   },
   {
+   "team": "UIT_Remontada",
+   "affiliation": "University of Information Technology, VNU-HCM",
+   "score": 94.0,
+   "unsafe_recall": 97.06,
+   "safe_recall": 96.94
+  },
+  {
    "team": "ScriptSentry",
    "affiliation": "Independent Researcher",
    "score": 88.94,
@@ -28,6 +35,13 @@
    "score": 88.94,
    "unsafe_recall": 94.2,
    "safe_recall": 94.74
+  },
+  {
+   "team": "Tagore",
+   "affiliation": "MTU",
+   "score": 88.76,
+   "unsafe_recall": 95.22,
+   "safe_recall": 93.54
   },
   {
    "team": "ABCD Team",
@@ -51,18 +65,18 @@
    "safe_recall": 90.94
   },
   {
-   "team": "UIT_Remontada",
-   "affiliation": "University of Information Technology, VNU-HCM",
-   "score": 86.22,
-   "unsafe_recall": 96.06,
-   "safe_recall": 90.16
-  },
-  {
    "team": "Semantix",
    "affiliation": "University of Asia Pacific",
-   "score": 84.76,
-   "unsafe_recall": 93.92,
-   "safe_recall": 90.84
+   "score": 85.38,
+   "unsafe_recall": 94.74,
+   "safe_recall": 90.64
+  },
+  {
+   "team": "CUET_Synthetica",
+   "affiliation": "Chittagong University Of Engineering And Technology",
+   "score": 85.1,
+   "unsafe_recall": 93.76,
+   "safe_recall": 91.34
   },
   {
    "team": "SAS",
@@ -86,13 +100,6 @@
    "safe_recall": 91.32
   },
   {
-   "team": "CUET_Synthetica",
-   "affiliation": "Chittagong University Of Engineering And Technology",
-   "score": 80.36,
-   "unsafe_recall": 92.18,
-   "safe_recall": 88.18
-  },
-  {
    "team": "Team Albatross",
    "affiliation": "IIUC",
    "score": 80.22,
@@ -107,18 +114,11 @@
    "safe_recall": 84.66
   },
   {
-   "team": "Tagore",
-   "affiliation": "MTU",
-   "score": 77.46,
-   "unsafe_recall": 91.82,
-   "safe_recall": 85.64
-  },
-  {
    "team": "GenreMinds",
    "affiliation": "independent researcher",
-   "score": 77.22,
-   "unsafe_recall": 90.2,
-   "safe_recall": 87.02
+   "score": 75.08,
+   "unsafe_recall": 90.12,
+   "safe_recall": 84.96
   }
  ],
  "test": []
