@@ -100,7 +100,7 @@ p { margin: 0 0 1rem; }
 .nav-toggle span { display: block; width: 22px; height: 2px; background: var(--ink); margin: 5px 0; border-radius: 2px; }
 
 /* Hero */
-.hero { position: relative; padding: 36px 0 24px; overflow: hidden; isolation: isolate; }
+.hero { position: relative; padding: 26px 0 20px; overflow: hidden; isolation: isolate; }
 .hero-photo {
   position: absolute; inset: 0; z-index: -1;
   background:
@@ -112,14 +112,14 @@ p { margin: 0 0 1rem; }
 .eyebrow {
   display: inline-flex; align-items: center; gap: 8px;
   background: var(--surface); border: 1px solid var(--line); border-radius: 999px;
-  padding: 4px 14px; font-size: .85rem; font-weight: 600; color: var(--ink-soft); margin-bottom: 12px;
+  padding: 3px 13px; font-size: .82rem; font-weight: 600; color: var(--ink-soft); margin-bottom: 8px;
 }
 .eyebrow .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--primary); box-shadow: 0 0 0 4px var(--primary-soft); }
 .hero h1 { font-size: var(--h1-size, clamp(2.6rem, 5.6vw, 4rem)); font-weight: 800; letter-spacing: -.02em; }
 .hero h1 span { color: var(--primary); }
 .hero-sub { font-family: var(--font-head); font-size: 1.2rem; font-weight: 600; color: var(--ink-soft); margin: 2px 0 10px; }
-.lead { color: var(--ink-soft); max-width: 34em; }
-.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 18px; }
+.lead { color: var(--ink-soft); max-width: 40em; font-size: .97rem; line-height: 1.55; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; }
 .btn {
   display: inline-flex; align-items: center; gap: 8px; text-decoration: none; font-weight: 600;
   padding: 12px 22px; border-radius: 999px; transition: transform .15s, background .15s;
@@ -352,7 +352,7 @@ p { margin: 0 0 1rem; }
 .narrow h2:not(:first-child) { margin-top: 44px; }
 
 /* Home facts */
-.facts { list-style: none; padding: 0; margin: 12px 0 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.facts { list-style: none; padding: 0; margin: 8px 0 0; display: flex; flex-wrap: wrap; gap: 8px; }
 .facts li { background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 3px 14px; font-size: .9rem; font-weight: 600; color: var(--ink-soft); }
 
 /* Important dates card (home) */
@@ -365,7 +365,7 @@ p { margin: 0 0 1rem; }
 .dc-tag { font-size: .72rem; font-weight: 700; border: 1px solid var(--line); border-radius: 6px; padding: 1px 7px; color: var(--muted); }
 .dc-list { list-style: none; margin: 0; padding: 0 0 0 22px; position: relative; }
 .dc-list::before { content: ""; position: absolute; left: 6px; top: 6px; bottom: 6px; width: 2px; background: var(--line); }
-.dc-list li { position: relative; padding: 1px 0; display: grid; grid-template-columns: 102px 1fr; gap: 6px; align-items: baseline; line-height: 1.25; }
+.dc-list li { position: relative; padding: 0; display: grid; grid-template-columns: 102px 1fr; gap: 6px; align-items: baseline; line-height: 1.25; }
 .dc-list li::before {
   content: ""; position: absolute; left: -21px; top: 5px; width: 12px; height: 12px; border-radius: 50%;
   background: var(--surface); border: 2px solid var(--dot-line);
@@ -483,7 +483,7 @@ p { margin: 0 0 1rem; }
 .narrow .kicker + h2 { margin-top: 0; }
 
 /* Phase blocks inside the dates card */
-.dc-group { border-radius: 12px; padding: 7px 10px 5px 10px; margin-bottom: 6px; border: 1px solid transparent; }
+.dc-group { border-radius: 12px; padding: 5px 10px 4px 10px; margin-bottom: 5px; border: 1px solid transparent; }
 .dc-group-dev { background: var(--dev-bg); border-color: var(--dev-line); }
 .dc-group-eval { background: var(--eval-bg); border-color: var(--eval-line); }
 .dc-group-after { background: transparent; border: 1px dashed var(--line); }

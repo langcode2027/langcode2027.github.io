@@ -1334,3 +1334,21 @@ ol.stepper::before {
   section { padding: 1rem 0; break-inside: avoid; }
   .pillar, .task, .org, .stat, .fact { break-inside: avoid; box-shadow: none; }
 }
+
+/* ------------------------------------------------ compact page heroes (2026-11-10) */
+/* dates card: one line per date so the Submission hero is no taller than the home hero */
+.dates-card ol.timeline.compact li { display: grid; grid-template-columns: 7.3rem minmax(0, 1fr); gap: .45rem; align-items: baseline; padding-bottom: .38rem; }
+.dates-card ol.timeline.compact li::before { top: .3rem; }
+.dates-card ol.timeline.compact .what { line-height: 1.3; }
+.dates-card .countdown { margin-top: .5rem; }
+.dates-card .dc-head { margin-bottom: .55rem; }
+/* header buttons stay on one row; the submit button keeps its colour and weight, not its extra size */
+.hero-actions .btn.cta { padding: .62rem 1.2rem; font-size: 1rem; }
+.toc { margin-top: 1rem; }
+.dates-card ol.timeline.compact li { padding-bottom: .26rem; }
+.dates-card .countdown { padding-top: .45rem; padding-bottom: .45rem; }
+header.hero:not(.home) .crumbs { margin-bottom: .6rem; }
+header.hero:not(.home) .tagline { margin-bottom: .8rem; }
+header.hero:not(.home) .venue { margin-bottom: .7rem; }
+@media (min-width: 44.01rem) { header.hero:not(.home) .hero-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 23.5rem); gap: 1.6rem 2.2rem; } }
+header.hero:not(.home):not(.mini) { padding: 2.1rem 0 1.6rem; }
