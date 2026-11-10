@@ -206,7 +206,7 @@ html[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
 
 header.hero {
   position: relative; overflow: hidden;
-  padding: 4rem 0 2.8rem;
+  padding: 2.7rem 0 2rem;
   border-bottom: 1px solid var(--line);
   background:
     radial-gradient(58rem 22rem at 12% -10%, var(--accent-soft), transparent 70%),
@@ -223,7 +223,7 @@ header.hero .wrap { position: relative; z-index: 1; }
 
 .kicker {
   font-family: var(--mono); font-size: .82rem; color: var(--accent);
-  letter-spacing: .06em; text-transform: lowercase; margin: 0 0 .9rem;
+  letter-spacing: .06em; text-transform: lowercase; margin: 0 0 .6rem;
 }
 h1.title {
   margin: 0 0 .5rem; font-size: clamp(2rem, 5.6vw, 3.1rem);
@@ -297,21 +297,11 @@ p.tagline b { color: var(--ink); font-weight: 650; }
 .route .cta-row { margin: 0 0 .6rem; }
 @media (max-width: 30rem) { .route .btn.cta, .step-i .btn.cta, .sb-actions .btn.cta { width: 100%; justify-content: center; } }
 
-/* "Submit" pill in the top nav, on every main page */
-.nav-submit {
-  flex: none; display: inline-flex; align-items: center; gap: .3rem; margin: 0 .45rem 0 .3rem;
-  padding: .42rem .95rem; border-radius: 999px; font-size: .88rem; font-weight: 800;
-  background: var(--accent); color: var(--cta-ink); white-space: nowrap;
-  box-shadow: 0 .35rem .9rem -.35rem var(--accent);
-  transition: background .18s var(--ease), transform .18s var(--ease);
-}
-.nav-submit:hover { background: var(--accent-deep); color: var(--cta-ink); text-decoration: none; transform: translateY(-1px); }
-
 /* "Submissions open" band under each hero */
 .submit-band {
   position: relative; z-index: 1;
   background: linear-gradient(100deg, var(--accent-soft), var(--bg-raise) 75%);
-  border-top: 2px solid var(--accent); border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
 }
 .sb-in { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem 1.6rem; padding-top: 1.15rem; padding-bottom: 1.15rem; }
 .sb-text { flex: 1 1 22rem; min-width: 0; }
@@ -330,7 +320,7 @@ p.tagline b { color: var(--ink); font-weight: 650; }
 
 /* hero terminal line */
 .termline {
-  margin-top: 2.2rem; font-family: var(--mono); font-size: .88rem;
+  margin-top: 1.4rem; font-family: var(--mono); font-size: .88rem;
   color: var(--ink-soft); display: flex; flex-wrap: wrap;
   align-items: baseline; gap: .5rem; min-height: 1.6rem;
 }
@@ -999,7 +989,7 @@ html[data-theme="dark"] .sibling .go { color: #0d1117; }
 }
 @media (max-width: 44rem) { .hero-grid { grid-template-columns: minmax(0, 1fr); } }
 
-.venue { display: flex; flex-wrap: wrap; align-items: center; gap: .55rem 1rem; margin-bottom: 1.3rem; }
+.venue { display: flex; flex-wrap: wrap; align-items: center; gap: .55rem 1rem; margin-bottom: 1rem; }
 .venue .status { margin-bottom: 0; }
 .vmeta {
   display: inline-flex; align-items: center; gap: .4rem;
@@ -1257,7 +1247,7 @@ footer .credit a { color: inherit; text-decoration: underline; text-underline-of
 
 /* home hero: keep the copy left of the bridge tower */
 header.hero.home .hero-main { max-width: 34rem; }
-.hero.mini { padding: 3.2rem 0 2.6rem; }
+.hero.mini { padding: 2.3rem 0 1.9rem; }
 
 
 /* ------------------------------------------- how-to-submit stepper */

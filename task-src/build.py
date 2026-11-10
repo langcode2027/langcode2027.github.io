@@ -341,6 +341,19 @@ def nav(key, t, active):
 </header>"""
 
 
+def submit_band(t):
+    """'Submissions open' strip under the updates bar (task home and paper pages only)."""
+    return f"""<section class="submit-band" aria-label="System paper submission is open">
+  <div class="wrap sb-in">
+    <div class="sb-text">
+      <span class="sb-live"><span class="dot" aria-hidden="true"></span>Submissions open</span>
+      <p><b>Submit your system paper on OpenReview</b> by <b>Feb&nbsp;5,&nbsp;2027</b> (11:59&nbsp;PM AoE). Choose <b>Shared Task {t["n"]} system paper</b> as the paper type.</p>
+    </div>
+    <a class="btn btn-primary sb-btn" href="https://openreview.net/group?id=aclweb.org/NAACL/2027/Workshop/LangCode" target="_blank" rel="noopener">Submit on OpenReview <span aria-hidden="true">↗</span></a>
+  </div>
+</section>"""
+
+
 def page_header(key, t, title, desc, photo, ico):
     return f"""<section class="page-head" style="--photo: url('/media/photos/{photo}')">
   <div class="wrap">
@@ -388,7 +401,7 @@ def render(key, i):
     body = (HERE / key / f"{slug}.html").read_text(encoding="utf-8")
     body = (body.replace("{{DATES_CARD}}", dates_card(t))
                 .replace("{{PHASES}}", phases_block(t))
-                .replace("{{TICKER}}", ticker(key, t)))
+                .replace("{{TICKER}}", ticker(key, t) + ("\n" + submit_band(t) if slug == "home" else "")))
     body = LB_EMPTY_RE.sub(lambda m: lb_empty(m.group(1)), body)
     if "{{LB_DEV_ROWS}}" in body:
         dev_rows, test_rows, updated = leaderboard_parts()
@@ -403,7 +416,7 @@ def render(key, i):
         head_html = ""
     else:
         full_title = f"{title} · Task {t['n']}: {t['name']} · LangCode 2027"
-        head_html = page_header(key, t, title, desc, photo, ico) + "\n" + ticker(key, t)
+        head_html = page_header(key, t, title, desc, photo, ico) + "\n" + ticker(key, t) + ("\n" + submit_band(t) if slug == "paper" else "")
     return icons_in(f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -417,7 +430,7 @@ def render(key, i):
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/task.css?v=13">
+  <link rel="stylesheet" href="/css/task.css?v=14">
 </head>
 <body class="{t["cls"]} page-{slug}">
 

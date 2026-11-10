@@ -128,9 +128,17 @@ p { margin: 0 0 1rem; }
 .btn-primary { background: var(--primary); color: var(--primary-ink); box-shadow: var(--shadow); }
 .btn-primary:hover { background: var(--primary-deep); }
 .btn-ghost { background: var(--surface); color: var(--ink); border: 1.5px solid var(--line); }
-.cta-row { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; margin: 20px 0 30px; }
-.cta-row .btn-primary { font-size: 1.05rem; padding: 14px 26px; }
-.cta-row .when { font-size: .88rem; font-weight: 600; color: var(--ink-soft); }
+/* "Submissions open" strip under the updates bar (home and paper pages) */
+.submit-band { background: linear-gradient(100deg, var(--primary-soft), var(--surface) 75%); border-bottom: 1px solid var(--line); }
+.sb-in { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 24px; padding-top: 16px; padding-bottom: 16px; }
+.sb-text { flex: 1 1 340px; min-width: 0; }
+.sb-text p { margin: 4px 0 0; color: var(--ink-soft); }
+.sb-text p b { color: var(--ink); }
+.sb-live { display: inline-flex; align-items: center; gap: 7px; font-family: var(--mono); font-size: .74rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--primary-deep); }
+.sb-live .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--primary); animation: tk-pulse 2.4s ease-in-out infinite; }
+.sb-btn { font-size: 1.05rem; font-weight: 800; padding: 14px 26px; box-shadow: 0 10px 22px -10px var(--primary), var(--shadow); }
+@media (max-width: 620px) { .sb-btn { width: 100%; justify-content: center; } }
+@media (prefers-reduced-motion: reduce) { .sb-live .dot { animation: none; } }
 
 /* Demo card */
 .demo {
