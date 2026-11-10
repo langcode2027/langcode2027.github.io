@@ -708,3 +708,28 @@ p { margin: 0 0 1rem; }
 .team-rules > .ico { margin-top: 2px; }
 .team-rules p + p { margin-top: 8px; }
 .team-warn { color: #C8102E; font-weight: 700; }
+
+/* ---- compact task home header: same height as the LangCode home hero (2026-11-10) ---- */
+.hero { padding: 22px 0 18px; }
+.hero .eyebrow { padding: 2px 12px; font-size: .78rem; margin-bottom: 6px; }
+.hero h1 { font-size: clamp(1.9rem, 3.1vw, 2.35rem); line-height: 1.08; }
+.hero-sub { font-size: 1.05rem; margin: 2px 0 6px; }
+.hero .lead { font-size: .92rem; line-height: 1.5; margin-bottom: 10px; }
+.hero .facts { margin-top: 4px; gap: 6px; }
+.hero .facts li { font-size: .82rem; padding: 2px 11px; }
+.hero .hero-actions { margin-top: 10px; gap: 10px; }
+.hero .hero-actions .btn { padding: 9px 19px; font-size: .95rem; }
+.dates-card { padding: 11px 15px 10px; }
+.dc-head { margin-bottom: 6px; }
+.dc-head h2 { font-size: 1rem; }
+.dc-list li { line-height: 1.18; }
+.dc-title { font-size: .82rem; }
+.dc-date { font-size: .7rem; }
+.dc-phase-head { margin-bottom: 2px; }
+.dc-pill { font-size: .64rem; padding: 2px 9px; }
+.dc-group { padding: 4px 9px 3px; margin-bottom: 4px; }
+.dc-countdown { margin-top: 4px; padding: 4px 9px; font-size: .8rem; }
+.dc-note { margin-top: 3px; font-size: .72rem; }
+.hero { padding: 20px 0 16px; }
+.dc-list li { line-height: 1.1; }
+.dc-head { margin-bottom: 4px; }
