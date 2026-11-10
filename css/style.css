@@ -269,24 +269,64 @@ p.tagline b { color: var(--ink); font-weight: 650; }
 .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
 .btn.primary:hover { background: var(--accent-deep); border-color: var(--accent-deep); color: #fff; }
 
-/* submit / commit call-to-action: the one button on a page that should win attention */
+/* submit / commit call-to-action: the one thing on a page that should win attention */
 .btn.cta {
-  display: inline-flex; align-items: center; gap: .5rem;
-  padding: .78rem 1.4rem; font-size: 1.02rem; font-weight: 700; letter-spacing: .005em;
-  background: var(--accent); border-color: var(--accent); color: var(--cta-ink);
-  box-shadow: 0 .55rem 1.3rem -.55rem var(--accent), var(--shadow-s);
+  display: inline-flex; align-items: center; gap: .55rem;
+  padding: .9rem 1.65rem; font-size: 1.08rem; font-weight: 800; letter-spacing: .005em;
+  background: linear-gradient(180deg, var(--accent), var(--accent-deep));
+  border: 0; color: var(--cta-ink);
+  box-shadow: 0 .65rem 1.5rem -.55rem var(--accent), var(--shadow-s);
 }
 .btn.cta:hover {
-  background: var(--accent-deep); border-color: var(--accent-deep); color: var(--cta-ink);
-  box-shadow: 0 .8rem 1.6rem -.6rem var(--accent), var(--shadow-m);
+  color: var(--cta-ink); transform: translateY(-3px);
+  box-shadow: 0 1rem 2rem -.6rem var(--accent), var(--shadow-m);
 }
-.btn.cta.arr { background: var(--amber); border-color: var(--amber); box-shadow: 0 .55rem 1.3rem -.55rem var(--amber), var(--shadow-s); }
-.btn.cta.arr:hover { filter: brightness(1.08); border-color: var(--amber); }
-.btn.cta .ar { font-size: 1.05em; line-height: 1; }
+.btn.cta .ar { font-size: 1.1em; line-height: 1; transition: transform .18s var(--ease); }
+.btn.cta:hover .ar { transform: translate(2px, -2px); }
+.btn.cta.arr { background: linear-gradient(180deg, var(--amber), color-mix(in srgb, var(--amber) 80%, #000)); box-shadow: 0 .65rem 1.5rem -.55rem var(--amber), var(--shadow-s); }
+.btn.cta.arr:hover { box-shadow: 0 1rem 2rem -.6rem var(--amber), var(--shadow-m); }
+.btn.cta.pulse { animation: cta-pulse 2.6s ease-out infinite; }
+.btn.cta.pulse:hover { animation-play-state: paused; }
+@keyframes cta-pulse {
+  0%   { box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 55%, transparent), 0 .65rem 1.5rem -.55rem var(--accent); }
+  70%  { box-shadow: 0 0 0 .7rem color-mix(in srgb, var(--accent) 0%, transparent), 0 .65rem 1.5rem -.55rem var(--accent); }
+  100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 0%, transparent), 0 .65rem 1.5rem -.55rem var(--accent); }
+}
 .cta-row { display: flex; flex-wrap: wrap; align-items: center; gap: .55rem .9rem; margin: .9rem 0 .2rem; }
-.cta-row .note { font-family: var(--mono); font-size: .76rem; color: var(--ink-soft); }
+.cta-row .note { font-family: var(--mono); font-size: .78rem; font-weight: 700; color: var(--ink); }
 .route .cta-row { margin: 0 0 .6rem; }
-@media (max-width: 30rem) { .route .btn.cta, .step-i .btn.cta { width: 100%; justify-content: center; } }
+@media (max-width: 30rem) { .route .btn.cta, .step-i .btn.cta, .sb-actions .btn.cta { width: 100%; justify-content: center; } }
+
+/* "Submit" pill in the top nav, on every main page */
+.nav-submit {
+  flex: none; display: inline-flex; align-items: center; gap: .3rem; margin: 0 .45rem 0 .3rem;
+  padding: .42rem .95rem; border-radius: 999px; font-size: .88rem; font-weight: 800;
+  background: var(--accent); color: var(--cta-ink); white-space: nowrap;
+  box-shadow: 0 .35rem .9rem -.35rem var(--accent);
+  transition: background .18s var(--ease), transform .18s var(--ease);
+}
+.nav-submit:hover { background: var(--accent-deep); color: var(--cta-ink); text-decoration: none; transform: translateY(-1px); }
+
+/* "Submissions open" band under each hero */
+.submit-band {
+  position: relative; z-index: 1;
+  background: linear-gradient(100deg, var(--accent-soft), var(--bg-raise) 75%);
+  border-top: 2px solid var(--accent); border-bottom: 1px solid var(--line);
+}
+.sb-in { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem 1.6rem; padding-top: 1.15rem; padding-bottom: 1.15rem; }
+.sb-text { flex: 1 1 22rem; min-width: 0; }
+.sb-text p { margin: .3rem 0 0; font-size: 1rem; color: var(--ink-soft); line-height: 1.5; }
+.sb-text p b { color: var(--ink); }
+.sb-live {
+  display: inline-flex; align-items: center; gap: .45rem;
+  font-family: var(--mono); font-size: .74rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--accent);
+}
+.sb-live .dot { width: .55rem; height: .55rem; border-radius: 50%; background: var(--accent); animation: sb-blink 1.6s ease-in-out infinite; }
+@keyframes sb-blink { 50% { opacity: .25; } }
+.sb-actions { display: flex; flex-wrap: wrap; gap: .7rem; }
+@media (prefers-reduced-motion: reduce) {
+  .btn.cta.pulse, .sb-live .dot { animation: none; }
+}
 
 /* hero terminal line */
 .termline {
