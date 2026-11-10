@@ -17,6 +17,7 @@
   --accent-soft: #e3f1ec;
   --blue: #1f4e9c;
   --amber: #8a5c00;
+  --cta-ink: #ffffff;
   --amber-soft: #fff3d6;
   --rose: #b4234a;
   --rose-deep: #8f1a3a;
@@ -47,6 +48,7 @@
     --accent-soft: #10281f;
     --blue: #79a7e8;
     --amber: #e3b341;
+    --cta-ink: #0d1117;
     --amber-soft: #2b2410;
     --rose: #f07a96;
     --rose-deep: #f6a3b6;
@@ -73,6 +75,7 @@ html[data-theme="dark"] {
   --accent-soft: #10281f;
   --blue: #79a7e8;
   --amber: #e3b341;
+  --cta-ink: #0d1117;
   --amber-soft: #2b2410;
   --rose: #f07a96;
   --rose-deep: #f6a3b6;
@@ -265,6 +268,25 @@ p.tagline b { color: var(--ink); font-weight: 650; }
 }
 .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
 .btn.primary:hover { background: var(--accent-deep); border-color: var(--accent-deep); color: #fff; }
+
+/* submit / commit call-to-action: the one button on a page that should win attention */
+.btn.cta {
+  display: inline-flex; align-items: center; gap: .5rem;
+  padding: .78rem 1.4rem; font-size: 1.02rem; font-weight: 700; letter-spacing: .005em;
+  background: var(--accent); border-color: var(--accent); color: var(--cta-ink);
+  box-shadow: 0 .55rem 1.3rem -.55rem var(--accent), var(--shadow-s);
+}
+.btn.cta:hover {
+  background: var(--accent-deep); border-color: var(--accent-deep); color: var(--cta-ink);
+  box-shadow: 0 .8rem 1.6rem -.6rem var(--accent), var(--shadow-m);
+}
+.btn.cta.arr { background: var(--amber); border-color: var(--amber); box-shadow: 0 .55rem 1.3rem -.55rem var(--amber), var(--shadow-s); }
+.btn.cta.arr:hover { filter: brightness(1.08); border-color: var(--amber); }
+.btn.cta .ar { font-size: 1.05em; line-height: 1; }
+.cta-row { display: flex; flex-wrap: wrap; align-items: center; gap: .55rem .9rem; margin: .9rem 0 .2rem; }
+.cta-row .note { font-family: var(--mono); font-size: .76rem; color: var(--ink-soft); }
+.route .cta-row { margin: 0 0 .6rem; }
+@media (max-width: 30rem) { .route .btn.cta, .step-i .btn.cta { width: 100%; justify-content: center; } }
 
 /* hero terminal line */
 .termline {
