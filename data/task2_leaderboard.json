@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-09T13:41:13+00:00",
+ "updated": "2026-11-10T13:19:12+00:00",
  "dev": [
   {
    "team": "X",
@@ -23,25 +23,25 @@
    "safe_recall": 96.94
   },
   {
+   "team": "Tagore",
+   "affiliation": "MTU",
+   "score": 92.12,
+   "unsafe_recall": 97.1,
+   "safe_recall": 95.02
+  },
+  {
+   "team": "team-halmstad",
+   "affiliation": "Halmstad University",
+   "score": 89.64,
+   "unsafe_recall": 94.34,
+   "safe_recall": 95.3
+  },
+  {
    "team": "ScriptSentry",
    "affiliation": "Independent Researcher",
    "score": 88.94,
    "unsafe_recall": 95.8,
    "safe_recall": 93.14
-  },
-  {
-   "team": "team-halmstad",
-   "affiliation": "Halmstad University",
-   "score": 88.94,
-   "unsafe_recall": 94.2,
-   "safe_recall": 94.74
-  },
-  {
-   "team": "Tagore",
-   "affiliation": "MTU",
-   "score": 88.76,
-   "unsafe_recall": 95.22,
-   "safe_recall": 93.54
   },
   {
    "team": "ABCD Team",
@@ -58,18 +58,18 @@
    "safe_recall": 92.44
   },
   {
+   "team": "Semantix",
+   "affiliation": "University of Asia Pacific",
+   "score": 87.42,
+   "unsafe_recall": 95.48,
+   "safe_recall": 91.94
+  },
+  {
    "team": "Guard",
    "affiliation": "University of Georgia",
    "score": 87.16,
    "unsafe_recall": 96.22,
    "safe_recall": 90.94
-  },
-  {
-   "team": "Semantix",
-   "affiliation": "University of Asia Pacific",
-   "score": 85.38,
-   "unsafe_recall": 94.74,
-   "safe_recall": 90.64
   },
   {
    "team": "CUET_Synthetica",
@@ -109,9 +109,9 @@
   {
    "team": "cr7goat",
    "affiliation": "independent researcher",
-   "score": 78.12,
-   "unsafe_recall": 93.46,
-   "safe_recall": 84.66
+   "score": 77.88,
+   "unsafe_recall": 91.2,
+   "safe_recall": 86.68
   },
   {
    "team": "GenreMinds",
