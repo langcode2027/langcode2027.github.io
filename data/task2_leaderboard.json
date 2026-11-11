@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-10T13:19:12+00:00",
+ "updated": "2026-11-11T12:31:05+00:00",
  "dev": [
   {
    "team": "X",
@@ -30,18 +30,25 @@
    "safe_recall": 95.02
   },
   {
+   "team": "ScriptSentry",
+   "affiliation": "Independent Researcher",
+   "score": 91.34,
+   "unsafe_recall": 97.02,
+   "safe_recall": 94.32
+  },
+  {
+   "team": "Semantix",
+   "affiliation": "University of Asia Pacific",
+   "score": 90.04,
+   "unsafe_recall": 96.76,
+   "safe_recall": 93.28
+  },
+  {
    "team": "team-halmstad",
    "affiliation": "Halmstad University",
    "score": 89.64,
    "unsafe_recall": 94.34,
    "safe_recall": 95.3
-  },
-  {
-   "team": "ScriptSentry",
-   "affiliation": "Independent Researcher",
-   "score": 88.94,
-   "unsafe_recall": 95.8,
-   "safe_recall": 93.14
   },
   {
    "team": "ABCD Team",
@@ -56,13 +63,6 @@
    "score": 87.66,
    "unsafe_recall": 95.22,
    "safe_recall": 92.44
-  },
-  {
-   "team": "Semantix",
-   "affiliation": "University of Asia Pacific",
-   "score": 87.42,
-   "unsafe_recall": 95.48,
-   "safe_recall": 91.94
   },
   {
    "team": "Guard",
@@ -93,18 +93,18 @@
    "safe_recall": 87.3
   },
   {
-   "team": "CITD@UIT",
-   "affiliation": "University of Information Technology - VNUHCM",
-   "score": 82.74,
-   "unsafe_recall": 91.42,
-   "safe_recall": 91.32
-  },
-  {
    "team": "Team Albatross",
    "affiliation": "IIUC",
    "score": 80.22,
    "unsafe_recall": 96.32,
    "safe_recall": 83.9
+  },
+  {
+   "team": "CITD@UIT",
+   "affiliation": "University Of Information Technology",
+   "score": 78.78,
+   "unsafe_recall": 93.3,
+   "safe_recall": 85.48
   },
   {
    "team": "cr7goat",
