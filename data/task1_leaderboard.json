@@ -1,6 +1,11 @@
 {
- "updated": "2026-11-10T13:09:49+00:00",
+ "updated": "2026-11-11T12:18:59+00:00",
  "dev": [
+  {
+   "team": "Linguistic Slayers",
+   "affiliation": "Osmania University, Thomson Reuters",
+   "score": 99.4
+  },
   {
    "team": "X",
    "affiliation": "BUET",
@@ -10,11 +15,6 @@
    "team": "SAA",
    "affiliation": "BRAC University",
    "score": 74.4
-  },
-  {
-   "team": "xianyu",
-   "affiliation": "xianyu",
-   "score": 49.6
   },
   {
    "team": "Team Albatross",
@@ -30,6 +30,11 @@
    "team": "SAS",
    "affiliation": "BRAC University (Dhaka)",
    "score": 3.0
+  },
+  {
+   "team": "ocdokc",
+   "affiliation": "dmlcdsd",
+   "score": 0.0
   }
  ],
  "test": []
