@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-11T12:31:05+00:00",
+ "updated": "2026-11-13T12:54:35+00:00",
  "dev": [
   {
    "team": "X",
@@ -7,6 +7,13 @@
    "score": 96.8,
    "unsafe_recall": 99.1,
    "safe_recall": 97.7
+  },
+  {
+   "team": "Wings of Freedom",
+   "affiliation": "University of Alberta",
+   "score": 95.38,
+   "unsafe_recall": 97.9,
+   "safe_recall": 97.48
   },
   {
    "team": "hh-coder",
@@ -18,9 +25,16 @@
   {
    "team": "UIT_Remontada",
    "affiliation": "University of Information Technology, VNU-HCM",
-   "score": 94.0,
-   "unsafe_recall": 97.06,
-   "safe_recall": 96.94
+   "score": 93.86,
+   "unsafe_recall": 97.0,
+   "safe_recall": 96.86
+  },
+  {
+   "team": "PromptSentinel",
+   "affiliation": "Brac University",
+   "score": 93.64,
+   "unsafe_recall": 97.08,
+   "safe_recall": 96.56
   },
   {
    "team": "Tagore",
@@ -46,16 +60,16 @@
   {
    "team": "team-halmstad",
    "affiliation": "Halmstad University",
-   "score": 89.64,
-   "unsafe_recall": 94.34,
-   "safe_recall": 95.3
+   "score": 88.94,
+   "unsafe_recall": 94.2,
+   "safe_recall": 94.74
   },
   {
    "team": "ABCD Team",
    "affiliation": "University of Information Technology, VNU-HCM",
-   "score": 87.82,
-   "unsafe_recall": 97.08,
-   "safe_recall": 90.74
+   "score": 88.84,
+   "unsafe_recall": 94.96,
+   "safe_recall": 93.88
   },
   {
    "team": "onlypv",
@@ -84,6 +98,13 @@
    "score": 84.44,
    "unsafe_recall": 93.78,
    "safe_recall": 90.66
+  },
+  {
+   "team": "Team HP",
+   "affiliation": "IMT Atlantique",
+   "score": 83.56,
+   "unsafe_recall": 93.84,
+   "safe_recall": 89.72
   },
   {
    "team": "HexDefend-AI",
@@ -119,6 +140,20 @@
    "score": 75.08,
    "unsafe_recall": 90.12,
    "safe_recall": 84.96
+  },
+  {
+   "team": "Ami Nije",
+   "affiliation": "Independent Researcher",
+   "score": 72.88,
+   "unsafe_recall": 80.0,
+   "safe_recall": 92.88
+  },
+  {
+   "team": "BabySign",
+   "affiliation": "HCMUS",
+   "score": 66.08,
+   "unsafe_recall": 91.34,
+   "safe_recall": 74.74
   }
  ],
  "test": []
