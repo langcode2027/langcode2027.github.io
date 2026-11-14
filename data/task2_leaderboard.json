@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-13T12:54:35+00:00",
+ "updated": "2026-11-14T11:58:09+00:00",
  "dev": [
   {
    "team": "X",
@@ -11,9 +11,16 @@
   {
    "team": "Wings of Freedom",
    "affiliation": "University of Alberta",
-   "score": 95.38,
-   "unsafe_recall": 97.9,
-   "safe_recall": 97.48
+   "score": 96.14,
+   "unsafe_recall": 98.44,
+   "safe_recall": 97.7
+  },
+  {
+   "team": "UIT_Remontada",
+   "affiliation": "University of Information Technology, VNU-HCM",
+   "score": 94.42,
+   "unsafe_recall": 97.84,
+   "safe_recall": 96.58
   },
   {
    "team": "hh-coder",
@@ -21,13 +28,6 @@
    "score": 94.34,
    "unsafe_recall": 97.78,
    "safe_recall": 96.56
-  },
-  {
-   "team": "UIT_Remontada",
-   "affiliation": "University of Information Technology, VNU-HCM",
-   "score": 93.86,
-   "unsafe_recall": 97.0,
-   "safe_recall": 96.86
   },
   {
    "team": "PromptSentinel",
@@ -53,9 +53,16 @@
   {
    "team": "Semantix",
    "affiliation": "University of Asia Pacific",
-   "score": 90.04,
-   "unsafe_recall": 96.76,
-   "safe_recall": 93.28
+   "score": 90.58,
+   "unsafe_recall": 96.66,
+   "safe_recall": 93.92
+  },
+  {
+   "team": "Team HP",
+   "affiliation": "IMT Atlantique",
+   "score": 89.76,
+   "unsafe_recall": 98.2,
+   "safe_recall": 91.56
   },
   {
    "team": "team-halmstad",
@@ -86,6 +93,13 @@
    "safe_recall": 90.94
   },
   {
+   "team": "SAA",
+   "affiliation": "BRAC University",
+   "score": 85.76,
+   "unsafe_recall": 94.1,
+   "safe_recall": 91.66
+  },
+  {
    "team": "CUET_Synthetica",
    "affiliation": "Chittagong University Of Engineering And Technology",
    "score": 85.1,
@@ -100,18 +114,18 @@
    "safe_recall": 90.66
   },
   {
-   "team": "Team HP",
-   "affiliation": "IMT Atlantique",
-   "score": 83.56,
-   "unsafe_recall": 93.84,
-   "safe_recall": 89.72
-  },
-  {
    "team": "HexDefend-AI",
    "affiliation": "Türkiye",
    "score": 83.0,
    "unsafe_recall": 95.7,
    "safe_recall": 87.3
+  },
+  {
+   "team": "StrongWomen",
+   "affiliation": "University of Information Technology, VNU-HCM",
+   "score": 81.96,
+   "unsafe_recall": 92.52,
+   "safe_recall": 89.44
   },
   {
    "team": "Team Albatross",
