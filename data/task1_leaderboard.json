@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-14T11:52:34+00:00",
+ "updated": "2026-11-16T13:15:45+00:00",
  "dev": [
   {
    "team": "Linguistic Slayers",
@@ -25,6 +25,11 @@
    "team": "Team Albatross",
    "affiliation": "IIUC",
    "score": 38.6
+  },
+  {
+   "team": "StrongWomen",
+   "affiliation": "University of Information Technology, VNU-HCM",
+   "score": 31.6
   },
   {
    "team": "JFO",
