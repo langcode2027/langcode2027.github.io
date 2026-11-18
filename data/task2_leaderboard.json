@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-16T13:25:50+00:00",
+ "updated": "2026-11-18T13:42:34+00:00",
  "dev": [
   {
    "team": "X",
@@ -46,16 +46,23 @@
   {
    "team": "team-halmstad",
    "affiliation": "Halmstad University",
-   "score": 92.76,
-   "unsafe_recall": 96.32,
-   "safe_recall": 96.44
+   "score": 93.42,
+   "unsafe_recall": 96.92,
+   "safe_recall": 96.5
   },
   {
    "team": "Semantix",
    "affiliation": "University of Asia Pacific",
-   "score": 92.02,
-   "unsafe_recall": 97.2,
-   "safe_recall": 94.82
+   "score": 92.12,
+   "unsafe_recall": 96.94,
+   "safe_recall": 95.18
+  },
+  {
+   "team": "CUET_Synthetica",
+   "affiliation": "Chittagong University Of Engineering And Technology",
+   "score": 91.38,
+   "unsafe_recall": 96.44,
+   "safe_recall": 94.94
   },
   {
    "team": "ScriptSentry",
@@ -81,9 +88,9 @@
   {
    "team": "ABCD Team",
    "affiliation": "University of Information Technology, VNU-HCM",
-   "score": 88.84,
-   "unsafe_recall": 94.96,
-   "safe_recall": 93.88
+   "score": 89.56,
+   "unsafe_recall": 96.58,
+   "safe_recall": 92.98
   },
   {
    "team": "Guard",
@@ -107,11 +114,11 @@
    "safe_recall": 90.64
   },
   {
-   "team": "CUET_Synthetica",
-   "affiliation": "Chittagong University Of Engineering And Technology",
-   "score": 85.16,
-   "unsafe_recall": 95.1,
-   "safe_recall": 90.06
+   "team": "Team_Nit",
+   "affiliation": "NITDA IT HUB (NITHUB-UNILAG)",
+   "score": 84.5,
+   "unsafe_recall": 93.7,
+   "safe_recall": 90.8
   },
   {
    "team": "SAS",
@@ -130,9 +137,9 @@
   {
    "team": "cr7goat",
    "affiliation": "independent researcher",
-   "score": 81.62,
-   "unsafe_recall": 94.66,
-   "safe_recall": 86.96
+   "score": 82.22,
+   "unsafe_recall": 94.08,
+   "safe_recall": 88.14
   },
   {
    "team": "Team Albatross",
