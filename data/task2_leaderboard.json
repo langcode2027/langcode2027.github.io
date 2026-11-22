@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-18T13:42:34+00:00",
+ "updated": "2026-11-22T17:40:05+00:00",
  "dev": [
   {
    "team": "X",
@@ -7,6 +7,13 @@
    "score": 96.8,
    "unsafe_recall": 99.1,
    "safe_recall": 97.7
+  },
+  {
+   "team": "PromptSentinel",
+   "affiliation": "Brac University",
+   "score": 96.34,
+   "unsafe_recall": 98.54,
+   "safe_recall": 97.8
   },
   {
    "team": "Wings of Freedom",
@@ -23,11 +30,18 @@
    "safe_recall": 97.58
   },
   {
-   "team": "UIT_Remontada",
-   "affiliation": "University of Information Technology, VNU-HCM",
+   "team": "CUET_AL_Masaar",
+   "affiliation": "CUET",
+   "score": 95.82,
+   "unsafe_recall": 98.6,
+   "safe_recall": 97.22
+  },
+  {
+   "team": "SAA",
+   "affiliation": "BRAC University",
    "score": 94.4,
-   "unsafe_recall": 97.82,
-   "safe_recall": 96.58
+   "unsafe_recall": 98.22,
+   "safe_recall": 96.18
   },
   {
    "team": "hh-coder",
@@ -37,18 +51,18 @@
    "safe_recall": 96.56
   },
   {
-   "team": "PromptSentinel",
-   "affiliation": "Brac University",
-   "score": 93.64,
-   "unsafe_recall": 97.08,
-   "safe_recall": 96.56
-  },
-  {
    "team": "team-halmstad",
    "affiliation": "Halmstad University",
-   "score": 93.42,
-   "unsafe_recall": 96.92,
-   "safe_recall": 96.5
+   "score": 94.28,
+   "unsafe_recall": 97.64,
+   "safe_recall": 96.64
+  },
+  {
+   "team": "UIT_Remontada",
+   "affiliation": "University of Information Technology, VNU-HCM",
+   "score": 92.76,
+   "unsafe_recall": 96.58,
+   "safe_recall": 96.18
   },
   {
    "team": "Semantix",
@@ -56,6 +70,13 @@
    "score": 92.12,
    "unsafe_recall": 96.94,
    "safe_recall": 95.18
+  },
+  {
+   "team": "Team_Nit",
+   "affiliation": "NITDA IT HUB (NITHUB-UNILAG)",
+   "score": 91.4,
+   "unsafe_recall": 96.38,
+   "safe_recall": 95.02
   },
   {
    "team": "CUET_Synthetica",
@@ -70,13 +91,6 @@
    "score": 91.34,
    "unsafe_recall": 97.02,
    "safe_recall": 94.32
-  },
-  {
-   "team": "SAA",
-   "affiliation": "BRAC University",
-   "score": 90.96,
-   "unsafe_recall": 95.98,
-   "safe_recall": 94.98
   },
   {
    "team": "Team HP",
@@ -107,25 +121,39 @@
    "safe_recall": 92.44
   },
   {
-   "team": "StrongWomen",
-   "affiliation": "University of Information Technology, VNU-HCM",
-   "score": 86.88,
-   "unsafe_recall": 96.24,
-   "safe_recall": 90.64
-  },
-  {
-   "team": "Team_Nit",
-   "affiliation": "NITDA IT HUB (NITHUB-UNILAG)",
-   "score": 84.5,
-   "unsafe_recall": 93.7,
-   "safe_recall": 90.8
+   "team": "FAGJ",
+   "affiliation": "DUT",
+   "score": 86.22,
+   "unsafe_recall": 93.74,
+   "safe_recall": 92.48
   },
   {
    "team": "SAS",
-   "affiliation": "BRAC University (Dhaka)",
+   "affiliation": "BRAC University",
    "score": 84.44,
    "unsafe_recall": 93.78,
    "safe_recall": 90.66
+  },
+  {
+   "team": "daydayup",
+   "affiliation": "Ocean University Of China",
+   "score": 84.44,
+   "unsafe_recall": 93.32,
+   "safe_recall": 91.12
+  },
+  {
+   "team": "StrongWomen",
+   "affiliation": "University of Information Technology, VNU-HCM",
+   "score": 84.32,
+   "unsafe_recall": 95.72,
+   "safe_recall": 88.6
+  },
+  {
+   "team": "HCMUS-DrGuru",
+   "affiliation": "University of Science, VNU-HCM",
+   "score": 84.18,
+   "unsafe_recall": 95.28,
+   "safe_recall": 88.9
   },
   {
    "team": "HexDefend-AI",
@@ -137,9 +165,16 @@
   {
    "team": "cr7goat",
    "affiliation": "independent researcher",
-   "score": 82.22,
-   "unsafe_recall": 94.08,
-   "safe_recall": 88.14
+   "score": 82.3,
+   "unsafe_recall": 94.2,
+   "safe_recall": 88.1
+  },
+  {
+   "team": "Smile-Labs",
+   "affiliation": "University of Moratuwa",
+   "score": 82.1,
+   "unsafe_recall": 92.58,
+   "safe_recall": 89.52
   },
   {
    "team": "Team Albatross",
