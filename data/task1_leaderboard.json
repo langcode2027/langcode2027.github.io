@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-16T13:15:45+00:00",
+ "updated": "2026-11-22T17:40:05+00:00",
  "dev": [
   {
    "team": "Linguistic Slayers",
@@ -7,14 +7,39 @@
    "score": 99.4
   },
   {
+   "team": "VNNZ",
+   "affiliation": "Independent",
+   "score": 97.2
+  },
+  {
+   "team": "StrongWomen",
+   "affiliation": "University of Information Technology, VNU-HCM",
+   "score": 97.0
+  },
+  {
+   "team": "RaRa_IUBAT",
+   "affiliation": "International University of Business Agriculture and Technology (IUBAT)",
+   "score": 96.4
+  },
+  {
+   "team": "Semantix",
+   "affiliation": "University of Asia Pacific",
+   "score": 93.4
+  },
+  {
    "team": "X",
    "affiliation": "BUET",
    "score": 93.2
   },
   {
+   "team": "Triptych",
+   "affiliation": "Amherst College, UMass Amherst, USF",
+   "score": 90.0
+  },
+  {
    "team": "SAA",
    "affiliation": "BRAC University",
-   "score": 84.4
+   "score": 85.4
   },
   {
    "team": "quantum_quest",
@@ -22,14 +47,14 @@
    "score": 60.0
   },
   {
+   "team": "IIT Patna",
+   "affiliation": "AI Inference Engineer",
+   "score": 43.8
+  },
+  {
    "team": "Team Albatross",
    "affiliation": "IIUC",
    "score": 38.6
-  },
-  {
-   "team": "StrongWomen",
-   "affiliation": "University of Information Technology, VNU-HCM",
-   "score": 31.6
   },
   {
    "team": "JFO",
