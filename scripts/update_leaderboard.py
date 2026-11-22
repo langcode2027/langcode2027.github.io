@@ -4,9 +4,12 @@ Reads the public leaderboard API of the Development and Test phases of competiti
 team's entry (team name and affiliation from the submission form, Pass@1), sorts by Pass@1 and writes
 data/task1_leaderboard.json with the time of the update. task-src/build.py turns that file into the two
 boards on /task1/leaderboard/. Submissions from the organizers' accounts are never shown.
+Sends the CODABENCH_TOKEN secret, when set, as `Authorization: Token ...`: since Nov 2026 CodaBench's
+bot check (Anubis) answers API calls without it with an HTML page.
 Standard library only. Exits with an error, and leaves the file unchanged, if CodaBench cannot be read.
 """
 import json
+import os
 import sys
 import time
 import urllib.request
@@ -22,7 +25,10 @@ ORGANIZERS = {"raihan_nishad"}                      # our own CodaBench accounts
 
 
 def fetch(phase_id):
-    req = urllib.request.Request(API.format(phase_id), headers={"Accept": "application/json"})
+    headers = {"Accept": "application/json"}
+    if os.environ.get("CODABENCH_TOKEN"):
+        headers["Authorization"] = "Token " + os.environ["CODABENCH_TOKEN"].strip()
+    req = urllib.request.Request(API.format(phase_id), headers=headers)
     for attempt in range(4):
         try:
             with urllib.request.urlopen(req, timeout=60) as r:
