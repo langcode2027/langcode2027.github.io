@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-22T18:35:57+00:00",
+ "updated": "2026-11-23T18:36:09+00:00",
  "dev": [
   {
    "team": "X",
@@ -53,9 +53,9 @@
   {
    "team": "team-halmstad",
    "affiliation": "Halmstad University",
-   "score": 94.28,
-   "unsafe_recall": 97.64,
-   "safe_recall": 96.64
+   "score": 94.2,
+   "unsafe_recall": 98.06,
+   "safe_recall": 96.14
   },
   {
    "team": "UIT_Remontada",
@@ -70,6 +70,13 @@
    "score": 92.12,
    "unsafe_recall": 96.94,
    "safe_recall": 95.18
+  },
+  {
+   "team": "HCMUS-DrGuru",
+   "affiliation": "University of Science, VNU-HCM",
+   "score": 91.76,
+   "unsafe_recall": 96.14,
+   "safe_recall": 95.62
   },
   {
    "team": "Team_Nit",
@@ -121,6 +128,13 @@
    "safe_recall": 92.44
   },
   {
+   "team": "daydayup",
+   "affiliation": "Ocean University Of China",
+   "score": 87.26,
+   "unsafe_recall": 95.24,
+   "safe_recall": 92.02
+  },
+  {
    "team": "FAGJ",
    "affiliation": "DUT",
    "score": 86.22,
@@ -135,25 +149,11 @@
    "safe_recall": 90.66
   },
   {
-   "team": "daydayup",
-   "affiliation": "Ocean University Of China",
-   "score": 84.44,
-   "unsafe_recall": 93.32,
-   "safe_recall": 91.12
-  },
-  {
-   "team": "StrongWomen",
-   "affiliation": "University of Information Technology, VNU-HCM",
-   "score": 84.32,
-   "unsafe_recall": 95.72,
-   "safe_recall": 88.6
-  },
-  {
-   "team": "HCMUS-DrGuru",
-   "affiliation": "University of Science, VNU-HCM",
-   "score": 84.18,
-   "unsafe_recall": 95.28,
-   "safe_recall": 88.9
+   "team": "Smile Labs",
+   "affiliation": "University of Moratuwa",
+   "score": 83.8,
+   "unsafe_recall": 94.02,
+   "safe_recall": 89.78
   },
   {
    "team": "HexDefend-AI",
@@ -168,13 +168,6 @@
    "score": 82.3,
    "unsafe_recall": 94.2,
    "safe_recall": 88.1
-  },
-  {
-   "team": "Smile-Labs",
-   "affiliation": "University of Moratuwa",
-   "score": 82.1,
-   "unsafe_recall": 92.58,
-   "safe_recall": 89.52
   },
   {
    "team": "Team Albatross",
@@ -210,6 +203,20 @@
    "score": 66.08,
    "unsafe_recall": 91.34,
    "safe_recall": 74.74
+  },
+  {
+   "team": "StrongWomen",
+   "affiliation": "University of Information Technology, VNU-HCM",
+   "score": 53.5,
+   "unsafe_recall": 78.8,
+   "safe_recall": 74.7
+  },
+  {
+   "team": "tangthienthanh288",
+   "affiliation": "University of Information Technology",
+   "score": 52.68,
+   "unsafe_recall": 82.64,
+   "safe_recall": 70.04
   },
   {
    "team": "Aegis-1",
