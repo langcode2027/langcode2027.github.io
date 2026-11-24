@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-23T18:36:09+00:00",
+ "updated": "2026-11-24T18:36:18+00:00",
  "dev": [
   {
    "team": "Linguistic Slayers",
@@ -22,6 +22,16 @@
    "score": 96.4
   },
   {
+   "team": "Team001",
+   "affiliation": "Anonymous",
+   "score": 94.4
+  },
+  {
+   "team": "Triptych",
+   "affiliation": "Amherst College, UMass Amherst, USF",
+   "score": 94.2
+  },
+  {
    "team": "Semantix",
    "affiliation": "University of Asia Pacific",
    "score": 93.4
@@ -30,11 +40,6 @@
    "team": "X",
    "affiliation": "BUET",
    "score": 93.2
-  },
-  {
-   "team": "Triptych",
-   "affiliation": "Amherst College, UMass Amherst, USF",
-   "score": 90.0
   },
   {
    "team": "SAA",
