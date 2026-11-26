@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-25T18:36:21+00:00",
+ "updated": "2026-11-26T18:36:27+00:00",
  "dev": [
   {
    "team": "X",
@@ -37,11 +37,11 @@
    "safe_recall": 97.22
   },
   {
-   "team": "UIT_Remontada",
-   "affiliation": "University of Information Technology, VNU-HCM",
-   "score": 95.46,
-   "unsafe_recall": 98.52,
-   "safe_recall": 96.94
+   "team": "HCMUS-DrGuru",
+   "affiliation": "University of Science, VNU-HCM",
+   "score": 95.12,
+   "unsafe_recall": 98.02,
+   "safe_recall": 97.1
   },
   {
    "team": "team-halmstad",
@@ -51,18 +51,18 @@
    "safe_recall": 96.46
   },
   {
-   "team": "HCMUS-DrGuru",
-   "affiliation": "University of Science, VNU-HCM",
-   "score": 94.62,
-   "unsafe_recall": 97.56,
-   "safe_recall": 97.06
-  },
-  {
    "team": "SAA",
    "affiliation": "BRAC University",
    "score": 94.6,
    "unsafe_recall": 97.7,
    "safe_recall": 96.9
+  },
+  {
+   "team": "UIT_Remontada",
+   "affiliation": "University of Information Technology, VNU-HCM",
+   "score": 94.42,
+   "unsafe_recall": 97.84,
+   "safe_recall": 96.58
   },
   {
    "team": "hh-coder",
@@ -86,6 +86,20 @@
    "safe_recall": 96.04
   },
   {
+   "team": "tangthienthanh288",
+   "affiliation": "University of Information Technology",
+   "score": 93.38,
+   "unsafe_recall": 97.84,
+   "safe_recall": 95.54
+  },
+  {
+   "team": "Team_Nit",
+   "affiliation": "NITDA IT HUB (NITHUB-UNILAG)",
+   "score": 92.66,
+   "unsafe_recall": 96.52,
+   "safe_recall": 96.14
+  },
+  {
    "team": "Semantix",
    "affiliation": "University of Asia Pacific",
    "score": 92.12,
@@ -93,25 +107,18 @@
    "safe_recall": 95.18
   },
   {
-   "team": "tangthienthanh288",
-   "affiliation": "University of Information Technology",
-   "score": 91.52,
-   "unsafe_recall": 96.94,
-   "safe_recall": 94.58
+   "team": "Sedan Group",
+   "affiliation": "University Of Luxembourg",
+   "score": 91.96,
+   "unsafe_recall": 97.74,
+   "safe_recall": 94.22
   },
   {
-   "team": "Team_Nit",
-   "affiliation": "NITDA IT HUB (NITHUB-UNILAG)",
-   "score": 91.4,
-   "unsafe_recall": 96.38,
-   "safe_recall": 95.02
-  },
-  {
-   "team": "CUET_Synthetica",
-   "affiliation": "Chittagong University Of Engineering And Technology",
-   "score": 91.38,
-   "unsafe_recall": 96.44,
-   "safe_recall": 94.94
+   "team": "Marsam",
+   "affiliation": "University of Scholars",
+   "score": 91.86,
+   "unsafe_recall": 96.52,
+   "safe_recall": 95.34
   },
   {
    "team": "ScriptSentry",
@@ -121,11 +128,18 @@
    "safe_recall": 94.32
   },
   {
+   "team": "mukti",
+   "affiliation": "uiu",
+   "score": 90.48,
+   "unsafe_recall": 96.46,
+   "safe_recall": 94.02
+  },
+  {
    "team": "Tredence_AICOE",
    "affiliation": "TREDENCE",
-   "score": 90.5,
-   "unsafe_recall": 95.98,
-   "safe_recall": 94.52
+   "score": 90.1,
+   "unsafe_recall": 97.46,
+   "safe_recall": 92.64
   },
   {
    "team": "Team HP",
@@ -142,11 +156,18 @@
    "safe_recall": 92.98
   },
   {
+   "team": "CUET_Synthetica",
+   "affiliation": "Chittagong University Of Engineering And Technology",
+   "score": 88.9,
+   "unsafe_recall": 95.8,
+   "safe_recall": 93.1
+  },
+  {
    "team": "daydayup",
    "affiliation": "ocean university of china",
-   "score": 88.32,
-   "unsafe_recall": 94.58,
-   "safe_recall": 93.74
+   "score": 88.4,
+   "unsafe_recall": 94.74,
+   "safe_recall": 93.66
   },
   {
    "team": "Guard",
@@ -184,13 +205,6 @@
    "safe_recall": 92.48
   },
   {
-   "team": "Marsam",
-   "affiliation": "University of Scholars",
-   "score": 85.9,
-   "unsafe_recall": 93.48,
-   "safe_recall": 92.42
-  },
-  {
    "team": "SAS",
    "affiliation": "BRAC University",
    "score": 84.44,
@@ -217,13 +231,6 @@
    "score": 80.22,
    "unsafe_recall": 96.32,
    "safe_recall": 83.9
-  },
-  {
-   "team": "CITD@UIT",
-   "affiliation": "University Of Information Technology",
-   "score": 78.78,
-   "unsafe_recall": 93.3,
-   "safe_recall": 85.48
   },
   {
    "team": "GenreMinds",
@@ -259,6 +266,13 @@
    "score": 51.4,
    "unsafe_recall": 84.48,
    "safe_recall": 66.92
+  },
+  {
+   "team": "UIT",
+   "affiliation": "UIT",
+   "score": 0.0,
+   "unsafe_recall": 100.0,
+   "safe_recall": 0.0
   }
  ],
  "test": []
