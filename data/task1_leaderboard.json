@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T18:36:27+00:00",
+ "updated": "2026-11-27T14:31:36+00:00",
  "dev": [
   {
    "team": "Linguistic Slayers",
@@ -52,6 +52,11 @@
    "score": 60.0
   },
   {
+   "team": "SOLID",
+   "affiliation": "IUBAT - International University of Business Agriculture and Technology",
+   "score": 46.6
+  },
+  {
    "team": "IIT Patna",
    "affiliation": "AI Inference Engineer",
    "score": 43.8
@@ -79,6 +84,11 @@
   {
    "team": "ocdokc",
    "affiliation": "dmlcdsd",
+   "score": 0.0
+  },
+  {
+   "team": "LangFusion_NAM",
+   "affiliation": "IUBAT",
    "score": 0.0
   }
  ],
