@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T18:36:26+00:00",
+ "updated": "2026-11-28T18:36:34+00:00",
  "dev": [
   {
    "team": "X",
@@ -11,8 +11,8 @@
   {
    "team": "PromptSentinel",
    "affiliation": "Brac University",
-   "score": 96.34,
-   "unsafe_recall": 98.54,
+   "score": 96.78,
+   "unsafe_recall": 98.98,
    "safe_recall": 97.8
   },
   {
@@ -39,9 +39,9 @@
   {
    "team": "CUET_AL_Masaar",
    "affiliation": "CUET",
-   "score": 95.82,
-   "unsafe_recall": 98.6,
-   "safe_recall": 97.22
+   "score": 95.94,
+   "unsafe_recall": 98.68,
+   "safe_recall": 97.26
   },
   {
    "team": "HCMUS-DrGuru",
@@ -86,6 +86,13 @@
    "safe_recall": 96.56
   },
   {
+   "team": "NPGL",
+   "affiliation": "University of Information Technology, VNU-HCM",
+   "score": 94.24,
+   "unsafe_recall": 98.1,
+   "safe_recall": 96.14
+  },
+  {
    "team": "CUET_Synthetica",
    "affiliation": "Chittagong University Of Engineering And Technology",
    "score": 94.06,
@@ -98,13 +105,6 @@
    "score": 93.8,
    "unsafe_recall": 97.76,
    "safe_recall": 96.04
-  },
-  {
-   "team": "NPGL",
-   "affiliation": "University of Information Technology, VNU-HCM",
-   "score": 92.96,
-   "unsafe_recall": 97.86,
-   "safe_recall": 95.1
   },
   {
    "team": "Team_Nit",
@@ -137,8 +137,8 @@
   {
    "team": "daydayup",
    "affiliation": "ocean university of china",
-   "score": 91.6,
-   "unsafe_recall": 96.22,
+   "score": 91.78,
+   "unsafe_recall": 96.4,
    "safe_recall": 95.38
   },
   {
@@ -219,6 +219,20 @@
    "safe_recall": 90.66
   },
   {
+   "team": "CITD",
+   "affiliation": "VNUHCM - University of Information Technology (UIT)",
+   "score": 84.28,
+   "unsafe_recall": 96.4,
+   "safe_recall": 87.88
+  },
+  {
+   "team": "RaRa_IUBAT",
+   "affiliation": "International University of Business Agriculture and Technology (IUBAT)",
+   "score": 83.06,
+   "unsafe_recall": 93.42,
+   "safe_recall": 89.64
+  },
+  {
    "team": "HexDefend-AI",
    "affiliation": "Türkiye",
    "score": 83.0,
@@ -245,6 +259,13 @@
    "score": 79.2,
    "unsafe_recall": 91.72,
    "safe_recall": 87.48
+  },
+  {
+   "team": "TeamNPLabs",
+   "affiliation": "NPLabs",
+   "score": 76.88,
+   "unsafe_recall": 89.36,
+   "safe_recall": 87.52
   },
   {
    "team": "GenreMinds",
@@ -287,13 +308,6 @@
    "score": 49.32,
    "unsafe_recall": 82.58,
    "safe_recall": 66.74
-  },
-  {
-   "team": "UIT",
-   "affiliation": "UIT",
-   "score": 0.0,
-   "unsafe_recall": 100.0,
-   "safe_recall": 0.0
   }
  ],
  "test": []
